@@ -1,20 +1,74 @@
+/**
+ * Nieuwsbronnen voor de Gameinside agent.
+ *
+ * Elke feed heeft een `weight` (bronautoriteit) die meetelt in de score.
+ * `gamingOnly: false` betekent een gemengde tech-feed: die items moeten
+ * eerst een gaming-keyword raken voor ze meedoen.
+ *
+ * Feedgezondheid is getest op 2026-08-24. Draai `npm run check-feeds`
+ * om opnieuw te controleren welke feeds nog leven.
+ */
 const RSS_FEEDS = [
-  'https://feeds.tweakers.net/tweakers/mixed.xml',
-  'https://www.nu.nl/rss/games',
-  'https://www.gamer.nl/feed',
-  'https://www.eurogamer.net/?format=rss',
-  'https://feeds.feedburner.com/ign/games',
-  'https://store.steampowered.com/feeds/news/',
-  'https://www.nintendo.com/nl-nl/rss.xml',
+  // Groot en snel
+  { url: 'https://www.gamesradar.com/rss/', weight: 1.0, gamingOnly: true },
+  { url: 'https://www.ign.com/rss/articles/feed?tags=games', weight: 1.15, gamingOnly: true },
+  { url: 'https://www.gamespot.com/feeds/news/', weight: 1.1, gamingOnly: true },
+  { url: 'https://www.pcgamer.com/rss/', weight: 1.05, gamingOnly: true },
+  { url: 'https://www.eurogamer.net/?format=rss', weight: 1.1, gamingOnly: true },
+  { url: 'https://www.polygon.com/rss/index.xml', weight: 1.05, gamingOnly: true },
+
+  // Scoop-gedreven, vaak als eerste met echt nieuws
+  { url: 'https://www.videogameschronicle.com/feed/', weight: 1.25, gamingOnly: true },
+  { url: 'https://insider-gaming.com/feed/', weight: 1.0, gamingOnly: true },
+  { url: 'https://www.gematsu.com/feed', weight: 1.05, gamingOnly: true },
+
+  // Platformspecifiek
+  { url: 'https://www.pushsquare.com/feeds/latest', weight: 0.95, gamingOnly: true },
+  { url: 'https://www.purexbox.com/feeds/latest', weight: 0.95, gamingOnly: true },
+  { url: 'https://www.nintendolife.com/feeds/latest', weight: 0.95, gamingOnly: true },
+  { url: 'https://blog.playstation.com/feed/', weight: 1.0, gamingOnly: true },
+  { url: 'https://news.xbox.com/en-us/feed/', weight: 1.0, gamingOnly: true },
+
+  // Breed / cultuur
+  { url: 'https://kotaku.com/rss', weight: 0.9, gamingOnly: true },
+  { url: 'https://www.rockpapershotgun.com/feed', weight: 0.95, gamingOnly: true },
+  { url: 'https://www.destructoid.com/feed/', weight: 0.85, gamingOnly: true },
+
+  // Hardware en tech (gemengd, wordt gefilterd op gaming-keywords)
+  { url: 'https://tweakers.net/feeds/mixed.xml', weight: 1.1, gamingOnly: false },
+  { url: 'https://wccftech.com/feed/', weight: 0.8, gamingOnly: false },
 ];
 
-// Keywords that boost an item's score
+// Keywords die een item als gaming-relevant markeren en punten opleveren.
 const GAMING_KEYWORDS = [
-  'game', 'gaming', 'playstation', 'xbox', 'nintendo', 'steam', 'pc',
-  'release', 'trailer', 'review', 'dlc', 'update', 'patch', 'fps', 'rpg',
-  'esport', 'console', 'ps5', 'switch', 'gpu', 'nvidia', 'amd', 'intel',
-  'capcom', 'ubisoft', 'ea', 'activision', 'bethesda', 'rockstar', 'sony',
-  'microsoft', 'valve', 'epic', 'riot', 'blizzard', 'cd projekt',
+  'game', 'games', 'gaming', 'gamer', 'gameplay', 'playstation', 'ps5', 'ps6',
+  'xbox', 'nintendo', 'switch', 'steam', 'steamdeck', 'pc gaming', 'console',
+  'trailer', 'dlc', 'expansion', 'patch', 'update', 'multiplayer', 'singleplayer',
+  'fps', 'rpg', 'mmo', 'roguelike', 'soulslike', 'indie', 'esport', 'esports',
+  'speedrun', 'mod', 'remaster', 'remake', 'sequel', 'reveal', 'launch',
+  'capcom', 'ubisoft', 'bethesda', 'rockstar', 'sony', 'microsoft', 'valve',
+  'epic games', 'riot games', 'blizzard', 'activision', 'cd projekt', 'square enix',
+  'fromsoftware', 'bungie', 'naughty dog', 'insomniac', 'larian', 'obsidian',
+  'nvidia', 'geforce', 'radeon', 'gpu', 'videokaart', 'controller', 'vr', 'gta',
 ];
 
-module.exports = { RSS_FEEDS, GAMING_KEYWORDS };
+// Woorden die duiden op groot, echt nieuws. Extra punten.
+const HOT_KEYWORDS = [
+  'announced', 'announcement', 'revealed', 'reveal', 'confirmed', 'delayed',
+  'release date', 'launches', 'shutting down', 'shut down', 'layoffs', 'acquires',
+  'acquisition', 'lawsuit', 'leaked', 'leak', 'exclusive', 'record', 'banned',
+  'cancelled', 'canceled', 'sequel', 'remake', 'trailer', 'gameplay reveal',
+  'aangekondigd', 'onthuld', 'uitgesteld', 'bevestigd', 'gelekt', 'overname',
+  'ontslagen', 'gestopt', 'rechtszaak', 'recordbrekend',
+];
+
+// Woorden die duiden op laagwaardige of commerciele content. Strafpunten.
+const NEGATIVE_KEYWORDS = [
+  'deal', 'deals', 'discount', 'korting', 'aanbieding', 'sale', 'coupon',
+  'black friday', 'cyber monday', 'prime day', 'giveaway', 'sweepstakes',
+  'best price', 'save %', 'sponsored', 'advertorial', 'affiliate', 'bundle deal',
+  'gift guide', 'cadeaugids', 'wordle', 'nyt connections', 'quordle',
+  'today\'s answer', 'hints and answers', 'daily puzzle', 'horoscope',
+];
+
+module.exports = { RSS_FEEDS, GAMING_KEYWORDS, HOT_KEYWORDS, NEGATIVE_KEYWORDS };

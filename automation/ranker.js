@@ -1,0 +1,136 @@
+/**
+ * Scoren en clusteren van nieuwsitems.
+ *
+ * Twee dingen gebeuren hier:
+ *  1. scoreItem()      -- hoe relevant is dit item op zichzelf
+ *  2. clusterItems()   -- welke items gaan over hetzelfde nieuws
+ *
+ * Het aantal verschillende bronnen dat over een verhaal schrijft is het
+ * sterkste signaal voor "dit is vandaag belangrijk", dus dat weegt zwaar mee.
+ */
+
+const { GAMING_KEYWORDS, HOT_KEYWORDS, NEGATIVE_KEYWORDS } = require('./sources.js');
+
+// Halfwaardetijd van de recency-score in uren. Lager = agressiever op vers nieuws.
+const RECENCY_HALFLIFE_HOURS = 6;
+
+const STOPWORDS = new Set([
+  'the', 'and', 'for', 'with', 'this', 'that', 'from', 'have', 'has', 'are',
+  'was', 'were', 'will', 'its', 'you', 'your', 'but', 'not', 'all', 'can',
+  'new', 'now', 'out', 'get', 'how', 'why', 'what', 'who', 'een', 'het', 'de',
+  'van', 'voor', 'met', 'dat', 'die', 'zijn', 'wordt', 'worden', 'naar', 'over',
+]);
+
+/** Escape voor gebruik in een RegExp. */
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Telt hoeveel termen uit `list` als heel woord in `text` voorkomen.
+ * Woordgrenzen zijn belangrijk: zonder \b matcht 'ea' in "release", "team" en
+ * "year", waardoor bijna elk item gratis punten kreeg.
+ */
+function countMatches(text, list) {
+  let hits = 0;
+  for (const term of list) {
+    const re = new RegExp(`(^|[^a-z0-9])${escapeRegex(term)}([^a-z0-9]|$)`, 'i');
+    if (re.test(text)) hits++;
+  }
+  return hits;
+}
+
+function hasMatch(text, list) {
+  return countMatches(text, list) > 0;
+}
+
+/** Betekenisvolle woorden uit een titel, voor gelijkenisvergelijking. */
+function titleTokens(title) {
+  return new Set(
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w.length > 3 && !STOPWORDS.has(w))
+  );
+}
+
+/**
+ * Jaccard-gelijkenis tussen twee titels (0-1).
+ */
+function titleSimilarity(a, b) {
+  const wa = a instanceof Set ? a : titleTokens(a);
+  const wb = b instanceof Set ? b : titleTokens(b);
+  if (wa.size === 0 || wb.size === 0) return 0;
+  let overlap = 0;
+  for (const w of wa) if (wb.has(w)) overlap++;
+  const union = wa.size + wb.size - overlap;
+  return union === 0 ? 0 : overlap / union;
+}
+
+/**
+ * Score van een los item. Hoger is relevanter.
+ *
+ * Opbouw:
+ *   recency    0-100  exponentieel verval, halfwaardetijd 6 uur
+ *   gaming     0-24   max 8 keyword-treffers
+ *   hot        0-24   max 3 treffers op groot-nieuws-woorden
+ *   negatief   -50    deals, giveaways, puzzelantwoorden
+ *   autoriteit  x0.8-1.25 vermenigvuldiger op het totaal
+ */
+function scoreItem(item) {
+  const text = `${item.title} ${item.description}`.toLowerCase();
+
+  const ageHours = Math.max(0, (Date.now() - item.date.getTime()) / 3_600_000);
+  const recency = 100 * Math.pow(0.5, ageHours / RECENCY_HALFLIFE_HOURS);
+
+  const gaming = Math.min(8, countMatches(text, GAMING_KEYWORDS)) * 3;
+  const hot = Math.min(3, countMatches(text, HOT_KEYWORDS)) * 8;
+  const penalty = hasMatch(text, NEGATIVE_KEYWORDS) ? -50 : 0;
+
+  const base = recency + gaming + hot + penalty;
+  return {
+    total: base * (item.weight || 1),
+    parts: { recency, gaming, hot, penalty, weight: item.weight || 1 },
+  };
+}
+
+/**
+ * Groepeert items die over hetzelfde nieuws gaan.
+ *
+ * Elk cluster krijgt het best scorende item als `lead` en houdt de rest bij als
+ * `supporting`, zodat de schrijver context uit meerdere bronnen kan gebruiken.
+ * Meer verschillende bronnen betekent een grotere boost: als vijf redacties
+ * hetzelfde bericht brengen, is dat het nieuws van de dag.
+ */
+function clusterItems(items, threshold = 0.34) {
+  const withTokens = items.map((it) => ({ ...it, _tokens: titleTokens(it.title) }));
+  const clusters = [];
+
+  for (const item of withTokens) {
+    const match = clusters.find((c) =>
+      c.members.some((m) => titleSimilarity(m._tokens, item._tokens) >= threshold)
+    );
+    if (match) match.members.push(item);
+    else clusters.push({ members: [item] });
+  }
+
+  return clusters.map((c) => {
+    const members = c.members.slice().sort((a, b) => b.score.total - a.score.total);
+    const lead = members[0];
+    const outlets = new Set(members.map((m) => m.source)).size;
+
+    // Corroboratie: elke extra onafhankelijke bron is +22, tot maximaal +66.
+    const corroboration = Math.min(3, outlets - 1) * 22;
+
+    return {
+      lead,
+      supporting: members.slice(1),
+      outlets,
+      score: lead.score.total + corroboration,
+      corroboration,
+    };
+  }).sort((a, b) => b.score - a.score);
+}
+
+module.exports = { scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, countMatches };

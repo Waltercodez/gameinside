@@ -1,11 +1,19 @@
 #!/usr/bin/env node
 /**
- * Gameinside Daily News Agent
- * Fetches 5 gaming news items, rewrites them in Dutch, saves as Sanity drafts.
+ * Gameinside News Agent
+ *
+ * Draait elke drie uur. Per run:
+ *   1. haalt alle RSS-feeds op
+ *   2. filtert op versheid en gaming-relevantie
+ *   3. scoort en clustert items per verhaal
+ *   4. laat Claude de meest nieuwswaardige verhalen kiezen
+ *   5. haalt de bronartikelen op
+ *   6. schrijft Nederlandse artikelen en zet ze als concept in Sanity
  *
  * Usage:
- *   node news-fetcher.js          (production run)
- *   node news-fetcher.js --test   (verbose output, skips email)
+ *   node news-fetcher.js            (productie)
+ *   node news-fetcher.js --test     (verbose, geen mail, geen Sanity-schrijf)
+ *   node news-fetcher.js --dry-run  (alleen selectie tonen, niets schrijven)
  */
 
 const Parser = require('rss-parser');
@@ -13,20 +21,32 @@ const fs = require('fs');
 const path = require('path');
 
 const { RSS_FEEDS, GAMING_KEYWORDS } = require('./sources.js');
-const { writeArticle } = require('./writer.js');
+const { scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch } = require('./ranker.js');
+const { curateSafe, CURATOR_MODEL } = require('./curator.js');
+const { fetchArticleText } = require('./extract.js');
+const state = require('./state.js');
+const { writeArticle, WRITER_MODEL } = require('./writer.js');
 const { saveDraft } = require('./sanity-draft.js');
 const { sendSuccess, sendFailure } = require('./notifier.js');
 
 const IS_TEST = process.argv.includes('--test');
-const MAX_ARTICLES = 5;
-const MAX_AGE_HOURS = 48;
-const DEDUP_DAYS = 7;
+const IS_DRY = process.argv.includes('--dry-run');
 
-const PUBLISHED_TOPICS_PATH = path.join(__dirname, 'published-topics.json');
+const DAILY_MAX = Number(process.env.DAILY_MAX || 10);
+const PER_RUN_MAX = Number(process.env.PER_RUN_MAX || 2);
+const MAX_AGE_HOURS = Number(process.env.MAX_AGE_HOURS || 20);
+
+// Boven deze gelijkenis met een eerder gepubliceerde kop slaan we het over.
+const DEDUP_THRESHOLD = 0.34;
+
 const FAILED_DRAFTS_DIR = path.join(__dirname, 'failed-drafts');
 const NEW_ARTICLES_DIR = path.join(__dirname, '..', 'new articles');
 
-// ── Save article as markdown file ─────────────────────────────────────────────
+function log(msg) {
+  console.log(msg);
+}
+
+// ── Artikel als markdown wegschrijven ─────────────────────────────────────────
 
 function saveArticleToFolder(article) {
   if (!fs.existsSync(NEW_ARTICLES_DIR)) fs.mkdirSync(NEW_ARTICLES_DIR, { recursive: true });
@@ -36,10 +56,10 @@ function saveArticleToFolder(article) {
   const filepath = path.join(NEW_ARTICLES_DIR, filename);
 
   const markdown = `---
-title: "${article.title}"
+title: "${article.title.replace(/"/g, "'")}"
 slug: "${article.slug}"
 category: "${article.category}"
-excerpt: "${article.excerpt}"
+excerpt: "${(article.excerpt || '').replace(/"/g, "'")}"
 keywords: [${(article.keywords || []).map((k) => `"${k}"`).join(', ')}]
 readTime: ${article.readTime || 4}
 date: "${date}"
@@ -55,223 +75,239 @@ ${article.content}
   return filename;
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function log(msg) {
-  console.log(msg);
-}
-
-/**
- * Simple word-overlap similarity to detect duplicate topics (0–1).
- */
-function titleSimilarity(a, b) {
-  const words = (str) =>
-    new Set(
-      str
-        .toLowerCase()
-        .split(/\s+/)
-        .filter((w) => w.length > 3)
-    );
-  const wa = words(a);
-  const wb = words(b);
-  const intersection = [...wa].filter((w) => wb.has(w));
-  const union = new Set([...wa, ...wb]);
-  return union.size === 0 ? 0 : intersection.size / union.size;
-}
-
-/**
- * Score a news item — higher = more relevant.
- * Factors: recency, keyword matches.
- */
-function scoreItem(item) {
-  let score = 0;
-  const text = `${item.title} ${item.description}`.toLowerCase();
-
-  // Recency: up to +48 points for a fresh item
-  const ageHours = (Date.now() - item.date.getTime()) / 3_600_000;
-  score += Math.max(0, MAX_AGE_HOURS - ageHours);
-
-  // Gaming keyword matches
-  GAMING_KEYWORDS.forEach((kw) => {
-    if (text.includes(kw)) score += 5;
-  });
-
-  return score;
-}
-
-// ── RSS fetching ──────────────────────────────────────────────────────────────
+// ── RSS ophalen ───────────────────────────────────────────────────────────────
 
 async function fetchAllFeeds() {
-  const parser = new Parser({ timeout: 12_000, headers: { 'User-Agent': 'Gameinside-Bot/1.0' } });
+  const parser = new Parser({
+    timeout: 12_000,
+    headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh) Gameinside-Bot/1.0' },
+  });
+
+  // Feeds parallel ophalen: 19 feeds serieel duurde te lang voor een run
+  // die elke drie uur moet passen.
+  const results = await Promise.all(
+    RSS_FEEDS.map(async (feed) => {
+      try {
+        const parsed = await parser.parseURL(feed.url);
+        const items = (parsed.items || []).slice(0, 25).map((item) => ({
+          title: (item.title || '').trim(),
+          description: (item.contentSnippet || item.summary || item.content || '')
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/\s+/g, ' ')
+            .slice(0, 600)
+            .trim(),
+          url: item.link || feed.url,
+          source: parsed.title || feed.url,
+          date: new Date(item.isoDate || item.pubDate || Date.now()),
+          weight: feed.weight,
+          gamingOnly: feed.gamingOnly,
+        }));
+        return { ok: true, name: parsed.title || feed.url, items };
+      } catch (err) {
+        return { ok: false, name: feed.url, error: err.message, items: [] };
+      }
+    })
+  );
+
   const allItems = [];
   const usedFeeds = [];
+  const deadFeeds = [];
 
-  for (const feedUrl of RSS_FEEDS) {
-    try {
-      log(`📡 Fetching: ${feedUrl}`);
-      const feed = await parser.parseURL(feedUrl);
-
-      const items = (feed.items || []).slice(0, 20).map((item) => ({
-        title: (item.title || '').trim(),
-        description: (item.contentSnippet || item.summary || item.content || '').slice(0, 500).trim(),
-        url: item.link || feedUrl,
-        source: feed.title || feedUrl,
-        date: item.pubDate ? new Date(item.pubDate) : new Date(),
-      }));
-
-      allItems.push(...items);
-      usedFeeds.push(feed.title || feedUrl);
-      log(`   ✓ ${items.length} items`);
-    } catch (err) {
-      log(`   ⚠️  Overgeslagen (${err.message})`);
+  for (const r of results) {
+    if (r.ok) {
+      allItems.push(...r.items);
+      usedFeeds.push(r.name);
+      log(`   ✓ ${r.items.length.toString().padStart(2)} items  ${r.name}`);
+    } else {
+      deadFeeds.push(r.name);
+      log(`   ✗ MISLUKT   ${r.name} (${r.error})`);
     }
   }
 
-  return { allItems, usedFeeds };
+  return { allItems, usedFeeds, deadFeeds };
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  log('🎮 Gameinside News Agent gestart...\n');
-  if (IS_TEST) log('🧪 TEST MODE — email wordt overgeslagen\n');
-
-  // Load and clean published-topics
-  let publishedTopics = [];
-  try {
-    publishedTopics = JSON.parse(fs.readFileSync(PUBLISHED_TOPICS_PATH, 'utf-8'));
-  } catch {
-    publishedTopics = [];
-  }
-
-  const cutoff = new Date(Date.now() - DEDUP_DAYS * 24 * 3_600_000);
-  const recentTopics = publishedTopics.filter((t) => new Date(t.date) > cutoff);
-  const recentTitles = recentTopics.map((t) => t.title.toLowerCase());
-
-  // Fetch feeds
-  const { allItems, usedFeeds } = await fetchAllFeeds();
-  log(`\n📦 Totaal ${allItems.length} items gevonden uit ${usedFeeds.length} feeds\n`);
-
-  if (allItems.length === 0) {
-    await sendFailure('Geen RSS items gevonden', 'Alle RSS feeds zijn mislukt of leeg.');
-    process.exit(1);
-  }
-
-  // Filter and score
-  const candidates = allItems
-    .filter((item) => {
-      if (!item.title) return false;
-
-      // Skip old items
-      const ageHours = (Date.now() - item.date.getTime()) / 3_600_000;
-      if (ageHours > MAX_AGE_HOURS) return false;
-
-      // Skip duplicates
-      const isDuplicate = recentTitles.some(
-        (t) => titleSimilarity(t, item.title.toLowerCase()) > 0.6
-      );
-      return !isDuplicate;
-    })
-    .map((item) => ({ ...item, score: scoreItem(item) }))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, MAX_ARTICLES);
-
-  if (candidates.length === 0) {
-    await sendFailure(
-      'Geen geschikte items gevonden',
-      'Alle items waren duplicaten, te oud of niet gaming-gerelateerd.'
-    );
-    process.exit(1);
-  }
-
-  log(`✅ ${candidates.length} items geselecteerd:\n`);
-  candidates.forEach((item, i) => log(`  ${i + 1}. [score ${item.score.toFixed(0)}] ${item.title}`));
+  const startedAt = new Date();
+  log(`🎮 Gameinside News Agent — ${startedAt.toLocaleString('nl-NL')}`);
+  if (IS_TEST) log('🧪 TEST MODE — geen email');
+  if (IS_DRY) log('🔍 DRY RUN — alleen selectie, er wordt niets geschreven');
   log('');
 
-  // Write articles and save to Sanity
+  state.migrateLegacy();
+  const st = state.load();
+  const budget = Math.min(PER_RUN_MAX, state.remainingToday(st, DAILY_MAX));
+
+  log(`📊 Vandaag al ${st.publishedToday}/${DAILY_MAX} artikelen. Ruimte deze run: ${budget}\n`);
+
+  if (budget === 0 && !IS_DRY) {
+    log('✅ Dagcap bereikt, niets te doen.');
+    return;
+  }
+
+  // 1. Feeds ophalen
+  log('📡 Feeds ophalen...');
+  const { allItems, usedFeeds, deadFeeds } = await fetchAllFeeds();
+  log(`\n📦 ${allItems.length} items uit ${usedFeeds.length}/${RSS_FEEDS.length} feeds\n`);
+
+  if (allItems.length === 0) {
+    await sendFailure('Geen RSS items gevonden', 'Alle feeds zijn mislukt of leeg.');
+    process.exitCode = 1;
+    return;
+  }
+
+  if (deadFeeds.length >= Math.ceil(RSS_FEEDS.length / 2)) {
+    log(`⚠️  Let op: ${deadFeeds.length} feeds werken niet meer.\n`);
+  }
+
+  // 2. Filteren op versheid, gaming-relevantie en eerdere publicaties
+  const recentTokens = st.topics.map((t) => titleTokens(t.title));
+  const seenUrls = new Set(st.topics.map((t) => t.url).filter(Boolean));
+
+  const stats = { oud: 0, nietGaming: 0, duplicaat: 0, geenTitel: 0 };
+
+  const fresh = allItems.filter((item) => {
+    if (!item.title) { stats.geenTitel++; return false; }
+
+    const ageHours = (Date.now() - item.date.getTime()) / 3_600_000;
+    if (!Number.isFinite(ageHours) || ageHours > MAX_AGE_HOURS || ageHours < -2) {
+      stats.oud++; return false;
+    }
+
+    // Gemengde tech-feeds moeten eerst gaming-relevant blijken
+    if (item.gamingOnly === false) {
+      const text = `${item.title} ${item.description}`.toLowerCase();
+      if (!hasMatch(text, GAMING_KEYWORDS)) { stats.nietGaming++; return false; }
+    }
+
+    if (seenUrls.has(item.url)) { stats.duplicaat++; return false; }
+
+    const tokens = titleTokens(item.title);
+    if (recentTokens.some((t) => titleSimilarity(t, tokens) >= DEDUP_THRESHOLD)) {
+      stats.duplicaat++; return false;
+    }
+
+    return true;
+  });
+
+  log(`🔎 ${fresh.length} verse items over (${stats.oud} te oud, ${stats.nietGaming} niet gaming, ${stats.duplicaat} al gehad)\n`);
+
+  if (fresh.length === 0) {
+    log('ℹ️  Niets nieuws deze run.');
+    return;
+  }
+
+  // 3. Scoren en clusteren
+  const scored = fresh.map((item) => ({ ...item, score: scoreItem(item) }));
+  const clusters = clusterItems(scored);
+
+  log(`🧩 ${clusters.length} unieke verhalen na clustering. Top 10 op score:\n`);
+  clusters.slice(0, 10).forEach((c, i) => {
+    const age = ((Date.now() - c.lead.date.getTime()) / 3_600_000).toFixed(1);
+    const flag = c.outlets > 1 ? `${c.outlets}x bron` : '1 bron';
+    log(`  ${String(i + 1).padStart(2)}. [${c.score.toFixed(0).padStart(3)}] [${age.padStart(4)}u] [${flag}] ${c.lead.title.slice(0, 78)}`);
+  });
+  log('');
+
+  // 4. Claude kiest wat er echt toe doet
+  log(`🎯 Curator (${CURATOR_MODEL}) kiest ${budget} verhaal(en)...`);
+  const selected = await curateSafe(clusters, budget, log);
+
+  log(`\n✅ Geselecteerd:\n`);
+  selected.forEach((c, i) => {
+    log(`  ${i + 1}. ${c.lead.title}`);
+    if (c.curatorReason) log(`     → ${c.curatorReason}`);
+  });
+  log('');
+
+  if (IS_DRY) {
+    log('🔍 Dry run klaar, er is niets geschreven.');
+    return;
+  }
+
+  // 5+6. Bronartikelen ophalen en schrijven
   const savedArticles = [];
 
-  for (const item of candidates) {
-    log(`\n✍️  Schrijven: ${item.title}`);
+  for (const cluster of selected) {
+    const item = cluster.lead;
+    log(`\n✍️  ${item.title}`);
+
+    const fullText = await fetchArticleText(item.url);
+    log(`   📖 Bronartikel: ${fullText ? `${fullText.length} tekens` : 'niet beschikbaar, val terug op RSS-snippet'}`);
+
+    const newsItem = { ...item, fullText, supporting: cluster.supporting };
 
     let article;
-
-    // Write with one retry
     try {
-      article = await writeArticle(item);
+      article = await writeArticle(newsItem);
     } catch (firstErr) {
       log(`   ⚠️  Eerste poging mislukt (${firstErr.message}), opnieuw proberen...`);
       try {
-        article = await writeArticle(item);
+        article = await writeArticle(newsItem);
       } catch (retryErr) {
         log(`   ❌ Schrijven mislukt na retry: ${retryErr.message}`);
         continue;
       }
     }
 
-    // Always save to 'new articles' folder
     const filename = saveArticleToFolder(article);
-    log(`   📄 Opgeslagen: new articles/${filename}`);
+    log(`   📄 new articles/${filename}`);
 
     if (IS_TEST) {
-      log('\n── ARTIKEL PREVIEW ──────────────────────────────');
-      log(`Titel:    ${article.title}`);
-      log(`Slug:     ${article.slug}`);
+      log('\n── PREVIEW ──────────────────────────────────────');
+      log(`Titel:     ${article.title}`);
       log(`Categorie: ${article.category}`);
-      log(`Excerpt:  ${article.excerpt}`);
-      log(`Keywords: ${(article.keywords || []).join(', ')}`);
-      log(`\nContent:\n${article.content.slice(0, 300)}...`);
-      log('─────────────────────────────────────────────────\n');
+      log(`Excerpt:   ${article.excerpt}`);
+      log(`Keywords:  ${(article.keywords || []).join(', ')}`);
+      log(`Bron:      ${article.usedFullText ? 'volledig artikel' : 'alleen RSS-snippet'}`);
+      log(`\n${article.content.slice(0, 400)}...`);
+      log('─────────────────────────────────────────────────');
     }
 
-    // Save to Sanity (with fallback to local JSON)
     try {
       const docId = await saveDraft(article);
-      log(`   💾 Sanity draft opgeslagen: ${docId}`);
+      log(`   💾 Sanity concept: ${docId}`);
       savedArticles.push(article);
-      recentTopics.push({ title: item.title, date: new Date().toISOString() });
+      state.recordPublished(st, item.title, item.url);
     } catch (sanityErr) {
-      log(`   ❌ Sanity opslaan mislukt: ${sanityErr.message}`);
-      log(`   📁 Backup naar failed-drafts/...`);
+      log(`   ❌ Sanity mislukt: ${sanityErr.message}`);
+      log(`   📁 Backup naar failed-drafts/`);
 
       if (!fs.existsSync(FAILED_DRAFTS_DIR)) fs.mkdirSync(FAILED_DRAFTS_DIR, { recursive: true });
-      const filename = `${Date.now()}-${article.slug}.json`;
       fs.writeFileSync(
-        path.join(FAILED_DRAFTS_DIR, filename),
+        path.join(FAILED_DRAFTS_DIR, `${Date.now()}-${article.slug}.json`),
         JSON.stringify(article, null, 2)
       );
 
-      // Still include in email so editor knows it exists
       savedArticles.push(article);
+      state.recordPublished(st, item.title, item.url);
     }
   }
 
-  // Persist updated published-topics
-  fs.writeFileSync(PUBLISHED_TOPICS_PATH, JSON.stringify(recentTopics, null, 2));
+  state.save(st);
 
-  log(`\n📋 Resultaat: ${savedArticles.length}/${candidates.length} artikelen succesvol verwerkt`);
+  const seconds = ((Date.now() - startedAt.getTime()) / 1000).toFixed(0);
+  log(`\n📋 ${savedArticles.length}/${selected.length} verwerkt in ${seconds}s. Dagtotaal: ${st.publishedToday}/${DAILY_MAX}`);
 
-  // Send notification
-  if (savedArticles.length > 0) {
-    if (!IS_TEST) {
-      await sendSuccess(savedArticles, usedFeeds);
-    } else {
-      log('\n🧪 Test mode: email wordt overgeslagen.');
-    }
-  } else {
+  if (savedArticles.length > 0 && !IS_TEST) {
+    await sendSuccess(savedArticles, usedFeeds);
+  } else if (savedArticles.length === 0) {
     await sendFailure(
-      'Geen artikelen konden worden opgeslagen',
-      'Zowel het schrijven als het opslaan is mislukt voor alle items.'
+      'Geen artikelen opgeslagen',
+      'Zowel schrijven als opslaan is mislukt voor alle geselecteerde items.'
     );
   }
 
-  log('\n🎉 Klaar!\n');
+  log('\n🎉 Klaar\n');
 }
 
 main()
-  .then(() => process.exit(0))
+  .then(() => process.exit(process.exitCode || 0))
   .catch(async (err) => {
     console.error('\n💥 Fatale fout:', err.message);
+    console.error(err.stack);
     await sendFailure('Fatale fout in news agent', err.stack || err.message).catch(() => {});
     process.exit(1);
   });

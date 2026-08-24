@@ -1,6 +1,6 @@
 #!/bin/bash
 # Gameinside Daily News Agent - macOS runner
-# Scheduled via cron to run every day at 09:00
+# Draait via cron elke 3 uur (07,10,13,16,19,22). Dagcap staat in news-fetcher.js
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -23,4 +23,4 @@ node "$SCRIPT_DIR/news-fetcher.js" >> "$LOG_FILE" 2>&1
 echo "Einde: $(date '+%Y-%m-%d %H:%M:%S')" >> "$LOG_FILE"
 
 # Keep log file clean — remove entries older than 30 days (max ~500 lines)
-tail -500 "$LOG_FILE" > "$LOG_FILE.tmp" && mv "$LOG_FILE.tmp" "$LOG_FILE"
+tail -2000 "$LOG_FILE" > "$LOG_FILE.tmp" && mv "$LOG_FILE.tmp" "$LOG_FILE"

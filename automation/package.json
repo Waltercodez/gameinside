@@ -5,7 +5,9 @@
   "main": "news-fetcher.js",
   "scripts": {
     "start": "node news-fetcher.js",
-    "test": "node news-fetcher.js --test"
+    "test": "node news-fetcher.js --test",
+    "dry-run": "node news-fetcher.js --dry-run",
+    "check-feeds": "node check-feeds.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
