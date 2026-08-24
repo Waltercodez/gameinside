@@ -33,6 +33,9 @@ Zet hiervoor een `.env` neer met `ANTHROPIC_API_KEY`, `SANITY_API_TOKEN`,
 3. `curator.js` — Claude kiest uit de shortlist wat een Nederlandse gamer wil
    lezen. Valt bij een fout terug op de scorevolgorde.
 4. `extract.js` — haalt het bronartikel op, zodat de schrijver echte tekst heeft
+4b. `image.js` — pakt de og:image van de bron en uploadt hem naar Sanity, met
+   een bronvermelding onder het artikel. Lukt bij ongeveer 9 van de 10 bronnen;
+   zonder afbeelding valt de site terug op het gekleurde categorie-vlak.
 5. `writer.js` — schrijft het Nederlandse artikel
 6. `sanity-draft.js` — zet het in Sanity
 

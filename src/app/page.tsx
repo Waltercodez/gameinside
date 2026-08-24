@@ -13,7 +13,6 @@ import {
   getAllArticles,
   getFeaturedArticle,
   getMostRead,
-  getBreakingTitles,
 } from '@/lib/getArticles';
 
 // Revalidate every 60 seconds so new Sanity articles appear without a full rebuild
@@ -48,11 +47,10 @@ export const metadata: Metadata = {
 
 // ── Page component ─────────────────────────────────────────────────────────
 export default async function HomePage() {
-  const [allArticles, featured, mostRead, breakingTitles] = await Promise.all([
+  const [allArticles, featured, mostRead] = await Promise.all([
     getAllArticles(),
     getFeaturedArticle(),
     getMostRead(),
-    getBreakingTitles(),
   ]);
 
   const gridArticles = allArticles.filter((a) => a.id !== featured.id).slice(0, 6);
@@ -74,19 +72,6 @@ export default async function HomePage() {
       />
 
       <HeroSection article={featured} />
-
-      {/* Breaking ticker */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-[#7c3aed] to-[#00aaff]">
-        <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center gap-4">
-          <span className="flex-shrink-0 px-2.5 py-0.5 text-xs font-black uppercase tracking-widest
-                           rounded-md bg-white/20 text-white backdrop-blur-sm">
-            🔴 Live
-          </span>
-          <div className="overflow-hidden flex-1">
-            <p className="text-xs font-semibold text-white/90 truncate">{breakingTitles}</p>
-          </div>
-        </div>
-      </div>
 
       {/* Article grid */}
       <ArticleGrid articles={gridArticles} title="Uitgelicht" />

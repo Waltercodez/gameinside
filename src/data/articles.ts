@@ -21,34 +21,6 @@ export interface Article {
 export const articles: Article[] = [
   // ── FEBRUARI 2026 ──────────────────────────────────────────────────────────
 
-  {
-    id: 21,
-    slug: 'odido-datalek-hack-shinyhunters-6-miljoen-klanten-2026',
-    title: 'Odido datalek 2026: 6 miljoen Nederlanders gehackt, check nu of jij erbij zit',
-    excerpt:
-      'ShinyHunters hackte Odido en lekte data van 6,2 miljoen klanten. Namen, IBANs en paspoortnummers staan op straat. Dit moet je nu meteen doen.',
-    content: `Odido is gehackt. Niet een klein lek met een paar honderd accounts, maar een aanval waarbij de gegevens van maar liefst 6,2 miljoen klanten zijn buitgemaakt. De daders zijn het internationale hackercollectief **ShinyHunters**. Als je klant bent bij Odido of Ben, is de kans reëel dat jouw data erbij zit.
-
-Ook als gamer moet je dit serieus nemen. Steam, PlayStation Network, Xbox: bijna alles is tegenwoordig gekoppeld aan je telefoonnummer via tweestapsverificatie. Als criminelen jouw sim overnemen, hebben ze direct toegang tot al je accounts.
-
-ShinyHunters gebruikte een opvallend eenvoudige methode om binnen te komen. Ze belden Odido-medewerkers op, deden zich voor als ICT-collega's en manipuleerden hen om inloggegevens af te geven. Klassieke **social engineering**, maar dan op grote schaal. Zo kregen ze toegang tot het Salesforce CRM-systeem van Odido, het systeem waar alle klantdata in staat. Het extra zure is dat Salesforce Odido al had gewaarschuwd voor precies deze hackmethode. Die waarschuwing werd niet op tijd omgezet in actie.
-
-De hackers hadden toegang tot volledige namen en adressen, telefoonnummers, e-mailadressen, IBAN-bankrekeningnummers, geboortedatums, paspoortnummers en geldigheidsdata. ShinyHunters eiste meer dan een miljoen euro losgeld. Odido weigerde te betalen. Op 26 februari publiceerden de hackers de gegevens van 430.000 personen en 290.000 bedrijven op het dark web en dreigden ze de rest ook online te gooien.
-
-Voor gamers is er naast de voor de hand liggende risico's zoals bankfraude en identiteitsdiefstal nog een specifiek gevaar: **SIM-swapping**. Daarbij overtuigen criminelen jouw provider om jouw telefoonnummer over te zetten naar hun sim-kaart. Vervolgens resetten ze wachtwoorden van al je accounts via sms-verificatie. Je Steam-bibliotheek, je PlayStation-account met al je saves en DLC, je Xbox Game Pass: alles kan zo worden overgenomen. Het CMI (Centraal Meldpunt Identiteitsfraude) zag het aantal meldingen vorige week al meer dan verdubbelen naar 590 bevestigde gevallen.
-
-Wat kun je nu doen? Controleer eerst via odidodatalek.nl of jouw data is gelekt. Verander daarna de wachtwoorden van al je belangrijke accounts, begin met je e-mail en gamingplatformen. Zet tweestapsverificatie om van sms naar een authenticator-app zoals Google Authenticator of Authy, want sms is niet meer veilig genoeg. Als getroffen klant kun je ook de gratis F-Secure beveiliging activeren die Odido aanbiedt: 24 maanden gratis. Houd tot slot je bankrekening in de gaten en meld verdachte transacties direct.
-
-Als compensatie biedt Odido alle getroffen klanten dus 24 maanden gratis F-Secure, een digitaal beveiligingspakket. Dat is een goede stap, maar lost het achterliggende probleem niet op: de data is al weg. De Nederlandse politie steunt Odido in de beslissing om niet te betalen en onderzoekt de zaak actief. ShinyHunters is een bekende hackersgroep die eerder ook grote bedrijven als Ticketmaster en Santander trof. Check vandaag nog of jouw gegevens zijn gelekt en beveilig je accounts, zeker je gamingaccounts.`,
-    category: 'tech',
-    categoryLabel: 'Tech',
-    author: 'Gameinside Redactie',
-    date: '2026-02-28',
-    image: '/images/odido.jpg',
-    isBreaking: true,
-    isFeatured: false,
-    readTime: 5,
-  },
 
   {
     id: 1,

@@ -95,6 +95,32 @@ function markdownToPortableText(markdown) {
 
 // ── Save draft ────────────────────────────────────────────────────────────────
 
+const EXTENSIONS = {
+  'image/jpeg': 'jpg',
+  'image/png': 'png',
+  'image/webp': 'webp',
+  'image/avif': 'avif',
+};
+
+/**
+ * Uploadt een afbeelding naar Sanity en geeft de asset-referentie terug.
+ * Faalt nooit hard: zonder afbeelding valt de site terug op het gradient-vlak.
+ */
+async function uploadImage(image, slug) {
+  if (!image || !image.buffer) return null;
+
+  try {
+    const ext = EXTENSIONS[image.contentType] || 'jpg';
+    const asset = await client.assets.upload('image', image.buffer, {
+      filename: `${slug}.${ext}`,
+      contentType: image.contentType,
+    });
+    return asset._id;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Zet een artikel in Sanity.
  *
@@ -110,6 +136,8 @@ async function saveDraft(article, options = {}) {
   const publish = Boolean(options.publish);
   const baseId = `auto-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 
+  const assetId = await uploadImage(options.image, article.slug);
+
   const doc = {
     _id: publish ? baseId : `drafts.${baseId}`,
     _type: DOCUMENT_TYPE,
@@ -124,8 +152,16 @@ async function saveDraft(article, options = {}) {
     readTime: article.readTime || 4,
   };
 
+  if (assetId) {
+    doc.mainImage = {
+      _type: 'image',
+      asset: { _type: 'reference', _ref: assetId },
+      alt: article.imageAlt || article.title,
+    };
+  }
+
   await client.createOrReplace(doc);
   return doc._id;
 }
 
-module.exports = { saveDraft };
+module.exports = { saveDraft, uploadImage };

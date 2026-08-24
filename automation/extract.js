@@ -57,12 +57,15 @@ function extractBody(html) {
 }
 
 /**
- * Haalt de volledige tekst van een artikel op.
- * Faalt nooit hard: bij een fout krijg je een lege string terug en valt de
- * aanroeper terug op de RSS-omschrijving.
+ * Haalt een pagina op en geeft zowel de ruwe HTML als de platte tekst terug.
+ * De HTML wordt hergebruikt om de og:image te zoeken, zodat we de pagina niet
+ * twee keer ophalen.
+ *
+ * Faalt nooit hard: bij een fout krijg je lege waarden terug.
+ * @returns {Promise<{text: string, html: string}>}
  */
-async function fetchArticleText(url) {
-  if (!url || !/^https?:\/\//i.test(url)) return '';
+async function fetchPage(url) {
+  if (!url || !/^https?:\/\//i.test(url)) return { text: '', html: '' };
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
@@ -79,21 +82,26 @@ async function fetchArticleText(url) {
       },
     });
 
-    if (!res.ok) return '';
+    if (!res.ok) return { text: '', html: '' };
     const type = res.headers.get('content-type') || '';
-    if (!type.includes('html')) return '';
+    if (!type.includes('html')) return { text: '', html: '' };
 
     const html = await res.text();
     const text = extractBody(html);
 
     // Te kort betekent meestal een cookiemuur of paywall.
-    if (text.length < 300) return '';
-    return text.slice(0, MAX_CHARS);
+    return { text: text.length < 300 ? '' : text.slice(0, MAX_CHARS), html };
   } catch {
-    return '';
+    return { text: '', html: '' };
   } finally {
     clearTimeout(timer);
   }
 }
 
-module.exports = { fetchArticleText, htmlToText };
+/** Alleen de tekst, voor aanroepers die de HTML niet nodig hebben. */
+async function fetchArticleText(url) {
+  const { text } = await fetchPage(url);
+  return text;
+}
+
+module.exports = { fetchPage, fetchArticleText, htmlToText };

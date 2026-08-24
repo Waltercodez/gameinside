@@ -44,11 +44,3 @@ export async function getRelatedArticles(article: Article, count = 3): Promise<A
     .slice(0, count);
 }
 
-export async function getBreakingTitles(): Promise<string> {
-  const all = await getAllArticles();
-  return all
-    .filter((a) => a.isBreaking)
-    .slice(0, 4)
-    .map((a) => a.title)
-    .join('   ·   ');
-}

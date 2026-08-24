@@ -23,7 +23,8 @@ const path = require('path');
 const { RSS_FEEDS, GAMING_KEYWORDS } = require('./sources.js');
 const { scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch } = require('./ranker.js');
 const { curateSafe, CURATOR_MODEL } = require('./curator.js');
-const { fetchArticleText } = require('./extract.js');
+const { fetchPage } = require('./extract.js');
+const { fetchLeadImage } = require('./image.js');
 const state = require('./state.js');
 const { writeArticle, WRITER_MODEL } = require('./writer.js');
 const { saveDraft } = require('./sanity-draft.js');
@@ -104,7 +105,7 @@ async function fetchAllFeeds() {
             .slice(0, 600)
             .trim(),
           url: item.link || feed.url,
-          source: parsed.title || feed.url,
+          source: feed.name || parsed.title || feed.url,
           date: new Date(item.isoDate || item.pubDate || Date.now()),
           weight: feed.weight,
           gamingOnly: feed.gamingOnly,
@@ -241,8 +242,16 @@ async function main() {
     const item = cluster.lead;
     log(`\n✍️  ${item.title}`);
 
-    const fullText = await fetchArticleText(item.url);
+    // Een keer ophalen, hergebruikt voor zowel de tekst als de afbeelding.
+    const { text: fullText, html } = await fetchPage(item.url);
     log(`   📖 Bronartikel: ${fullText ? `${fullText.length} tekens` : 'niet beschikbaar, val terug op RSS-snippet'}`);
+
+    const image = await fetchLeadImage(item.url, html);
+    log(
+      image
+        ? `   🖼️  Afbeelding: ${(image.buffer.length / 1024).toFixed(0)} kB (${image.contentType})`
+        : '   🖼️  Geen bruikbare afbeelding gevonden'
+    );
 
     const newsItem = { ...item, fullText, supporting: cluster.supporting };
 
@@ -270,6 +279,13 @@ async function main() {
       log('─────────────────────────────────────────────────');
     }
 
+    // Beeldcredit onder het artikel. De afbeelding komt van de bron, dus die
+    // hoort vermeld te worden.
+    if (image) {
+      article.imageAlt = article.title;
+      article.content = `${article.content}\n\n**Beeld: ${item.source}**`;
+    }
+
     const publish = PUBLISH_MIN_OUTLETS > 0 && cluster.outlets >= PUBLISH_MIN_OUTLETS;
     article.published = publish;
 
@@ -277,7 +293,7 @@ async function main() {
     log(`   📄 new articles/${filename}`);
 
     try {
-      const docId = await saveDraft(article, { publish });
+      const docId = await saveDraft(article, { publish, image });
       log(
         publish
           ? `   🚀 DIRECT GEPUBLICEERD (${cluster.outlets} bronnen): ${docId}`

@@ -10,33 +10,33 @@
  */
 const RSS_FEEDS = [
   // Groot en snel
-  { url: 'https://www.gamesradar.com/rss/', weight: 1.0, gamingOnly: true },
-  { url: 'https://www.ign.com/rss/articles/feed?tags=games', weight: 1.15, gamingOnly: true },
-  { url: 'https://www.gamespot.com/feeds/news/', weight: 1.1, gamingOnly: true },
-  { url: 'https://www.pcgamer.com/rss/', weight: 1.05, gamingOnly: true },
-  { url: 'https://www.eurogamer.net/?format=rss', weight: 1.1, gamingOnly: true },
-  { url: 'https://www.polygon.com/rss/index.xml', weight: 1.05, gamingOnly: true },
+  { url: 'https://www.gamesradar.com/rss/', name: 'GamesRadar+', weight: 1.0, gamingOnly: true },
+  { url: 'https://www.ign.com/rss/articles/feed?tags=games', name: 'IGN', weight: 1.15, gamingOnly: true },
+  { url: 'https://www.gamespot.com/feeds/news/', name: 'GameSpot', weight: 1.1, gamingOnly: true },
+  { url: 'https://www.pcgamer.com/rss/', name: 'PC Gamer', weight: 1.05, gamingOnly: true },
+  { url: 'https://www.eurogamer.net/?format=rss', name: 'Eurogamer', weight: 1.1, gamingOnly: true },
+  { url: 'https://www.polygon.com/rss/index.xml', name: 'Polygon', weight: 1.05, gamingOnly: true },
 
   // Scoop-gedreven, vaak als eerste met echt nieuws
-  { url: 'https://www.videogameschronicle.com/feed/', weight: 1.25, gamingOnly: true },
-  { url: 'https://insider-gaming.com/feed/', weight: 1.0, gamingOnly: true },
-  { url: 'https://www.gematsu.com/feed', weight: 1.05, gamingOnly: true },
+  { url: 'https://www.videogameschronicle.com/feed/', name: 'VGC', weight: 1.25, gamingOnly: true },
+  { url: 'https://insider-gaming.com/feed/', name: 'Insider Gaming', weight: 1.0, gamingOnly: true },
+  { url: 'https://www.gematsu.com/feed', name: 'Gematsu', weight: 1.05, gamingOnly: true },
 
   // Platformspecifiek
-  { url: 'https://www.pushsquare.com/feeds/latest', weight: 0.95, gamingOnly: true },
-  { url: 'https://www.purexbox.com/feeds/latest', weight: 0.95, gamingOnly: true },
-  { url: 'https://www.nintendolife.com/feeds/latest', weight: 0.95, gamingOnly: true },
-  { url: 'https://blog.playstation.com/feed/', weight: 1.0, gamingOnly: true },
-  { url: 'https://news.xbox.com/en-us/feed/', weight: 1.0, gamingOnly: true },
+  { url: 'https://www.pushsquare.com/feeds/latest', name: 'Push Square', weight: 0.95, gamingOnly: true },
+  { url: 'https://www.purexbox.com/feeds/latest', name: 'Pure Xbox', weight: 0.95, gamingOnly: true },
+  { url: 'https://www.nintendolife.com/feeds/latest', name: 'Nintendo Life', weight: 0.95, gamingOnly: true },
+  { url: 'https://blog.playstation.com/feed/', name: 'PlayStation Blog', weight: 1.0, gamingOnly: true },
+  { url: 'https://news.xbox.com/en-us/feed/', name: 'Xbox Wire', weight: 1.0, gamingOnly: true },
 
   // Breed / cultuur
-  { url: 'https://kotaku.com/rss', weight: 0.9, gamingOnly: true },
-  { url: 'https://www.rockpapershotgun.com/feed', weight: 0.95, gamingOnly: true },
-  { url: 'https://www.destructoid.com/feed/', weight: 0.85, gamingOnly: true },
+  { url: 'https://kotaku.com/rss', name: 'Kotaku', weight: 0.9, gamingOnly: true },
+  { url: 'https://www.rockpapershotgun.com/feed', name: 'Rock Paper Shotgun', weight: 0.95, gamingOnly: true },
+  { url: 'https://www.destructoid.com/feed/', name: 'Destructoid', weight: 0.85, gamingOnly: true },
 
   // Hardware en tech (gemengd, wordt gefilterd op gaming-keywords)
-  { url: 'https://tweakers.net/feeds/mixed.xml', weight: 1.1, gamingOnly: false },
-  { url: 'https://wccftech.com/feed/', weight: 0.8, gamingOnly: false },
+  { url: 'https://tweakers.net/feeds/mixed.xml', name: 'Tweakers', weight: 1.1, gamingOnly: false },
+  { url: 'https://wccftech.com/feed/', name: 'Wccftech', weight: 0.8, gamingOnly: false },
 ];
 
 // Keywords die een item als gaming-relevant markeren en punten opleveren.
