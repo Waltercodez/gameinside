@@ -1,23 +1,32 @@
-name: Daily Gaming News Research
+name: Gameinside News Agent
 
 on:
   schedule:
-    - cron: '0 7 * * *'   # 07:00 UTC = 09:00 Amsterdam time
-  workflow_dispatch:        # Allow manual trigger from GitHub Actions tab
+    # Elke 3 uur. Tijden in UTC, dat is 07/10/13/16/19/22 in Amsterdam (zomertijd).
+    - cron: '0 5,8,11,14,17,20 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Alleen selectie tonen, niets schrijven'
+        type: boolean
+        default: false
+
+# Twee runs tegelijk zouden dezelfde state.json overschrijven.
+concurrency:
+  group: news-agent
+  cancel-in-progress: false
 
 permissions:
-  contents: write           # Needed to commit published-topics.json
+  contents: write
 
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,21 +37,37 @@ jobs:
 
       - name: Install dependencies
         working-directory: automation
-        run: npm install
+        run: npm ci || npm install
 
-      - name: Run news fetcher
+      - name: Controleer of de feeds nog leven
+        working-directory: automation
+        continue-on-error: true
+        run: npm run check-feeds
+
+      - name: Run news agent
         working-directory: automation
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: node news-fetcher.js
+        run: node news-fetcher.js ${{ inputs.dry_run && '--dry-run' || '' }}
 
-      - name: Commit updated published-topics.json
+      - name: Bewaar state
+        if: ${{ !inputs.dry_run }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Gameinside Bot"
-          git add automation/published-topics.json
-          git diff --staged --quiet || git commit -m "chore: update published topics [skip ci]"
-          git push
+          git add automation/state.json
+          if git diff --staged --quiet; then
+            echo "Geen wijziging in state.json"
+            exit 0
+          fi
+          git commit -m "chore: news agent state [skip ci]"
+          # Een andere run kan intussen gepusht hebben, dus rebase en probeer opnieuw.
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "Push poging $i mislukt, opnieuw..."
+            sleep 5
+          done
+          exit 1

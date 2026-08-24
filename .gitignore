@@ -34,6 +34,5 @@ node_modules/
 automation/.env
 
 # automation runtime
-automation/state.json
 automation/agent.log
 automation/failed-drafts/
