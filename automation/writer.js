@@ -109,9 +109,6 @@ Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra teks
     article.excerpt = article.excerpt.slice(0, 147) + '...';
   }
 
-  // [CONCEPT] prefix zodat de redactie nieuwe drafts meteen herkent
-  article.title = `[CONCEPT] ${article.title}`;
-
   // Bronmetadata bewaren voor de notifier
   article.sourceUrl = newsItem.url;
   article.sourceName = newsItem.source;

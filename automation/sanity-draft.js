@@ -95,14 +95,25 @@ function markdownToPortableText(markdown) {
 
 // ── Save draft ────────────────────────────────────────────────────────────────
 
-async function saveDraft(article) {
-  // Drafts in Sanity have a "drafts." prefix on the _id
-  const docId = `drafts.auto-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+/**
+ * Zet een artikel in Sanity.
+ *
+ * Concepten krijgen een "drafts."-prefix op het _id en een [CONCEPT] marker in
+ * de titel. Die zijn onzichtbaar op de site, want de frontend praat zonder
+ * token met Sanity en ziet daardoor alleen gepubliceerde documenten.
+ *
+ * @param {object} article
+ * @param {object} [options]
+ * @param {boolean} [options.publish]  direct live zetten in plaats van concept
+ */
+async function saveDraft(article, options = {}) {
+  const publish = Boolean(options.publish);
+  const baseId = `auto-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 
   const doc = {
-    _id: docId,
+    _id: publish ? baseId : `drafts.${baseId}`,
     _type: DOCUMENT_TYPE,
-    title: article.title,
+    title: publish ? article.title : `[CONCEPT] ${article.title}`,
     slug: { _type: 'slug', current: article.slug },
     excerpt: article.excerpt,
     content: markdownToPortableText(article.content),
@@ -114,7 +125,7 @@ async function saveDraft(article) {
   };
 
   await client.createOrReplace(doc);
-  return docId;
+  return doc._id;
 }
 
 module.exports = { saveDraft };

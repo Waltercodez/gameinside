@@ -22,29 +22,40 @@ async function sendSuccess(articles, usedFeeds) {
     return;
   }
 
-  const articleList = articles
-    .map((a, i) => `${i + 1}. ${a.title.replace('[CONCEPT] ', '')} - ${a.category}`)
-    .join('\n');
+  const published = articles.filter((a) => a.published);
+  const drafts = articles.filter((a) => !a.published);
 
-  const feedList = usedFeeds.slice(0, 5).join(', ');
+  const format = (list) =>
+    list.map((a, i) => `${i + 1}. ${a.title} (${a.category})\n   ${a.sourceUrl || ''}`).join('\n');
 
-  const body = `Goedemorgen! Je dagelijkse concepten staan klaar.
+  const sections = [];
+  if (published.length > 0) {
+    sections.push(`AL LIVE op gameinside.nl (${published.length}):\n${format(published)}`);
+  }
+  if (drafts.length > 0) {
+    sections.push(`CONCEPT, wacht op je review (${drafts.length}):\n${format(drafts)}`);
+  }
 
-Ga naar gameinside.sanity.studio om te reviewen.
+  const feedList = usedFeeds.slice(0, 6).join(', ');
 
-Vandaag's concepten:
-${articleList}
+  const body = `De news agent is klaar met deze run.
 
-Bronnen gebruikt: ${feedList}
-API kosten vandaag: ~€0.05
+${sections.join('\n\n')}
 
-Fijne dag!`;
+Reviewen kan op gameinside.sanity.studio
+
+Verhalen die door drie of meer redacties gebracht worden gaan direct live. De
+rest blijft concept totdat jij ze publiceert.
+
+Bronnen: ${feedList}`;
 
   const transporter = createTransport();
   await transporter.sendMail({
     from: process.env.GMAIL_USER,
     to: TO,
-    subject: '📝 Gameinside - 5 concepten klaar voor review',
+    subject: published.length > 0
+      ? `Gameinside: ${published.length} live, ${drafts.length} concept`
+      : `Gameinside: ${drafts.length} concept${drafts.length === 1 ? '' : 'en'} klaar`,
     text: body,
   });
 

@@ -36,6 +36,11 @@ const DAILY_MAX = Number(process.env.DAILY_MAX || 10);
 const PER_RUN_MAX = Number(process.env.PER_RUN_MAX || 2);
 const MAX_AGE_HOURS = Number(process.env.MAX_AGE_HOURS || 20);
 
+// Verhalen die door dit aantal onafhankelijke bronnen gebracht worden, gaan
+// direct live. Dat is het echte nieuws van de dag; de rest blijft concept.
+// Op 0 zetten betekent: alles blijft concept.
+const PUBLISH_MIN_OUTLETS = Number(process.env.PUBLISH_MIN_OUTLETS || 3);
+
 // Boven deze gelijkenis met een eerder gepubliceerde kop slaan we het over.
 const DEDUP_THRESHOLD = 0.34;
 
@@ -55,6 +60,8 @@ function saveArticleToFolder(article) {
   const filename = `${date}-${article.slug}.md`;
   const filepath = path.join(NEW_ARTICLES_DIR, filename);
 
+  const status = article.published ? 'published' : 'draft';
+
   const markdown = `---
 title: "${article.title.replace(/"/g, "'")}"
 slug: "${article.slug}"
@@ -65,7 +72,7 @@ readTime: ${article.readTime || 4}
 date: "${date}"
 source: "${article.sourceName || ''}"
 sourceUrl: "${article.sourceUrl || ''}"
-status: draft
+status: ${status}
 ---
 
 ${article.content}
@@ -252,9 +259,6 @@ async function main() {
       }
     }
 
-    const filename = saveArticleToFolder(article);
-    log(`   📄 new articles/${filename}`);
-
     if (IS_TEST) {
       log('\n── PREVIEW ──────────────────────────────────────');
       log(`Titel:     ${article.title}`);
@@ -266,9 +270,19 @@ async function main() {
       log('─────────────────────────────────────────────────');
     }
 
+    const publish = PUBLISH_MIN_OUTLETS > 0 && cluster.outlets >= PUBLISH_MIN_OUTLETS;
+    article.published = publish;
+
+    const filename = saveArticleToFolder(article);
+    log(`   📄 new articles/${filename}`);
+
     try {
-      const docId = await saveDraft(article);
-      log(`   💾 Sanity concept: ${docId}`);
+      const docId = await saveDraft(article, { publish });
+      log(
+        publish
+          ? `   🚀 DIRECT GEPUBLICEERD (${cluster.outlets} bronnen): ${docId}`
+          : `   💾 Sanity concept: ${docId}`
+      );
       savedArticles.push(article);
       state.recordPublished(st, item.title, item.url);
     } catch (sanityErr) {

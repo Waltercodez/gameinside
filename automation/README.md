@@ -34,7 +34,16 @@ Zet hiervoor een `.env` neer met `ANTHROPIC_API_KEY`, `SANITY_API_TOKEN`,
    lezen. Valt bij een fout terug op de scorevolgorde.
 4. `extract.js` — haalt het bronartikel op, zodat de schrijver echte tekst heeft
 5. `writer.js` — schrijft het Nederlandse artikel
-6. `sanity-draft.js` — zet het als concept in Sanity
+6. `sanity-draft.js` — zet het in Sanity
+
+## Concept of direct live
+
+Verhalen die door 3 of meer onafhankelijke redacties gebracht worden gaan direct
+live. Dat is het echte nieuws van de dag, en dat is ook precies het signaal waar
+de clustering op stuurt. Alles daaronder komt binnen als concept met `[CONCEPT]`
+in de titel en verschijnt niet op de site totdat je het in de Studio publiceert.
+
+Zet `PUBLISH_MIN_OUTLETS=0` als je wilt dat alles weer concept blijft.
 
 ## Als de agent achterloopt of rare dingen kiest
 
@@ -52,6 +61,7 @@ Via environment variables, met de standaardwaarde erachter:
 | `DAILY_MAX` | 10 | artikelen per dag |
 | `PER_RUN_MAX` | 2 | artikelen per run |
 | `MAX_AGE_HOURS` | 20 | ouder nieuws wordt genegeerd |
+| `PUBLISH_MIN_OUTLETS` | 3 | vanaf dit aantal bronnen gaat een verhaal direct live; 0 houdt alles concept |
 | `CURATOR_MODEL` | `claude-opus-5` | model dat de selectie maakt |
 | `WRITER_MODEL` | `claude-haiku-4-5` | model dat de artikelen schrijft |
 
