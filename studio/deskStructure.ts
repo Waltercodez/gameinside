@@ -2,33 +2,37 @@ import type { StructureResolver } from 'sanity/structure'
 
 /**
  * Splitst artikelen in Concepten en Gepubliceerd, zodat de redactie de
- * agent-concepten niet meer hoeft te onderscheiden tussen de gepubliceerde
- * artikelen in dezelfde lijst.
+ * agent-concepten niet tussen de gepubliceerde artikelen hoeft te zoeken.
  *
- * Concept-documenten hebben een "drafts."-prefix op hun _id in Sanity. Er
- * bestaat geen apart schema-type voor concepten, dus filteren we op _id.
+ * Let op het gebruik van `_originalId` in plaats van `_id`. De Studio draait
+ * deze lijsten onder het "drafts"-perspectief, en daar is de "drafts."-prefix
+ * al van `_id` afgehaald. Filteren op `_id in path("drafts.**")` levert dan
+ * nul resultaten op en de concepten belanden in de gepubliceerd-lijst.
+ * `_originalId` houdt de echte document-id vast, inclusief prefix.
  */
+const DRAFT = '_originalId in path("drafts.**")'
+
 export const structure: StructureResolver = (S) =>
   S.list()
     .title('Content')
     .items([
       S.listItem()
         .title('Concepten')
-        .icon(() => '📝')
+        .icon(() => '\u{1F4DD}')
         .child(
           S.documentList()
             .title('Concepten')
-            .filter('_type == "article" && _id in path("drafts.**")')
+            .filter(`_type == "article" && ${DRAFT}`)
             .defaultOrdering([{ field: '_createdAt', direction: 'desc' }])
         ),
 
       S.listItem()
         .title('Gepubliceerd')
-        .icon(() => '✅')
+        .icon(() => '\u{2705}')
         .child(
           S.documentList()
             .title('Gepubliceerd')
-            .filter('_type == "article" && !(_id in path("drafts.**"))')
+            .filter(`_type == "article" && !(${DRAFT})`)
             .defaultOrdering([{ field: 'publishedAt', direction: 'desc' }])
         ),
 
