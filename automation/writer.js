@@ -2,8 +2,14 @@ const Anthropic = require('@anthropic-ai/sdk');
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-// Instelbaar via .env zodat je kunt wisselen zonder code te wijzigen.
+// Twee modellen, instelbaar via .env.
+//
+// Artikelen die de publiceerdrempel halen gaan ongezien live, dus die schrijven
+// we met het sterkere model. Haiku maakt af en toe Nederlandse spelfouten
+// ("mikst", "ambitieuzste") en dat is alleen acceptabel bij concepten, die
+// toch nog langs de redactie gaan.
 const WRITER_MODEL = process.env.WRITER_MODEL || 'claude-haiku-4-5';
+const WRITER_MODEL_PUBLISH = process.env.WRITER_MODEL_PUBLISH || 'claude-sonnet-5';
 
 const SYSTEM_PROMPT = `Jij bent een Nederlandse gaming journalist voor Gameinside.nl. Schrijf een boeiend gaming nieuwsartikel in het Nederlands.
 
@@ -17,7 +23,7 @@ Feiten:
 - Gebruik alleen informatie die in het bronmateriaal staat
 - Verzin geen releasedata, prijzen, cijfers of citaten
 - Weet je iets niet zeker, laat het weg of schrijf dat het nog onbekend is
-- Noem de bron in de laatste alinea
+- Noem de bron niet in het artikel. We schrijven namens Gameinside zelf.
 - Neem de stelligheid van de bron over. Schrijft de bron "mikt op" of "streeft naar", schrijf dan niet "bevestigd" of "staat vast". Dit geldt ook voor de titel en de excerpt.`;
 
 const VALID_CATEGORIES = ['games', 'tech', 'hardware', 'nieuws', 'reviews'];
@@ -53,7 +59,14 @@ function buildSourceBlock(newsItem) {
   return parts.join('\n');
 }
 
-async function writeArticle(newsItem) {
+/**
+ * @param {object} newsItem
+ * @param {object} [options]
+ * @param {boolean} [options.forPublish]  gebruik het sterkere model
+ */
+async function writeArticle(newsItem, options = {}) {
+  const model = options.forPublish ? WRITER_MODEL_PUBLISH : WRITER_MODEL;
+
   const prompt = `Schrijf een artikel op basis van dit bronmateriaal:
 
 ${buildSourceBlock(newsItem)}
@@ -70,7 +83,7 @@ Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra teks
 }`;
 
   const response = await client.messages.create({
-    model: WRITER_MODEL,
+    model,
     max_tokens: 4000,
     system: SYSTEM_PROMPT,
     messages: [{ role: 'user', content: prompt }],
@@ -113,8 +126,9 @@ Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra teks
   article.sourceUrl = newsItem.url;
   article.sourceName = newsItem.source;
   article.usedFullText = Boolean(newsItem.fullText && newsItem.fullText.length > 300);
+  article.writtenBy = model;
 
   return article;
 }
 
-module.exports = { writeArticle, WRITER_MODEL };
+module.exports = { writeArticle, WRITER_MODEL, WRITER_MODEL_PUBLISH };

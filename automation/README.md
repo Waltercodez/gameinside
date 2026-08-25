@@ -48,6 +48,14 @@ in de titel en verschijnt niet op de site totdat je het in de Studio publiceert.
 
 Zet `PUBLISH_MIN_OUTLETS=0` als je wilt dat alles weer concept blijft.
 
+Artikelen die direct live gaan worden door een sterker model geschreven. Haiku
+maakt af en toe Nederlandse spelfouten ("mikst", "een nieuw update") en dat is
+alleen acceptabel bij concepten, die toch nog langs de redactie gaan.
+
+Er staat geen bronvermelding onder de artikelen. We schrijven namens Gameinside
+zelf. De bron blijft wel in de frontmatter van het markdown-bestand en in de
+overzichtsmail staan, zodat de redactie kan nachecken.
+
 ## Als de agent achterloopt of rare dingen kiest
 
 Draai eerst `npm run check-feeds`. RSS-feeds gaan stilletjes dood en dan valt de
@@ -66,7 +74,8 @@ Via environment variables, met de standaardwaarde erachter:
 | `MAX_AGE_HOURS` | 20 | ouder nieuws wordt genegeerd |
 | `PUBLISH_MIN_OUTLETS` | 3 | vanaf dit aantal bronnen gaat een verhaal direct live; 0 houdt alles concept |
 | `CURATOR_MODEL` | `claude-opus-5` | model dat de selectie maakt |
-| `WRITER_MODEL` | `claude-haiku-4-5` | model dat de artikelen schrijft |
+| `WRITER_MODEL` | `claude-haiku-4-5` | schrijft de concepten |
+| `WRITER_MODEL_PUBLISH` | `claude-sonnet-5` | schrijft de artikelen die direct live gaan |
 
 ## State
 

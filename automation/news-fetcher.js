@@ -26,7 +26,7 @@ const { curateSafe, CURATOR_MODEL } = require('./curator.js');
 const { fetchPage } = require('./extract.js');
 const { fetchLeadImage } = require('./image.js');
 const state = require('./state.js');
-const { writeArticle, WRITER_MODEL } = require('./writer.js');
+const { writeArticle, WRITER_MODEL, WRITER_MODEL_PUBLISH } = require('./writer.js');
 const { saveDraft } = require('./sanity-draft.js');
 const notifier = require('./notifier.js');
 
@@ -287,13 +287,18 @@ async function main() {
 
     const newsItem = { ...item, fullText, supporting: cluster.supporting };
 
+    // Vooraf bepalen, want dit kiest ook welk model het artikel schrijft.
+    const publish = PUBLISH_MIN_OUTLETS > 0 && cluster.outlets >= PUBLISH_MIN_OUTLETS;
+    const writeOpts = { forPublish: publish };
+    log(`   🤖 Model: ${publish ? WRITER_MODEL_PUBLISH : WRITER_MODEL}${publish ? ' (gaat direct live)' : ''}`);
+
     let article;
     try {
-      article = await writeArticle(newsItem);
+      article = await writeArticle(newsItem, writeOpts);
     } catch (firstErr) {
       log(`   ⚠️  Eerste poging mislukt (${firstErr.message}), opnieuw proberen...`);
       try {
-        article = await writeArticle(newsItem);
+        article = await writeArticle(newsItem, writeOpts);
       } catch (retryErr) {
         const hint = describeApiError(retryErr.message);
         warn(`Schrijven mislukt voor "${item.title.slice(0, 60)}": ${hint || retryErr.message.slice(0, 160)}`);
@@ -312,14 +317,10 @@ async function main() {
       log('─────────────────────────────────────────────────');
     }
 
-    // Beeldcredit onder het artikel. De afbeelding komt van de bron, dus die
-    // hoort vermeld te worden.
     if (image) {
       article.imageAlt = article.title;
-      article.content = `${article.content}\n\n**Beeld: ${item.source}**`;
     }
 
-    const publish = PUBLISH_MIN_OUTLETS > 0 && cluster.outlets >= PUBLISH_MIN_OUTLETS;
     article.published = publish;
 
     const filename = saveArticleToFolder(article);
