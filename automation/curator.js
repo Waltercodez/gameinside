@@ -15,7 +15,10 @@ const Anthropic = require('@anthropic-ai/sdk');
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // De curator doet per run een enkele call. Model is instelbaar via .env.
-const CURATOR_MODEL = process.env.CURATOR_MODEL || 'claude-opus-5';
+// Haiku kiest in de praktijk dezelfde verhalen als Opus voor een zevende van de
+// prijs, en deze stap draait zes keer per dag. Let op: Haiku ondersteunt de
+// output_config.effort parameter niet, die geeft een 400.
+const CURATOR_MODEL = process.env.CURATOR_MODEL || 'claude-haiku-4-5';
 
 const SYSTEM_PROMPT = `Je bent hoofdredacteur van Gameinside.nl, een Nederlandse gamingnieuwssite voor lezers van 18 tot 35 jaar.
 
@@ -70,7 +73,6 @@ Gebruik de nummers uit de lijst hierboven. Geef maximaal ${limit} items.`;
   const response = await client.messages.create({
     model: CURATOR_MODEL,
     max_tokens: 2000,
-    output_config: { effort: 'low' },
     system: SYSTEM_PROMPT,
     messages: [{ role: 'user', content: prompt }],
   });

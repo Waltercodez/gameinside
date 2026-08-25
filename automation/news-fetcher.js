@@ -28,10 +28,15 @@ const { fetchLeadImage } = require('./image.js');
 const state = require('./state.js');
 const { writeArticle, WRITER_MODEL } = require('./writer.js');
 const { saveDraft } = require('./sanity-draft.js');
-const { sendSuccess, sendFailure } = require('./notifier.js');
+const notifier = require('./notifier.js');
 
 const IS_TEST = process.argv.includes('--test');
 const IS_DRY = process.argv.includes('--dry-run');
+
+// In test- en dry-run-modus nooit mailen, anders krijgt de redactie ruis.
+const sendSuccess = (data) => (IS_TEST ? Promise.resolve() : notifier.sendSuccess(data));
+const sendFailure = (title, details) =>
+  IS_TEST ? Promise.resolve() : notifier.sendFailure(title, details);
 
 const DAILY_MAX = Number(process.env.DAILY_MAX || 10);
 const PER_RUN_MAX = Number(process.env.PER_RUN_MAX || 2);
@@ -50,6 +55,33 @@ const NEW_ARTICLES_DIR = path.join(__dirname, '..', 'new articles');
 
 function log(msg) {
   console.log(msg);
+}
+
+// Niet-fatale problemen die wel in de mail moeten belanden.
+const problems = [];
+
+function warn(msg) {
+  console.log(msg);
+  problems.push(msg.replace(/^\s*[^\w]*\s*/, ''));
+}
+
+/**
+ * Herkent fouten waar geen enkele retry tegen helpt: op tegoed, ongeldige
+ * sleutel, of een rate limit. Die verdienen een eigen melding, anders zoek je
+ * de oorzaak in de verkeerde hoek.
+ */
+function describeApiError(message) {
+  const m = String(message);
+  if (/credit balance is too low|billing/i.test(m)) {
+    return 'Je Anthropic-tegoed is op. Vul het aan via console.anthropic.com onder Plans & Billing.';
+  }
+  if (/invalid.*api.?key|authentication/i.test(m)) {
+    return 'De ANTHROPIC_API_KEY wordt niet geaccepteerd. Controleer het secret in GitHub.';
+  }
+  if (/rate.?limit|429/i.test(m)) {
+    return 'Anthropic rate limit geraakt. De volgende run pakt het weer op.';
+  }
+  return null;
 }
 
 // ── Artikel als markdown wegschrijven ─────────────────────────────────────────
@@ -167,7 +199,7 @@ async function main() {
   }
 
   if (deadFeeds.length >= Math.ceil(RSS_FEEDS.length / 2)) {
-    log(`⚠️  Let op: ${deadFeeds.length} feeds werken niet meer.\n`);
+    warn(`${deadFeeds.length} van de ${RSS_FEEDS.length} feeds werken niet meer: ${deadFeeds.slice(0, 5).join(', ')}`);
   }
 
   // 2. Filteren op versheid, gaming-relevantie en eerdere publicaties
@@ -221,7 +253,7 @@ async function main() {
 
   // 4. Claude kiest wat er echt toe doet
   log(`🎯 Curator (${CURATOR_MODEL}) kiest ${budget} verhaal(en)...`);
-  const selected = await curateSafe(clusters, budget, log);
+  const selected = await curateSafe(clusters, budget, warn);
 
   log(`\n✅ Geselecteerd:\n`);
   selected.forEach((c, i) => {
@@ -263,7 +295,8 @@ async function main() {
       try {
         article = await writeArticle(newsItem);
       } catch (retryErr) {
-        log(`   ❌ Schrijven mislukt na retry: ${retryErr.message}`);
+        const hint = describeApiError(retryErr.message);
+        warn(`Schrijven mislukt voor "${item.title.slice(0, 60)}": ${hint || retryErr.message.slice(0, 160)}`);
         continue;
       }
     }
@@ -302,7 +335,7 @@ async function main() {
       savedArticles.push(article);
       state.recordPublished(st, item.title, item.url);
     } catch (sanityErr) {
-      log(`   ❌ Sanity mislukt: ${sanityErr.message}`);
+      warn(`Sanity opslaan mislukt: ${sanityErr.message.slice(0, 160)}`);
       log(`   📁 Backup naar failed-drafts/`);
 
       if (!fs.existsSync(FAILED_DRAFTS_DIR)) fs.mkdirSync(FAILED_DRAFTS_DIR, { recursive: true });
@@ -321,14 +354,32 @@ async function main() {
   const seconds = ((Date.now() - startedAt.getTime()) / 1000).toFixed(0);
   log(`\n📋 ${savedArticles.length}/${selected.length} verwerkt in ${seconds}s. Dagtotaal: ${st.publishedToday}/${DAILY_MAX}`);
 
-  if (savedArticles.length > 0 && !IS_TEST) {
-    await sendSuccess(savedArticles, usedFeeds);
-  } else if (savedArticles.length === 0) {
-    await sendFailure(
-      'Geen artikelen opgeslagen',
-      'Zowel schrijven als opslaan is mislukt voor alle geselecteerde items.'
-    );
+  // De verhalen die de curator wel zag maar niet koos, zodat de redactie kan
+  // meekijken of er iets gemist wordt.
+  const chosenTitles = new Set(selected.map((c) => c.lead.title));
+  const considered = clusters
+    .filter((c) => !chosenTitles.has(c.lead.title))
+    .slice(0, 12)
+    .map((c) => ({ title: c.lead.title, outlets: c.outlets, source: c.lead.source }));
+
+  if (savedArticles.length === 0) {
+    // Er waren kandidaten en ruimte, maar er kwam niets uit. Dat is een storing,
+    // geen rustige dag: laat de workflow rood worden zodat GitHub een mail stuurt.
+    const summary = problems.length > 0 ? problems.join('\n') : 'Onbekende oorzaak.';
+    await sendFailure('Geen artikelen geschreven', summary);
+    console.error(`::error::News agent schreef 0 artikelen. ${problems[0] || ''}`);
+    process.exitCode = 1;
+    return;
   }
+
+  await sendSuccess({
+    articles: savedArticles,
+    considered,
+    totalStories: clusters.length,
+    publishedToday: st.publishedToday,
+    dailyMax: DAILY_MAX,
+    problems,
+  });
 
   log('\n🎉 Klaar\n');
 }

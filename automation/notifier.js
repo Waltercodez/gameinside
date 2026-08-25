@@ -1,95 +1,195 @@
-const nodemailer = require('nodemailer');
+/**
+ * Verstuurt na elke run een overzicht naar de redactie.
+ *
+ * Gebruikt Resend, net als de website zelf. Het domein gameinside.nl is daar
+ * geverifieerd, dus er is geen Gmail app-wachtwoord nodig. Voorheen liep dit
+ * via nodemailer met lege credentials, waardoor er nooit een mail aankwam en
+ * storingen onopgemerkt bleven.
+ */
 
-const TO = 'redactie@gameinside.nl';
-
-function createTransport() {
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-  });
-}
+const TO = process.env.NOTIFY_TO || 'redactie@gameinside.nl';
+const FROM = 'Gameinside Agent <noreply@gameinside.nl>';
+const STUDIO_URL = 'https://gameinside.sanity.studio';
+const SITE_URL = 'https://gameinside.nl';
 
 function hasCredentials() {
-  return !!(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD);
+  return Boolean(process.env.RESEND_API_KEY);
 }
 
-async function sendSuccess(articles, usedFeeds) {
+async function send(subject, html) {
   if (!hasCredentials()) {
-    console.log('📧 Email overgeslagen (geen credentials gevonden)');
-    return;
+    console.log('📧 Email overgeslagen: RESEND_API_KEY ontbreekt');
+    return false;
   }
-
-  const published = articles.filter((a) => a.published);
-  const drafts = articles.filter((a) => !a.published);
-
-  const format = (list) =>
-    list.map((a, i) => `${i + 1}. ${a.title} (${a.category})\n   ${a.sourceUrl || ''}`).join('\n');
-
-  const sections = [];
-  if (published.length > 0) {
-    sections.push(`AL LIVE op gameinside.nl (${published.length}):\n${format(published)}`);
-  }
-  if (drafts.length > 0) {
-    sections.push(`CONCEPT, wacht op je review (${drafts.length}):\n${format(drafts)}`);
-  }
-
-  const feedList = usedFeeds.slice(0, 6).join(', ');
-
-  const body = `De news agent is klaar met deze run.
-
-${sections.join('\n\n')}
-
-Reviewen kan op gameinside.sanity.studio
-
-Verhalen die door drie of meer redacties gebracht worden gaan direct live. De
-rest blijft concept totdat jij ze publiceert.
-
-Bronnen: ${feedList}`;
-
-  const transporter = createTransport();
-  await transporter.sendMail({
-    from: process.env.GMAIL_USER,
-    to: TO,
-    subject: published.length > 0
-      ? `Gameinside: ${published.length} live, ${drafts.length} concept`
-      : `Gameinside: ${drafts.length} concept${drafts.length === 1 ? '' : 'en'} klaar`,
-    text: body,
-  });
-
-  console.log(`📧 Email verzonden naar ${TO}`);
-}
-
-async function sendFailure(errorTitle, errorDetails) {
-  if (!hasCredentials()) {
-    console.error(`📧 Email overgeslagen (geen credentials). Fout: ${errorTitle}`);
-    return;
-  }
-
-  const body = `De Gameinside news agent is mislukt.
-
-Fout: ${errorTitle}
-
-Details:
-${errorDetails}
-
-Controleer de GitHub Actions logs voor meer informatie.
-Tijd: ${new Date().toISOString()}`;
 
   try {
-    const transporter = createTransport();
-    await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      to: TO,
-      subject: '🚨 Gameinside agent mislukt',
-      text: body,
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ from: FROM, to: [TO], subject, html }),
     });
-    console.log(`📧 Fout-email verzonden naar ${TO}`);
-  } catch (mailErr) {
-    console.error('📧 Kon ook geen fout-email sturen:', mailErr.message);
+
+    if (!res.ok) {
+      const body = await res.text();
+      console.error(`📧 Email mislukt (${res.status}): ${body.slice(0, 200)}`);
+      return false;
+    }
+
+    console.log(`📧 Email verzonden naar ${TO}`);
+    return true;
+  } catch (err) {
+    console.error(`📧 Email mislukt: ${err.message}`);
+    return false;
   }
 }
 
-module.exports = { sendSuccess, sendFailure };
+// ── Opmaak ────────────────────────────────────────────────────────────────────
+
+function esc(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+const S = {
+  body: 'margin:0;padding:24px;background:#0d1117;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#e6edf3;',
+  card: 'max-width:640px;margin:0 auto;background:#161b22;border:1px solid #30363d;border-radius:12px;overflow:hidden;',
+  pad: 'padding:20px 24px;',
+  h2: 'margin:0 0 4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#8b949e;',
+  item: 'padding:12px 0;border-bottom:1px solid #21262d;',
+  title: 'font-size:15px;font-weight:600;color:#e6edf3;line-height:1.4;margin:0 0 4px;',
+  meta: 'font-size:12px;color:#8b949e;margin:0;',
+  a: 'color:#00aaff;text-decoration:none;',
+  btn: 'display:inline-block;padding:10px 18px;background:#00aaff;color:#0d1117;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;',
+};
+
+function pill(text, color) {
+  return `<span style="display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;background:${color}22;color:${color};">${esc(text)}</span>`;
+}
+
+/**
+ * Overzicht na een geslaagde run.
+ *
+ * @param {object} data
+ * @param {Array}  data.articles   geschreven artikelen (met .published)
+ * @param {Array}  data.considered de verhalen die de curator overwoog
+ * @param {number} data.totalStories aantal unieke verhalen gevonden
+ * @param {number} data.publishedToday dagtotaal
+ * @param {number} data.dailyMax
+ * @param {Array}  data.problems   niet-fatale problemen tijdens de run
+ */
+async function sendSuccess(data) {
+  const {
+    articles = [], considered = [], totalStories = 0,
+    publishedToday = 0, dailyMax = 10, problems = [],
+  } = data;
+
+  const live = articles.filter((a) => a.published);
+  const drafts = articles.filter((a) => !a.published);
+
+  const renderArticle = (a) => `
+    <div style="${S.item}">
+      <p style="${S.title}">${esc(a.title)}</p>
+      <p style="${S.meta}">
+        ${a.published
+          ? `${pill('LIVE', '#3fb950')} <a href="${SITE_URL}/artikel/${esc(a.slug)}" style="${S.a}">bekijk op de site</a>`
+          : `${pill('CONCEPT', '#d29922')} <a href="${STUDIO_URL}/structure/article" style="${S.a}">open in Studio</a>`}
+        &nbsp;·&nbsp; ${esc(a.category)}
+        ${a.sourceName ? `&nbsp;·&nbsp; bron: <a href="${esc(a.sourceUrl)}" style="${S.a}">${esc(a.sourceName)}</a>` : ''}
+      </p>
+    </div>`;
+
+  const sections = [];
+
+  if (live.length > 0) {
+    sections.push(`
+      <div style="${S.pad}">
+        <p style="${S.h2}">Gepubliceerd op gameinside.nl (${live.length})</p>
+        ${live.map(renderArticle).join('')}
+      </div>`);
+  }
+
+  if (drafts.length > 0) {
+    sections.push(`
+      <div style="${S.pad}">
+        <p style="${S.h2}">Concept, wacht op je review (${drafts.length})</p>
+        ${drafts.map(renderArticle).join('')}
+      </div>`);
+  }
+
+  if (considered.length > 0) {
+    sections.push(`
+      <div style="${S.pad}">
+        <p style="${S.h2}">Ook gevonden, niet gekozen</p>
+        ${considered.slice(0, 12).map((c) => `
+          <p style="${S.meta}padding:5px 0;">
+            ${esc(c.title)}
+            <span style="color:#555e6b;">— ${c.outlets} ${c.outlets === 1 ? 'bron' : 'bronnen'}, ${esc(c.source)}</span>
+          </p>`).join('')}
+      </div>`);
+  }
+
+  if (problems.length > 0) {
+    sections.push(`
+      <div style="${S.pad}background:#2d1e08;">
+        <p style="${S.h2}color:#d29922;">Let op</p>
+        ${problems.map((p) => `<p style="${S.meta}color:#e3b341;padding:3px 0;">${esc(p)}</p>`).join('')}
+      </div>`);
+  }
+
+  const subject = live.length > 0
+    ? `Gameinside: ${live.length} live, ${drafts.length} concept`
+    : `Gameinside: ${drafts.length} concept${drafts.length === 1 ? '' : 'en'} klaar`;
+
+  const html = `
+<body style="${S.body}">
+  <div style="${S.card}">
+    <div style="${S.pad}border-bottom:1px solid #30363d;">
+      <p style="margin:0;font-size:18px;font-weight:800;">
+        <span style="color:#00aaff;">GAME</span><span style="color:#fff;">INSIDE</span>
+        <span style="color:#8b949e;font-weight:400;font-size:14px;"> · news agent</span>
+      </p>
+      <p style="${S.meta}margin-top:6px;">
+        ${totalStories} verhalen gevonden · ${articles.length} geschreven deze run · ${publishedToday}/${dailyMax} vandaag
+      </p>
+    </div>
+    ${sections.join('')}
+    <div style="${S.pad}text-align:center;border-top:1px solid #30363d;">
+      <a href="${STUDIO_URL}/structure/article" style="${S.btn}">Open Sanity Studio</a>
+    </div>
+  </div>
+</body>`;
+
+  return send(subject, html);
+}
+
+/**
+ * Melding als de run mislukt is.
+ */
+async function sendFailure(errorTitle, errorDetails) {
+  const html = `
+<body style="${S.body}">
+  <div style="${S.card}">
+    <div style="${S.pad}background:#2d0a0a;border-bottom:1px solid #30363d;">
+      <p style="margin:0;font-size:16px;font-weight:800;color:#f85149;">News agent mislukt</p>
+      <p style="${S.meta}margin-top:6px;">${esc(errorTitle)}</p>
+    </div>
+    <div style="${S.pad}">
+      <pre style="margin:0;padding:14px;background:#0d1117;border:1px solid #30363d;border-radius:8px;
+                  font-size:12px;color:#8b949e;white-space:pre-wrap;word-break:break-word;">${esc(
+                    String(errorDetails).slice(0, 2000)
+                  )}</pre>
+    </div>
+  </div>
+</body>`;
+
+  console.error(`❌ ${errorTitle}`);
+  return send(`Gameinside agent mislukt: ${errorTitle}`, html);
+}
+
+module.exports = { sendSuccess, sendFailure, hasCredentials };

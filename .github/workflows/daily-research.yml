@@ -49,12 +49,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: node news-fetcher.js ${{ inputs.dry_run && '--dry-run' || '' }}
 
       - name: Bewaar state
-        if: ${{ !inputs.dry_run }}
+        # always() zodat de dedup-state ook bewaard blijft als de agent faalt.
+        if: ${{ always() && !inputs.dry_run }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Gameinside Bot"
