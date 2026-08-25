@@ -45,7 +45,7 @@ const MAX_AGE_HOURS = Number(process.env.MAX_AGE_HOURS || 20);
 // Verhalen die door dit aantal onafhankelijke bronnen gebracht worden, gaan
 // direct live. Dat is het echte nieuws van de dag; de rest blijft concept.
 // Op 0 zetten betekent: alles blijft concept.
-const PUBLISH_MIN_OUTLETS = Number(process.env.PUBLISH_MIN_OUTLETS || 3);
+const PUBLISH_MIN_OUTLETS = Number(process.env.PUBLISH_MIN_OUTLETS || 4);
 
 // Boven deze gelijkenis met een eerder gepubliceerde kop slaan we het over.
 const DEDUP_THRESHOLD = 0.34;
