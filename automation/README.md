@@ -36,7 +36,10 @@ Zet hiervoor een `.env` neer met `ANTHROPIC_API_KEY`, `SANITY_API_TOKEN`,
 4b. `image.js` — pakt de og:image van de bron en uploadt hem naar Sanity, met
    een bronvermelding onder het artikel. Lukt bij ongeveer 9 van de 10 bronnen;
    zonder afbeelding valt de site terug op het gekleurde categorie-vlak.
-5. `writer.js` — schrijft het Nederlandse artikel
+5. `writer.js` — schrijft het Nederlandse artikel en controleert of het niet
+   halverwege ophoudt. Eindigt de tekst midden in een zin, dan wordt hij
+   teruggeknipt tot de laatste hele alinea; blijft er te weinig over, dan volgt
+   een nieuwe poging.
 6. `sanity-draft.js` — zet het in Sanity
 
 ## Concept of direct live

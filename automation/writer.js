@@ -26,9 +26,54 @@ Feiten:
 - Noem de bron niet in het artikel. We schrijven namens Gameinside zelf.
 - Neem de stelligheid van de bron over. Schrijft de bron "mikt op" of "streeft naar", schrijf dan niet "bevestigd" of "staat vast". Dit geldt ook voor de titel en de excerpt.`;
 
+// Onder deze lengte is het geen bruikbaar artikel meer.
+const MIN_CONTENT_CHARS = 1200;
+
 const VALID_CATEGORIES = ['games', 'tech', 'hardware', 'nieuws', 'reviews'];
 
 const YEAR = new Date().getFullYear();
+
+// ── Controle op afgekapte artikelen ───────────────────────────────────────────
+
+// Een afgeronde alinea eindigt op een leesteken. Aanhalingstekens en haakjes
+// mogen er nog achteraan staan, en een tussenkopje heeft geen punt nodig.
+const ENDS_PROPERLY = /[.!?:][)\]"'”’]*\s*$/;
+
+/**
+ * Kijkt of het laatste stuk tekst midden in een zin ophoudt.
+ *
+ * Dit gebeurt vooral bij het lichtere model: het schrijft dan bijvoorbeeld
+ * "Ook interessant: eerder vandaag bevestigde het bedrijf dat " en stopt.
+ * De JSON is dan nog geldig, dus zonder deze controle glipt het erdoor.
+ */
+function looksTruncated(text) {
+  const trimmed = String(text || '').trim();
+  if (!trimmed) return true;
+
+  const lastBlock = trimmed.split(/\n{2,}/).pop().trim();
+
+  // Een tussenkopje als laatste blok betekent dat de alinea eronder ontbreekt.
+  if (/^#{1,6}\s/.test(lastBlock)) return true;
+
+  return !ENDS_PROPERLY.test(lastBlock);
+}
+
+/**
+ * Kapt terug naar de laatste volledig afgeronde alinea.
+ * Geeft null terug als er te weinig overblijft om nog een artikel te zijn.
+ */
+function trimToLastCompleteParagraph(text, minChars) {
+  const blocks = String(text).trim().split(/\n{2,}/);
+
+  while (blocks.length > 0) {
+    const last = blocks[blocks.length - 1].trim();
+    if (!/^#{1,6}\s/.test(last) && ENDS_PROPERLY.test(last)) break;
+    blocks.pop();
+  }
+
+  const result = blocks.join('\n\n').trim();
+  return result.length >= minChars ? result : null;
+}
 
 /**
  * Bouwt het bronblok. Voorkeur voor de opgehaalde artikeltekst, met de
@@ -103,6 +148,30 @@ Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra teks
 
   if (!article.title || !article.content || !article.slug) {
     throw new Error('Artikel mist title, slug of content');
+  }
+
+  // Raakte het antwoord de tokenlimiet, dan is het gegarandeerd incompleet.
+  if (response.stop_reason === 'max_tokens') {
+    throw new Error('Antwoord liep tegen de tokenlimiet aan, artikel is incompleet');
+  }
+
+  // Anders alsnog controleren of de tekst netjes afgerond is.
+  if (looksTruncated(article.content)) {
+    const repaired = trimToLastCompleteParagraph(article.content, MIN_CONTENT_CHARS);
+    if (!repaired) {
+      throw new Error('Artikel eindigt midden in een zin en is te kort om bij te knippen');
+    }
+    article.content = repaired;
+    article.wasTrimmed = true;
+  }
+
+  if (article.content.trim().length < MIN_CONTENT_CHARS) {
+    throw new Error(`Artikel is te kort (${article.content.trim().length} tekens)`);
+  }
+
+  // De excerpt is de meta-omschrijving en mag ook niet halverwege stoppen.
+  if (article.excerpt && looksTruncated(article.excerpt)) {
+    article.excerpt = String(article.excerpt).trim().replace(/[\s,;:]+$/, '') + '.';
   }
 
   // Categorie normaliseren

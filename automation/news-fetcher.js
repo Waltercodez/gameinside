@@ -317,6 +317,10 @@ async function main() {
       log('─────────────────────────────────────────────────');
     }
 
+    if (article.wasTrimmed) {
+      warn(`Artikel "${article.title.slice(0, 50)}" eindigde midden in een zin en is bijgeknipt tot de laatste hele alinea`);
+    }
+
     if (image) {
       article.imageAlt = article.title;
     }
