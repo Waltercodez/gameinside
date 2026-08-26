@@ -184,6 +184,9 @@ export default async function ArticlePage({ params }: Props) {
     { name: article.title,         url: articleUrl },
   ]);
 
+  // Verwijst dit artikel naar de GTA-hub?
+  const isGta = /\bgta\b|grand theft auto/i.test(`${article.title} ${article.slug}`);
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
 
@@ -294,6 +297,23 @@ export default async function ArticlePage({ params }: Props) {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
+
+          {/* Themapagina's. Artikelen zakken na een week weg, een hubpagina
+              blijft staan. Deze link stuurt de autoriteit die kant op. */}
+          {isGta && (
+            <div className="mt-4">
+              <Link
+                href="/gta-6"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#7c3aed]/40
+                           bg-[#7c3aed]/10 px-4 py-3 text-sm text-[#e6edf3]
+                           hover:border-[#7c3aed] transition-colors"
+              >
+                <span className="font-bold">Alles over GTA 6</span>
+                <span className="text-[#8b949e]">releasedatum, prijzen en al het nieuws</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          )}
 
           <div className="mt-6 pt-6 border-t border-[#30363d]/60">
             <p className="text-xs font-black text-[#555e6b] uppercase tracking-widest mb-3">
