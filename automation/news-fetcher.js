@@ -21,7 +21,9 @@ const fs = require('fs');
 const path = require('path');
 
 const { RSS_FEEDS, GAMING_KEYWORDS } = require('./sources.js');
-const { scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch } = require('./ranker.js');
+const {
+  scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, isNotNews,
+} = require('./ranker.js');
 const { curateSafe, CURATOR_MODEL } = require('./curator.js');
 const { fetchPage } = require('./extract.js');
 const { fetchLeadImage } = require('./image.js');
@@ -40,7 +42,7 @@ const sendFailure = (title, details) =>
 
 const DAILY_MAX = Number(process.env.DAILY_MAX || 10);
 const PER_RUN_MAX = Number(process.env.PER_RUN_MAX || 2);
-const MAX_AGE_HOURS = Number(process.env.MAX_AGE_HOURS || 20);
+const MAX_AGE_HOURS = Number(process.env.MAX_AGE_HOURS || 12);
 
 // Verhalen die door dit aantal onafhankelijke bronnen gebracht worden, gaan
 // direct live. Dat is het echte nieuws van de dag; de rest blijft concept.
@@ -206,10 +208,14 @@ async function main() {
   const recentTokens = st.topics.map((t) => titleTokens(t.title));
   const seenUrls = new Set(st.topics.map((t) => t.url).filter(Boolean));
 
-  const stats = { oud: 0, nietGaming: 0, duplicaat: 0, geenTitel: 0 };
+  const stats = { oud: 0, nietGaming: 0, duplicaat: 0, geenTitel: 0, geenNieuws: 0 };
 
   const fresh = allItems.filter((item) => {
     if (!item.title) { stats.geenTitel++; return false; }
+
+    // Terugblikken, gidsen en software-updates staan vers in de feed maar zijn
+    // geen nieuws. Ze scoorden hoog op recentheid en vervuilden de shortlist.
+    if (isNotNews(item.title)) { stats.geenNieuws++; return false; }
 
     const ageHours = (Date.now() - item.date.getTime()) / 3_600_000;
     if (!Number.isFinite(ageHours) || ageHours > MAX_AGE_HOURS || ageHours < -2) {
@@ -232,7 +238,7 @@ async function main() {
     return true;
   });
 
-  log(`🔎 ${fresh.length} verse items over (${stats.oud} te oud, ${stats.nietGaming} niet gaming, ${stats.duplicaat} al gehad)\n`);
+  log(`🔎 ${fresh.length} verse items over (${stats.oud} te oud, ${stats.nietGaming} niet gaming, ${stats.geenNieuws} geen nieuws, ${stats.duplicaat} al gehad)\n`);
 
   if (fresh.length === 0) {
     log('ℹ️  Niets nieuws deze run.');
@@ -247,7 +253,8 @@ async function main() {
   clusters.slice(0, 10).forEach((c, i) => {
     const age = ((Date.now() - c.lead.date.getTime()) / 3_600_000).toFixed(1);
     const flag = c.outlets > 1 ? `${c.outlets}x bron` : '1 bron';
-    log(`  ${String(i + 1).padStart(2)}. [${c.score.toFixed(0).padStart(3)}] [${age.padStart(4)}u] [${flag}] ${c.lead.title.slice(0, 78)}`);
+    const prio = c.lead.score.parts.priority > 0 ? '⭐ ' : '';
+    log(`  ${String(i + 1).padStart(2)}. [${c.score.toFixed(0).padStart(3)}] [${age.padStart(4)}u] [${flag}] ${prio}${c.lead.title.slice(0, 74)}`);
   });
   log('');
 

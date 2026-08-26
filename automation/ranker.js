@@ -9,16 +9,29 @@
  * sterkste signaal voor "dit is vandaag belangrijk", dus dat weegt zwaar mee.
  */
 
-const { GAMING_KEYWORDS, HOT_KEYWORDS, NEGATIVE_KEYWORDS } = require('./sources.js');
+const {
+  GAMING_KEYWORDS,
+  HOT_KEYWORDS,
+  NEGATIVE_KEYWORDS,
+  PRIORITY_TOPICS,
+  NOT_NEWS_PATTERNS,
+} = require('./sources.js');
 
 // Halfwaardetijd van de recency-score in uren. Lager = agressiever op vers nieuws.
 const RECENCY_HALFLIFE_HOURS = 6;
+
+// Bonus voor voorrangsonderwerpen. Ruim genoeg om een paar uur ouder nieuws
+// boven vers maar minder belangrijk nieuws te tillen, niet zo groot dat een
+// dag oud GTA-bericht alles overheerst.
+const PRIORITY_BONUS = 70;
 
 const STOPWORDS = new Set([
   'the', 'and', 'for', 'with', 'this', 'that', 'from', 'have', 'has', 'are',
   'was', 'were', 'will', 'its', 'you', 'your', 'but', 'not', 'all', 'can',
   'new', 'now', 'out', 'get', 'how', 'why', 'what', 'who', 'een', 'het', 'de',
   'van', 'voor', 'met', 'dat', 'die', 'zijn', 'wordt', 'worden', 'naar', 'over',
+  'says', 'said', 'been', 'more', 'here', 'about', 'into', 'them', 'they',
+  'zegt', 'gaat', 'komt', 'ook', 'nog', 'aan', 'als', 'bij', 'door', 'een',
 ]);
 
 /** Escape voor gebruik in een RegExp. */
@@ -44,14 +57,36 @@ function hasMatch(text, list) {
   return countMatches(text, list) > 0;
 }
 
-/** Betekenisvolle woorden uit een titel, voor gelijkenisvergelijking. */
+/**
+ * Betekenisvolle woorden uit een titel, voor gelijkenisvergelijking.
+ *
+ * Korte tokens tellen bewust mee zolang ze een cijfer bevatten of een bekende
+ * afkorting zijn. De vorige versie hield alleen woorden van 4 tekens of langer
+ * over, waardoor juist de meest onderscheidende termen in gamingkoppen
+ * wegvielen: GTA, PS5, DLC, RPG. Vier berichten over dezelfde GTA 6-leak
+ * belandden daardoor in vier losse clusters in plaats van een verhaal met vier
+ * bronnen.
+ */
+const SHORT_TOKENS_TO_KEEP = new Set([
+  'gta', 'ps4', 'ps5', 'ps6', 'dlc', 'rpg', 'fps', 'mmo', 'vr', 'ai', 'ea',
+  'dev', 'mod', 'pc', 'wow', 'cod', 'mw2', 'mw3', 'mw4', 'gpu', 'cpu',
+]);
+
 function titleTokens(title) {
+  const words = title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+
   return new Set(
-    title
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, ' ')
-      .split(/\s+/)
-      .filter((w) => w.length > 3 && !STOPWORDS.has(w))
+    words.filter((w) => {
+      if (STOPWORDS.has(w)) return false;
+      if (w.length > 3) return true;
+      if (SHORT_TOKENS_TO_KEEP.has(w)) return true;
+      // Losse cijfers dragen betekenis in koppen: "GTA 6", "Trine 6".
+      return /\d/.test(w);
+    })
   );
 }
 
@@ -88,10 +123,14 @@ function scoreItem(item) {
   const hot = Math.min(3, countMatches(text, HOT_KEYWORDS)) * 8;
   const penalty = hasMatch(text, NEGATIVE_KEYWORDS) ? -50 : 0;
 
-  const base = recency + gaming + hot + penalty;
+  // Voorrangsonderwerpen. Alleen op de titel matchen, want een terloopse
+  // vermelding van GTA ergens in een samenvatting maakt het nog geen GTA-nieuws.
+  const priority = hasMatch(item.title.toLowerCase(), PRIORITY_TOPICS) ? PRIORITY_BONUS : 0;
+
+  const base = recency + gaming + hot + penalty + priority;
   return {
     total: base * (item.weight || 1),
-    parts: { recency, gaming, hot, penalty, weight: item.weight || 1 },
+    parts: { recency, gaming, hot, penalty, priority, weight: item.weight || 1 },
   };
 }
 
@@ -133,4 +172,10 @@ function clusterItems(items, threshold = 0.34) {
   }).sort((a, b) => b.score - a.score);
 }
 
-module.exports = { scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, countMatches };
+/** Herkent koppen die vers zijn maar geen nieuws: terugblikken, gidsen, updates. */
+function isNotNews(title) {
+  return NOT_NEWS_PATTERNS.some((re) => re.test(title));
+}
+
+module.exports = {
+  isNotNews, scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, countMatches };

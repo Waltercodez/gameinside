@@ -71,4 +71,36 @@ const NEGATIVE_KEYWORDS = [
   'today\'s answer', 'hints and answers', 'daily puzzle', 'horoscope',
 ];
 
-module.exports = { RSS_FEEDS, GAMING_KEYWORDS, HOT_KEYWORDS, NEGATIVE_KEYWORDS };
+
+// Onderwerpen waar Gameinside voorrang aan geeft. Een treffer levert een forse
+// score-bonus op, zodat dit nieuws bovenaan de shortlist komt en de curator het
+// vrijwel zeker meeneemt.
+const PRIORITY_TOPICS = [
+  'gta', 'gta 6', 'gta6', 'grand theft auto', 'rockstar games', 'rockstar',
+];
+
+// Koppen die geen nieuws zijn maar wel vers in de feed staan: terugblikken,
+// koopgidsen, handleidingen en software-updates uit de Tweakers-feed. Die
+// scoorden hoog op recentheid en vervuilden de shortlist.
+const NOT_NEWS_PATTERNS = [
+  /\byears? ago\b/i,
+  /^software-update\b/i,
+  /\bhow to\b/i,
+  /\bsettings guide\b/i,
+  /\bbeginner'?s guide\b/i,
+  /\btips and tricks\b/i,
+  /\bevery .* ranked\b/i,
+  /\bbest .* of all time\b/i,
+  /\bretrospective\b/i,
+  /\bround up\b/i,
+  /\bwhere to (buy|pre-?order)\b/i,
+];
+
+module.exports = {
+  RSS_FEEDS,
+  GAMING_KEYWORDS,
+  HOT_KEYWORDS,
+  NEGATIVE_KEYWORDS,
+  PRIORITY_TOPICS,
+  NOT_NEWS_PATTERNS,
+};
