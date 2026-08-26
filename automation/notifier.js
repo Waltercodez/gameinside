@@ -117,7 +117,7 @@ async function sendSuccess(data) {
   if (live.length > 0) {
     sections.push(`
       <div style="${S.pad}">
-        <p style="${S.h2}">Gepubliceerd op gameinside.nl (${live.length})</p>
+        <p style="${S.h2}color:#3fb950;">✓ Staat live op gameinside.nl (${live.length})</p>
         ${live.map(renderArticle).join('')}
       </div>`);
   }
@@ -125,19 +125,27 @@ async function sendSuccess(data) {
   if (drafts.length > 0) {
     sections.push(`
       <div style="${S.pad}">
-        <p style="${S.h2}">Concept, wacht op je review (${drafts.length})</p>
+        <p style="${S.h2}color:#d29922;">✓ Klaar in Sanity, wacht op je review (${drafts.length})</p>
         ${drafts.map(renderArticle).join('')}
       </div>`);
   }
 
   if (considered.length > 0) {
+    // Nadrukkelijk gescheiden van de secties hierboven. Deze verhalen zijn
+    // NIET geschreven en staan nergens; ze zijn er alleen zodat de redactie
+    // kan zien wat de agent heeft laten liggen. Zonder dat onderscheid leest
+    // dit blok als een lijst met kant-en-klare concepten.
     sections.push(`
-      <div style="${S.pad}">
-        <p style="${S.h2}">Ook gevonden, niet gekozen</p>
+      <div style="${S.pad}border-top:2px dashed #30363d;background:#0d1117;">
+        <p style="${S.h2}color:#555e6b;">Niet geschreven — alleen ter info</p>
+        <p style="font-size:12px;color:#555e6b;margin:0 0 12px;line-height:1.5;">
+          Deze verhalen kwamen wel voorbij maar zijn niet gekozen. Er staat dus
+          <strong style="color:#8b949e;">niets</strong> van klaar in Sanity.
+        </p>
         ${considered.slice(0, 12).map((c) => `
-          <p style="${S.meta}padding:5px 0;">
+          <p style="${S.meta}padding:5px 0;opacity:0.75;">
             ${esc(c.title)}
-            <span style="color:#555e6b;">— ${c.outlets} ${c.outlets === 1 ? 'bron' : 'bronnen'}, ${esc(c.source)}</span>
+            <span style="color:#3d444d;">— ${c.outlets} ${c.outlets === 1 ? 'bron' : 'bronnen'}, ${esc(c.source)}</span>
           </p>`).join('')}
       </div>`);
   }

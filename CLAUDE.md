@@ -42,6 +42,12 @@ Let op: Haiku ondersteunt `output_config.effort` niet, dat geeft een 400.
 
 ### Publiceren
 
+**Voorrangsnieuws.** GTA en Rockstar krijgen +70 score, een gereserveerde plek
+in elke run buiten de curator om, en mogen tot `PRIORITY_EXTRA` (2) boven de
+dagcap uitkomen. Reden: het is het belangrijkste onderwerp voor de lezers en het
+mag nooit een dag blijven liggen omdat er toevallig al tien andere artikelen
+staan. Instelbaar via `PRIORITY_TOPICS` in `sources.js`.
+
 `PUBLISH_MIN_OUTLETS` staat op **4**. Verhalen die door vier of meer
 onafhankelijke redacties gebracht worden gaan direct live, de rest wordt
 concept. De verdeling is sterk scheef: van ~185 verhalen heeft de overgrote

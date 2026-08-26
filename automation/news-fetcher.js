@@ -49,6 +49,11 @@ const MAX_AGE_HOURS = Number(process.env.MAX_AGE_HOURS || 12);
 // Op 0 zetten betekent: alles blijft concept.
 const PUBLISH_MIN_OUTLETS = Number(process.env.PUBLISH_MIN_OUTLETS || 4);
 
+// Voorrangsnieuws mag boven de dagcap uitkomen. GTA is het belangrijkste
+// onderwerp voor onze lezers; dat een dag laten liggen omdat er toevallig al
+// tien andere artikelen staan, is precies wat we niet willen.
+const PRIORITY_EXTRA = Number(process.env.PRIORITY_EXTRA || 2);
+
 // Boven deze gelijkenis met een eerder gepubliceerde kop slaan we het over.
 const DEDUP_THRESHOLD = 0.34;
 
@@ -180,12 +185,20 @@ async function main() {
 
   state.migrateLegacy();
   const st = state.load();
-  const budget = Math.min(PER_RUN_MAX, state.remainingToday(st, DAILY_MAX));
+  const normalBudget = Math.min(PER_RUN_MAX, state.remainingToday(st, DAILY_MAX));
+  const priorityBudget = Math.min(
+    PER_RUN_MAX,
+    state.remainingToday(st, DAILY_MAX + PRIORITY_EXTRA)
+  );
 
-  log(`📊 Vandaag al ${st.publishedToday}/${DAILY_MAX} artikelen. Ruimte deze run: ${budget}\n`);
+  log(`📊 Vandaag al ${st.publishedToday}/${DAILY_MAX} artikelen. Ruimte deze run: ${normalBudget}`);
+  if (priorityBudget > normalBudget) {
+    log(`   (nog ${priorityBudget - normalBudget} plek gereserveerd voor voorrangsnieuws)`);
+  }
+  log('');
 
-  if (budget === 0 && !IS_DRY) {
-    log('✅ Dagcap bereikt, niets te doen.');
+  if (priorityBudget === 0 && !IS_DRY) {
+    log('✅ Dagcap bereikt, ook voor voorrangsnieuws. Niets te doen.');
     return;
   }
 
@@ -259,8 +272,28 @@ async function main() {
   log('');
 
   // 4. Claude kiest wat er echt toe doet
-  log(`🎯 Curator (${CURATOR_MODEL}) kiest ${budget} verhaal(en)...`);
-  const selected = await curateSafe(clusters, budget, warn);
+  // Voorrangsverhalen krijgen een gereserveerde plek en gaan buiten de curator
+  // om. Anders kan hij ze alsnog laten liggen ten gunste van iets versers.
+  const priorityClusters = clusters.filter((c) => c.lead.score.parts.priority > 0);
+  const takePriority = priorityClusters.slice(0, Math.min(1, priorityBudget));
+
+  const remaining = Math.max(0, normalBudget - takePriority.length);
+  const rest = clusters.filter((c) => !takePriority.includes(c));
+
+  let selected = takePriority;
+  if (remaining > 0) {
+    log(`🎯 Curator (${CURATOR_MODEL}) kiest ${remaining} verhaal(en)...`);
+    selected = [...takePriority, ...(await curateSafe(rest, remaining, warn))];
+  }
+
+  if (takePriority.length > 0) {
+    log(`⭐ Voorrangsnieuws automatisch meegenomen: ${takePriority[0].lead.title.slice(0, 60)}`);
+  }
+
+  if (selected.length === 0) {
+    log('ℹ️  Geen ruimte meer binnen de dagcap.');
+    return;
+  }
 
   log(`\n✅ Geselecteerd:\n`);
   selected.forEach((c, i) => {
