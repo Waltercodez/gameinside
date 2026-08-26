@@ -16,7 +16,7 @@ function hasCredentials() {
   return Boolean(process.env.RESEND_API_KEY);
 }
 
-async function send(subject, html) {
+async function send(subject, html, type) {
   if (!hasCredentials()) {
     console.log('📧 Email overgeslagen: RESEND_API_KEY ontbreekt');
     return false;
@@ -29,7 +29,15 @@ async function send(subject, html) {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ from: FROM, to: [TO], subject, html }),
+      body: JSON.stringify({
+        from: FROM,
+        to: [TO],
+        subject,
+        html,
+        // Vast kenmerk om op te filteren in de mailbox, ongeacht het
+        // onderwerp. Werkt in Gmail via "has:X-Gameinside-Type".
+        headers: { 'X-Gameinside-Type': type },
+      }),
     });
 
     if (!res.ok) {
@@ -142,9 +150,12 @@ async function sendSuccess(data) {
       </div>`);
   }
 
+  // Vast voorvoegsel vooraan het onderwerp, zodat een enkele filterregel de
+  // routineoverzichten uit de hoofdinbox houdt en storingen juist niet.
+  const type = live.length > 0 ? 'live' : 'concepten';
   const subject = live.length > 0
-    ? `Gameinside: ${live.length} live, ${drafts.length} concept`
-    : `Gameinside: ${drafts.length} concept${drafts.length === 1 ? '' : 'en'} klaar`;
+    ? `[Gameinside Live] ${live.length} gepubliceerd, ${drafts.length} concept`
+    : `[Gameinside Concepten] ${drafts.length} concept${drafts.length === 1 ? '' : 'en'} klaar`;
 
   const html = `
 <body style="${S.body}">
@@ -165,7 +176,7 @@ async function sendSuccess(data) {
   </div>
 </body>`;
 
-  return send(subject, html);
+  return send(subject, html, type);
 }
 
 /**
@@ -189,7 +200,7 @@ async function sendFailure(errorTitle, errorDetails) {
 </body>`;
 
   console.error(`❌ ${errorTitle}`);
-  return send(`Gameinside agent mislukt: ${errorTitle}`, html);
+  return send(`[Gameinside STORING] ${errorTitle}`, html, 'storing');
 }
 
 module.exports = { sendSuccess, sendFailure, hasCredentials };
