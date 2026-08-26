@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const navLinks = [
+  // GTA 6 staat vooraan: het is onze belangrijkste themapagina en interne
+  // links vanaf elke pagina helpen hem in de zoekresultaten.
+  { href: '/gta-6',               label: 'GTA 6' },
   { href: '/categorie/nieuws',    label: 'Nieuws' },
   { href: '/categorie/reviews',   label: 'Reviews' },
   { href: '/categorie/games',     label: 'Games' },

@@ -44,3 +44,23 @@ export async function getRelatedArticles(article: Article, count = 3): Promise<A
     .slice(0, count);
 }
 
+
+/**
+ * Alle artikelen over een onderwerp, nieuwste eerst.
+ *
+ * Gebruikt door de themapagina's. Zoekt in titel, excerpt en slug, zodat een
+ * artikel over "Rockstar" ook meetelt bij GTA zonder dat iemand het handmatig
+ * hoeft te koppelen.
+ */
+export async function getArticlesByTopic(
+  patterns: RegExp[],
+  limit = 24,
+): Promise<Article[]> {
+  const all = await getAllArticles();
+  return all
+    .filter((a) => {
+      const haystack = `${a.title} ${a.excerpt} ${a.slug}`;
+      return patterns.some((re) => re.test(haystack));
+    })
+    .slice(0, limit);
+}

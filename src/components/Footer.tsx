@@ -10,6 +10,7 @@ const footerLinks = {
     { href: '/categorie/video',    label: 'Video' },
   ],
   Platform: [
+    { href: '/gta-6', label: 'GTA 6' },
     { href: '#', label: 'PlayStation' },
     { href: '#', label: 'Xbox' },
     { href: '#', label: 'Nintendo' },
