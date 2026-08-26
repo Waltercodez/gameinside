@@ -16,7 +16,9 @@ export const metadata: Metadata = {
   // ── Titles ───────────────────────────────────────────────────────────────
   title: {
     default: 'Gameinside | Nederlands Gaming Nieuws, Reviews & Tech',
-    template: '%s | Gameinside - Nederlands Gaming Nieuws',
+    // Kort gehouden: Google toont ongeveer 60 tekens, dus elk teken dat het
+    // merk opeet gaat af van de kop zelf.
+    template: '%s | Gameinside',
   },
 
   // ── Description ──────────────────────────────────────────────────────────

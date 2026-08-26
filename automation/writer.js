@@ -24,10 +24,22 @@ Feiten:
 - Verzin geen releasedata, prijzen, cijfers of citaten
 - Weet je iets niet zeker, laat het weg of schrijf dat het nog onbekend is
 - Noem de bron niet in het artikel. We schrijven namens Gameinside zelf.
+
+Zoekmachines:
+- De kop is het belangrijkste SEO-element. Maximaal 55 tekens, want Google kapt
+  langere koppen af en een afgekapte kop leest als een fout.
+- Begin de kop met de spelnaam, studio of het platform. Dat is de term waarop
+  gezocht wordt.
+- De excerpt is de omschrijving in de zoekresultaten. Maximaal 150 tekens, een
+  volledige zin, en herhaal het hoofdzoekwoord.
+- Gebruik in de eerste alinea de woorden waarop iemand zou zoeken.
 - Neem de stelligheid van de bron over. Schrijft de bron "mikt op" of "streeft naar", schrijf dan niet "bevestigd" of "staat vast". Dit geldt ook voor de titel en de excerpt.`;
 
 // Onder deze lengte is het geen bruikbaar artikel meer.
 const MIN_CONTENT_CHARS = 1200;
+
+// Google toont ongeveer 60 tekens inclusief " | Gameinside" (13 tekens).
+const MAX_TITLE_CHARS = 55;
 
 const VALID_CATEGORIES = ['games', 'tech', 'hardware', 'nieuws', 'reviews'];
 
@@ -118,7 +130,7 @@ ${buildSourceBlock(newsItem)}
 
 Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra tekst:
 {
-  "title": "SEO-vriendelijke Nederlandse titel met spelnaam, alleen ${YEAR} erbij als het jaartal relevant is voor het nieuws",
+  "title": "Nederlandse kop van MAXIMAAL 55 tekens. Zet de spelnaam of het merk vooraan, dat is waar mensen op zoeken. Geen jaartal tenzij het zelf het nieuws is. Tellen, niet schatten.",
   "slug": "url-vriendelijke-slug-zonder-spaties-of-hoofdletters",
   "excerpt": "Meta beschrijving van maximaal 150 tekens",
   "content": "400-600 woord artikel. Gebruik ## voor tussenkopjes. Gebruik **vetgedrukt** voor nadruk. Twee newlines tussen alineas.",
@@ -185,6 +197,18 @@ Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra teks
     .replace(/[^a-z0-9-]/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
+
+  // De kop moet binnen de zoekresultaten passen. Het model houdt zich hier niet
+  // altijd aan, dus we kappen alsnog af op een woordgrens.
+  article.title = article.title.trim();
+  if (article.title.length > MAX_TITLE_CHARS) {
+    const cut = article.title.slice(0, MAX_TITLE_CHARS);
+    const lastSpace = cut.lastIndexOf(' ');
+    article.title = (lastSpace > 30 ? cut.slice(0, lastSpace) : cut)
+      .replace(/[,;:\-–]$/, '')
+      .trim();
+    article.titleWasShortened = true;
+  }
 
   // Excerpt afkappen op 150 tekens
   if (article.excerpt && article.excerpt.length > 150) {

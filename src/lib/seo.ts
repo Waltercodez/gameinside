@@ -4,11 +4,20 @@ export const BASE_URL = 'https://gameinside.nl';
 export const SITE_NAME = 'Gameinside';
 
 /** Truncate a title to max chars at a word boundary */
-export function truncateTitle(title: string, maxChars = 60): string {
-  if (title.length <= maxChars) return title;
-  const cut = title.slice(0, maxChars);
+/**
+ * Kapt een titel af zodat hij met het merk-achtervoegsel binnen de ruimte past
+ * die Google toont, ongeveer 60 tekens.
+ *
+ * Het achtervoegsel " | Gameinside" kost 13 tekens, dus de kop zelf krijgt er
+ * 47. Afkappen blijft een noodgreep: de echte oplossing is dat de nieuwsagent
+ * meteen korte koppen schrijft, want een afgekapte kop leest als een fout.
+ */
+export function truncateTitle(title: string, maxChars = 47): string {
+  const clean = title.trim();
+  if (clean.length <= maxChars) return clean;
+  const cut = clean.slice(0, maxChars);
   const lastSpace = cut.lastIndexOf(' ');
-  return (lastSpace > 40 ? cut.slice(0, lastSpace) : cut).replace(/[,;:]$/, '');
+  return (lastSpace > 30 ? cut.slice(0, lastSpace) : cut).replace(/[,;:\-–]$/, '').trim();
 }
 
 /**
