@@ -12,7 +12,18 @@ automatische nieuwsagent die zelf artikelen schrijft.
   - Live op https://gameinside.sanity.studio
 - **Supabase** — accounts en reacties
 - **Resend** — alle uitgaande mail, domein `gameinside.nl` is geverifieerd
-- GitHub: `redwanmail1-debug/gameinside`
+- GitHub: `Waltercodez/gameinside`
+
+**Let op bij `gh`:** er staan twee accounts ingelogd. `Diamondstv` is vaak het
+actieve account, maar dat heeft geen rechten op deze repo en geeft een 403 bij
+bijvoorbeeld `gh workflow run`. Eerst omschakelen:
+
+```bash
+gh auth switch --user Waltercodez
+```
+
+Pushen werkt wel gewoon, want git gebruikt eigen credentials. De repo heette
+eerder `redwanmail1-debug/gameinside`; GitHub stuurt die URLs door.
 
 ## Taal
 
@@ -75,7 +86,7 @@ ontbreekt in `sanity.cli.ts`. Die staat nu vast op `gameinside`.
 
 **Vercel mist soms een push.** De code stond goed op GitHub maar er werd geen
 deployment aangemaakt. Controleren met:
-`gh api repos/redwanmail1-debug/gameinside/deployments --jq '.[0].sha'`
+`gh api repos/Waltercodez/gameinside/deployments --jq '.[0].sha'`
 Oplossen met een lege commit: `git commit --allow-empty -m "chore: trigger deploy"`
 
 **Twee Sanity-tokens.** De `SANITY_API_TOKEN` in `automation/.env` is uit het
@@ -112,12 +123,84 @@ npm run deploy                   # Studio publiceren
 Handmatig een agent-run starten: `gh workflow run "Gameinside News Agent"`,
 of via de Actions-tab met een vinkje voor dry run.
 
+## SEO
+
+Google Search Console is aangesloten sinds 26 augustus 2026. Credentials staan
+buiten de repo in `~/.config/claude-seo/`:
+
+- `google-api.json` — API-sleutel voor PageSpeed en CrUX
+- `service_account.json` — service-account voor Search Console en GA4
+
+Het service-account is `claude-seo@gameinside.iam.gserviceaccount.com` en heeft
+Full-rechten op de property `sc-domain:gameinside.nl`.
+
+```bash
+cd seo/scripts
+node gsc-report.js 28      # zoekprestaties laatste 28 dagen
+node gsc-report.js 180     # halfjaar
+```
+
+`google-auth.js` tekent zelf een JWT, dus er is geen Google-bibliotheek nodig.
+
+### Wat de eerste meting liet zien
+
+Zes maanden: 60 klikken, 3.263 vertoningen, gemiddelde positie 30,6. Daarvan is
+22 procent merkzoekverkeer op varianten van "gameinside". Volledige analyse in
+`seo/search-console-analyse-2026-08-26.md`, nulmeting in
+`seo/baseline-2026-08-26.md`.
+
+Techniek is niet het probleem: snelheid 93/100, Lighthouse keurt geen enkel
+SEO-punt af. Het probleem is omvang en autoriteit.
+
+### Wat er is opgelost
+
+- **Titels werden allemaal afgekapt.** De kop werd op 60 tekens gezet en daarna
+  plakte de template er 40 tekens merk achter. Geen van de 18 artikelen paste
+  binnen de ongeveer 60 tekens die Google toont. Achtervoegsel is nu
+  `| Gameinside`, de agent schrijft koppen van maximaal 55 tekens.
+- **De sitemap miste alle agent-artikelen.** Hij gebruikte alleen de hardcoded
+  lijst uit `src/data/articles.ts`. Nu via `getAllArticles`, van 27 naar 48 URLs.
+- **`llms.txt` gaf een 404.** Staat er nu, werkt zichzelf elk uur bij.
+- **AI-crawlers** staan expliciet toegestaan in `robots.txt`.
+
+### De GTA 6-hub
+
+`/gta-6` is de eerste themapagina. Nieuwsberichten zakken na een week weg, een
+hubpagina blijft staan en verzamelt de autoriteit.
+
+De feiten staan in `src/app/gta-6/data.ts`, gescheiden van de opmaak zodat de
+zichtbare pagina en het FAQPage-schema niet uit elkaar kunnen lopen. **Alle
+feiten komen uit onze eigen gepubliceerde artikelen**, niets is elders vandaan
+gehaald. Werk `LAST_UPDATED` bij zodra je iets wijzigt.
+
+Schema's op de pagina: FAQPage, VideoGame en BreadcrumbList.
+
 ## Openstaand
 
-- De scorelijst bevat nog ruis uit de Tweakers-feed, zoals
-  "Software-update - Win11Debloat". Het lekt niet door naar de site omdat de
-  curator het overslaat, maar de shortlist zou schoner kunnen.
-- De deel-knoppen onder artikelen (`Twitter / X`, `Facebook`, `WhatsApp`,
-  `Kopieer link`) doen niets, er hangt geen onClick aan.
-- `src/lib/seo.ts` claimt in de schema.org-data nog een Twitter-account via
-  `sameAs`. Controleren of dat account nog bestaat.
+In volgorde van rendement:
+
+1. **Indexing API aansluiten.** Nieuwe artikelen en de GTA-hub binnen uren bij
+   Google in plaats van weken. De API staat al aan in het Cloud-project.
+2. **Het pre-order-artikel herschrijven.** `gta-6-pre-orders-komen-eraan-...`
+   begint met "Hier is een beknopte samenvatting van alle info over" en leest
+   als een chatbot. Het staat live en krijgt vertoningen.
+3. **SEO-agent bouwen.** Wekelijkse mail met zoekwoorden op positie 5 tot 20,
+   pagina's met vertoningen maar nul klikken, en gaten in de dekking. Puur
+   rekenwerk op GSC-data, geen AI-call nodig. Wordt pas echt nuttig bij meer
+   data.
+4. **Tweede hub voor Nintendo Switch 2.** Daar staat de site al op positie 8,
+   dichterbij dan GTA.
+5. De deel-knoppen onder artikelen doen niets, er hangt geen onClick aan.
+6. `src/lib/seo.ts` claimt via `sameAs` nog een Twitter-account. Controleren of
+   dat bestaat.
+7. De scorelijst bevat nog wat ruis uit de Tweakers-feed.
+
+## Werkafspraken
+
+- **Stuur nooit testmails naar `redactie@gameinside.nl`.** Dat is een echt
+  redactieadres. Op 26 augustus gingen daar twee testmails heen met verzonnen
+  inhoud, waaronder een GTA-concept dat niet bestond. Gebruik `NOTIFY_TO` om
+  tijdens het testen naar een ander adres te sturen.
+- Wijzigingen aan de agent gelden pas vanaf de eerstvolgende run. De
+  GTA-voorrang werd gecommit om 17:49 en miste daardoor alle runs van die dag.
+  Draai `gh workflow run "Gameinside News Agent"` als je het meteen wilt zien.
