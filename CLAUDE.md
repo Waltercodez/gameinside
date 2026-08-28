@@ -94,6 +94,26 @@ project verwijderd en werkt niet. Het GitHub-secret met dezelfde naam werkt wel.
 Voor losse acties vanaf deze Mac werkt de CLI-login in
 `~/.config/sanity/config.json` (veld `authToken`).
 
+**GitHub schrapt geplande runs op het hele uur.** De cron stond op
+`0 5,8,11,14,17,20`. Op 25 en 26 augustus 2026 draaiden alle zes de runs, op
+27 en 28 nog maar een per dag: de gedeelde runnerpool is op het hele uur het
+drukst en `schedule` heeft daar de laagste prioriteit. Gevolg was 2 artikelen
+per dag in plaats van 10, zonder enige foutmelding — de runs die wel draaiden
+slaagden gewoon. Staat nu op `17 */2 * * *`. Zet dit nooit terug op minuut 0.
+Controleren met:
+`gh run list --workflow=daily-research.yml --limit 60 --json createdAt -q '.[].createdAt[0:10]' | sort | uniq -c`
+
+**Generieke woorden in `GAMING_KEYWORDS` lieten film- en tv-nieuws door.**
+"update", "reveal", "sequel" en "launch" staan net zo goed in een bericht over
+een Superman-film, en een enkele treffer was genoeg. Bovendien gold de filter
+alleen voor gemengde feeds, terwijl GamesRadar en IGN zelf ook film en comics
+brengen. De lijst is nu gesplitst in `GAMING_STRONG` (een treffer volstaat) en
+`GAMING_WEAK` (twee nodig), met `ENTERTAINMENT_KEYWORDS` als tegenhanger.
+Tweakers en andere gemengde feeds moeten een harde term laten zien
+(`isGamingStrict`). Let op bij het uitbreiden: `countMatches` matcht op
+woordgrenzen, dus een term als "reveal" ving eerder "reveals" niet. Daar zit nu
+een `(s|es)?`-uitgang op.
+
 **De agent stopte ooit stil.** Het Anthropic-tegoed raakte op, de workflow
 eindigde met exitcode 0 en er ging geen mail uit omdat de Gmail-secrets nooit
 bestonden. Nu eindigt de agent met exitcode 1 bij nul artikelen, waardoor GitHub
