@@ -23,7 +23,7 @@ const path = require('path');
 const { RSS_FEEDS, GAMING_KEYWORDS } = require('./sources.js');
 const {
   scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, isNotNews,
-  isGaming, isGamingStrict, isEntertainmentNoise,
+  isGaming, isGamingStrict, isEntertainmentNoise, curatorPool,
 } = require('./ranker.js');
 const { curateSafe, CURATOR_MODEL } = require('./curator.js');
 const { fetchPage } = require('./extract.js');
@@ -55,10 +55,17 @@ const PUBLISH_MIN_OUTLETS = Number(process.env.PUBLISH_MIN_OUTLETS || 4);
 // tien andere artikelen staan, is precies wat we niet willen.
 const PRIORITY_EXTRA = Number(process.env.PRIORITY_EXTRA || 2);
 
+// Hoeveel voorrangsverhalen er per run mee mogen. Op 1 houdt GTA de eerste
+// plek en gaat de tweede naar de rest van het gamingnieuws, zodat de
+// conceptenlijst niet uit louter GTA bestaat. Hoger zetten mag, maar dan
+// verdringt een drukke GTA-dag al het andere nieuws weer.
+const MAX_PRIORITY_PER_RUN = Number(process.env.MAX_PRIORITY_PER_RUN || 1);
+
 // Boven deze gelijkenis met een eerder gepubliceerde kop slaan we het over.
 const DEDUP_THRESHOLD = 0.34;
 
 const FAILED_DRAFTS_DIR = path.join(__dirname, 'failed-drafts');
+
 const NEW_ARTICLES_DIR = path.join(__dirname, '..', 'new articles');
 
 function log(msg) {
@@ -281,14 +288,16 @@ async function main() {
   // Voorrangsverhalen krijgen een gereserveerde plek en gaan buiten de curator
   // om. Anders kan hij ze alsnog laten liggen ten gunste van iets versers.
   const priorityClusters = clusters.filter((c) => c.lead.score.parts.priority > 0);
-  const takePriority = priorityClusters.slice(0, Math.min(1, priorityBudget));
+  const takePriority = priorityClusters.slice(0, Math.min(MAX_PRIORITY_PER_RUN, priorityBudget));
 
   const remaining = Math.max(0, normalBudget - takePriority.length);
-  const rest = clusters.filter((c) => !takePriority.includes(c));
+
+  const { rest, variety } = curatorPool(clusters, takePriority);
 
   let selected = takePriority;
   if (remaining > 0) {
-    log(`🎯 Curator (${CURATOR_MODEL}) kiest ${remaining} verhaal(en)...`);
+    const pool = variety ? 'overig nieuws' : 'alles, er is niets anders';
+    log(`🎯 Curator (${CURATOR_MODEL}) kiest ${remaining} verhaal(en) uit ${pool}...`);
     selected = [...takePriority, ...(await curateSafe(rest, remaining, warn))];
   }
 

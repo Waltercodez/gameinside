@@ -200,6 +200,22 @@ function isGaming(text) {
  * treffers te makkelijk: "Update ... Windows 11" haalt dat al met "update" en
  * "microsoft". Die feeds moeten een harde gamingterm laten zien.
  */
+/**
+ * Waar de curator uit mag kiezen nadat het voorrangsnieuws zijn plek heeft.
+ *
+ * Op een grote GTA-dag staan er tientallen GTA-verhalen bovenaan. Zonder deze
+ * scheiding vullen die elke plek en bestaat de conceptenlijst uit niets anders.
+ * Ligt er echt geen ander nieuws, dan is een tweede voorrangsverhaal beter dan
+ * een lege plek.
+ */
+function curatorPool(clusters, takePriority) {
+  const available = clusters.filter((c) => !takePriority.includes(c));
+  const others = available.filter((c) => c.lead.score.parts.priority === 0);
+  return others.length > 0
+    ? { rest: others, variety: true }
+    : { rest: available, variety: false };
+}
+
 function isGamingStrict(text) {
   return hasMatch(text.toLowerCase(), GAMING_STRONG);
 }
@@ -215,5 +231,5 @@ function isEntertainmentNoise(text) {
 }
 
 module.exports = {
-  isNotNews, isGaming, isGamingStrict, isEntertainmentNoise,
+  isNotNews, isGaming, isGamingStrict, isEntertainmentNoise, curatorPool,
   scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, countMatches };
