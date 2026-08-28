@@ -42,43 +42,70 @@ async function inspect(token, url) {
   return body.inspectionResult?.indexStatusResult || {};
 }
 
+/**
+ * Inspecteert alle URLs en geeft per URL de status terug.
+ * @returns {Promise<{url: string, status: string, lastCrawl: string|null}[]>}
+ */
+async function scan(urls) {
+  const lijst = urls && urls.length > 0 ? urls : await urlsUitSitemap();
+  const token = await getAccessToken(['https://www.googleapis.com/auth/webmasters.readonly']);
+  const resultaat = [];
+
+  for (const url of lijst) {
+    try {
+      const r = await inspect(token, url);
+      resultaat.push({
+        url,
+        status: r.coverageState || 'onbekend',
+        lastCrawl: r.lastCrawlTime || null,
+      });
+    } catch (err) {
+      resultaat.push({ url, status: `FOUT: ${err.message.slice(0, 60)}`, lastCrawl: null });
+    }
+    await new Promise((r) => setTimeout(r, PAUZE_MS));
+  }
+
+  return resultaat;
+}
+
+/** Telt per status hoeveel URLs er zijn. */
+function samenvatten(resultaat) {
+  const per = new Map();
+  for (const r of resultaat) {
+    if (!per.has(r.status)) per.set(r.status, []);
+    per.get(r.status).push(r.url.replace(BASE_URL, '') || '/');
+  }
+  return [...per.entries()].sort((a, b) => b[1].length - a[1].length);
+}
+
+/** Staat deze status voor "hij staat in de index"? */
+function isGeindexeerd(status) {
+  return /^Submitted and indexed|^Indexed/i.test(status);
+}
+
 async function main() {
   const only = process.argv.slice(2).filter((a) => !a.startsWith('-'));
   const urls = only.length > 0 ? only : await urlsUitSitemap();
 
-  const token = await getAccessToken(['https://www.googleapis.com/auth/webmasters.readonly']);
-  const perStatus = new Map();
-
   console.log(`${urls.length} URLs inspecteren...\n`);
+  const resultaat = await scan(urls);
 
-  for (const url of urls) {
-    let status;
-    try {
-      const r = await inspect(token, url);
-      status = r.coverageState || 'onbekend';
-    } catch (err) {
-      status = `FOUT: ${err.message.slice(0, 60)}`;
-    }
-    if (!perStatus.has(status)) perStatus.set(status, []);
-    perStatus.get(status).push(url.replace(BASE_URL, '') || '/');
-    await new Promise((r) => setTimeout(r, PAUZE_MS));
-  }
-
-  const gesorteerd = [...perStatus.entries()].sort((a, b) => b[1].length - a[1].length);
-
-  for (const [status, lijst] of gesorteerd) {
+  for (const [status, lijst] of samenvatten(resultaat)) {
     console.log(`${lijst.length}x  ${status}`);
     for (const pad of lijst) console.log(`      ${pad}`);
     console.log('');
   }
 
-  const geindexeerd = gesorteerd
-    .filter(([s]) => /^Submitted and indexed|^Indexed/i.test(s))
-    .reduce((n, [, l]) => n + l.length, 0);
-  console.log(`Samengevat: ${geindexeerd} van de ${urls.length} URLs staat in de index.`);
+  const geindexeerd = resultaat.filter((r) => isGeindexeerd(r.status)).length;
+  console.log(`Samengevat: ${geindexeerd} van de ${resultaat.length} URLs staat in de index.`);
 }
 
-main().catch((err) => {
-  console.error(`Fout: ${err.message}`);
-  process.exit(1);
-});
+module.exports = { scan, samenvatten, isGeindexeerd, urlsUitSitemap, BASE_URL };
+
+// Alleen draaien als dit script direct wordt aangeroepen, niet bij require.
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(`Fout: ${err.message}`);
+    process.exit(1);
+  });
+}

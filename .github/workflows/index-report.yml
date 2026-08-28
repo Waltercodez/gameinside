@@ -1,0 +1,51 @@
+name: Indexatierapport
+
+on:
+  schedule:
+    # Maandagochtend. Niet op het hele uur, want daar schrapt GitHub geplande
+    # runs als eerste; zie de toelichting in daily-research.yml.
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Alleen tonen, geen mail en geen nieuwe baseline'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  meten:
+    runs-on: ubuntu-latest
+    # De URL Inspection API doet er een paar seconden over per URL.
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Meten en mailen
+        working-directory: seo/scripts
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: node index-report.js ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Bewaar de nieuwe baseline
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Gameinside Bot"
+          git add seo/index-baseline.json
+          if git diff --staged --quiet; then
+            echo "Geen wijziging in de baseline"
+            exit 0
+          fi
+          git commit -m "chore: indexatie-baseline [skip ci]"
+          git pull --rebase --autostash origin main && git push

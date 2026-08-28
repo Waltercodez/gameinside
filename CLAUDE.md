@@ -263,10 +263,46 @@ De eerste meting op 28 augustus 2026, direct na het aansluiten van de API:
 gecontroleerd werden wel gecrawld waren (april en juli) en toch niet
 geindexeerd. Volledige uitslag in `seo/index-status-2026-08-28.md`.
 
-Dat betekent dat de Indexing API het probleem maar half raakt. Voor de
-hubpagina's en verse artikelen is hij zinvol, voor de bestaande voorraad niet.
-Reken hier dus niet op een sprong in verkeer, en meet het na een week opnieuw
-met `node index-status.js` in plaats van het aan te nemen.
+De volledige nulmeting van 28 augustus 2026, vlak na het aansluiten:
+
+| Status | Aantal |
+|---|---|
+| URL is unknown to Google (nooit gecrawld) | 49 |
+| Submitted and indexed | 3 |
+| Crawled - currently not indexed | 2 |
+
+Dat is dus vooral een **vindbaarheidsprobleem**, geen kwaliteitsprobleem. Er
+zit niets in de weg: `robots.txt` is in orde, de homepage heeft echte
+`<a href>`-links naar 16 artikelen en een artikelpagina linkt naar 7 andere.
+De paden zijn er, Google loopt ze niet af. Dat is het beeld van te weinig
+crawlbudget door te weinig autoriteit.
+
+**Trek hier geen conclusies uit een steekproef.** Ik keek eerst naar drie URLs,
+daar zaten toevallig allebei de afgewezen gevallen in, en de conclusie was
+precies omgekeerd aan wat de volle meting liet zien.
+
+### De wekelijkse hermeting
+
+`index-report.js` draait elke maandag via `.github/workflows/index-report.yml`,
+vergelijkt met `seo/index-baseline.json` en mailt het verschil via Resend. Daarna
+schrijft hij de nieuwe baseline terug in de repo.
+
+```bash
+cd seo/scripts
+NOTIFY_TO=jouw@adres.nl node index-report.js       # meten, mailen, baseline bij
+node index-report.js --dry-run                     # meten, verder niets
+```
+
+De uitslag bepaalt wat er daarna moet gebeuren, en dat zijn twee tegengestelde
+richtingen:
+
+- **unknown wordt indexed** — vindbaarheid was het probleem en het is opgelost.
+- **unknown wordt "crawled - currently not indexed"** — Google leest ons nu wel
+  en zegt alsnog nee. Dan is de inhoud aan de beurt, en dan hebben we tientallen
+  gevallen om op te sturen in plaats van de twee die we nu hebben.
+
+Verander in die week zo min mogelijk anders, anders lopen twee wijzigingen door
+elkaar en leren we van geen van beide iets.
 
 ```bash
 cd seo/scripts
@@ -283,6 +319,43 @@ cd seo/scripts && node -e "require('./google-auth.js').getAccessToken(['https://
 Het service-account komt in Actions uit het secret `GOOGLE_SERVICE_ACCOUNT_JSON`
 en lokaal uit `~/.config/claude-seo/`. `google-auth.js` kijkt eerst naar de
 env-var, zodat een CI-run nooit op een lokaal bestand terugvalt.
+
+## Verwijzen naar ons eigen archief
+
+De agent herschreef berichten van Eurogamer en IGN met dezelfde feiten. Dat is
+voor Google geen reden om ons naast de bron te zetten, want ze hebben de bron
+al. Dat risico staat los van de meting hierboven en komt hoe dan ook op ons af
+zodra Google die 49 pagina's gaat lezen.
+
+Ons archief is het enige dat de bron niet heeft. `automation/archive.js` zoekt
+op woordoverlap wat wij er zelf eerder over schreven en geeft dat mee aan de
+writer, die het als journalistiek verband verwerkt met een interne link.
+
+Op hetzelfde GTA-uitstelbericht leverde dat twee feiten op die Eurogamer niet
+had: de ontslagen vakbondsleden en de 27 minuten gameplay op een standaard PS5.
+Zonder archief was het een nette hervertelling en verder niets.
+
+**Het gaat om inhoud, niet om stijl.** We mogen klinken als IGN. Wat niet werkt
+is dezelfde feiten in andere woorden, want dan krijgt een lezer die op ons klikt
+precies hetzelfde te weten als bij de bron.
+
+Drie dingen die daarvoor moesten kloppen, en die samen kapot gaan als je er een
+weghaalt:
+
+1. `archive.js` leest **zowel Sanity als `src/data/articles.ts`**. De helft van
+   de artikelen staat niet in het CMS; zonder die tweede helft mist de agent
+   alle reviews en de Switch 2-stukken. Geen AI-call, alleen woordoverlap. Onder
+   `MIN_SCORE` (2 treffers) komt er geen link, want een gezochte verwijzing is
+   erger dan geen.
+2. `sanity-draft.js` kende **geen links**. `[tekst](/pad)` belandde letterlijk
+   als tekst in het artikel. Nu een `link`-mark met `markDefs`. Alleen paden die
+   met `/` beginnen worden een echte link; een externe URL is altijd een
+   vergissing van het model en wordt platte tekst.
+3. `page.tsx` rendert de `link`-mark. Zonder die regel staat de link wel in
+   Sanity maar niet op de pagina.
+
+Verzonnen slugs worden in `writer.js` uit de tekst gefilterd, de linktekst blijft
+staan. Faalt het archief, dan schrijft de agent zonder context door.
 
 ## Openstaand
 
