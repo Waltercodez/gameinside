@@ -99,6 +99,17 @@ const portableTextComponents: PortableTextComponents = {
     number: ({ children }) => <li className="leading-relaxed">{children}</li>,
   },
   marks: {
+    // Interne links naar onze eigen artikelen. De nieuwsagent zet die erin om
+    // nieuws aan onze eerdere berichtgeving te verbinden; sanity-draft.js laat
+    // alleen paden door die met / beginnen, dus dit is altijd intern.
+    link: ({ children, value }) => (
+      <Link
+        href={value?.href ?? '#'}
+        className="text-[#00aaff] hover:text-[#4dc4ff] underline underline-offset-2 transition-colors"
+      >
+        {children}
+      </Link>
+    ),
     strong: ({ children }) => (
       <strong className="text-white font-semibold">{children}</strong>
     ),

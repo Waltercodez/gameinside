@@ -18,33 +18,70 @@ function randomKey() {
   return Math.random().toString(36).slice(2, 14);
 }
 
+// Ofwel **vet**, ofwel een [link](/pad). In een keer doorlopen, want twee
+// aparte passes zouden over elkaars resultaat heen lopen.
+const INLINE_TOKEN = /\*\*([\s\S]+?)\*\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
+
 /**
- * Parse a line of text with **bold** markers into Portable Text span objects.
+ * Alleen interne links worden een echte link.
+ *
+ * De agent hoort niet naar bronnen te linken; we schrijven namens Gameinside
+ * zelf en er staan bewust geen bronvermeldingen onder artikelen. Een externe
+ * URL is dus altijd een vergissing van het model. Die laten we als gewone
+ * tekst staan in plaats van hem te volgen.
+ */
+function isInterneLink(href) {
+  return typeof href === 'string' && href.startsWith('/') && !href.startsWith('//');
+}
+
+/**
+ * Parse a line of text with **bold** and [text](/internal/link) markers into
+ * Portable Text spans, plus the markDefs the link marks refer to.
+ *
+ * @returns {{children: object[], markDefs: object[]}}
  */
 function parseInlineText(text) {
-  const spans = [];
-  let remaining = text;
+  const children = [];
+  const markDefs = [];
 
-  while (remaining.length > 0) {
-    const match = remaining.match(/^([\s\S]*?)\*\*([\s\S]+?)\*\*([\s\S]*)$/);
-    if (match) {
-      if (match[1]) {
-        spans.push({ _type: 'span', _key: randomKey(), text: match[1], marks: [] });
-      }
-      spans.push({ _type: 'span', _key: randomKey(), text: match[2], marks: ['strong'] });
-      remaining = match[3];
+  const push = (str, marks) => {
+    if (str) children.push({ _type: 'span', _key: randomKey(), text: str, marks });
+  };
+
+  let laatste = 0;
+  let match;
+  INLINE_TOKEN.lastIndex = 0;
+
+  while ((match = INLINE_TOKEN.exec(text)) !== null) {
+    push(text.slice(laatste, match.index), []);
+
+    if (match[1] !== undefined) {
+      push(match[1], ['strong']);
+    } else if (isInterneLink(match[3])) {
+      const key = randomKey();
+      markDefs.push({ _type: 'link', _key: key, href: match[3] });
+      push(match[2], [key]);
     } else {
-      spans.push({ _type: 'span', _key: randomKey(), text: remaining, marks: [] });
-      break;
+      // Externe of kapotte link: de tekst blijft, de opmaak vervalt.
+      push(match[2], []);
     }
+
+    laatste = INLINE_TOKEN.lastIndex;
   }
 
-  return spans.length > 0 ? spans : [{ _type: 'span', _key: randomKey(), text: '', marks: [] }];
+  push(text.slice(laatste), []);
+
+  if (children.length === 0) {
+    children.push({ _type: 'span', _key: randomKey(), text: '', marks: [] });
+  }
+
+  return { children, markDefs };
 }
 
 /**
  * Convert a markdown string (from Claude) to a Portable Text block array.
- * Handles: # headings, ## headings, ### headings, **bold**, normal paragraphs.
+ * Handles: # headings, ## headings, ### headings, **bold**, [internal links],
+ * normal paragraphs.
  */
 function markdownToPortableText(markdown) {
   const paragraphs = markdown.split(/\n{2,}/).filter((p) => p.trim());
@@ -82,13 +119,14 @@ function markdownToPortableText(markdown) {
       };
     }
 
-    // Normal paragraph — parse inline bold
+    // Normal paragraph — parse inline bold and internal links
+    const { children, markDefs } = parseInlineText(trimmed);
     return {
       _type: 'block',
       _key: randomKey(),
       style: 'normal',
-      markDefs: [],
-      children: parseInlineText(trimmed),
+      markDefs,
+      children,
     };
   });
 }
@@ -164,4 +202,4 @@ async function saveDraft(article, options = {}) {
   return doc._id;
 }
 
-module.exports = { saveDraft, uploadImage };
+module.exports = { saveDraft, uploadImage, markdownToPortableText };

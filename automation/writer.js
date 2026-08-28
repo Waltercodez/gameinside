@@ -1,4 +1,5 @@
 const Anthropic = require('@anthropic-ai/sdk');
+const { zoekGerelateerd } = require('./archive.js');
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -33,7 +34,16 @@ Zoekmachines:
 - De excerpt is de omschrijving in de zoekresultaten. Maximaal 150 tekens, een
   volledige zin, en herhaal het hoofdzoekwoord.
 - Gebruik in de eerste alinea de woorden waarop iemand zou zoeken.
-- Neem de stelligheid van de bron over. Schrijft de bron "mikt op" of "streeft naar", schrijf dan niet "bevestigd" of "staat vast". Dit geldt ook voor de titel en de excerpt.`;
+- Neem de stelligheid van de bron over. Schrijft de bron "mikt op" of "streeft naar", schrijf dan niet "bevestigd" of "staat vast". Dit geldt ook voor de titel en de excerpt.
+
+Ons eigen archief:
+- Krijg je een lijst met eerdere Gameinside-artikelen, dan bevat het artikel een alinea die dit nieuws verbindt met wat wij er eerder over schreven.
+- Verwijs alleen naar een artikel als er een echt inhoudelijk verband is. Bij twijfel: weglaten. Een gezochte verwijzing is erger dan geen.
+- Verwijs met een markdown-link naar het opgegeven pad: [beschrijvende tekst](/artikel/de-slug). Gebruik alleen paden uit de lijst, verzin er nooit een.
+- De linktekst beschrijft waar het artikel over gaat. Niet "lees hier" of "ons eerdere artikel".
+- Maximaal twee verwijzingen per artikel, en nooit in de eerste alinea.
+- Schrijf de verwijzing als journalistiek verband, niet als voetnoot. Dus "Toen de pre-order-IDs in juni opdoken leek een najaarsrelease al waarschijnlijk", niet "Zie ook ons eerdere artikel".
+- Link nooit naar een externe site. We schrijven namens Gameinside zelf.`;
 
 // Onder deze lengte is het geen bruikbaar artikel meer.
 const MIN_CONTENT_CHARS = 1200;
@@ -92,7 +102,36 @@ function trimToLastCompleteParagraph(text, minChars) {
  * RSS-omschrijving als terugval, plus context uit andere bronnen die
  * hetzelfde verhaal brachten.
  */
-function buildSourceBlock(newsItem) {
+/**
+ * Haalt links naar paden die we niet zelf aangeboden hebben eruit.
+ *
+ * Het model verzint af en toe een plausibele slug. Een interne link naar een
+ * 404 is slechter dan geen link: de lezer klapt eruit en Google ziet een
+ * kapotte verwijzing. De linktekst blijft staan, alleen de link vervalt.
+ *
+ * @returns {{content: string, verwijderd: number, gebruikt: number}}
+ */
+function schoonInterneLinks(content, gerelateerd) {
+  const toegestaan = new Set((gerelateerd || []).map((a) => `/artikel/${a.slug}`));
+  let verwijderd = 0;
+  let gebruikt = 0;
+
+  const schoon = String(content).replace(
+    /\[([^\]]+)\]\(([^)\s]+)\)/g,
+    (heel, tekst, href) => {
+      if (toegestaan.has(href)) {
+        gebruikt += 1;
+        return heel;
+      }
+      verwijderd += 1;
+      return tekst;
+    }
+  );
+
+  return { content: schoon, verwijderd, gebruikt };
+}
+
+function buildSourceBlock(newsItem, gerelateerd) {
   const parts = [
     `Kop: ${newsItem.title}`,
     `Bron: ${newsItem.source}`,
@@ -113,6 +152,19 @@ function buildSourceBlock(newsItem) {
     parts.push(`\nAndere bronnen over hetzelfde nieuws:\n${extra}`);
   }
 
+  if (gerelateerd && gerelateerd.length > 0) {
+    const eigen = gerelateerd
+      .map((a) => {
+        const datum = a.publishedAt ? ` (${a.publishedAt.slice(0, 10)})` : '';
+        const kort = a.excerpt ? `\n  ${a.excerpt.slice(0, 200)}` : '';
+        return `- ${a.title}${datum}\n  pad: /artikel/${a.slug}${kort}`;
+      })
+      .join('\n');
+    parts.push(
+      `\nWat wij hier eerder zelf over schreven. Dit heeft de bron niet, dus dit is wat ons artikel onderscheidt:\n${eigen}`
+    );
+  }
+
   return parts.join('\n');
 }
 
@@ -124,9 +176,14 @@ function buildSourceBlock(newsItem) {
 async function writeArticle(newsItem, options = {}) {
   const model = options.forPublish ? WRITER_MODEL_PUBLISH : WRITER_MODEL;
 
+  // Wat wij er zelf eerder over schreven. Zonder dit is ons artikel dezelfde
+  // feiten als de bron in andere woorden, en dat is voor Google geen reden om
+  // ons naast de bron in de resultaten te zetten.
+  const gerelateerd = await zoekGerelateerd(newsItem);
+
   const prompt = `Schrijf een artikel op basis van dit bronmateriaal:
 
-${buildSourceBlock(newsItem)}
+${buildSourceBlock(newsItem, gerelateerd)}
 
 Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra tekst:
 {
@@ -160,6 +217,13 @@ Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra teks
 
   if (!article.title || !article.content || !article.slug) {
     throw new Error('Artikel mist title, slug of content');
+  }
+
+  const links = schoonInterneLinks(article.content, gerelateerd);
+  article.content = links.content;
+  article.interneLinks = links.gebruikt;
+  if (links.verwijderd > 0) {
+    console.warn(`   ${links.verwijderd} verzonnen interne link(s) verwijderd`);
   }
 
   // Raakte het antwoord de tokenlimiet, dan is het gegarandeerd incompleet.
