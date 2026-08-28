@@ -17,6 +17,37 @@ function loadConfig() {
   return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
 }
 
+/**
+ * Het service-account komt uit een van twee plekken.
+ *
+ * In GitHub Actions bestaat ~/.config/claude-seo niet, daar staat de hele JSON
+ * als secret in GOOGLE_SERVICE_ACCOUNT_JSON. Lokaal wijst google-api.json naar
+ * het bestand op schijf. De env-var wint, zodat een CI-run nooit per ongeluk
+ * op een lokaal bestand terugvalt.
+ */
+function loadServiceAccount() {
+  const fromEnv = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+  if (fromEnv && fromEnv.trim()) {
+    try {
+      return JSON.parse(fromEnv);
+    } catch (err) {
+      throw new Error(`GOOGLE_SERVICE_ACCOUNT_JSON is geen geldige JSON: ${err.message}`);
+    }
+  }
+
+  if (!fs.existsSync(CONFIG_PATH)) {
+    throw new Error(
+      `Geen service-account gevonden. Zet GOOGLE_SERVICE_ACCOUNT_JSON of maak ${CONFIG_PATH}`
+    );
+  }
+
+  const config = loadConfig();
+  if (!config.service_account_path) {
+    throw new Error('Geen service_account_path in ~/.config/claude-seo/google-api.json');
+  }
+  return JSON.parse(fs.readFileSync(config.service_account_path, 'utf-8'));
+}
+
 function base64url(input) {
   return Buffer.from(input)
     .toString('base64')
@@ -29,12 +60,7 @@ function base64url(input) {
  * @param {string[]} scopes  bijvoorbeeld ['https://www.googleapis.com/auth/webmasters.readonly']
  */
 async function getAccessToken(scopes) {
-  const config = loadConfig();
-  if (!config.service_account_path) {
-    throw new Error('Geen service_account_path in ~/.config/claude-seo/google-api.json');
-  }
-
-  const sa = JSON.parse(fs.readFileSync(config.service_account_path, 'utf-8'));
+  const sa = loadServiceAccount();
   const now = Math.floor(Date.now() / 1000);
 
   const header = base64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
@@ -71,4 +97,4 @@ async function getAccessToken(scopes) {
   return body.access_token;
 }
 
-module.exports = { getAccessToken, loadConfig, CONFIG_PATH };
+module.exports = { getAccessToken, loadConfig, loadServiceAccount, CONFIG_PATH };

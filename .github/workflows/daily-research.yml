@@ -56,13 +56,23 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: node news-fetcher.js ${{ inputs.dry_run && '--dry-run' || '' }}
 
+      - name: Meld nieuwe URLs bij Google
+        # Na de agent, zodat verse artikelen meteen meegaan. Nooit blokkerend:
+        # de sitemap doet het werk ook zonder deze stap, dit versnelt alleen.
+        if: ${{ !inputs.dry_run }}
+        working-directory: automation
+        continue-on-error: true
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node index-sweep.js
+
       - name: Bewaar state
         # always() zodat de dedup-state ook bewaard blijft als de agent faalt.
         if: ${{ always() && !inputs.dry_run }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Gameinside Bot"
-          git add automation/state.json
+          git add automation/state.json automation/indexed.json
           if git diff --staged --quiet; then
             echo "Geen wijziging in state.json"
             exit 0

@@ -39,3 +39,6 @@ automation/failed-drafts/
 
 # Sanity Studio bouwoutput (wordt door `sanity deploy` geregenereerd)
 studio/dist/
+
+# TypeScript incrementele buildinfo
+tsconfig.tsbuildinfo

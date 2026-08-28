@@ -128,7 +128,8 @@ zelf mailt, en de overzichtsmail loopt via Resend.
 
 ## GitHub-secrets
 
-`ANTHROPIC_API_KEY`, `SANITY_API_TOKEN`, `RESEND_API_KEY`.
+`ANTHROPIC_API_KEY`, `SANITY_API_TOKEN`, `RESEND_API_KEY`,
+`GOOGLE_SERVICE_ACCOUNT_JSON` (de volledige service-account-JSON).
 De oude `GMAIL_USER` en `GMAIL_APP_PASSWORD` zijn niet meer in gebruik.
 
 ## Commando's
@@ -139,6 +140,7 @@ npm run build                    # productiebuild
 
 cd automation
 npm run check-feeds              # controleer of alle feeds nog leven
+npm run index-sweep              # nieuwe URLs bij Google aanmelden
 npm run dry-run                  # toon de selectie, schrijf niets
 npm run test                     # schrijf artikelen, geen mail
 npm start                        # volledige run
@@ -202,25 +204,76 @@ gehaald. Werk `LAST_UPDATED` bij zodra je iets wijzigt.
 
 Schema's op de pagina: FAQPage, VideoGame en BreadcrumbList.
 
+### Indexing API
+
+`automation/index-sweep.js` draait als stap in de agent-workflow en meldt URLs
+uit de sitemap aan bij Google die nog niet eerder aangemeld zijn. Wat geslaagd
+is staat in `automation/indexed.json`, dat wordt net als `state.json` na elke
+run gecommit. Mislukte meldingen worden niet onthouden, die gaan volgende run
+vanzelf opnieuw.
+
+Handmatig aanmelden, bijvoorbeeld na het herschrijven van een artikel:
+
+```bash
+cd seo/scripts
+node submit-url.js https://gameinside.nl/artikel/de-slug
+node submit-url.js --sitemap                    # alles wat nog ontbreekt
+node submit-url.js --status https://gameinside.nl/gta-6
+```
+
+**Waarom een sweep over de sitemap en niet een melding zodra de agent schrijft.**
+`PUBLISH_MIN_OUTLETS` staat op 4, dus de agent zet zelf zelden iets live; de
+meeste artikelen worden concept en gaan met de hand live. Een melding op het
+moment van schrijven zou die nooit zien. Bovendien werkt een URL aanmelden die
+nog niet op te halen is averechts, en wat in de sitemap staat is wel bereikbaar.
+Prijs is een vertraging van maximaal een half uur, de `revalidate` van de
+sitemap.
+
+**Google documenteert deze API alleen voor JobPosting en BroadcastEvent.**
+Nieuwsartikelen vallen daar formeel buiten. In de praktijk pikt Google het vaak
+wel op, maar er is geen garantie en Google mag het zonder aankondiging negeren.
+Daarom is de stap `continue-on-error` en eindigt het script altijd met exitcode
+0: dit is winst bovenop de sitemap, geen vervanging ervan. Werkt het niet, dan
+is de eerlijke conclusie dat we terugvallen op de sitemap en dat er niets stuk
+is.
+
+**Twee dingen die buiten de repo geregeld moeten zijn:**
+
+1. De Web Search Indexing API moet aanstaan in Cloud-project `993224032567`.
+   Op 28 augustus 2026 stond hij nog uit, ondanks een eerdere aantekening dat
+   het al geregeld was. Het service-account mag hem niet zelf aanzetten
+   (`AUTH_PERMISSION_DENIED` op serviceusage), dat moet via de console.
+2. Het service-account moet **Owner** zijn op `sc-domain:gameinside.nl`, niet
+   Full. Nu staat het op `siteFullUser` en dat geeft een 403 op de Indexing API.
+   Search Console, Instellingen, Gebruikers en machtigingen.
+
+Controleren of stap 2 goed staat:
+
+```bash
+cd seo/scripts && node -e "require('./google-auth.js').getAccessToken(['https://www.googleapis.com/auth/webmasters.readonly']).then(t=>fetch('https://www.googleapis.com/webmasters/v3/sites',{headers:{Authorization:'Bearer '+t}}).then(r=>r.json()).then(j=>console.log(j.siteEntry)))"
+```
+
+Het service-account komt in Actions uit het secret `GOOGLE_SERVICE_ACCOUNT_JSON`
+en lokaal uit `~/.config/claude-seo/`. `google-auth.js` kijkt eerst naar de
+env-var, zodat een CI-run nooit op een lokaal bestand terugvalt.
+
 ## Openstaand
 
 In volgorde van rendement:
 
-1. **Indexing API aansluiten.** Nieuwe artikelen en de GTA-hub binnen uren bij
-   Google in plaats van weken. De API staat al aan in het Cloud-project.
-2. **Het pre-order-artikel herschrijven.** `gta-6-pre-orders-komen-eraan-...`
+1. **Het pre-order-artikel herschrijven.** `gta-6-pre-orders-komen-eraan-...`
    begint met "Hier is een beknopte samenvatting van alle info over" en leest
    als een chatbot. Het staat live en krijgt vertoningen.
-3. **SEO-agent bouwen.** Wekelijkse mail met zoekwoorden op positie 5 tot 20,
+2. **SEO-agent bouwen.** Wekelijkse mail met zoekwoorden op positie 5 tot 20,
    pagina's met vertoningen maar nul klikken, en gaten in de dekking. Puur
    rekenwerk op GSC-data, geen AI-call nodig. Wordt pas echt nuttig bij meer
    data.
-4. **Tweede hub voor Nintendo Switch 2.** Daar staat de site al op positie 8,
+3. **Tweede hub voor Nintendo Switch 2.** Daar staat de site al op positie 8,
    dichterbij dan GTA.
-5. De deel-knoppen onder artikelen doen niets, er hangt geen onClick aan.
-6. `src/lib/seo.ts` claimt via `sameAs` nog een Twitter-account. Controleren of
+4. De deel-knoppen onder artikelen doen niets, er hangt geen onClick aan.
+5. `src/lib/seo.ts` claimt via `sameAs` nog een Twitter-account. Controleren of
    dat bestaat.
-7. De scorelijst bevat nog wat ruis uit de Tweakers-feed.
+6. De scorelijst bevat nog wat ruis uit de Tweakers-feed.
 
 ## Werkafspraken
 
