@@ -218,7 +218,7 @@ Handmatig aanmelden, bijvoorbeeld na het herschrijven van een artikel:
 cd seo/scripts
 node submit-url.js https://gameinside.nl/artikel/de-slug
 node submit-url.js --sitemap                    # alles wat nog ontbreekt
-node submit-url.js --status https://gameinside.nl/gta-6
+node submit-url.js --status https://gameinside.nl/gta-6   # loopt achter, zie hieronder
 ```
 
 **Waarom een sweep over de sitemap en niet een melding zodra de agent schrijft.**
@@ -237,17 +237,44 @@ Daarom is de stap `continue-on-error` en eindigt het script altijd met exitcode
 is de eerlijke conclusie dat we terugvallen op de sitemap en dat er niets stuk
 is.
 
-**Twee dingen die buiten de repo geregeld moeten zijn:**
+**Twee dingen die buiten de repo geregeld zijn, op 28 augustus 2026:**
 
-1. De Web Search Indexing API moet aanstaan in Cloud-project `993224032567`.
-   Op 28 augustus 2026 stond hij nog uit, ondanks een eerdere aantekening dat
-   het al geregeld was. Het service-account mag hem niet zelf aanzetten
-   (`AUTH_PERMISSION_DENIED` op serviceusage), dat moet via de console.
-2. Het service-account moet **Owner** zijn op `sc-domain:gameinside.nl`, niet
-   Full. Nu staat het op `siteFullUser` en dat geeft een 403 op de Indexing API.
+1. De Web Search Indexing API staat aan in Cloud-project `993224032567`. Hij
+   stond uit, ondanks een eerdere aantekening dat het al geregeld was. Het
+   service-account mag hem niet zelf aanzetten (`AUTH_PERMISSION_DENIED` op
+   serviceusage), dat moet via de console.
+2. Het service-account is **Owner** op `sc-domain:gameinside.nl`, niet Full.
+   Het stond op `siteFullUser` en dat geeft een 403 op de Indexing API.
    Search Console, Instellingen, Gebruikers en machtigingen.
 
-Controleren of stap 2 goed staat:
+### Wat aanmelden wel en niet oplost
+
+`index-status.js` vraagt per URL bij Search Console op wat Google er echt mee
+gedaan heeft. Dat onderscheidt twee problemen die van buiten hetzelfde lijken:
+
+- **"URL is unknown to Google"** — niet gevonden. Hier helpt aanmelden.
+- **"Crawled - currently not indexed"** — wel gevonden, niet goed genoeg
+  bevonden. Hier helpt aanmelden **niets**. Google is er geweest en heeft
+  besloten het niet op te nemen. Alleen betere inhoud en inkomende links
+  veranderen dat.
+
+De eerste meting op 28 augustus 2026, direct na het aansluiten van de API:
+`/gta-6` was onbekend bij Google en nooit gecrawld, terwijl de artikelen die
+gecontroleerd werden wel gecrawld waren (april en juli) en toch niet
+geindexeerd. Volledige uitslag in `seo/index-status-2026-08-28.md`.
+
+Dat betekent dat de Indexing API het probleem maar half raakt. Voor de
+hubpagina's en verse artikelen is hij zinvol, voor de bestaande voorraad niet.
+Reken hier dus niet op een sprong in verkeer, en meet het na een week opnieuw
+met `node index-status.js` in plaats van het aan te nemen.
+
+```bash
+cd seo/scripts
+node index-status.js                              # hele sitemap
+node index-status.js https://gameinside.nl/gta-6  # losse URLs
+```
+
+Controleren of het service-account nog Owner is:
 
 ```bash
 cd seo/scripts && node -e "require('./google-auth.js').getAccessToken(['https://www.googleapis.com/auth/webmasters.readonly']).then(t=>fetch('https://www.googleapis.com/webmasters/v3/sites',{headers:{Authorization:'Bearer '+t}}).then(r=>r.json()).then(j=>console.log(j.siteEntry)))"
