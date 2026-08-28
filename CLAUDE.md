@@ -96,10 +96,12 @@ deployment aangemaakt. Controleren met:
 `gh api repos/Waltercodez/gameinside/deployments --jq '.[0].sha'`
 Oplossen met een lege commit: `git commit --allow-empty -m "chore: trigger deploy"`
 
-**Twee Sanity-tokens.** De `SANITY_API_TOKEN` in `automation/.env` is uit het
-project verwijderd en werkt niet. Het GitHub-secret met dezelfde naam werkt wel.
-Voor losse acties vanaf deze Mac werkt de CLI-login in
-`~/.config/sanity/config.json` (veld `authToken`).
+**Twee Sanity-tokens.** De oorspronkelijke `SANITY_API_TOKEN` in
+`automation/.env` was uit het project verwijderd en gaf "project user not
+found". Dat kostte een keer een verkeerde diagnose: het leek alsof `archive.js`
+kapot was. In `.env` staat nu de token van de CLI-login
+(`~/.config/sanity/config.json`, veld `authToken`). Het GitHub-secret is een
+andere token en werkt gewoon.
 
 **GitHub schrapt geplande runs op het hele uur.** De cron stond op
 `0 5,8,11,14,17,20`. Op 25 en 26 augustus 2026 draaiden alle zes de runs, op
