@@ -59,6 +59,13 @@ dagcap uitkomen. Reden: het is het belangrijkste onderwerp voor de lezers en het
 mag nooit een dag blijven liggen omdat er toevallig al tien andere artikelen
 staan. Instelbaar via `PRIORITY_TOPICS` in `sources.js`.
 
+Per run gaat er **maximaal een** voorrangsverhaal mee (`MAX_PRIORITY_PER_RUN`).
+Na de Extended Look van augustus 2026 ging 41 van de 50 verhalen over GTA, en
+de curator vulde daarmee ook de tweede plek: de conceptenlijst bestond uit niets
+anders. De curator ziet nu alleen het niet-voorrangsnieuws (`curatorPool` in
+`ranker.js`), tenzij er echt niets anders ligt. Hoger zetten laat een drukke
+GTA-dag weer alles verdringen.
+
 `PUBLISH_MIN_OUTLETS` staat op **4**. Verhalen die door vier of meer
 onafhankelijke redacties gebracht worden gaan direct live, de rest wordt
 concept. De verdeling is sterk scheef: van ~185 verhalen heeft de overgrote
