@@ -94,11 +94,53 @@ const NOT_NEWS_PATTERNS = [
   /\bretrospective\b/i,
   /\bround up\b/i,
   /\bwhere to (buy|pre-?order)\b/i,
+  // "7 Years Later, This Stephen King Thriller Remains..." — terugblik, geen nieuws.
+  /\b\d+\s+years?\s+later\b/i,
+  /\bstill (holds up|worth playing)\b/i,
+  /^icymi\b/i,
+  /\bbox office\b/i,
+];
+
+// Gamingsites brengen ook film, tv en comics. Zulke stukken halen de
+// gaming-filter omdat woorden als "sequel", "trailer" en "reveal" erin staan.
+// Een item is pas echt entertainmentruis als het hierop matcht en er geen
+// enkele harde gamingterm in staat; zo blijft "GTA 6 Netflix-onthulling" wel
+// staan, maar "Andor-ster over Superman-sequel" niet.
+const ENTERTAINMENT_KEYWORDS = [
+  'box office', 'rotten tomatoes', 'streaming service', 'now streaming',
+  'movie', 'film', 'tv show', 'tv series', 'miniseries', 'sitcom',
+  'showrunner', 'screenwriter', 'director', 'cast member', 'co-star',
+  'marvel cinematic', 'mcu', 'dceu', 'superman', 'batman', 'star wars',
+  'season finale', 'episode', 'red carpet', 'premiere', 'oscar', 'emmy',
+];
+
+// Harde gamingtermen: als een van deze in de tekst staat, is het gaming.
+const GAMING_STRONG = [
+  'game', 'games', 'gaming', 'gamer', 'gameplay', 'playstation', 'ps5', 'ps6',
+  'xbox', 'nintendo', 'steam', 'steamdeck', 'pc gaming', 'dlc', 'expansion pack',
+  'multiplayer', 'singleplayer', 'roguelike', 'soulslike', 'esport', 'esports',
+  'speedrun', 'remaster', 'gta', 'capcom', 'ubisoft', 'bethesda', 'rockstar',
+  'valve', 'epic games', 'riot games', 'blizzard', 'activision', 'cd projekt',
+  'square enix', 'fromsoftware', 'bungie', 'naughty dog', 'insomniac', 'larian',
+  'obsidian', 'geforce', 'radeon', 'videokaart', 'nintendo switch',
+];
+
+// Zwakke termen: buiten gamingcontext betekenen ze niets. Twee of meer samen
+// maken een item alsnog gaming-relevant.
+const GAMING_WEAK = [
+  'console', 'trailer', 'patch', 'update', 'fps', 'rpg', 'mmo', 'indie', 'mod',
+  'remake', 'sequel', 'reveal', 'launch', 'switch', 'sony', 'microsoft',
+  'nvidia', 'gpu', 'controller', 'vr', 'studio', 'developer', 'publisher',
+  'roadmap', 'beta', 'early access', 'season pass', 'crossplay', 'co-op',
+  'battle royale', 'loadout', 'boss fight', 'open world', 'port', 'mode',
 ];
 
 module.exports = {
   RSS_FEEDS,
   GAMING_KEYWORDS,
+  GAMING_STRONG,
+  GAMING_WEAK,
+  ENTERTAINMENT_KEYWORDS,
   HOT_KEYWORDS,
   NEGATIVE_KEYWORDS,
   PRIORITY_TOPICS,

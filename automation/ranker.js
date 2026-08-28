@@ -11,6 +11,9 @@
 
 const {
   GAMING_KEYWORDS,
+  GAMING_STRONG,
+  GAMING_WEAK,
+  ENTERTAINMENT_KEYWORDS,
   HOT_KEYWORDS,
   NEGATIVE_KEYWORDS,
   PRIORITY_TOPICS,
@@ -47,7 +50,11 @@ function escapeRegex(str) {
 function countMatches(text, list) {
   let hits = 0;
   for (const term of list) {
-    const re = new RegExp(`(^|[^a-z0-9])${escapeRegex(term)}([^a-z0-9]|$)`, 'i');
+    // Meervoud en werkwoordsvormen meenemen: "reveal" moet ook "reveals"
+    // vangen, anders glipt "Roadmap Reveals New Boss" door de gamingfilter.
+    // Termen die zelf al op een s eindigen krijgen geen extra uitgang.
+    const suffix = /s$/i.test(term) ? '' : '(s|es)?';
+    const re = new RegExp(`(^|[^a-z0-9])${escapeRegex(term)}${suffix}([^a-z0-9]|$)`, 'i');
     if (re.test(text)) hits++;
   }
   return hits;
@@ -177,5 +184,36 @@ function isNotNews(title) {
   return NOT_NEWS_PATTERNS.some((re) => re.test(title));
 }
 
+/**
+ * Is dit gaming-nieuws? Een harde term is genoeg; van de zwakke termen
+ * ("update", "reveal", "sequel") zijn er twee nodig, want los van elkaar
+ * staan die net zo goed in film- of Windows-nieuws.
+ */
+function isGaming(text) {
+  const t = text.toLowerCase();
+  if (hasMatch(t, GAMING_STRONG)) return true;
+  return countMatches(t, GAMING_WEAK) >= 2;
+}
+
+/**
+ * Strenge variant voor gemengde techfeeds zoals Tweakers. Daar is twee zwakke
+ * treffers te makkelijk: "Update ... Windows 11" haalt dat al met "update" en
+ * "microsoft". Die feeds moeten een harde gamingterm laten zien.
+ */
+function isGamingStrict(text) {
+  return hasMatch(text.toLowerCase(), GAMING_STRONG);
+}
+
+/**
+ * Film-, tv- en comicsstukken van gamingsites. Alleen ruis als er geen enkele
+ * harde gamingterm in staat: "GTA 6 Netflix-onthulling" blijft dus staan.
+ */
+function isEntertainmentNoise(text) {
+  const t = text.toLowerCase();
+  if (hasMatch(t, GAMING_STRONG)) return false;
+  return hasMatch(t, ENTERTAINMENT_KEYWORDS);
+}
+
 module.exports = {
-  isNotNews, scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, countMatches };
+  isNotNews, isGaming, isGamingStrict, isEntertainmentNoise,
+  scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, countMatches };

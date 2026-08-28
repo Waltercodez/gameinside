@@ -23,6 +23,7 @@ const path = require('path');
 const { RSS_FEEDS, GAMING_KEYWORDS } = require('./sources.js');
 const {
   scoreItem, clusterItems, titleSimilarity, titleTokens, hasMatch, isNotNews,
+  isGaming, isGamingStrict, isEntertainmentNoise,
 } = require('./ranker.js');
 const { curateSafe, CURATOR_MODEL } = require('./curator.js');
 const { fetchPage } = require('./extract.js');
@@ -235,11 +236,16 @@ async function main() {
       stats.oud++; return false;
     }
 
-    // Gemengde tech-feeds moeten eerst gaming-relevant blijken
-    if (item.gamingOnly === false) {
-      const text = `${item.title} ${item.description}`.toLowerCase();
-      if (!hasMatch(text, GAMING_KEYWORDS)) { stats.nietGaming++; return false; }
-    }
+    const text = `${item.title} ${item.description}`;
+
+    // Gemengde tech-feeds moeten een harde gamingterm laten zien; gamingsites
+    // krijgen de soepele toets omdat daar alles al over games hoort te gaan.
+    const relevant = item.gamingOnly === false ? isGamingStrict(text) : isGaming(text);
+    if (!relevant) { stats.nietGaming++; return false; }
+
+    // Ook de gamingsites zelf brengen film, tv en comics. Die stukken haalden
+    // de shortlist omdat "sequel" en "reveal" als gamingtermen golden.
+    if (isEntertainmentNoise(text)) { stats.nietGaming++; return false; }
 
     if (seenUrls.has(item.url)) { stats.duplicaat++; return false; }
 
