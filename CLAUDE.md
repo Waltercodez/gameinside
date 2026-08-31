@@ -359,6 +359,19 @@ weghaalt:
 Verzonnen slugs worden in `writer.js` uit de tekst gefilterd, de linktekst blijft
 staan. Faalt het archief, dan schrijft de agent zonder context door.
 
+**De opdracht moet in de user prompt staan, niet alleen in de system prompt.**
+Eerst stond hij alleen in `SYSTEM_PROMPT`. Na drie dagen had 2 van de 14
+artikelen een link, terwijl het archief voor de meeste wel kandidaten
+aanleverde. Haiku volgt de veldbeschrijving in de opdracht zelf. Nu staat de
+lijst met toegestane paden in de user prompt en verwijst de beschrijving van
+het `content`-veld er ook naar. Daarna kreeg Haiku het in beide testgevallen
+wel voor elkaar.
+
+Een filter tegen verwijzen naar bijna hetzelfde verhaal is geprobeerd en weer
+weggehaald. Bij korte Engelse brontitels is de woordenzak zo klein dat de
+overlapverhouding altijd hoog uitvalt: hij haalde de goede kandidaten weg en
+liet het echte duplicaat staan. Het model kiest zelf al het betere artikel.
+
 ## Openstaand
 
 In volgorde van rendement:

@@ -181,16 +181,33 @@ async function writeArticle(newsItem, options = {}) {
   // ons naast de bron in de resultaten te zetten.
   const gerelateerd = await zoekGerelateerd(newsItem);
 
+  // De opdracht om naar het archief te verwijzen stond eerst alleen in de
+  // system prompt. Op 31 augustus 2026 bleek dat 2 van de 14 artikelen een
+  // link kreeg, terwijl het archief voor de meeste wel kandidaten aanleverde.
+  // Haiku volgt de veldbeschrijving in de opdracht zelf, niet een opsomming
+  // in de system prompt. Daarom staat hij nu op beide plekken.
+  const archiefOpdracht =
+    gerelateerd.length > 0
+      ? `\n\nVERPLICHT: dit artikel bevat een alinea die het nieuws verbindt met onze eerdere berichtgeving hierboven, met een markdown-link naar het pad. Kies het artikel met het sterkste inhoudelijke verband. Is er geen enkel echt verband, laat het dan weg; dat is beter dan een gezochte verwijzing. Toegestane paden:\n${gerelateerd
+          .map((a) => `  /artikel/${a.slug}`)
+          .join('\n')}`
+      : '';
+
+  const contentOpdracht =
+    gerelateerd.length > 0
+      ? '400-600 woord artikel. Gebruik ## voor tussenkopjes. Gebruik **vetgedrukt** voor nadruk. Twee newlines tussen alineas. Bevat een verwijzing naar onze eerdere berichtgeving als [beschrijvende tekst](/artikel/de-slug), niet in de eerste alinea, maximaal twee.'
+      : '400-600 woord artikel. Gebruik ## voor tussenkopjes. Gebruik **vetgedrukt** voor nadruk. Twee newlines tussen alineas.';
+
   const prompt = `Schrijf een artikel op basis van dit bronmateriaal:
 
-${buildSourceBlock(newsItem, gerelateerd)}
+${buildSourceBlock(newsItem, gerelateerd)}${archiefOpdracht}
 
 Geef je antwoord ALLEEN als geldig JSON in dit exacte formaat, zonder extra tekst:
 {
   "title": "Nederlandse kop van MAXIMAAL 55 tekens. Zet de spelnaam of het merk vooraan, dat is waar mensen op zoeken. Geen jaartal tenzij het zelf het nieuws is. Tellen, niet schatten.",
   "slug": "url-vriendelijke-slug-zonder-spaties-of-hoofdletters",
   "excerpt": "Meta beschrijving van maximaal 150 tekens",
-  "content": "400-600 woord artikel. Gebruik ## voor tussenkopjes. Gebruik **vetgedrukt** voor nadruk. Twee newlines tussen alineas.",
+  "content": "${contentOpdracht}",
   "category": "games of tech of hardware of nieuws of reviews",
   "keywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
   "readTime": 4
