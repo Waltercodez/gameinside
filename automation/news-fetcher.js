@@ -2,7 +2,7 @@
 /**
  * Gameinside News Agent
  *
- * Draait elke drie uur. Per run:
+ * Draait elk uur. Per run:
  *   1. haalt alle RSS-feeds op
  *   2. filtert op versheid en gaming-relevantie
  *   3. scoort en clustert items per verhaal
@@ -60,6 +60,14 @@ const PRIORITY_EXTRA = Number(process.env.PRIORITY_EXTRA || 2);
 // conceptenlijst niet uit louter GTA bestaat. Hoger zetten mag, maar dan
 // verdringt een drukke GTA-dag al het andere nieuws weer.
 const MAX_PRIORITY_PER_RUN = Number(process.env.MAX_PRIORITY_PER_RUN || 1);
+
+// Ondergrens: dit aantal niet-voorrangsverhalen gaat sowieso live per dag,
+// ook onder de 4-bronnen-eis. Zonder dit stond Sanity vrijwel alleen vol met
+// GTA, want dat haalt de drempel vanzelf en de rest zelden. Telt gewoon mee
+// als niet-voorrangsnieuws toevallig wel de drempel haalt; alleen als dat nog
+// niet genoeg oplevert wordt er geforceerd. Schrijft met WRITER_MODEL_PUBLISH,
+// dezelfde kwaliteitseis als voor voorrangsnieuws dat direct live gaat.
+const VARIETY_MIN_PER_DAY = Number(process.env.VARIETY_MIN_PER_DAY || 3);
 
 // Boven deze gelijkenis met een eerder gepubliceerde kop slaan we het over.
 const DEDUP_THRESHOLD = 0.34;
@@ -343,9 +351,18 @@ async function main() {
     const newsItem = { ...item, fullText, supporting: cluster.supporting };
 
     // Vooraf bepalen, want dit kiest ook welk model het artikel schrijft.
-    const publish = PUBLISH_MIN_OUTLETS > 0 && cluster.outlets >= PUBLISH_MIN_OUTLETS;
+    const meetsOutletThreshold = PUBLISH_MIN_OUTLETS > 0 && cluster.outlets >= PUBLISH_MIN_OUTLETS;
+    const isPriority = cluster.lead.score.parts.priority > 0;
+    const varietySlot = !isPriority && !meetsOutletThreshold
+      && st.varietyPublishedToday < VARIETY_MIN_PER_DAY;
+    const publish = meetsOutletThreshold || varietySlot;
+
+    let publishReason = '';
+    if (meetsOutletThreshold) publishReason = `${cluster.outlets} bronnen`;
+    else if (varietySlot) publishReason = `variatie ${st.varietyPublishedToday + 1}/${VARIETY_MIN_PER_DAY}`;
+
     const writeOpts = { forPublish: publish };
-    log(`   🤖 Model: ${publish ? WRITER_MODEL_PUBLISH : WRITER_MODEL}${publish ? ' (gaat direct live)' : ''}`);
+    log(`   🤖 Model: ${publish ? WRITER_MODEL_PUBLISH : WRITER_MODEL}${publish ? ` (gaat direct live — ${publishReason})` : ''}`);
 
     let article;
     try {
@@ -389,11 +406,12 @@ async function main() {
       const docId = await saveDraft(article, { publish, image });
       log(
         publish
-          ? `   🚀 DIRECT GEPUBLICEERD (${cluster.outlets} bronnen): ${docId}`
+          ? `   🚀 DIRECT GEPUBLICEERD (${publishReason}): ${docId}`
           : `   💾 Sanity concept: ${docId}`
       );
       savedArticles.push(article);
       state.recordPublished(st, item.title, item.url);
+      if (publish && !isPriority) state.recordVarietyPublished(st);
     } catch (sanityErr) {
       warn(`Sanity opslaan mislukt: ${sanityErr.message.slice(0, 160)}`);
       log(`   📁 Backup naar failed-drafts/`);
@@ -406,6 +424,7 @@ async function main() {
 
       savedArticles.push(article);
       state.recordPublished(st, item.title, item.url);
+      if (publish && !isPriority) state.recordVarietyPublished(st);
     }
   }
 

@@ -32,8 +32,10 @@ gepubliceerde teksten.
 
 ## De nieuwsagent (`automation/`)
 
-Draait via GitHub Actions, elke 3 uur (07/10/13/16/19/22 Amsterdam), max 2
-artikelen per run en 10 per dag. Zie `automation/README.md` voor de details.
+Draait via GitHub Actions, elk uur, max 2 artikelen per run en 10 per dag
+(sinds 2026-09-01 verhoogd van elke 2 uur, om nieuws sneller op te pikken; de
+dagcap voorkomt dat dit ook tot meer artikelen leidt). Zie `automation/README.md`
+voor de details.
 
 Pijplijn: `sources.js` → `ranker.js` → `curator.js` → `extract.js` +
 `image.js` → `writer.js` → `sanity-draft.js` → `notifier.js`
@@ -72,9 +74,60 @@ concept. De verdeling is sterk scheef: van ~185 verhalen heeft de overgrote
 meerderheid één bron, dus dit is zeldzaam en dat is de bedoeling. Op 0 zetten
 houdt alles concept.
 
+Daardoor stond Sanity vrijwel alleen vol met GTA-nieuws: dat haalt de drempel
+vanzelf, de rest zelden. `VARIETY_MIN_PER_DAY` (standaard **3**) garandeert
+dat er sowieso dagelijks dat aantal niet-voorrangsverhalen live gaat, ook
+onder de drempel — nodig zodat de social agent (hieronder) ook iets anders
+dan GTA heeft om over te posten. Niet-voorrangsnieuws dat toevallig wel de
+drempel haalt telt gewoon mee; er wordt alleen geforceerd als dat nog niet
+genoeg oplevert. Schrijft met hetzelfde sterkere model als voorrangsnieuws
+(Sonnet), om te voorkomen dat een spelfout ongezien live gaat.
+
 Er staan **geen bronvermeldingen** onder artikelen. We schrijven namens
 Gameinside zelf. De bron blijft wel in de markdown-frontmatter en in de
 overzichtsmail staan.
+
+## De social media agent (`automation/social-agent.js`)
+
+Doel: dagelijks pakkende posts met een link naar de site op X, Facebook en
+Instagram, om traffic en naamsbekendheid op te bouwen (met het oog op latere
+samenwerkingen met merken). **Fase 1, wat er nu staat:** de agent schrijft
+conceptteksten en mailt ze ter goedkeuring. Er wordt nog niets automatisch
+gepost. **Fase 2** (automatisch posten) volgt pas als de conceptteksten een
+tijdje betrouwbaar blijken, en vereist eerst developer-accounts bij X en Meta
+(Facebook-pagina + gekoppeld Instagram-Business-account) die er nu nog niet
+zijn — zie "Openstaand".
+
+Draait één keer per dag (`.github/workflows/social-agent.yml`). Pijplijn:
+
+1. Haalt alle live `article`-documenten uit Sanity op.
+2. Vergelijkt met `automation/social-seen.json` — alleen artikelen die nog
+   niet eerder verwerkt zijn, zijn "nieuw". Dit is bewust **niet** gebaseerd
+   op `publishedAt`: dat veld wordt al bij het aanmaken van een concept gezet
+   (zie `sanity-draft.js`), niet op het moment dat een redacteur het later
+   met de hand publiceert. Zelfde patroon als `indexed.json` in
+   `index-sweep.js`: een seen-lijst bijhouden werkt ongeacht hoe een artikel
+   live ging.
+3. `social-writer.js` laat Claude (`SOCIAL_MODEL`, standaard `claude-haiku-4-5`
+   — mensen reviewen alles voor het gepost wordt) per artikel drie teksten
+   schrijven met een haak die tot doorklikken aanzet, geen droge meldingen.
+   Het script plakt zelf de link achter de X- en Facebook-tekst.
+4. Eén mail per dag met alle conceptteksten, kopieerbaar per platform.
+
+**Instagram ondersteunt geen klikbare link in de caption.** Dat is een
+platformbeperking, geen bug — "link in bio" blijft de gangbare oplossing tot
+fase 2 er is (dan kan een link-sticker in Stories).
+
+**Scope:** alleen artikelen uit de nieuwsagent (Sanity `article`-type). De
+handgeschreven stukken in `src/data/articles.ts` (reviews, Switch 2-stukken)
+vallen hierbuiten, die hebben geen vergelijkbaar "live"-moment om op te
+vangen.
+
+```bash
+cd automation
+npm run social-dry-run   # toont conceptteksten, mailt niets
+npm run social-agent     # volledige run
+```
 
 ## Valkuilen die geld of tijd hebben gekost
 
@@ -147,12 +200,16 @@ npm run dry-run                  # toon de selectie, schrijf niets
 npm run test                     # schrijf artikelen, geen mail
 npm start                        # volledige run
 
+npm run social-dry-run           # toon conceptteksten voor socials, mail niets
+npm run social-agent             # volledige social-agent-run
+
 cd studio
 npm run deploy                   # Studio publiceren
 ```
 
-Handmatig een agent-run starten: `gh workflow run "Gameinside News Agent"`,
-of via de Actions-tab met een vinkje voor dry run.
+Handmatig een agent-run starten: `gh workflow run "Gameinside News Agent"` of
+`gh workflow run "Gameinside Social Agent"`, of via de Actions-tab met een
+vinkje voor dry run.
 
 ## SEO
 
@@ -376,19 +433,24 @@ liet het echte duplicaat staan. Het model kiest zelf al het betere artikel.
 
 In volgorde van rendement:
 
-1. **Het pre-order-artikel herschrijven.** `gta-6-pre-orders-komen-eraan-...`
+1. **Social agent fase 2: automatisch posten.** Vereist eerst een X
+   developer-app met schrijftoegang, en een Meta developer-app met een
+   Facebook-pagina en een gekoppeld Instagram-Business-account — geen van
+   beide bestaat nu. Pas doen zodra de conceptteksten uit fase 1 een tijdje
+   betrouwbaar blijken.
+2. **Het pre-order-artikel herschrijven.** `gta-6-pre-orders-komen-eraan-...`
    begint met "Hier is een beknopte samenvatting van alle info over" en leest
    als een chatbot. Het staat live en krijgt vertoningen.
-2. **SEO-agent bouwen.** Wekelijkse mail met zoekwoorden op positie 5 tot 20,
+3. **SEO-agent bouwen.** Wekelijkse mail met zoekwoorden op positie 5 tot 20,
    pagina's met vertoningen maar nul klikken, en gaten in de dekking. Puur
    rekenwerk op GSC-data, geen AI-call nodig. Wordt pas echt nuttig bij meer
    data.
-3. **Tweede hub voor Nintendo Switch 2.** Daar staat de site al op positie 8,
+4. **Tweede hub voor Nintendo Switch 2.** Daar staat de site al op positie 8,
    dichterbij dan GTA.
-4. De deel-knoppen onder artikelen doen niets, er hangt geen onClick aan.
-5. `src/lib/seo.ts` claimt via `sameAs` nog een Twitter-account. Controleren of
+5. De deel-knoppen onder artikelen doen niets, er hangt geen onClick aan.
+6. `src/lib/seo.ts` claimt via `sameAs` nog een Twitter-account. Controleren of
    dat bestaat.
-6. De scorelijst bevat nog wat ruis uit de Tweakers-feed.
+7. De scorelijst bevat nog wat ruis uit de Tweakers-feed.
 
 ## Werkafspraken
 

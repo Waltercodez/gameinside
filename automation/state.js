@@ -1,9 +1,9 @@
 /**
  * Houdt bij wat de agent vandaag al gepubliceerd heeft.
  *
- * Sinds de agent elke drie uur draait in plaats van een keer per dag, moet
- * hij over runs heen onthouden hoeveel artikelen er al staan en waarover,
- * anders schrijft de run van 13:00 hetzelfde stuk als die van 10:00.
+ * Sinds de agent elk uur draait in plaats van een keer per dag, moet hij over
+ * runs heen onthouden hoeveel artikelen er al staan en waarover, anders
+ * schrijft de run van 13:00 hetzelfde stuk als die van 10:00.
  */
 
 const fs = require('fs');
@@ -27,9 +27,11 @@ function load() {
   if (state.date !== today()) {
     state.date = today();
     state.publishedToday = 0;
+    state.varietyPublishedToday = 0;
   }
 
   state.publishedToday = state.publishedToday || 0;
+  state.varietyPublishedToday = state.varietyPublishedToday || 0;
   state.topics = Array.isArray(state.topics) ? state.topics : [];
 
   // Oude onderwerpen opruimen zodat het bestand niet eindeloos groeit.
@@ -53,6 +55,11 @@ function recordPublished(state, title, url) {
   state.topics.push({ title, url: url || '', date: new Date().toISOString() });
 }
 
+/** Telt mee voor de dagelijkse ondergrens aan niet-voorrangsnieuws dat live gaat. */
+function recordVarietyPublished(state) {
+  state.varietyPublishedToday += 1;
+}
+
 /**
  * Eenmalige migratie van het oude published-topics.json bestand.
  */
@@ -70,4 +77,7 @@ function migrateLegacy() {
   }
 }
 
-module.exports = { load, save, remainingToday, recordPublished, migrateLegacy, STATE_PATH, DEDUP_DAYS };
+module.exports = {
+  load, save, remainingToday, recordPublished, recordVarietyPublished, migrateLegacy,
+  STATE_PATH, DEDUP_DAYS,
+};

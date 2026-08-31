@@ -188,6 +188,51 @@ async function sendSuccess(data) {
 }
 
 /**
+ * Dagelijks overzicht van conceptteksten voor X, Facebook en Instagram, per
+ * artikel dat sinds de vorige run live is gegaan. Ter goedkeuring — er wordt
+ * niets automatisch gepost (fase 1).
+ *
+ * @param {Array} articles  zie social-agent.js: { title, category, url,
+ *                          imageUrl, x, facebook, instagram }
+ */
+async function sendSocialConcepts(articles) {
+  const block = (label, text) => `
+    <p style="${S.meta}margin:12px 0 4px;font-weight:700;color:#8b949e;">${esc(label)}</p>
+    <pre style="margin:0;padding:12px 14px;background:#0d1117;border:1px solid #30363d;
+                border-radius:8px;font-size:13px;color:#e6edf3;white-space:pre-wrap;
+                word-break:break-word;font-family:inherit;">${esc(text)}</pre>`;
+
+  const renderArticle = (a) => `
+    <div style="${S.pad}border-bottom:1px solid #21262d;">
+      <p style="${S.title}"><a href="${esc(a.url)}" style="${S.a}color:#e6edf3;">${esc(a.title)}</a></p>
+      <p style="${S.meta}">${pill(a.category, '#00aaff')}</p>
+      ${block('X', a.x)}
+      ${block('Facebook', a.facebook)}
+      ${block('Instagram (caption + hashtags — geen klikbare link, gebruik link in bio)', a.instagram)}
+      ${a.imageUrl ? `<p style="${S.meta}margin-top:10px;">Afbeelding: <a href="${esc(a.imageUrl)}" style="${S.a}">${esc(a.imageUrl)}</a></p>` : ''}
+    </div>`;
+
+  const html = `
+<body style="${S.body}">
+  <div style="${S.card}">
+    <div style="${S.pad}border-bottom:1px solid #30363d;">
+      <p style="margin:0;font-size:18px;font-weight:800;">
+        <span style="color:#00aaff;">GAME</span><span style="color:#fff;">INSIDE</span>
+        <span style="color:#8b949e;font-weight:400;font-size:14px;"> · social agent</span>
+      </p>
+      <p style="${S.meta}margin-top:6px;">
+        ${articles.length} conceptpost${articles.length === 1 ? '' : 's'} klaar ter goedkeuring — nog niets gepost
+      </p>
+    </div>
+    ${articles.map(renderArticle).join('')}
+  </div>
+</body>`;
+
+  const subject = `[Gameinside Social] ${articles.length} conceptpost${articles.length === 1 ? '' : 'en'} klaar`;
+  return send(subject, html, 'social');
+}
+
+/**
  * Melding als de run mislukt is.
  */
 async function sendFailure(errorTitle, errorDetails) {
@@ -211,4 +256,4 @@ async function sendFailure(errorTitle, errorDetails) {
   return send(`[Gameinside STORING] ${errorTitle}`, html, 'storing');
 }
 
-module.exports = { sendSuccess, sendFailure, hasCredentials };
+module.exports = { sendSuccess, sendFailure, sendSocialConcepts, hasCredentials };

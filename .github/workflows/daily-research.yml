@@ -2,12 +2,13 @@ name: Gameinside News Agent
 
 on:
   schedule:
-    # Elke 2 uur, op minuut 17. Niet op het hele uur: dan is de gedeelde
+    # Elk uur, op minuut 17. Niet op het hele uur: dan is de gedeelde
     # runnerpool van GitHub het drukst en worden geplande runs als eerste
     # geschrapt. Op 27 en 28 augustus 2026 draaide er van de zes geplande
-    # runs nog maar een per dag. Twaalf slots op een rustig tijdstip vangen
-    # het op als GitHub er alsnog een laat vallen.
-    - cron: '17 */2 * * *'
+    # runs nog maar een per dag. Sinds 2026-09-01 van elke 2 uur naar elk uur,
+    # om nieuws sneller op te pikken — de dagcap in state.json voorkomt dat
+    # dit ook tot meer artikelen leidt dan voorheen.
+    - cron: '17 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:

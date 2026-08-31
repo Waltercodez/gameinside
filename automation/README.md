@@ -5,9 +5,8 @@ concept-artikelen over in Sanity.
 
 ## Draaien
 
-De agent draait via GitHub Actions, elke 3 uur (07/10/13/16/19/22 Amsterdam),
-met een dagcap van 10 artikelen en maximaal 2 per run. Zie
-`.github/workflows/daily-research.yml`.
+De agent draait via GitHub Actions, elk uur, met een dagcap van 10 artikelen
+en maximaal 2 per run. Zie `.github/workflows/daily-research.yml`.
 
 Handmatig starten kan via de Actions-tab op GitHub, met een vinkje voor dry run.
 
@@ -51,9 +50,16 @@ in de titel en verschijnt niet op de site totdat je het in de Studio publiceert.
 
 Zet `PUBLISH_MIN_OUTLETS=0` als je wilt dat alles weer concept blijft.
 
-Artikelen die direct live gaan worden door een sterker model geschreven. Haiku
-maakt af en toe Nederlandse spelfouten ("mikst", "een nieuw update") en dat is
-alleen acceptabel bij concepten, die toch nog langs de redactie gaan.
+Daarnaast gaan er sowieso `VARIETY_MIN_PER_DAY` niet-voorrangsverhalen per dag
+live, ook onder die drempel. Zonder deze ondergrens stond Sanity vrijwel
+alleen vol met voorrangsnieuws (GTA), want dat haalt de 4-bronnen-eis vanzelf
+en de rest zelden. Telt niet dubbel: niet-voorrangsnieuws dat toevallig wel de
+drempel haalt, telt gewoon mee voor deze ondergrens.
+
+Artikelen die direct live gaan (via de drempel of via de ondergrens) worden
+door een sterker model geschreven. Haiku maakt af en toe Nederlandse
+spelfouten ("mikst", "een nieuw update") en dat is alleen acceptabel bij
+concepten, die toch nog langs de redactie gaan.
 
 Er staat geen bronvermelding onder de artikelen. We schrijven namens Gameinside
 zelf. De bron blijft wel in de frontmatter van het markdown-bestand en in de
@@ -76,6 +82,7 @@ Via environment variables, met de standaardwaarde erachter:
 | `PER_RUN_MAX` | 2 | artikelen per run |
 | `MAX_AGE_HOURS` | 20 | ouder nieuws wordt genegeerd |
 | `PUBLISH_MIN_OUTLETS` | 4 | vanaf dit aantal bronnen gaat een verhaal direct live; 0 houdt alles concept |
+| `VARIETY_MIN_PER_DAY` | 3 | ondergrens niet-voorrangsverhalen die sowieso live gaan per dag |
 | `CURATOR_MODEL` | `claude-opus-5` | model dat de selectie maakt |
 | `WRITER_MODEL` | `claude-haiku-4-5` | schrijft de concepten |
 | `WRITER_MODEL_PUBLISH` | `claude-sonnet-5` | schrijft de artikelen die direct live gaan |

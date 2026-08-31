@@ -8,7 +8,9 @@
     "test": "node news-fetcher.js --test",
     "dry-run": "node news-fetcher.js --dry-run",
     "check-feeds": "node check-feeds.js",
-    "index-sweep": "node index-sweep.js"
+    "index-sweep": "node index-sweep.js",
+    "social-agent": "node social-agent.js",
+    "social-dry-run": "node social-agent.js --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
