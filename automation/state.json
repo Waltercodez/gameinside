@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-31",
-  "publishedToday": 6,
+  "date": "2026-09-01",
+  "publishedToday": 2,
   "topics": [
     {
       "title": "CD Projekt Red is \"targeting\" a 2028 release date for The Witcher 4, per a new update from the developer",
@@ -281,6 +281,17 @@
       "title": "A September 10 Nintendo Direct Is Looking Likely Thanks To Just Dance",
       "url": "https://www.gamespot.com/articles/a-september-10-nintendo-direct-is-looking-likely-thanks-to-just-dance/",
       "date": "2026-08-31T20:05:10.030Z"
+    },
+    {
+      "title": "Take-Two's GTA 6 leak investigation is heating up as the publisher requests sealed subpoena to avoid tipping off leakers",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/take-twos-gta-6-leak-investigation-is-heating-up-as-the-publisher-requests-sealed-subpoena-to-avoid-tipping-off-leakers/",
+      "date": "2026-09-01T01:50:06.342Z"
+    },
+    {
+      "title": "After the debacle of Cyberpunk 2077, CD Projekt says The Witcher 4 is already running on PC and consoles, promises 'it's going to run' on all target platforms",
+      "url": "https://www.pcgamer.com/games/the-witcher/after-the-debacle-of-cyberpunk-2077-cd-projekt-says-the-witcher-4-is-already-running-on-pc-and-consoles-promises-its-going-to-run-on-all-target-platforms/",
+      "date": "2026-09-01T01:51:00.809Z"
     }
-  ]
+  ],
+  "varietyPublishedToday": 1
 }
