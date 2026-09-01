@@ -42,16 +42,20 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
         run: node social-agent.js ${{ inputs.dry_run && '--dry-run' || '' }}
 
-      - name: Bewaar welke artikelen al verwerkt zijn
+      - name: Bewaar welke artikelen al verwerkt en gepost zijn
         if: ${{ always() && !inputs.dry_run }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Gameinside Bot"
-          git add automation/social-seen.json
+          git add automation/social-seen.json automation/x-queue.json
           if git diff --staged --quiet; then
-            echo "Geen wijziging in social-seen.json"
+            echo "Geen wijziging in social-seen.json of x-queue.json"
             exit 0
           fi
           git commit -m "chore: social agent seen [skip ci]"

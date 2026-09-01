@@ -202,11 +202,25 @@ async function sendSocialConcepts(articles) {
                 border-radius:8px;font-size:13px;color:#e6edf3;white-space:pre-wrap;
                 word-break:break-word;font-family:inherit;">${esc(text)}</pre>`;
 
+  const xSection = (a) => {
+    if (a.xPostedUrl) {
+      return `
+    <p style="${S.meta}margin:12px 0 4px;font-weight:700;color:#8b949e;">X</p>
+    <p style="${S.meta}">${pill('AUTOMATISCH GEPOST', '#3fb950')} <a href="${esc(a.xPostedUrl)}" style="${S.a}">bekijk op X</a></p>`;
+    }
+    if (a.xQueued) {
+      return `
+    <p style="${S.meta}margin:12px 0 4px;font-weight:700;color:#8b949e;">X</p>
+    <p style="${S.meta}">${pill('WACHTRIJ', '#d29922')} lukte niet direct, wordt automatisch opnieuw geprobeerd</p>`;
+    }
+    return block('X', a.x);
+  };
+
   const renderArticle = (a) => `
     <div style="${S.pad}border-bottom:1px solid #21262d;">
       <p style="${S.title}"><a href="${esc(a.url)}" style="${S.a}color:#e6edf3;">${esc(a.title)}</a></p>
       <p style="${S.meta}">${pill(a.category, '#00aaff')}</p>
-      ${block('X', a.x)}
+      ${xSection(a)}
       ${block('Facebook', a.facebook)}
       ${block('Instagram (caption + hashtags — geen klikbare link, gebruik link in bio)', a.instagram)}
       ${a.imageUrl ? `<p style="${S.meta}margin-top:10px;">Afbeelding: <a href="${esc(a.imageUrl)}" style="${S.a}">${esc(a.imageUrl)}</a></p>` : ''}

@@ -91,12 +91,19 @@ overzichtsmail staan.
 
 Doel: dagelijks pakkende posts met een link naar de site op X, Facebook en
 Instagram, om traffic en naamsbekendheid op te bouwen (met het oog op latere
-samenwerkingen met merken). **Fase 1, wat er nu staat:** de agent schrijft
-conceptteksten en mailt ze ter goedkeuring. Er wordt nog niets automatisch
-gepost. **Fase 2** (automatisch posten) volgt pas als de conceptteksten een
-tijdje betrouwbaar blijken, en vereist eerst developer-accounts bij X en Meta
-(Facebook-pagina + gekoppeld Instagram-Business-account) die er nu nog niet
-zijn — zie "Openstaand".
+samenwerkingen met merken).
+
+**X: volledig automatisch, sinds 2026-09-01.** `automation/x-poster.js` post
+via de X API (OAuth 1.0a, `twitter-api-v2`) direct en zonder tussenstap zodra
+een artikel live gaat. **Facebook en Instagram: nog fase 1** (concept +
+mail-review) — daar is nog geen developer-app/koppeling voor, zie
+"Openstaand".
+
+**Kosten X: $0,20 per post.** X rekent sinds februari 2026 pay-per-use, en
+een post met een link (die hebben we altijd, dat is het doel) kost $0,20 —
+zonder link zou het $0,015 zijn. Bij 2-3 nieuwe artikelen per dag is dat
+ruwweg $12-18/maand. Zie ook `X_BACKLOG_PER_DAY` hieronder voor de eenmalige
+extra kosten van de achterstand.
 
 Draait één keer per dag (`.github/workflows/social-agent.yml`). Pijplijn:
 
@@ -108,15 +115,29 @@ Draait één keer per dag (`.github/workflows/social-agent.yml`). Pijplijn:
    met de hand publiceert. Zelfde patroon als `indexed.json` in
    `index-sweep.js`: een seen-lijst bijhouden werkt ongeacht hoe een artikel
    live ging.
-3. `social-writer.js` laat Claude (`SOCIAL_MODEL`, standaard `claude-haiku-4-5`
-   — mensen reviewen alles voor het gepost wordt) per artikel drie teksten
-   schrijven met een haak die tot doorklikken aanzet, geen droge meldingen.
-   Het script plakt zelf de link achter de X- en Facebook-tekst.
-4. Eén mail per dag met alle conceptteksten, kopieerbaar per platform.
+3. `social-writer.js` laat Claude (`SOCIAL_MODEL`, standaard `claude-haiku-4-5`)
+   per artikel drie teksten schrijven met een haak die tot doorklikken
+   aanzet, geen droge meldingen.
+4. Voor elk nieuw artikel: de X-tekst wordt meteen gepost (link erachter
+   geplakt door het script, niet door het model — zo hangt de linklengte
+   nooit af van hoe goed Claude kan tellen). Lukt dat niet direct (bv.
+   tijdelijke rate limit), dan komt het artikel vooraan in
+   `automation/x-queue.json` voor een automatische herkansing de volgende run.
+5. Eén mail per dag: voor X een link naar de geplaatste post (of een melding
+   dat hij in de wachtrij staat), voor Facebook en Instagram de conceptteksten
+   ter review, kopieerbaar.
+
+`X_BACKLOG_PER_DAY` (standaard 3) werkt daarnaast dagelijks een deel van
+`automation/x-queue.json` weg, los van wat er die dag vers bijkomt — voor
+artikelen die al live stonden voordat het X-account bestond. Oudste eerst.
+Op 2026-09-01 is de wachtrij handmatig leeggemaakt na het account aanmaken:
+de nieuwste 10 van de toen 30 live artikelen zijn direct geplaatst (~$2), de
+oudere 20 zijn bewust laten vervallen in plaats van alsnog geplaatst.
 
 **Instagram ondersteunt geen klikbare link in de caption.** Dat is een
 platformbeperking, geen bug — "link in bio" blijft de gangbare oplossing tot
-fase 2 er is (dan kan een link-sticker in Stories).
+Facebook/Instagram ook een echte koppeling hebben (dan kan een link-sticker
+in Stories).
 
 **Scope:** alleen artikelen uit de nieuwsagent (Sanity `article`-type). De
 handgeschreven stukken in `src/data/articles.ts` (reviews, Switch 2-stukken)
@@ -200,8 +221,8 @@ npm run dry-run                  # toon de selectie, schrijf niets
 npm run test                     # schrijf artikelen, geen mail
 npm start                        # volledige run
 
-npm run social-dry-run           # toon conceptteksten voor socials, mail niets
-npm run social-agent             # volledige social-agent-run
+npm run social-dry-run           # toon conceptteksten, post niets op X, mailt niets
+npm run social-agent             # volledige run: post op X, mailt FB/IG-concepten
 
 cd studio
 npm run deploy                   # Studio publiceren
@@ -433,11 +454,10 @@ liet het echte duplicaat staan. Het model kiest zelf al het betere artikel.
 
 In volgorde van rendement:
 
-1. **Social agent fase 2: automatisch posten.** Vereist eerst een X
-   developer-app met schrijftoegang, en een Meta developer-app met een
-   Facebook-pagina en een gekoppeld Instagram-Business-account — geen van
-   beide bestaat nu. Pas doen zodra de conceptteksten uit fase 1 een tijdje
-   betrouwbaar blijken.
+1. **Social agent: Facebook en Instagram ook automatisch posten.** X is dit
+   al sinds 2026-09-01. Vereist een Meta developer-app met een gekoppelde
+   Facebook-pagina en een Instagram-Business-account (dat laatste bestaat al)
+   — de developer-app zelf nog niet.
 2. **Het pre-order-artikel herschrijven.** `gta-6-pre-orders-komen-eraan-...`
    begint met "Hier is een beknopte samenvatting van alle info over" en leest
    als een chatbot. Het staat live en krijgt vertoningen.

@@ -1,12 +1,18 @@
 #!/usr/bin/env node
 /**
- * Social media agent — fase 1 (concept + mail-review).
+ * Social media agent.
  *
  * Draait één keer per dag. Checkt welke Sanity-artikelen sinds de vorige run
  * echt live zijn gegaan, laat Claude er per artikel drie social-teksten (X,
- * Facebook, Instagram) voor schrijven, en mailt het geheel ter goedkeuring.
- * Er wordt nog niets automatisch gepost — dat is fase 2, en vereist
- * developer-accounts bij X en Meta die er nu nog niet zijn.
+ * Facebook, Instagram) voor schrijven, en:
+ *   - post de X-tekst direct en automatisch (zodra X_API_KEY etc. gezet zijn)
+ *   - mailt de Facebook- en Instagram-tekst ter goedkeuring, want daar is nog
+ *     geen API-koppeling voor (vereist een Meta developer-app + gekoppeld
+ *     Instagram-Business-account)
+ *
+ * Daarnaast werkt elke run een deel van de "achterstand" weg: artikelen die
+ * al live stonden voordat het X-account bestond, oudste eerst, via
+ * x-queue.json — zie X_BACKLOG_PER_DAY hieronder.
  *
  * "Live" is lastiger te detecteren dan het lijkt: publishedAt wordt al bij
  * het AANMAKEN van een concept gezet (zie sanity-draft.js), dus dat veld
@@ -16,8 +22,9 @@
  * elke run diffen tegen wat er nu echt live staat, ongeacht hoe het live ging.
  *
  * Usage:
- *   node social-agent.js            (productie: genereert, mailt, onthoudt)
+ *   node social-agent.js            (productie: post op X, mailt FB/IG-concepten)
  *   node social-agent.js --dry-run  (toont alleen wat er zou gebeuren)
+ *   node social-agent.js --test     (genereert en leest, post niets en mailt niets)
  */
 
 const fs = require('fs');
@@ -25,13 +32,24 @@ const path = require('path');
 const { createClient } = require('@sanity/client');
 
 const { generateCaptionsSafe } = require('./social-writer.js');
+const xPoster = require('./x-poster.js');
 const notifier = require('./notifier.js');
 
 const IS_TEST = process.argv.includes('--test');
 const IS_DRY = process.argv.includes('--dry-run');
 
+// Geen echte externe acties (posten op X, mailen) in test- of dry-run-modus.
+const SKIP_EXTERNAL = IS_TEST || IS_DRY;
+
 const SITE_URL = 'https://gameinside.nl';
 const SEEN_PATH = path.join(__dirname, 'social-seen.json');
+const QUEUE_PATH = path.join(__dirname, 'x-queue.json');
+
+// Hoeveel artikelen uit de achterstand er per dag automatisch op X bij
+// komen, los van wat er die dag toevallig vers live gaat. Laag genoeg om
+// niet als spam over te komen, genoeg om de achterstand in een paar weken
+// weg te werken.
+const X_BACKLOG_PER_DAY = Number(process.env.X_BACKLOG_PER_DAY || 3);
 
 const client = createClient({
   projectId: 'aydnlbgw',
@@ -54,23 +72,121 @@ function log(msg) {
   console.log(msg);
 }
 
-function loadSeen() {
+function loadJson(filePath, fallback) {
   try {
-    const data = JSON.parse(fs.readFileSync(SEEN_PATH, 'utf-8'));
-    return { ids: Array.isArray(data.ids) ? data.ids : [], lastRun: data.lastRun || null };
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   } catch {
-    return { ids: [], lastRun: null };
+    return fallback;
   }
 }
 
-function saveSeen(state) {
-  fs.writeFileSync(SEEN_PATH, JSON.stringify(state, null, 2));
+function saveJson(filePath, data) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
+function loadSeen() {
+  const data = loadJson(SEEN_PATH, {});
+  return { ids: Array.isArray(data.ids) ? data.ids : [], lastRun: data.lastRun || null };
+}
+
+function loadQueue() {
+  const data = loadJson(QUEUE_PATH, {});
+  return { items: Array.isArray(data.items) ? data.items : [], lastRun: data.lastRun || null };
+}
+
+/**
+ * Post een artikel op X, of zet het (voorin) terug in de wachtrij bij een
+ * mislukte poging. Nooit blokkerend voor de rest van de run.
+ */
+async function postToX(item) {
+  try {
+    const result = await xPoster.postArticle(item.x, item.url);
+    log(`   🐦 Gepost op X: ${result.url}`);
+    return result;
+  } catch (err) {
+    log(`   ⚠️  X-post mislukt voor "${item.title.slice(0, 60)}": ${err.message.slice(0, 160)}`);
+    return null;
+  }
+}
+
+async function verwerkNieuw(nieuw) {
+  const results = [];
+  const processedIds = [];
+  const xConfigured = xPoster.hasCredentials() && !SKIP_EXTERNAL;
+
+  for (const article of nieuw) {
+    log(`✍️  ${article.title}`);
+    processedIds.push(article._id);
+
+    const captions = await generateCaptionsSafe(article, log);
+    if (!captions) continue;
+
+    const url = `${SITE_URL}/artikel/${article.slug}`;
+    const entry = {
+      title: article.title,
+      category: article.category,
+      url,
+      imageUrl: article.imageUrl || null,
+      facebook: `${captions.facebook}\n\n${url}`,
+      instagram: captions.instagram,
+    };
+
+    if (xConfigured) {
+      const posted = await postToX({ title: article.title, x: captions.x, url });
+      if (posted) {
+        entry.xPostedUrl = posted.url;
+      } else {
+        // Meteen posten lukte niet (bv. tijdelijk rate limit) — voorin de
+        // wachtrij zetten zodat het automatisch opnieuw geprobeerd wordt,
+        // in plaats van dit aan een handmatige post over te laten.
+        entry.xQueued = true;
+        if (!SKIP_EXTERNAL) {
+          const queue = loadQueue();
+          queue.items = [{ _id: article._id, title: article.title, url, x: captions.x }, ...queue.items];
+          saveJson(QUEUE_PATH, queue);
+        }
+      }
+    } else if (!xPoster.hasCredentials()) {
+      // Geen X-koppeling actief (lokaal testen zonder secrets): oude gedrag,
+      // toon de tekst gewoon als kopieerbaar concept.
+      entry.x = `${captions.x}\n\n${url}`;
+    }
+
+    results.push(entry);
+  }
+
+  return { results, processedIds };
+}
+
+async function werkAchterstandWeg() {
+  if (!xPoster.hasCredentials() || SKIP_EXTERNAL) return { posted: 0, remaining: null };
+
+  const queue = loadQueue();
+  if (queue.items.length === 0) return { posted: 0, remaining: 0 };
+
+  const batch = queue.items.slice(0, X_BACKLOG_PER_DAY);
+  const rest = queue.items.slice(X_BACKLOG_PER_DAY);
+  const failed = [];
+
+  log(`\n📤 Achterstand: ${batch.length}/${queue.items.length} artikelen posten...`);
+  for (const item of batch) {
+    log(`   ${item.title}`);
+    const posted = await postToX(item);
+    if (!posted) failed.push(item);
+  }
+
+  queue.items = [...failed, ...rest];
+  queue.lastRun = new Date().toISOString();
+  saveJson(QUEUE_PATH, queue);
+
+  return { posted: batch.length - failed.length, remaining: queue.items.length };
 }
 
 async function main() {
   const startedAt = new Date();
   log(`📱 Gameinside Social Agent — ${startedAt.toLocaleString('nl-NL')}`);
-  if (IS_DRY) log('🔍 DRY RUN — alleen tonen, niets mailen of onthouden');
+  if (IS_DRY) log('🔍 DRY RUN — alleen tonen, niets posten, mailen of onthouden');
+  if (IS_TEST) log('🧪 TEST MODE — genereert en leest, post en mailt niets');
   log('');
 
   const seen = loadSeen();
@@ -85,62 +201,45 @@ async function main() {
   // dat gebeurt, dus hier gewoon overslaan in plaats van een rommelige post
   // versturen.
   const nieuw = live.filter((a) => !seenIds.has(a._id) && !a.title.startsWith('[CONCEPT]'));
-
   log(`🆕 ${nieuw.length} nieuw live artikel(en) sinds de vorige run\n`);
 
-  if (nieuw.length === 0) {
-    log('✅ Niets nieuws, geen mail nodig.');
-    if (!IS_DRY) {
-      seen.lastRun = new Date().toISOString();
-      saveSeen(seen);
-    }
-    return;
+  let results = [];
+  let processedIds = [];
+
+  if (nieuw.length > 0) {
+    ({ results, processedIds } = await verwerkNieuw(nieuw));
+    log(`\n📋 ${results.length}/${nieuw.length} verwerkt in ${((Date.now() - startedAt.getTime()) / 1000).toFixed(0)}s`);
+  } else {
+    log('ℹ️  Niets nieuws vandaag.');
   }
-
-  const results = [];
-  const processedIds = [];
-
-  for (const article of nieuw) {
-    log(`✍️  ${article.title}`);
-    processedIds.push(article._id);
-
-    const captions = await generateCaptionsSafe(article, log);
-    if (!captions) continue;
-
-    const url = `${SITE_URL}/artikel/${article.slug}`;
-    results.push({
-      title: article.title,
-      category: article.category,
-      url,
-      imageUrl: article.imageUrl || null,
-      x: `${captions.x}\n\n${url}`,
-      facebook: `${captions.facebook}\n\n${url}`,
-      instagram: captions.instagram,
-    });
-  }
-
-  log(`\n📋 ${results.length}/${nieuw.length} conceptpost(en) klaar in ${((Date.now() - startedAt.getTime()) / 1000).toFixed(0)}s`);
 
   if (IS_DRY) {
     for (const r of results) {
       log(`\n── ${r.title} ──────────────────────────────`);
-      log(`X:\n${r.x}\n`);
+      log(`X: ${r.xPostedUrl || (r.xQueued ? '(zou geprobeerd worden, niet gelukt in dry run)' : r.x) || '(niet geconfigureerd)'}\n`);
       log(`Facebook:\n${r.facebook}\n`);
       log(`Instagram:\n${r.instagram}`);
       if (r.imageUrl) log(`\nAfbeelding: ${r.imageUrl}`);
     }
-    log('\n🔍 Dry run klaar, er is niets gemaild of onthouden.');
+    log('\n🔍 Dry run klaar, er is niets gepost, gemaild of onthouden.');
     return;
   }
 
   // Alle verwerkte artikelen onthouden, ook de mislukte generaties — anders
   // probeert de agent er morgen weer op te stuklopen.
-  seen.ids = [...seen.ids, ...processedIds];
+  if (processedIds.length > 0) {
+    seen.ids = [...seen.ids, ...processedIds];
+  }
   seen.lastRun = new Date().toISOString();
-  saveSeen(seen);
+  saveJson(SEEN_PATH, seen);
+
+  const achterstand = await werkAchterstandWeg();
+  if (achterstand.remaining !== null) {
+    log(`\n📬 Achterstand: ${achterstand.posted} gepost, ${achterstand.remaining} nog in de wachtrij.`);
+  }
 
   if (results.length === 0) {
-    log('⚠️  Geen enkele conceptpost gelukt, geen mail verstuurd.');
+    log('\n🎉 Klaar (niets te mailen)\n');
     return;
   }
 
