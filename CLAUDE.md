@@ -271,6 +271,26 @@ SEO-punt af. Het probleem is omvang en autoriteit.
   lijst uit `src/data/articles.ts`. Nu via `getAllArticles`, van 27 naar 48 URLs.
 - **`llms.txt` gaf een 404.** Staat er nu, werkt zichzelf elk uur bij.
 - **AI-crawlers** staan expliciet toegestaan in `robots.txt`.
+- **Auteur-schema klopte niet.** `article.author` is altijd de teamnaam
+  "Gameinside Redactie", nooit een individu, maar `buildArticleJsonLd` en
+  `buildReviewJsonLd` in `src/lib/seo.ts` zetten daar `@type: 'Person'` bij.
+  Nu `Organization`.
+- **Geen redactie/over-ons-pagina.** Nodig voor basale E-E-A-T-signalen,
+  vooral relevant met het oog op Google News/Top Stories bij een site die
+  veel AI-geschreven content publiceert. Staat nu op `/redactie`, gekoppeld
+  vanuit de footer (wees eerder naar `#`) en toegevoegd aan de sitemap.
+
+### Openstaand richting Google News/Top Stories
+
+Het NewsArticle-schema bestond al en is nu gecorrigeerd; dit ontbreekt nog:
+
+- **Aparte nieuws-sitemap** met `news:publication`/`news:publication_date` —
+  anders dan de gewone sitemap, alleen artikelen van de laatste 2 dagen.
+- **Aanmelden bij Google Publisher Center.**
+- **Spanning met `PUBLISH_MIN_OUTLETS=4`:** dat vereist dat 4+ andere
+  redacties een verhaal al gebracht hebben voor het automatisch live gaat.
+  Voor Google News telt snelheid en originaliteit zwaarder dan die
+  voorzichtigheid — nog niet opgelost, wel een bewuste afweging.
 
 ### De GTA 6-hub
 
@@ -468,9 +488,9 @@ In volgorde van rendement:
 4. **Tweede hub voor Nintendo Switch 2.** Daar staat de site al op positie 8,
    dichterbij dan GTA.
 5. De deel-knoppen onder artikelen doen niets, er hangt geen onClick aan.
-6. `src/lib/seo.ts` claimt via `sameAs` nog een Twitter-account. Controleren of
-   dat bestaat.
-7. De scorelijst bevat nog wat ruis uit de Tweakers-feed.
+6. De scorelijst bevat nog wat ruis uit de Tweakers-feed.
+7. **Google News-nieuwssitemap en aanmelding bij Publisher Center**, zie
+   "Openstaand richting Google News/Top Stories" bij de SEO-sectie.
 
 ## Werkafspraken
 
