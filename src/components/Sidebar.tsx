@@ -64,37 +64,6 @@ export default function Sidebar({ mostRead }: SidebarProps) {
         </div>
       </div>
 
-      {/* Newsletter */}
-      <div className="rounded-xl p-5 bg-gradient-to-br from-[#00aaff]/10 to-[#7c3aed]/10
-                      border border-[#00aaff]/20">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#00aaff] to-[#7c3aed] flex items-center justify-center flex-shrink-0">
-            <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-          </div>
-          <h3 className="text-sm font-black text-white uppercase tracking-wide">Newsletter</h3>
-        </div>
-        <p className="text-xs text-[#8b949e] mb-3 leading-relaxed">
-          Het beste gaming nieuws dagelijks in je inbox.
-        </p>
-        <input
-          type="email"
-          placeholder="jouw@email.nl"
-          className="w-full bg-[#0d1117] border border-[#30363d] rounded-lg px-3 py-2
-                     text-sm text-white placeholder-[#555e6b]
-                     focus:outline-none focus:border-[#00aaff] focus:shadow-[0_0_0_3px_rgba(0,170,255,0.1)]
-                     transition-all mb-2"
-        />
-        <button className="w-full rounded-lg py-2 text-xs font-black uppercase tracking-wider text-white
-                           bg-gradient-to-r from-[#00aaff] to-[#7c3aed]
-                           hover:from-[#0088cc] hover:to-[#6d28d9]
-                           transition-all shadow-[0_0_16px_rgba(0,170,255,0.2)]
-                           hover:shadow-[0_0_24px_rgba(0,170,255,0.35)]">
-          Inschrijven
-        </button>
-      </div>
     </aside>
   );
 }

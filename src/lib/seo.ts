@@ -151,7 +151,7 @@ export function buildOrganizationJsonLd(): object {
       '@type': 'ImageObject',
       url: `${BASE_URL}/logo.png`,
     },
-    sameAs: ['https://twitter.com/gameinside_nl'],
+    sameAs: ['https://x.com/GameinsideNL'],
   };
 }
 

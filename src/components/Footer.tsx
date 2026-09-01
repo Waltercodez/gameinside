@@ -45,6 +45,20 @@ export default function Footer() {
             <p className="text-sm text-[#8b949e] leading-relaxed">
               Jouw Nederlandse bron voor gaming nieuws, reviews en de beste tech. Dagelijks bijgewerkt door een team van gepassioneerde gamers.
             </p>
+            <div className="flex items-center gap-3 mt-4">
+              <a
+                href="https://x.com/GameinsideNL"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Gameinside op X"
+                className="w-9 h-9 rounded-lg bg-[#1c2333] border border-[#30363d] flex items-center justify-center
+                           text-[#8b949e] hover:text-[#00aaff] hover:border-[#00aaff]/60 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}
