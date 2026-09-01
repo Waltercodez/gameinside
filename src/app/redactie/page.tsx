@@ -3,7 +3,7 @@ import { BASE_URL, buildOrganizationJsonLd, buildAlternates } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Redactie | Gameinside',
-  description: 'Wie zit er achter Gameinside en hoe komt ons nieuws tot stand? Onze werkwijze, bronnen en redactionele standaarden.',
+  description: 'Het verhaal achter Gameinside: ontstaan uit een gedeelde passie voor gaming en tech, en onze redactionele standaarden.',
   alternates: buildAlternates(`${BASE_URL}/redactie`),
 };
 
@@ -39,9 +39,11 @@ export default function RedactiePage() {
               Over Gameinside
             </h1>
             <p className="text-[#8b949e] text-base leading-relaxed">
-              Gameinside.nl is een Nederlandstalige gamingnieuwssite. We volgen het gaminglandschap
-              dag en nacht en schrijven daar Nederlands nieuws over, van grote aankondigingen tot
-              releasedata en de verhalen die er voor Nederlandse spelers echt toe doen.
+              Gameinside.nl is ontstaan uit een groepje vrienden met dezelfde passie: gaming en
+              tech, en de droom om daar ooit een eigen platform voor te bouwen. Die droom is nu
+              Gameinside. We volgen het gaminglandschap dag en nacht en schrijven daar Nederlands
+              nieuws over, van grote aankondigingen tot releasedata en de verhalen die er voor
+              Nederlandse spelers echt toe doen.
             </p>
           </div>
         </div>
@@ -57,14 +59,7 @@ export default function RedactiePage() {
                 Onze redactie houdt doorlopend een brede selectie internationale en Nederlandse
                 gamingbronnen in de gaten. Nieuws dat door meerdere onafhankelijke redacties wordt
                 bevestigd, publiceren we direct; verhalen met een enkele bron of een minder
-                stevige onderbouwing gaan eerst langs een menselijke redacteur voor publicatie.
-              </p>
-              <p className="text-sm text-[#c8d3e0] leading-relaxed">
-                We maken daarbij gebruik van AI om conceptteksten op te stellen op basis van
-                geverifieerde berichtgeving. Elk artikel dat automatisch live gaat, is geschreven
-                met het model dat wij intern reserveren voor directe publicatie juist om
-                taalfouten te voorkomen; concepten die niet aan die drempel voldoen worden altijd
-                eerst door de redactie nagelezen voordat ze verschijnen.
+                stevige onderbouwing gaan eerst langs een redacteur voordat ze verschijnen.
               </p>
               <p className="text-sm text-[#c8d3e0] leading-relaxed">
                 Waar relevant verwijzen we naar onze eigen eerdere berichtgeving, zodat lezers de
