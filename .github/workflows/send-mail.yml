@@ -1,0 +1,59 @@
+name: Gameinside Mail
+
+# Herbruikbaar voor losse mails aan de redactie via workflow_dispatch. De
+# schedule hieronder is eenmalig: stuurt op 1 september 2026 om 09:05 CEST
+# (07:05 UTC) de dagelijkse to-do. Niet op het hele uur, zelfde val als bij
+# de andere workflows (zie daily-research.yml). Haal deze cron-regel er na
+# 1 september weer uit, anders vuurt hij volgend jaar op dezelfde datum
+# opnieuw af.
+on:
+  schedule:
+    - cron: '5 7 1 9 *'
+  workflow_dispatch:
+    inputs:
+      subject:
+        description: 'Onderwerp'
+        type: string
+        default: '[Gameinside] Bericht'
+      heading:
+        description: 'Kop boven in de mail'
+        type: string
+        default: ''
+      lines:
+        description: 'Regels, gescheiden door |'
+        type: string
+        default: ''
+
+jobs:
+  mail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Install dependencies
+        working-directory: automation
+        run: npm ci || npm install
+
+      - name: Verstuur mail
+        working-directory: automation
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            node send-custom.js \
+              "[Gameinside] To-do voor vandaag" \
+              "To-do voor 1 september 2026" \
+              "Facebook en Instagram koppelen aan de social agent (developer-app aanmaken, tokens ophalen) — X doet dit al automatisch|SEO: nieuws-sitemap bouwen voor Google News, aanmelden bij Google Publisher Center|Werken aan hogere posities in Google en meer zichtbaarheid en traffic"
+          else
+            node send-custom.js "${{ inputs.subject }}" "${{ inputs.heading }}" "${{ inputs.lines }}"
+          fi

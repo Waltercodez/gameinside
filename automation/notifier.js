@@ -247,6 +247,36 @@ async function sendSocialConcepts(articles) {
 }
 
 /**
+ * Vrije mail met een titel en een lijst regels — voor eenmalige of ad-hoc
+ * berichten aan de redactie (bv. een to-do-lijst) die niet bij een van de
+ * bestaande automatische rapportages horen.
+ *
+ * @param {string} subject
+ * @param {string} heading
+ * @param {string[]} lines
+ */
+async function sendCustom(subject, heading, lines) {
+  const html = `
+<body style="${S.body}">
+  <div style="${S.card}">
+    <div style="${S.pad}border-bottom:1px solid #30363d;">
+      <p style="margin:0;font-size:18px;font-weight:800;">
+        <span style="color:#00aaff;">GAME</span><span style="color:#fff;">INSIDE</span>
+      </p>
+      <p style="${S.meta}margin-top:6px;">${esc(heading)}</p>
+    </div>
+    <div style="${S.pad}">
+      <ul style="margin:0;padding:0 0 0 18px;color:#e6edf3;font-size:14px;line-height:1.9;">
+        ${lines.map((l) => `<li>${esc(l)}</li>`).join('')}
+      </ul>
+    </div>
+  </div>
+</body>`;
+
+  return send(subject, html, 'custom');
+}
+
+/**
  * Melding als de run mislukt is.
  */
 async function sendFailure(errorTitle, errorDetails) {
@@ -270,4 +300,4 @@ async function sendFailure(errorTitle, errorDetails) {
   return send(`[Gameinside STORING] ${errorTitle}`, html, 'storing');
 }
 
-module.exports = { sendSuccess, sendFailure, sendSocialConcepts, hasCredentials };
+module.exports = { sendSuccess, sendFailure, sendSocialConcepts, sendCustom, hasCredentials };
