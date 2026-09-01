@@ -1,14 +1,10 @@
 name: Gameinside Mail
 
-# Herbruikbaar voor losse mails aan de redactie via workflow_dispatch. De
-# schedule hieronder is eenmalig: stuurt op 1 september 2026 om 09:05 CEST
-# (07:05 UTC) de dagelijkse to-do. Niet op het hele uur, zelfde val als bij
-# de andere workflows (zie daily-research.yml). Haal deze cron-regel er na
-# 1 september weer uit, anders vuurt hij volgend jaar op dezelfde datum
-# opnieuw af.
+# Herbruikbaar voor losse mails aan de redactie via workflow_dispatch. Had
+# eerder een eenmalige schedule-trigger voor de to-do-mail van 1 september
+# 2026, maar die cron is nooit afgegaan (0 runs) en is met de hand alsnog
+# verstuurd. Regel er weer uit, zoals gepland.
 on:
-  schedule:
-    - cron: '5 7 1 9 *'
   workflow_dispatch:
     inputs:
       subject:
@@ -48,12 +44,4 @@ jobs:
         working-directory: automation
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-        run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            node send-custom.js \
-              "[Gameinside] To-do voor vandaag" \
-              "To-do voor 1 september 2026" \
-              "Facebook en Instagram koppelen aan de social agent (developer-app aanmaken, tokens ophalen) — X doet dit al automatisch|SEO: nieuws-sitemap bouwen voor Google News, aanmelden bij Google Publisher Center|Werken aan hogere posities in Google en meer zichtbaarheid en traffic"
-          else
-            node send-custom.js "${{ inputs.subject }}" "${{ inputs.heading }}" "${{ inputs.lines }}"
-          fi
+        run: node send-custom.js "${{ inputs.subject }}" "${{ inputs.heading }}" "${{ inputs.lines }}"
