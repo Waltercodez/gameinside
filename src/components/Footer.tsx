@@ -18,8 +18,8 @@ const footerLinks = {
     { href: '#', label: 'Mobile' },
   ],
   Redactie: [
-    { href: '#', label: 'Over Gameinside' },
-    { href: '#', label: 'Redactieteam' },
+    { href: '/redactie', label: 'Over Gameinside' },
+    { href: '/redactie', label: 'Redactieteam' },
     { href: '/adverteren', label: 'Adverteren' },
     { href: '/contact', label: 'Contact' },
     { href: '#', label: 'Privacy' },

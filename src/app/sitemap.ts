@@ -23,6 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/gta-6`, changeFrequency: 'daily', priority: 0.9, lastModified: new Date() },
     { url: `${BASE_URL}/contact`, changeFrequency: 'monthly', priority: 0.3, lastModified: new Date() },
     { url: `${BASE_URL}/adverteren`, changeFrequency: 'monthly', priority: 0.3, lastModified: new Date() },
+    { url: `${BASE_URL}/redactie`, changeFrequency: 'monthly', priority: 0.4, lastModified: new Date() },
   ];
 
   const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({

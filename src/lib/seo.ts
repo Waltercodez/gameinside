@@ -65,8 +65,9 @@ export function buildArticleJsonLd(article: Article): object {
     datePublished: article.date,
     dateModified: article.date,
     author: {
-      '@type': 'Person',
+      '@type': 'Organization',
       name: article.author,
+      url: BASE_URL,
     },
     publisher: {
       '@type': 'Organization',
@@ -113,8 +114,9 @@ export function buildReviewJsonLd(article: Article): object | null {
       name: gameName,
     },
     author: {
-      '@type': 'Person',
+      '@type': 'Organization',
       name: article.author,
+      url: BASE_URL,
     },
     description: article.excerpt,
   };
