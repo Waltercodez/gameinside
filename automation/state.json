@@ -1,12 +1,7 @@
 {
   "date": "2026-09-01",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "CD Projekt Red is \"targeting\" a 2028 release date for The Witcher 4, per a new update from the developer",
-      "url": "https://www.eurogamer.net/the-witcher-4-release-date-2028",
-      "date": "2026-08-25T07:33:51.678Z"
-    },
     {
       "title": "Gamescom Opening Night Live 2026: Start Time, How To Watch, And What To Expect",
       "url": "https://www.gamespot.com/articles/gamescom-opening-night-live-2026-start-time-how-to-watch-and-what-to-expect/",
@@ -291,7 +286,17 @@
       "title": "After the debacle of Cyberpunk 2077, CD Projekt says The Witcher 4 is already running on PC and consoles, promises 'it's going to run' on all target platforms",
       "url": "https://www.pcgamer.com/games/the-witcher/after-the-debacle-of-cyberpunk-2077-cd-projekt-says-the-witcher-4-is-already-running-on-pc-and-consoles-promises-its-going-to-run-on-all-target-platforms/",
       "date": "2026-09-01T01:51:00.809Z"
+    },
+    {
+      "title": "Godzilla Remaster Devs Explain Why They Aren’t Worried About Releasing Near GTA 6",
+      "url": "https://www.gamespot.com/articles/godzilla-remaster-devs-explain-why-they-arent-worried-about-releasing-near-gta-6/",
+      "date": "2026-09-01T07:48:57.738Z"
+    },
+    {
+      "title": "Videopreview - Het begin van de oorlog - Gears of War: E-Day gespeeld",
+      "url": "https://tweakers.net/video/20538/het-begin-van-de-oorlog-gears-of-war-e-day-gespeeld.html",
+      "date": "2026-09-01T07:49:25.545Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
