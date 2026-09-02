@@ -1,27 +1,7 @@
 {
   "date": "2026-09-02",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "The Witcher 3 Remastered announced, an overhaul free for existing owners, while expansion Songs of the Past finally shown",
-      "url": "https://www.eurogamer.net/witcher-3-expansion-songs-of-the-past-trailer",
-      "date": "2026-08-26T05:23:48.439Z"
-    },
-    {
-      "title": "Path Of Exile 2 Is Finally Getting Its Full Release, And It’ll Be Free-To-Play",
-      "url": "https://www.gamespot.com/articles/path-of-exile-2-is-finally-getting-its-full-release-and-itll-be-free-to-play/",
-      "date": "2026-08-26T05:24:01.173Z"
-    },
-    {
-      "title": "The Witcher 3 Songs of the Past Expansion: Everything Revealed at gamescom ONL 2026",
-      "url": "https://www.ign.com/articles/the-witcher-3-songs-of-the-past-expansion-everything-revealed-at-gamescom-onl-2026",
-      "date": "2026-08-26T08:29:43.877Z"
-    },
-    {
-      "title": "Mass Effect’s Spiritual Successor Exodus Finally Gets a Release Date, and It’s Bringing an Octopus Mercenary Along",
-      "url": "https://wccftech.com/exodus-release-date-april-2027-archetype-entertainment/",
-      "date": "2026-08-26T08:30:08.900Z"
-    },
     {
       "title": "Paradox en LEGO onthullen citybuilder LEGO Skylines voor pc en consoles",
       "url": "https://tweakers.net/nieuws/251402/paradox-en-lego-onthullen-citybuilder-lego-skylines-voor-pc-en-consoles.html",
@@ -296,7 +276,17 @@
       "title": "Mario Kart 8 Just Got a Game-Changing Update for Nintendo Switch 2",
       "url": "https://www.polygon.com/mario-kart-8-deluxe-switch-2-update-patch-notes-nintendo/",
       "date": "2026-09-02T04:32:24.531Z"
+    },
+    {
+      "title": "The Grand Theft Auto run button has changed after 25 years - GTA 6 no longer requires you to tap a face button to peg it",
+      "url": "https://www.eurogamer.net/gta-6-run-button-changes-tap-rockstar",
+      "date": "2026-09-02T09:36:35.560Z"
+    },
+    {
+      "title": "Mario Kart 8 Deluxe gets a free Switch 2 update adding an eight-player split-screen mode",
+      "url": "https://www.videogameschronicle.com/news/mario-kart-8-deluxe-gets-a-free-switch-2-update-adding-an-eight-player-split-screen-mode/",
+      "date": "2026-09-02T09:37:02.571Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
