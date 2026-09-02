@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-01",
-  "publishedToday": 11,
+  "date": "2026-09-02",
+  "publishedToday": 2,
   "topics": [
     {
       "title": "The Witcher 3 Remastered announced, an overhaul free for existing owners, while expansion Songs of the Past finally shown",
@@ -286,7 +286,17 @@
       "title": "Rockstar Games Reveals Its Official GTA Online Roleplaying Server, nopixel V",
       "url": "https://www.ign.com/articles/rockstar-games-reveals-its-official-gta-online-roleplaying-server-nopixel-v",
       "date": "2026-09-01T23:17:58.315Z"
+    },
+    {
+      "title": "GTA 6 Extended Look Tops Netflix Top 10 Chart in First Week",
+      "url": "https://www.ign.com/articles/gta-6-extended-look-tops-netflix-top-10-chart-in-first-week",
+      "date": "2026-09-02T04:31:53.503Z"
+    },
+    {
+      "title": "Mario Kart 8 Just Got a Game-Changing Update for Nintendo Switch 2",
+      "url": "https://www.polygon.com/mario-kart-8-deluxe-switch-2-update-patch-notes-nintendo/",
+      "date": "2026-09-02T04:32:24.531Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
