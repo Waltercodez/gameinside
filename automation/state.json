@@ -1,17 +1,7 @@
 {
   "date": "2026-09-02",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Paradox en LEGO onthullen citybuilder LEGO Skylines voor pc en consoles",
-      "url": "https://tweakers.net/nieuws/251402/paradox-en-lego-onthullen-citybuilder-lego-skylines-voor-pc-en-consoles.html",
-      "date": "2026-08-26T11:19:14.794Z"
-    },
-    {
-      "title": "The Witcher 3: Songs of the Past takes the best of CDPR's RPG and pushes it further in Geralt's new final chapter",
-      "url": "https://www.gamesradar.com/games/the-witcher/the-witcher-3-songs-of-the-past-takes-the-best-of-cdprs-rpg-and-pushes-it-further-in-geralts-new-final-chapter/",
-      "date": "2026-08-26T11:19:30.881Z"
-    },
     {
       "title": "‘We understand that this is disappointing news’ Bloodstained: The Scarlet Engagement is delayed to 2027",
       "url": "https://www.videogameschronicle.com/news/we-understand-that-this-is-disappointing-news-bloodstained-the-scarlet-engagement-is-delayed-to-2027/",
@@ -286,7 +276,17 @@
       "title": "Mario Kart 8 Deluxe gets a free Switch 2 update adding an eight-player split-screen mode",
       "url": "https://www.videogameschronicle.com/news/mario-kart-8-deluxe-gets-a-free-switch-2-update-adding-an-eight-player-split-screen-mode/",
       "date": "2026-09-02T09:37:02.571Z"
+    },
+    {
+      "title": "GTA 6 Has A Point Of No Return For Players Who Take Crime Too Far",
+      "url": "https://www.gamespot.com/articles/gta-6-morality-system-has-a-secret-breaking-point/",
+      "date": "2026-09-02T14:29:01.398Z"
+    },
+    {
+      "title": "Square Enix denies it's going private following Japanese reports to the contrary",
+      "url": "https://www.eurogamer.net/square-enix-denies-going-private-report",
+      "date": "2026-09-02T14:29:34.431Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
