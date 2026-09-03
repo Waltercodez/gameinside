@@ -1,17 +1,7 @@
 {
   "date": "2026-09-03",
-  "publishedToday": 8,
+  "publishedToday": 10,
   "topics": [
-    {
-      "title": "Grand Theft Auto 6: An Extended Look Runtime Revealed, Features Footage Captured on PS5",
-      "url": "https://www.ign.com/articles/grand-theft-auto-6-an-extended-look-runtime-revealed-features-footage-captured-on-ps5",
-      "date": "2026-08-27T15:58:29.391Z"
-    },
-    {
-      "title": "LIVE: Rockstar Set to Finally Reveal Official GTA 6 Gameplay",
-      "url": "https://www.ign.com/articles/grand-theft-auto-6-everything-revealed-on-netflix-ign-and-more",
-      "date": "2026-08-27T15:58:42.162Z"
-    },
     {
       "title": "Grand Theft Auto VI: An Extended Look – 27 minutes of gameplay",
       "url": "https://www.gematsu.com/2026/08/grand-theft-auto-vi-an-extended-look-27-minutes-of-gameplay",
@@ -316,7 +306,17 @@
       "title": "Final Fantasy VII Revelation launches on PS5 April 8, 2027",
       "url": "https://blog.playstation.com/2026/09/03/final-fantasy-vii-revelation-launches-on-ps5-april-8-2027/",
       "date": "2026-09-03T14:34:40.499Z"
+    },
+    {
+      "title": "'We Were All Positive It Was Going to Fail': Rockstar Devs Thought GTA Online Would Flop",
+      "url": "https://www.ign.com/articles/we-were-all-positive-it-was-going-to-fail-rockstar-devs-thought-gta-online-would-flop",
+      "date": "2026-09-03T18:37:41.070Z"
+    },
+    {
+      "title": "Final Fantasy 7 Revelation is getting story DLC after all, focussing on Sephiroth and Vincent",
+      "url": "https://www.videogameschronicle.com/news/final-fantasy-7-revelation-is-getting-story-dlc-after-all-focussing-on-sephiroth-and-vincent/",
+      "date": "2026-09-03T18:38:09.815Z"
     }
   ],
-  "varietyPublishedToday": 4
+  "varietyPublishedToday": 5
 }
