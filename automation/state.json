@@ -1,12 +1,7 @@
 {
-  "date": "2026-09-02",
-  "publishedToday": 10,
+  "date": "2026-09-03",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Brings Back A Fascinating San Andreas Feature",
-      "url": "https://www.gamespot.com/articles/gta-6-brings-back-a-fascinating-san-andreas-feature/",
-      "date": "2026-08-26T22:34:21.313Z"
-    },
     {
       "title": "Grand Theft Auto 6: An Extended Look Runtime Revealed, Features Footage Captured on PS5",
       "url": "https://www.ign.com/articles/grand-theft-auto-6-an-extended-look-runtime-revealed-features-footage-captured-on-ps5",
@@ -281,7 +276,17 @@
       "title": "Mario Kart 8's surprise Switch 2 update makes everyone faster \"by the equivalent of one coin,\" decimating world records everywhere",
       "url": "https://www.gamesradar.com/games/super-mario/mario-kart-8s-surprise-switch-2-update-makes-everyone-faster-by-the-equivalent-of-one-coin-decimating-world-records-everywhere/",
       "date": "2026-09-02T21:49:06.798Z"
+    },
+    {
+      "title": "A Bunch Of Old GTA 6 Leaks Turned Out To Be True",
+      "url": "https://kotaku.com/a-bunch-of-old-gta-6-leaks-turned-out-to-be-true-2000730608",
+      "date": "2026-09-03T00:14:57.929Z"
+    },
+    {
+      "title": "The Witcher Remake Is on Hold Until The Witcher 4's Development Progresses, Confirms CD Projekt Red",
+      "url": "https://www.ign.com/articles/the-witcher-remake-is-on-hold-until-the-witcher-4s-development-progresses-confirms-cd-projekt-red",
+      "date": "2026-09-03T00:15:27.983Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
