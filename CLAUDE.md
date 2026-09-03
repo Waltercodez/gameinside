@@ -105,7 +105,11 @@ zonder link zou het $0,015 zijn. Bij 2-3 nieuwe artikelen per dag is dat
 ruwweg $12-18/maand. Zie ook `X_BACKLOG_PER_DAY` hieronder voor de eenmalige
 extra kosten van de achterstand.
 
-Draait één keer per dag (`.github/workflows/social-agent.yml`). Pijplijn:
+Draait om de 2 uur (`.github/workflows/social-agent.yml`), sinds 2026-09-03
+verhoogd van 1x per dag. Bij 1x per dag ('s avonds) zag een artikel dat
+overdag met de hand live gezet was er op X al een dag oud uit tegen de tijd
+dat de run het oppikte — precies tegengesteld aan het doel van traffic en
+naamsbekendheid opbouwen. Pijplijn:
 
 1. Haalt alle live `article`-documenten uit Sanity op.
 2. Vergelijkt met `automation/social-seen.json` — alleen artikelen die nog
@@ -123,16 +127,20 @@ Draait één keer per dag (`.github/workflows/social-agent.yml`). Pijplijn:
    nooit af van hoe goed Claude kan tellen). Lukt dat niet direct (bv.
    tijdelijke rate limit), dan komt het artikel vooraan in
    `automation/x-queue.json` voor een automatische herkansing de volgende run.
-5. Eén mail per dag: voor X een link naar de geplaatste post (of een melding
-   dat hij in de wachtrij staat), voor Facebook en Instagram de conceptteksten
-   ter review, kopieerbaar.
+5. Eén mail per run met iets te melden: voor X een link naar de geplaatste
+   post (of een melding dat hij in de wachtrij staat), voor Facebook en
+   Instagram de conceptteksten ter review, kopieerbaar. Een run zonder nieuwe
+   artikelen mailt niets.
 
 `X_BACKLOG_PER_DAY` (standaard 3) werkt daarnaast dagelijks een deel van
 `automation/x-queue.json` weg, los van wat er die dag vers bijkomt — voor
 artikelen die al live stonden voordat het X-account bestond. Oudste eerst.
-Op 2026-09-01 is de wachtrij handmatig leeggemaakt na het account aanmaken:
-de nieuwste 10 van de toen 30 live artikelen zijn direct geplaatst (~$2), de
-oudere 20 zijn bewust laten vervallen in plaats van alsnog geplaatst.
+Dit is expliciet **per kalenderdag**, niet per run (`isZelfdeUtcDag` in
+`social-agent.js`): sinds de run om de 2 uur draait in plaats van 1x per dag
+zou de wachtrij anders 12x zo snel leeglopen als bedoeld. Op 2026-09-01 is de
+wachtrij handmatig leeggemaakt na het account aanmaken: de nieuwste 10 van de
+toen 30 live artikelen zijn direct geplaatst (~$2), de oudere 20 zijn bewust
+laten vervallen in plaats van alsnog geplaatst.
 
 **Instagram ondersteunt geen klikbare link in de caption.** Dat is een
 platformbeperking, geen bug — "link in bio" blijft de gangbare oplossing tot

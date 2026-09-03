@@ -2,10 +2,11 @@ name: Gameinside Social Agent
 
 on:
   schedule:
-    # Dagelijks, niet op het hele uur (zelfde val als bij de news agent, zie
-    # daily-research.yml). Aan het einde van de dag, zodat het meeste
-    # handmatige publiceren in Studio al gebeurd is.
-    - cron: '41 17 * * *'
+    # Elke 2 uur, niet op het hele uur (zelfde val als bij de news agent,
+    # zie daily-research.yml). Stond eerst op eens per dag ('s avonds), maar
+    # dan postte hij nieuws van artikelen die overdag met de hand live waren
+    # gezet pas de volgende run op X: het zag er dan al een dag oud uit.
+    - cron: '23 */2 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

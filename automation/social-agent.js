@@ -158,11 +158,24 @@ async function verwerkNieuw(nieuw) {
   return { results, processedIds };
 }
 
+function isZelfdeUtcDag(isoA, isoB) {
+  return isoA && new Date(isoA).toISOString().slice(0, 10) === new Date(isoB).toISOString().slice(0, 10);
+}
+
 async function werkAchterstandWeg() {
   if (!xPoster.hasCredentials() || SKIP_EXTERNAL) return { posted: 0, remaining: null };
 
   const queue = loadQueue();
   if (queue.items.length === 0) return { posted: 0, remaining: 0 };
+
+  // Draait sinds 2026-09-03 om de 2 uur i.p.v. 1x per dag (zie
+  // social-agent.yml). Zonder deze check zou X_BACKLOG_PER_DAY per RUN
+  // gelden in plaats van per dag, en de wachtrij dus 12x zo snel leeglopen
+  // als bedoeld.
+  const nu = new Date().toISOString();
+  if (isZelfdeUtcDag(queue.lastRun, nu)) {
+    return { posted: 0, remaining: queue.items.length };
+  }
 
   const batch = queue.items.slice(0, X_BACKLOG_PER_DAY);
   const rest = queue.items.slice(X_BACKLOG_PER_DAY);
