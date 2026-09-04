@@ -1,27 +1,7 @@
 {
   "date": "2026-09-04",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Video - Alles wat we zagen in de nieuwe GTA VI-trailer - Tweakers Update",
-      "url": "https://tweakers.net/video/20536/alles-wat-we-zagen-in-de-nieuwe-gta-vi-trailer-tweakers.html",
-      "date": "2026-08-28T08:56:00.483Z"
-    },
-    {
-      "title": "Grand Theft Auto 6 Drops First-Person Mode at Launch, It’s Claimed",
-      "url": "https://insider-gaming.com/gta-6-drops-first-person-mode-at-launch/",
-      "date": "2026-08-28T08:56:12.498Z"
-    },
-    {
-      "title": "How the GTA 6 Map Size Stacks Up to Other Rockstar Games Like RDR2 and GTA 5",
-      "url": "https://www.ign.com/articles/how-the-gta-6-map-size-stacks-up-to-other-rockstar-games-like-rdr2-and-gta-5",
-      "date": "2026-08-28T09:01:25.254Z"
-    },
-    {
-      "title": "The Witcher 3 Remastered PC Specs Revealed",
-      "url": "https://insider-gaming.com/witcher-3-remastered-pc-specs-revealed/",
-      "date": "2026-08-28T09:01:37.274Z"
-    },
     {
       "title": "8 Incredible Details In GTA 6's Extended Look That Blew Us Away",
       "url": "https://www.polygon.com/gta-6-youtube-hair-sweat-animals-gameplay-details/",
@@ -331,7 +311,17 @@
       "title": "(For Southeast Asia) Until Dawn 2 launches January 28",
       "url": "https://blog.playstation.com/2026/09/03/20260904-ud/",
       "date": "2026-09-04T04:31:43.530Z"
+    },
+    {
+      "title": "Miami-Dade police outraged by proposals to turn parts of Miami into GTA 6, saying that Rockstar's game embodies what they \"work every single day to prevent\"",
+      "url": "https://www.rockpapershotgun.com/miami-dade-police-outraged-by-proposals-to-turn-parts-of-miami-into-gta-6-saying-that-rockstars-game-embodies-what-they-work-every-single-day-to-prevent",
+      "date": "2026-09-04T09:42:59.083Z"
+    },
+    {
+      "title": "Xbox places monthly time limits to its paid cloud gaming service, insists only a fraction of players will be impacted",
+      "url": "https://www.eurogamer.net/xbox-cloud-gaming-monthly-time-limits",
+      "date": "2026-09-04T09:43:25.677Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
