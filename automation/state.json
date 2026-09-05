@@ -1,17 +1,7 @@
 {
   "date": "2026-09-05",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Tech Experts Call Grand Theft Auto 6 The Most Visually Advanced Game To Date, Which Explains Why It’s Stuck At 30FPS",
-      "url": "https://www.gamespot.com/articles/tech-experts-call-grand-theft-auto-6-the-most-visually-advanced-game-to-date-which-explains-why-its-stuck-at-30fps/",
-      "date": "2026-08-29T03:43:38.536Z"
-    },
-    {
-      "title": "[UPDATE] EA Motive Confirms Iron Man Game Leak After Gameplay Trailer Spreads on Social Media",
-      "url": "https://www.ign.com/articles/ea-motives-iron-man-game-trailer-seemingly-leaked-with-early-look-at-gameplay",
-      "date": "2026-08-29T03:43:54.527Z"
-    },
     {
       "title": "Rockstar: GTA VI bevat geen microtransacties of generatieve AI",
       "url": "https://tweakers.net/nieuws/251518/rockstar-gta-vi-bevat-geen-microtransacties-of-generatieve-ai.html",
@@ -346,7 +336,17 @@
       "title": "Next week, for the first time ever, Nintendo is hosting two Directs back-to-back - and the first one is dedicated to The Legend of Zelda's 40th anniversary",
       "url": "https://www.eurogamer.net/nintendo-zelda-40th-anniversary-direct-another-nintendo-direct",
       "date": "2026-09-05T00:05:07.101Z"
+    },
+    {
+      "title": "GTA 6 for Xbox: You Can Save $10, Today Only",
+      "url": "https://www.ign.com/articles/gta-6-for-xbox-you-can-save-10-today-only",
+      "date": "2026-09-05T04:25:59.920Z"
+    },
+    {
+      "title": "'No One Puts Double Fine Out of Business Except for Me' — Tim Schafer Explains How He Kept Double Fine Afloat After Leaving Xbox",
+      "url": "https://www.ign.com/articles/no-one-puts-double-fine-out-of-business-except-for-me-tim-schafer-explains-how-he-kept-double-fine-afloat-after-leaving-xbox",
+      "date": "2026-09-05T04:26:27.937Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
