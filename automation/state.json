@@ -1,17 +1,7 @@
 {
   "date": "2026-09-08",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Take-Two's GTA 6 leak investigation is heating up as the publisher requests sealed subpoena to avoid tipping off leakers",
-      "url": "https://www.gamesradar.com/games/grand-theft-auto/take-twos-gta-6-leak-investigation-is-heating-up-as-the-publisher-requests-sealed-subpoena-to-avoid-tipping-off-leakers/",
-      "date": "2026-09-01T01:50:06.342Z"
-    },
-    {
-      "title": "After the debacle of Cyberpunk 2077, CD Projekt says The Witcher 4 is already running on PC and consoles, promises 'it's going to run' on all target platforms",
-      "url": "https://www.pcgamer.com/games/the-witcher/after-the-debacle-of-cyberpunk-2077-cd-projekt-says-the-witcher-4-is-already-running-on-pc-and-consoles-promises-its-going-to-run-on-all-target-platforms/",
-      "date": "2026-09-01T01:51:00.809Z"
-    },
     {
       "title": "Godzilla Remaster Devs Explain Why They Aren’t Worried About Releasing Near GTA 6",
       "url": "https://www.gamespot.com/articles/godzilla-remaster-devs-explain-why-they-arent-worried-about-releasing-near-gta-6/",
@@ -386,7 +376,17 @@
       "title": "Nintendo Reveals What To Expect From The Zelda 40th Anniversary Direct",
       "url": "https://www.nintendolife.com/news/2026/09/nintendo-reveals-what-to-expect-from-the-zelda-40th-anniversary-direct",
       "date": "2026-09-08T01:12:34.209Z"
+    },
+    {
+      "title": "GTA 6's Criminal Profile system sounds pretty interesting, includes a 'shattered' state for players who DGAF",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6s-criminal-profile-system-sounds-pretty-interesting-isnt-a-direct-copy-of-red-deads-honor-system/",
+      "date": "2026-09-08T05:57:45.654Z"
+    },
+    {
+      "title": "Zelda: Ocarina Of Time Remake Price Seemingly Revealed",
+      "url": "https://www.nintendolife.com/news/2026/09/zelda-ocarina-of-time-remake-price-seemingly-revealed",
+      "date": "2026-09-08T05:58:12.670Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
