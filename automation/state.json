@@ -1,17 +1,7 @@
 {
   "date": "2026-09-08",
-  "publishedToday": 8,
+  "publishedToday": 10,
   "topics": [
-    {
-      "title": "GTA 6 Removes The Series’ Worst Feature",
-      "url": "https://www.gamespot.com/articles/gta-6-removes-the-series-worst-feature/",
-      "date": "2026-09-01T17:49:22.228Z"
-    },
-    {
-      "title": "PlayStation argues \"reasonable consumers\" already know they don't actually own their digital games",
-      "url": "https://www.eurogamer.net/playstation-reasonable-consumers-know-dont-own-digital-games",
-      "date": "2026-09-01T17:49:37.778Z"
-    },
     {
       "title": "No Rest for the Wicked, which was slated to hit 1.0 a month before Grand Theft Auto 6, is delayed into 2027",
       "url": "https://www.pcgamer.com/games/action/no-rest-for-the-wicked-which-was-slated-to-hit-1-0-a-month-before-grand-theft-auto-6-is-delayed-into-2027/",
@@ -386,7 +376,17 @@
       "title": "The Legend of Zelda: Ocarina of Time Remake Release Date Confirmed, and It Looks Like a Faithful-Looking Return With a Few Surprises",
       "url": "https://www.ign.com/articles/the-legend-of-zelda-ocarina-of-time-remake-fully-revealed",
       "date": "2026-09-08T15:10:00.662Z"
+    },
+    {
+      "title": "Nintendo Doesn't Care About GTA 6",
+      "url": "https://www.polygon.com/zelda-ocarina-of-time-switch-2-release-date-nintendo-gta-6-november/",
+      "date": "2026-09-08T18:39:24.585Z"
+    },
+    {
+      "title": "The Legend Of Zelda: Ocarina Of Time Remake Looks Fantastic In First Gameplay Look",
+      "url": "https://www.gamespot.com/articles/the-legend-of-zelda-ocarina-of-time-remake-looks-fantastic-in-first-gameplay-look/",
+      "date": "2026-09-08T18:39:52.609Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
