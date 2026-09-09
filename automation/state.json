@@ -1,12 +1,7 @@
 {
-  "date": "2026-09-08",
-  "publishedToday": 11,
+  "date": "2026-09-09",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Rockstar Games Reveals Its Official GTA Online Roleplaying Server, nopixel V",
-      "url": "https://www.ign.com/articles/rockstar-games-reveals-its-official-gta-online-roleplaying-server-nopixel-v",
-      "date": "2026-09-01T23:17:58.315Z"
-    },
     {
       "title": "GTA 6 Extended Look Tops Netflix Top 10 Chart in First Week",
       "url": "https://www.ign.com/articles/gta-6-extended-look-tops-netflix-top-10-chart-in-first-week",
@@ -381,7 +376,17 @@
       "title": "The Legend of Zelda Is the Only Big Name Willing to Go Up Against GTA 6 in November",
       "url": "https://www.pushsquare.com/news/2026/09/the-legend-of-zelda-is-the-only-big-name-willing-to-go-up-against-gta-6-in-november",
       "date": "2026-09-08T21:50:54.647Z"
+    },
+    {
+      "title": "Another Big Sequel Launches in Zelda and GTA 6’s November That You Can't Miss",
+      "url": "https://www.polygon.com/escape-academy-2-back-2-school-interview/",
+      "date": "2026-09-09T00:13:35.220Z"
+    },
+    {
+      "title": "The Zelda 40th Anniversary Switch 2 console and Pro Controller are now official, after leaking last month",
+      "url": "https://www.videogameschronicle.com/news/the-zelda-40th-anniversary-switch-2-console-and-pro-controller-are-now-official-after-leaking-last-month/",
+      "date": "2026-09-09T00:14:06.242Z"
     }
   ],
-  "varietyPublishedToday": 4
+  "varietyPublishedToday": 1
 }
