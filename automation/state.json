@@ -1,17 +1,7 @@
 {
   "date": "2026-09-09",
-  "publishedToday": 6,
+  "publishedToday": 8,
   "topics": [
-    {
-      "title": "GTA 6 Has A Point Of No Return For Players Who Take Crime Too Far",
-      "url": "https://www.gamespot.com/articles/gta-6-morality-system-has-a-secret-breaking-point/",
-      "date": "2026-09-02T14:29:01.398Z"
-    },
-    {
-      "title": "Square Enix denies it's going private following Japanese reports to the contrary",
-      "url": "https://www.eurogamer.net/square-enix-denies-going-private-report",
-      "date": "2026-09-02T14:29:34.431Z"
-    },
     {
       "title": "YouTuber Claims Rockstar Confirmed Fans Measured Oxygen Levels Around Its Campus in Anticipation for a New Trailer",
       "url": "https://www.ign.com/articles/youtuber-claims-rockstar-confirmed-fans-measured-oxygen-levels-around-its-campus-in-anticipation-for-a-new-trailer",
@@ -386,7 +376,17 @@
       "title": "Loads Of Ubisoft Games Have Suddenly Joined Xbox Disc To Digital Overnight",
       "url": "https://www.purexbox.com/news/2026/09/loads-of-ubisoft-games-have-suddenly-joined-xbox-disc-to-digital-overnight",
       "date": "2026-09-09T09:44:59.857Z"
+    },
+    {
+      "title": "PS5-emulator KytyPS5 maakt eerste minuten GTA V speelbaar op pc tot 60fps",
+      "url": "https://tweakers.net/nieuws/251924/ps5-emulator-kytyps5-maakt-eerste-minuten-gta-v-speelbaar-op-pc-tot-60fps.html",
+      "date": "2026-09-09T14:35:15.682Z"
+    },
+    {
+      "title": "Nintendo Direct September 2026: All The Biggest Announcements And Games",
+      "url": "https://www.gamespot.com/articles/nintendo-direct-september-2026-all-the-biggest-announcements-and-games/",
+      "date": "2026-09-09T14:35:46.267Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
