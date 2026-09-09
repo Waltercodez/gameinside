@@ -1,17 +1,7 @@
 {
   "date": "2026-09-09",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6 Extended Look Tops Netflix Top 10 Chart in First Week",
-      "url": "https://www.ign.com/articles/gta-6-extended-look-tops-netflix-top-10-chart-in-first-week",
-      "date": "2026-09-02T04:31:53.503Z"
-    },
-    {
-      "title": "Mario Kart 8 Just Got a Game-Changing Update for Nintendo Switch 2",
-      "url": "https://www.polygon.com/mario-kart-8-deluxe-switch-2-update-patch-notes-nintendo/",
-      "date": "2026-09-02T04:32:24.531Z"
-    },
     {
       "title": "The Grand Theft Auto run button has changed after 25 years - GTA 6 no longer requires you to tap a face button to peg it",
       "url": "https://www.eurogamer.net/gta-6-run-button-changes-tap-rockstar",
@@ -386,7 +376,17 @@
       "title": "The Zelda 40th Anniversary Switch 2 console and Pro Controller are now official, after leaking last month",
       "url": "https://www.videogameschronicle.com/news/the-zelda-40th-anniversary-switch-2-console-and-pro-controller-are-now-official-after-leaking-last-month/",
       "date": "2026-09-09T00:14:06.242Z"
+    },
+    {
+      "title": "Forget 'GTA 6,' The Greatest Miami Action Crime Series Ever Made Is Streaming For Free Right Now",
+      "url": "https://www.polygon.com/miami-crime-drama-series-streaming-free-tubi/",
+      "date": "2026-09-09T04:41:59.810Z"
+    },
+    {
+      "title": "Steam may have leaked achievements for countless forthcoming PC games via a third party site, including Persona 6, Ace Combat 8, and even some unannounced games",
+      "url": "https://www.pcgamer.com/gaming-industry/steam-may-have-leaked-achievements-for-countless-forthcoming-pc-games-via-a-third-party-site-including-persona-6-ace-combat-8-and-even-some-unannounced-games/",
+      "date": "2026-09-09T04:42:35.853Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
