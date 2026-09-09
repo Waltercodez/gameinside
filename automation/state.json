@@ -1,17 +1,7 @@
 {
   "date": "2026-09-09",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "The Grand Theft Auto run button has changed after 25 years - GTA 6 no longer requires you to tap a face button to peg it",
-      "url": "https://www.eurogamer.net/gta-6-run-button-changes-tap-rockstar",
-      "date": "2026-09-02T09:36:35.560Z"
-    },
-    {
-      "title": "Mario Kart 8 Deluxe gets a free Switch 2 update adding an eight-player split-screen mode",
-      "url": "https://www.videogameschronicle.com/news/mario-kart-8-deluxe-gets-a-free-switch-2-update-adding-an-eight-player-split-screen-mode/",
-      "date": "2026-09-02T09:37:02.571Z"
-    },
     {
       "title": "GTA 6 Has A Point Of No Return For Players Who Take Crime Too Far",
       "url": "https://www.gamespot.com/articles/gta-6-morality-system-has-a-secret-breaking-point/",
@@ -386,7 +376,17 @@
       "title": "Steam may have leaked achievements for countless forthcoming PC games via a third party site, including Persona 6, Ace Combat 8, and even some unannounced games",
       "url": "https://www.pcgamer.com/gaming-industry/steam-may-have-leaked-achievements-for-countless-forthcoming-pc-games-via-a-third-party-site-including-persona-6-ace-combat-8-and-even-some-unannounced-games/",
       "date": "2026-09-09T04:42:35.853Z"
+    },
+    {
+      "title": "Huge Steam leak shows achievement lists for hundreds of upcoming games, including Kingdom Hearts 4 and Persona 6",
+      "url": "https://www.videogameschronicle.com/news/huge-steam-leak-shows-achievement-lists-for-hundreds-of-upcoming-games-including-kingdom-hearts-4-and-persona-6/",
+      "date": "2026-09-09T09:44:42.266Z"
+    },
+    {
+      "title": "Loads Of Ubisoft Games Have Suddenly Joined Xbox Disc To Digital Overnight",
+      "url": "https://www.purexbox.com/news/2026/09/loads-of-ubisoft-games-have-suddenly-joined-xbox-disc-to-digital-overnight",
+      "date": "2026-09-09T09:44:59.857Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
