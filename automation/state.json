@@ -1,27 +1,7 @@
 {
-  "date": "2026-09-09",
-  "publishedToday": 10,
+  "date": "2026-09-10",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "YouTuber Claims Rockstar Confirmed Fans Measured Oxygen Levels Around Its Campus in Anticipation for a New Trailer",
-      "url": "https://www.ign.com/articles/youtuber-claims-rockstar-confirmed-fans-measured-oxygen-levels-around-its-campus-in-anticipation-for-a-new-trailer",
-      "date": "2026-09-02T18:41:32.300Z"
-    },
-    {
-      "title": "Dragon's Dogma 2 Frame Rates Massively Improved with Patch 3.2 on PS5, PS5 Pro",
-      "url": "https://www.pushsquare.com/news/2026/09/dragons-dogma-2-frame-rates-massively-improved-with-patch-3-2-on-ps5-ps5-pro",
-      "date": "2026-09-02T18:41:44.547Z"
-    },
-    {
-      "title": "Getting GTA Online players to move on to GTA 6 Online is going to be \"a mess\" for Rockstar, Valve veteran says",
-      "url": "https://www.gamesradar.com/games/grand-theft-auto/getting-gta-online-players-to-move-on-to-gta-6-online-is-going-to-be-a-mess-for-rockstar-valve-veteran-says/",
-      "date": "2026-09-02T21:48:52.058Z"
-    },
-    {
-      "title": "Mario Kart 8's surprise Switch 2 update makes everyone faster \"by the equivalent of one coin,\" decimating world records everywhere",
-      "url": "https://www.gamesradar.com/games/super-mario/mario-kart-8s-surprise-switch-2-update-makes-everyone-faster-by-the-equivalent-of-one-coin-decimating-world-records-everywhere/",
-      "date": "2026-09-02T21:49:06.798Z"
-    },
     {
       "title": "A Bunch Of Old GTA 6 Leaks Turned Out To Be True",
       "url": "https://kotaku.com/a-bunch-of-old-gta-6-leaks-turned-out-to-be-true-2000730608",
@@ -396,7 +376,17 @@
       "title": "Resident Evil 2, 3 and 4 remakes are coming to Switch 2 next month",
       "url": "https://www.videogameschronicle.com/news/resident-evil-2-3-and-4-remakes-are-coming-to-switch-2-next-month/",
       "date": "2026-09-09T18:35:40.795Z"
+    },
+    {
+      "title": "Metroid Ravenous announced, launches January 2027 exclusively for Nintendo Switch 2",
+      "url": "https://www.eurogamer.net/metroid-ravenous-switch-2-release-date",
+      "date": "2026-09-10T00:14:19.095Z"
+    },
+    {
+      "title": "Kirby and the World Beyond coming to Nintendo Switch 2 in Spring 2027",
+      "url": "https://www.eurogamer.net/kirby-and-the-world-beyond-reveal-trailer-nintendo-direct",
+      "date": "2026-09-10T00:14:50.120Z"
     }
   ],
-  "varietyPublishedToday": 5
+  "varietyPublishedToday": 2
 }
