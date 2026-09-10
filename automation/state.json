@@ -1,17 +1,7 @@
 {
   "date": "2026-09-10",
-  "publishedToday": 10,
+  "publishedToday": 11,
   "topics": [
-    {
-      "title": "'We Were All Positive It Was Going to Fail': Rockstar Devs Thought GTA Online Would Flop",
-      "url": "https://www.ign.com/articles/we-were-all-positive-it-was-going-to-fail-rockstar-devs-thought-gta-online-would-flop",
-      "date": "2026-09-03T18:37:41.070Z"
-    },
-    {
-      "title": "Final Fantasy 7 Revelation is getting story DLC after all, focussing on Sephiroth and Vincent",
-      "url": "https://www.videogameschronicle.com/news/final-fantasy-7-revelation-is-getting-story-dlc-after-all-focussing-on-sephiroth-and-vincent/",
-      "date": "2026-09-03T18:38:09.815Z"
-    },
     {
       "title": "GTA 6 Is Completely Changing How You Steal Cars",
       "url": "https://www.gamespot.com/articles/gta-6-how-to-steal-cars/",
@@ -386,6 +376,11 @@
       "title": "Marvel's Wolverine Is One of Sony's Worst-Reviewed PS5 Exclusives",
       "url": "https://www.polygon.com/marvels-wolverine-review-roundup/",
       "date": "2026-09-10T18:27:24.777Z"
+    },
+    {
+      "title": "GTA 4 Was the Xbox 360’s ‘We Mean Business’ Moment Against the PS3",
+      "url": "https://www.ign.com/articles/gta-4-was-the-xbox-360s-we-mean-business-moment-against-the-ps3",
+      "date": "2026-09-10T21:37:37.274Z"
     }
   ],
   "varietyPublishedToday": 4
