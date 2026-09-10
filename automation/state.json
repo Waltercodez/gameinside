@@ -1,27 +1,7 @@
 {
   "date": "2026-09-10",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "A Bunch Of Old GTA 6 Leaks Turned Out To Be True",
-      "url": "https://kotaku.com/a-bunch-of-old-gta-6-leaks-turned-out-to-be-true-2000730608",
-      "date": "2026-09-03T00:14:57.929Z"
-    },
-    {
-      "title": "The Witcher Remake Is on Hold Until The Witcher 4's Development Progresses, Confirms CD Projekt Red",
-      "url": "https://www.ign.com/articles/the-witcher-remake-is-on-hold-until-the-witcher-4s-development-progresses-confirms-cd-projekt-red",
-      "date": "2026-09-03T00:15:27.983Z"
-    },
-    {
-      "title": "Video - DLSS5-gedachten, GTA-beelden en tandenborstelcamera's - Tweakers Podcast #442",
-      "url": "https://tweakers.net/video/20540/dlss5-gedachten-gta-beelden-en-tandenborstelcameras-tweakers-podcast-442.html",
-      "date": "2026-09-03T04:35:14.930Z"
-    },
-    {
-      "title": "PSA: Final Fantasy XIV Online Free Subscription Period For Switch 2's \"Full Version\" Ends Next Week",
-      "url": "https://www.nintendolife.com/news/2026/09/psa-final-fantasy-xiv-online-free-subscription-period-for-switch-2s-full-version-ends-next-week",
-      "date": "2026-09-03T04:35:40.959Z"
-    },
     {
       "title": "The Witcher Remake is on hold while its studio works on The Witcher 3’s expansion",
       "url": "https://www.videogameschronicle.com/news/the-witcher-remake-is-on-hold-while-its-studio-works-on-the-witcher-3s-expansion/",
@@ -386,7 +366,17 @@
       "title": "Kirby and the World Beyond coming to Nintendo Switch 2 in Spring 2027",
       "url": "https://www.eurogamer.net/kirby-and-the-world-beyond-reveal-trailer-nintendo-direct",
       "date": "2026-09-10T00:14:50.120Z"
+    },
+    {
+      "title": "Rockstar Explains GTA 6’s Approach to Real-World Events",
+      "url": "https://insider-gaming.com/gta-6-development-since-2015/",
+      "date": "2026-09-10T04:43:25.892Z"
+    },
+    {
+      "title": "XBOX and KOJIMA PRODUCTIONS Expand Partnership to Publish PHYSINT",
+      "url": "https://news.xbox.com/en-us/2026/09/09/xbox-and-kojima-productions-expand-partnership-to-publish-physint/",
+      "date": "2026-09-10T04:43:54.490Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
