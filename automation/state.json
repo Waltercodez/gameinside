@@ -1,12 +1,7 @@
 {
   "date": "2026-09-11",
-  "publishedToday": 10,
+  "publishedToday": 11,
   "topics": [
-    {
-      "title": "Rockstar Censors GTA 6 Extended Look Trailer for China",
-      "url": "https://www.ign.com/articles/rockstar-censors-gta-6-extended-look-trailer-for-china",
-      "date": "2026-09-04T21:28:06.867Z"
-    },
     {
       "title": "'Grand Theft Auto is a videogame franchise built around criminal activity': Miami-Dade County Sheriff comes out hard against a proposed GTA 6 collab with Rockstar",
       "url": "https://www.pcgamer.com/games/grand-theft-auto/grand-theft-auto-is-a-videogame-franchise-built-around-criminal-activity-miami-dade-county-sheriff-comes-out-hard-against-a-proposed-gta-6-collab-with-rockstar/",
@@ -376,6 +371,11 @@
       "title": "Sony Dropped Kojima's 'PHYSINT' Over Budget, Profits & Timed Exclusivity Concerns, Sources Say",
       "url": "https://www.purexbox.com/news/2026/09/sony-dropped-kojimas-physint-over-budget-profits-and-timed-exclusivity-concerns-sources-say",
       "date": "2026-09-11T18:32:24.475Z"
+    },
+    {
+      "title": "Modder adds 235 destructible Flock cameras to GTA 5 so you can 'do whatever the flock you want' to them",
+      "url": "https://www.pcgamer.com/games/action/modder-adds-235-destructible-flock-cameras-to-gta-5-so-you-can-do-whatever-the-flock-you-want-to-them/",
+      "date": "2026-09-11T21:42:58.458Z"
     }
   ],
   "varietyPublishedToday": 3
