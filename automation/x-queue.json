@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "_id": "auto-1789085407037-bijj7",
+      "title": "Ubisoft test minder irritante launcher op Steam",
+      "url": "https://gameinside.nl/artikel/ubisoft-test-minder-irritante-launcher-op-steam",
+      "x": "Ubisoft luistert eindelijk - ze testen een manier om games via Steam te starten zonder die irritante Connect-launcher. Dit kan alles veranderen."
+    },
+    {
       "_id": "auto-1789033381483-1optn",
       "title": "Physint verhuist van PlayStation naar Xbox",
       "url": "https://gameinside.nl/artikel/physint-verhuist-van-playstation-naar-xbox",
@@ -145,5 +151,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-09-10T00:19:27.690Z"
+  "lastRun": "2026-09-11T00:15:18.100Z"
 }
