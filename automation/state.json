@@ -1,12 +1,7 @@
 {
-  "date": "2026-09-10",
-  "publishedToday": 11,
+  "date": "2026-09-11",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Is Completely Changing How You Steal Cars",
-      "url": "https://www.gamespot.com/articles/gta-6-how-to-steal-cars/",
-      "date": "2026-09-03T21:42:23.072Z"
-    },
     {
       "title": "Turkish GTA 6 Fans Want Language Support So Badly, They Professionally Dubbed the Gameplay Reveal",
       "url": "https://www.ign.com/articles/turkish-gta-6-fans-want-language-support-so-badly-they-professionally-dubbed-the-gameplay-reveal",
@@ -381,7 +376,17 @@
       "title": "GTA 4 Was the Xbox 360’s ‘We Mean Business’ Moment Against the PS3",
       "url": "https://www.ign.com/articles/gta-4-was-the-xbox-360s-we-mean-business-moment-against-the-ps3",
       "date": "2026-09-10T21:37:37.274Z"
+    },
+    {
+      "title": "Unofficial GTA 6 Worldwide Release Times Revealed, And The US Gets It Almost Last",
+      "url": "https://www.gamespot.com/articles/unofficial-gta-6-worldwide-release-times-revealed-and-the-us-gets-it-almost-last/",
+      "date": "2026-09-11T00:09:38.448Z"
+    },
+    {
+      "title": "Ubisoft is 'testing' making its games far less annoying to launch on Steam",
+      "url": "https://www.pcgamer.com/gaming-industry/ubisoft-is-testing-making-its-games-far-less-annoying-to-launch-on-steam/",
+      "date": "2026-09-11T00:10:10.263Z"
     }
   ],
-  "varietyPublishedToday": 4
+  "varietyPublishedToday": 1
 }
