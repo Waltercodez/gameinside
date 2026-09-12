@@ -1,17 +1,7 @@
 {
   "date": "2026-09-12",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6 for Xbox: You Can Save $10, Today Only",
-      "url": "https://www.ign.com/articles/gta-6-for-xbox-you-can-save-10-today-only",
-      "date": "2026-09-05T04:25:59.920Z"
-    },
-    {
-      "title": "'No One Puts Double Fine Out of Business Except for Me' — Tim Schafer Explains How He Kept Double Fine Afloat After Leaving Xbox",
-      "url": "https://www.ign.com/articles/no-one-puts-double-fine-out-of-business-except-for-me-tim-schafer-explains-how-he-kept-double-fine-afloat-after-leaving-xbox",
-      "date": "2026-09-05T04:26:27.937Z"
-    },
     {
       "title": "GTA 6 driving is \"the best parts\" of GTA 4 but with \"the accessibility of GTA 5,\" says Rockstar boss",
       "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-driving-is-the-best-parts-of-gta-4-but-with-the-accessibility-of-gta-5-says-rockstar-boss/",
@@ -376,7 +366,17 @@
       "title": "Polyarc, Dev Behind the Critically Acclaimed Moss Series, Is Shutting Down",
       "url": "https://www.ign.com/articles/polyarc-dev-behind-the-critically-acclaimed-moss-series-is-shutting-down",
       "date": "2026-09-12T00:18:06.855Z"
+    },
+    {
+      "title": "GTA 6 Developer Is Fighting Drones And Hackers To Keep The Game’s Secrets Safe",
+      "url": "https://www.gamespot.com/articles/gta-6-developer-is-fighting-drones-and-hackers-to-keep-the-games-secrets-safe/",
+      "date": "2026-09-12T04:41:50.593Z"
+    },
+    {
+      "title": "Fallout 5 and Classic Fallout Remasters Coming from Bethesda and Obsidian",
+      "url": "https://www.polygon.com/new-fallout-games-remasters-bethesda-softworks/",
+      "date": "2026-09-12T04:42:29.634Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
