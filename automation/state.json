@@ -1,17 +1,7 @@
 {
   "date": "2026-09-12",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 driving is \"the best parts\" of GTA 4 but with \"the accessibility of GTA 5,\" says Rockstar boss",
-      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-driving-is-the-best-parts-of-gta-4-but-with-the-accessibility-of-gta-5-says-rockstar-boss/",
-      "date": "2026-09-05T09:03:59.481Z"
-    },
-    {
-      "title": "Insider Claims Insomniac Is Still Working on the Leaked Standalone Marvel’s Venom Game, but No-One Knows When It’ll Be Unveiled",
-      "url": "https://wccftech.com/marvels-venom-insomniac-still-in-development/",
-      "date": "2026-09-05T09:04:30.465Z"
-    },
     {
       "title": "Grand Theft Auto 6's controversial refuelling action reportedly takes about 10 seconds to perform, which Rockstar's co-studio head says is 'pretty fast for a fill-up'",
       "url": "https://www.pcgamer.com/games/grand-theft-auto/grand-theft-auto-6s-controversial-refuelling-action-reportedly-takes-about-10-seconds-to-perform-which-rockstars-co-studio-head-says-is-pretty-fast-for-a-fill-up/",
@@ -376,7 +366,17 @@
       "title": "Fallout 5 and Classic Fallout Remasters Coming from Bethesda and Obsidian",
       "url": "https://www.polygon.com/new-fallout-games-remasters-bethesda-softworks/",
       "date": "2026-09-12T04:42:29.634Z"
+    },
+    {
+      "title": "Nintendo Announces Switch 2 Monster Hunter Wilds Bundle",
+      "url": "https://www.nintendolife.com/news/2026/09/nintendo-announces-switch-2-monster-hunter-wilds-bundle",
+      "date": "2026-09-12T09:20:43.751Z"
+    },
+    {
+      "title": "Kingdom Hearts 4 Is Being Developed by FF7 Remake Studio",
+      "url": "https://insider-gaming.com/kingdom-hearts-development-ff7-remake-studio/",
+      "date": "2026-09-12T09:20:58.770Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
