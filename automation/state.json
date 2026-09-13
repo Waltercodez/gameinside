@@ -1,12 +1,7 @@
 {
-  "date": "2026-09-12",
-  "publishedToday": 11,
+  "date": "2026-09-13",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 – Everything We Know About the Most Anticipated Game Ever Made",
-      "url": "https://wccftech.com/roundup/gta-6-everything-we-know/",
-      "date": "2026-09-05T20:26:35.220Z"
-    },
     {
       "title": "The Blood of Dawnwalker Passes 1 Million Copies Sold in Just 2 Days",
       "url": "https://www.ign.com/articles/the-blood-of-dawnwalker-passes-1-million-copies-sold-in-just-2-days",
@@ -381,7 +376,17 @@
       "title": "Rockstar was allegedly spying on worker union Discord for over two years, court documents show",
       "url": "https://www.destructoid.com/rockstar-was-allegedly-spying-on-worker-union-discord-for-over-two-years-court-documents-show/",
       "date": "2026-09-12T19:19:37.388Z"
+    },
+    {
+      "title": "StarCraft: Everything we know so far about Blizzard's new open-world, story-driven shooter",
+      "url": "https://www.gamesradar.com/games/third-person-shooter/starcraft-guide/",
+      "date": "2026-09-13T00:01:50.794Z"
+    },
+    {
+      "title": "Diablo 5 gameplay details from BlizzCon: More classes than ever before, procedurally-generated dungeons, and Diablo 2-style loot",
+      "url": "https://www.pcgamer.com/games/rpg/diablo-5-gameplay-details-from-blizzcon-more-classes-than-ever-before-procedurally-generated-dungeons-and-diablo-2-style-loot/",
+      "date": "2026-09-13T00:02:20.381Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
