@@ -1,17 +1,7 @@
 {
   "date": "2026-09-13",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "The Blood of Dawnwalker Passes 1 Million Copies Sold in Just 2 Days",
-      "url": "https://www.ign.com/articles/the-blood-of-dawnwalker-passes-1-million-copies-sold-in-just-2-days",
-      "date": "2026-09-06T00:56:28.986Z"
-    },
-    {
-      "title": "Epic Games CEO Tim Sweeney Says The Industry Is Crashing And AI Is Making It Worse",
-      "url": "https://kotaku.com/epic-games-ceo-tim-sweeney-says-the-industry-is-crashing-and-ai-is-making-it-worse-2000731564",
-      "date": "2026-09-06T00:56:59.017Z"
-    },
     {
       "title": "Tales Of Eternia Remastered Performance & Resolution Revealed (Switch, Switch 2)",
       "url": "https://www.nintendolife.com/news/2026/09/tales-of-eternia-remastered-performance-and-resolution-revealed-switch-switch-2",
@@ -386,7 +376,17 @@
       "title": "Diablo 5 gameplay details from BlizzCon: More classes than ever before, procedurally-generated dungeons, and Diablo 2-style loot",
       "url": "https://www.pcgamer.com/games/rpg/diablo-5-gameplay-details-from-blizzcon-more-classes-than-ever-before-procedurally-generated-dungeons-and-diablo-2-style-loot/",
       "date": "2026-09-13T00:02:20.381Z"
+    },
+    {
+      "title": "Diablo IV krijgt nieuwe klasse en Switch 2-versie",
+      "url": "https://tweakers.net/nieuws/252096/diablo-iv-krijgt-nieuwe-klasse-en-switch-2-versie.html",
+      "date": "2026-09-13T04:45:40.555Z"
+    },
+    {
+      "title": "Diablo 5 Is Coming In Spring 2029, Here's The First Teaser Trailer",
+      "url": "https://www.nintendolife.com/news/2026/09/diablo-5-is-coming-in-spring-2029-heres-the-first-teaser-trailer",
+      "date": "2026-09-13T04:45:52.576Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
