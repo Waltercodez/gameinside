@@ -1,12 +1,7 @@
 {
-  "date": "2026-09-13",
-  "publishedToday": 10,
+  "date": "2026-09-14",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Rockstar boss says GTA 6 doesn't just let you easily walk around with guns because GTA 5's approach doesn't work \"at this resolution\"",
-      "url": "https://www.gamesradar.com/games/grand-theft-auto/rockstar-boss-says-gta-6-doesnt-just-let-you-easily-walk-around-with-guns-because-gta-5s-approach-doesnt-work-at-this-resolution/",
-      "date": "2026-09-06T19:09:50.408Z"
-    },
     {
       "title": "New 85% on Metacritic Fantasy Action Game Just Shot Up to No. 1 on Steam Overnight",
       "url": "https://www.polygon.com/steam-ominusha-way-of-the-sword-number-1-game/",
@@ -376,7 +371,17 @@
       "title": "StarCraft is back, but it's not the RTS you remember - it's an open-world shooter coming spring 2030",
       "url": "https://www.eurogamer.net/starcraft-open-world-shooter-announced-blizzcon-2026",
       "date": "2026-09-13T18:12:32.873Z"
+    },
+    {
+      "title": "Diablo 5 and a New Starcraft Game Revealed, But Will They Be on PS6?",
+      "url": "https://www.pushsquare.com/news/2026/09/diablo-5-and-a-new-starcraft-game-revealed-but-will-they-be-on-ps6",
+      "date": "2026-09-14T01:03:43.986Z"
+    },
+    {
+      "title": "Last of Us Part 2 multiplayer mod ‘canceled by Sony’",
+      "url": "https://www.videogameschronicle.com/news/last-of-us-part-2-multiplayer-mod-canceled-by-sony/",
+      "date": "2026-09-14T01:04:15.764Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
