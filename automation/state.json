@@ -1,17 +1,7 @@
 {
   "date": "2026-09-14",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "New 85% on Metacritic Fantasy Action Game Just Shot Up to No. 1 on Steam Overnight",
-      "url": "https://www.polygon.com/steam-ominusha-way-of-the-sword-number-1-game/",
-      "date": "2026-09-07T04:38:57.464Z"
-    },
-    {
-      "title": "Rumour: Killzone Project in Early Development, Probably a Remake",
-      "url": "https://www.pushsquare.com/news/2026/09/rumour-killzone-project-in-early-development-probably-a-remake",
-      "date": "2026-09-07T04:39:26.046Z"
-    },
     {
       "title": "GTA 6 On PC Before Launch Is Not So Impossible After All, As KyTyPS5 Emulator Already Runs GTA V",
       "url": "https://wccftech.com/gta-6-pc-before-launch-kytyps5-emulator-gta-v/",
@@ -381,7 +371,17 @@
       "title": "Last of Us Part 2 multiplayer mod ‘canceled by Sony’",
       "url": "https://www.videogameschronicle.com/news/last-of-us-part-2-multiplayer-mod-canceled-by-sony/",
       "date": "2026-09-14T01:04:15.764Z"
+    },
+    {
+      "title": "Diablo 5 Director Confirms Game is Already in Full Production",
+      "url": "https://www.ign.com/articles/diablo-5-director-confirms-game-is-already-in-full-production",
+      "date": "2026-09-14T06:16:39.595Z"
+    },
+    {
+      "title": "Blizzard Explains Why The StarCraft Shooter Coming In 2030 Was Announced Now",
+      "url": "https://www.gamespot.com/articles/blizzard-explains-why-the-starcraft-shooter-coming-in-2030-was-announced-now/",
+      "date": "2026-09-14T06:16:52.300Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
