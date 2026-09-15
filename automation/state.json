@@ -1,17 +1,7 @@
 {
   "date": "2026-09-15",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6's Criminal Profile system sounds pretty interesting, includes a 'shattered' state for players who DGAF",
-      "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6s-criminal-profile-system-sounds-pretty-interesting-isnt-a-direct-copy-of-red-deads-honor-system/",
-      "date": "2026-09-08T05:57:45.654Z"
-    },
-    {
-      "title": "Zelda: Ocarina Of Time Remake Price Seemingly Revealed",
-      "url": "https://www.nintendolife.com/news/2026/09/zelda-ocarina-of-time-remake-price-seemingly-revealed",
-      "date": "2026-09-08T05:58:12.670Z"
-    },
     {
       "title": "\"Rockstar has tried to get away with Grand Theft Employment Rights\" - Final hearing in Rockstar vs. GTA 6 fired employees begins this week",
       "url": "https://www.eurogamer.net/rockstar-north-employment-tribunal-gta-6",
@@ -371,7 +361,17 @@
       "title": "Valve kondigt verkoop van Steam Frame aan, 256GB-versie kost 1049 euro",
       "url": "https://tweakers.net/nieuws/252158/valve-kondigt-verkoop-van-steam-frame-aan-256gb-versie-kost-1049-euro.html",
       "date": "2026-09-15T01:28:07.110Z"
+    },
+    {
+      "title": "007 First Light On Switch 2 Delayed Until March 2027",
+      "url": "https://www.nintendolife.com/news/2026/09/007-first-light-on-switch-2-delayed-until-march-2027",
+      "date": "2026-09-15T07:43:35.355Z"
+    },
+    {
+      "title": "Diablo IV Switch 2 Performance And Resolution Officially Revealed",
+      "url": "https://www.nintendolife.com/news/2026/09/diablo-iv-switch-2-performance-and-resolution-officially-revealed",
+      "date": "2026-09-15T07:43:51.652Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
