@@ -1,17 +1,7 @@
 {
   "date": "2026-09-17",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Kojima’s Physint Dropped By PlayStation, Rescued By Xbox",
-      "url": "https://www.gamespot.com/articles/kojimas-physint-dropped-by-playstation-rescued-by-xbox/",
-      "date": "2026-09-10T09:43:02.404Z"
-    },
-    {
-      "title": "Switch 2 system update adds VRR support when docked, Switch 2 to Switch 2 system transfer and more",
-      "url": "https://www.videogameschronicle.com/news/switch-2-system-update-adds-vrr-support-when-docked-switch-2-to-switch-2-system-transfer-and-more/",
-      "date": "2026-09-10T09:43:16.437Z"
-    },
     {
       "title": "A Top Boss At GTA 6 Company Take-Two Sold A Bunch Of Stock, But It’s Not What You Think",
       "url": "https://www.gamespot.com/articles/a-top-boss-at-gta-6-company-take-two-sold-a-bunch-of-stock-but-its-not-what-you-think/",
@@ -371,7 +361,17 @@
       "title": "Heart Machine Lays Off ‘Nearly Everyone’ After Lost Funding",
       "url": "https://insider-gaming.com/heart-machine-layoffs-lost-publisher-funding/",
       "date": "2026-09-17T07:38:42.387Z"
+    },
+    {
+      "title": "GTA 6 The Album Gets A Physical Release, Even Though The Game Won’t",
+      "url": "https://www.gamespot.com/articles/gta-6-the-album-announced-and-itll-be-on-physical-media/",
+      "date": "2026-09-17T13:26:21.954Z"
+    },
+    {
+      "title": "Call of Duty: Modern Warfare 4 Campaign Trailer Reveals Death Stranding Star Mads Mikkelsen",
+      "url": "https://www.ign.com/articles/call-of-duty-modern-warfare-4-campaign-trailer-reveals-death-stranding-star-mads-mikkelsen",
+      "date": "2026-09-17T13:26:46.972Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
