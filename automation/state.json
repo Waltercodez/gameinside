@@ -1,17 +1,7 @@
 {
-  "date": "2026-09-16",
-  "publishedToday": 11,
+  "date": "2026-09-17",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Metroid Ravenous announced, launches January 2027 exclusively for Nintendo Switch 2",
-      "url": "https://www.eurogamer.net/metroid-ravenous-switch-2-release-date",
-      "date": "2026-09-10T00:14:19.095Z"
-    },
-    {
-      "title": "Kirby and the World Beyond coming to Nintendo Switch 2 in Spring 2027",
-      "url": "https://www.eurogamer.net/kirby-and-the-world-beyond-reveal-trailer-nintendo-direct",
-      "date": "2026-09-10T00:14:50.120Z"
-    },
     {
       "title": "Rockstar Explains GTA 6’s Approach to Real-World Events",
       "url": "https://insider-gaming.com/gta-6-development-since-2015/",
@@ -371,7 +361,17 @@
       "title": "Spotify Seems to Be Teasing a GTA 6 Collaboration with Rockstar Games",
       "url": "https://www.ign.com/articles/spotify-seems-to-be-teasing-a-gta-6-collaboration-with-rockstar-games",
       "date": "2026-09-16T22:55:41.115Z"
+    },
+    {
+      "title": "GTA 5 Franklin Voice Actor Clears the Air After Calling Out Twitch Star Kai Cenat for Allegedly Breaking Promise to a Young Fan",
+      "url": "https://www.ign.com/articles/gta-5-franklin-voice-actor-clears-the-air-after-calling-out-twitch-star-kai-cenat-for-allegedly-breaking-promise-to-a-young-fan",
+      "date": "2026-09-17T01:24:21.065Z"
+    },
+    {
+      "title": "Hyper Light Drifter dev lays off \"nearly everyone at the studio\" after publisher backs out of new game: \"I'm not sure yet how or if Heart Machine survives\"",
+      "url": "https://www.gamesradar.com/games/hyper-light-drifter-dev-lays-off-nearly-everyone-at-the-studio-after-publisher-backs-out-of-new-game-im-not-sure-yet-how-or-if-heart-machine-survives/",
+      "date": "2026-09-17T01:24:54.447Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
