@@ -1,17 +1,7 @@
 {
   "date": "2026-09-17",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Rockstar Explains GTA 6’s Approach to Real-World Events",
-      "url": "https://insider-gaming.com/gta-6-development-since-2015/",
-      "date": "2026-09-10T04:43:25.892Z"
-    },
-    {
-      "title": "XBOX and KOJIMA PRODUCTIONS Expand Partnership to Publish PHYSINT",
-      "url": "https://news.xbox.com/en-us/2026/09/09/xbox-and-kojima-productions-expand-partnership-to-publish-physint/",
-      "date": "2026-09-10T04:43:54.490Z"
-    },
     {
       "title": "Kojima’s Physint Dropped By PlayStation, Rescued By Xbox",
       "url": "https://www.gamespot.com/articles/kojimas-physint-dropped-by-playstation-rescued-by-xbox/",
@@ -371,7 +361,17 @@
       "title": "Hyper Light Drifter dev lays off \"nearly everyone at the studio\" after publisher backs out of new game: \"I'm not sure yet how or if Heart Machine survives\"",
       "url": "https://www.gamesradar.com/games/hyper-light-drifter-dev-lays-off-nearly-everyone-at-the-studio-after-publisher-backs-out-of-new-game-im-not-sure-yet-how-or-if-heart-machine-survives/",
       "date": "2026-09-17T01:24:54.447Z"
+    },
+    {
+      "title": "Gamestudio achter tegenvallende MindsEye voert ontslagronde door",
+      "url": "https://tweakers.net/nieuws/252272/gamestudio-achter-tegenvallende-mindseye-voert-ontslagronde-door.html",
+      "date": "2026-09-17T07:38:20.119Z"
+    },
+    {
+      "title": "Heart Machine Lays Off ‘Nearly Everyone’ After Lost Funding",
+      "url": "https://insider-gaming.com/heart-machine-layoffs-lost-publisher-funding/",
+      "date": "2026-09-17T07:38:42.387Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 3
 }
