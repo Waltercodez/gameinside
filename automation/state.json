@@ -1,17 +1,7 @@
 {
   "date": "2026-09-18",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 Is Going To Be Huge. So Why Is Take-Two’s Stock Having Such A Bad Year?",
-      "url": "https://www.gamespot.com/articles/gta-6-is-going-to-be-huge-so-why-is-take-twos-stock-having-such-a-bad-year/",
-      "date": "2026-09-11T09:40:09.322Z"
-    },
-    {
-      "title": "Stellar Blade Is Fully on Cartridge for Switch 2",
-      "url": "https://insider-gaming.com/stellar-blade-switch-2-cartridge/",
-      "date": "2026-09-11T09:40:36.748Z"
-    },
     {
       "title": "'It would have been insanity to take no action' - Fiery opening statements reveal Rockstar's culture of secrecy as tribunal against sacked GTA 6 employees begins",
       "url": "https://www.eurogamer.net/rockstar-gta-6-fired-employees-tribunal-statements",
@@ -366,7 +356,17 @@
       "title": "FF7 Revelation director Hamaguchi discusses the game’s 200GB size, DLC plans, and a new Tifa detail",
       "url": "https://www.videogameschronicle.com/features/interviews/ff7-revelation-director-hamaguchi-discusses-the-games-200gb-size-dlc-plans-and-a-new-tifa-detail/",
       "date": "2026-09-18T04:49:58.213Z"
+    },
+    {
+      "title": "CD Projekt Red’s move from REDengine to UE5 for The Witcher 4 wasn’t because of Cyberpunk’s launch, co-CEO says",
+      "url": "https://www.videogameschronicle.com/news/cd-projekt-reds-move-from-redengine-to-ue5-for-the-witcher-4-wasnt-because-of-cyberpunks-launch-co-ceo-says/",
+      "date": "2026-09-18T09:45:21.833Z"
+    },
+    {
+      "title": "Lollipop Chainsaw 2 is Officially Bringing Back the Zombie-Slaying Cheerleader Cheesecake Franchise",
+      "url": "https://www.polygon.com/lollipop-chainsaw-2-tokyo-game-show-2026/",
+      "date": "2026-09-18T09:45:38.853Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
