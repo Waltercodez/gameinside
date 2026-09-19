@@ -1,17 +1,7 @@
 {
   "date": "2026-09-19",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Nintendo Announces Switch 2 Monster Hunter Wilds Bundle",
-      "url": "https://www.nintendolife.com/news/2026/09/nintendo-announces-switch-2-monster-hunter-wilds-bundle",
-      "date": "2026-09-12T09:20:43.751Z"
-    },
-    {
-      "title": "Kingdom Hearts 4 Is Being Developed by FF7 Remake Studio",
-      "url": "https://insider-gaming.com/kingdom-hearts-development-ff7-remake-studio/",
-      "date": "2026-09-12T09:20:58.770Z"
-    },
     {
       "title": "Moss studio Polyarc shuts down, becoming the latest casualty of a brutal year for VR",
       "url": "https://www.eurogamer.net/polyarc-moss-studio-closure-vr-industry-2026",
@@ -366,7 +356,17 @@
       "title": "Wolverine Hotfix Nerfs ‘Fart Gas’ As Insomniac Explores An Option To Toggle It Off Completely",
       "url": "https://kotaku.com/wolverine-hotfix-nerfs-fart-gas-as-insomniac-explores-an-option-to-toggle-it-off-completely-2000735790",
       "date": "2026-09-19T05:53:06.981Z"
+    },
+    {
+      "title": "Dune Awakening now has a solo mode for players put off by its MMO leanings, while Funcom has adjusted progression so 'you don't have to lose things anymore'",
+      "url": "https://www.pcgamer.com/games/survival-crafting/dune-awakening-now-has-a-solo-mode-for-players-put-off-by-its-mmo-leanings-while-funcom-has-adjusted-progression-so-you-dont-have-to-lose-things-anymore/",
+      "date": "2026-09-19T10:56:52.450Z"
+    },
+    {
+      "title": "As Fans Flood the World of Warcraft: Forever Beta, Dev Says It's Putting Up 'The Craziest Numbers I've Seen in 17 Years Working at Blizzard'",
+      "url": "https://www.ign.com/articles/as-fans-flood-the-world-of-warcraft-forever-beta-dev-says-its-putting-up-the-craziest-numbers-ive-seen-in-17-years-working-at-blizzard",
+      "date": "2026-09-19T10:57:05.464Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
