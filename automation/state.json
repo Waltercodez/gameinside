@@ -1,17 +1,7 @@
 {
   "date": "2026-09-19",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6 Developer Is Fighting Drones And Hackers To Keep The Game’s Secrets Safe",
-      "url": "https://www.gamespot.com/articles/gta-6-developer-is-fighting-drones-and-hackers-to-keep-the-games-secrets-safe/",
-      "date": "2026-09-12T04:41:50.593Z"
-    },
-    {
-      "title": "Fallout 5 and Classic Fallout Remasters Coming from Bethesda and Obsidian",
-      "url": "https://www.polygon.com/new-fallout-games-remasters-bethesda-softworks/",
-      "date": "2026-09-12T04:42:29.634Z"
-    },
     {
       "title": "Nintendo Announces Switch 2 Monster Hunter Wilds Bundle",
       "url": "https://www.nintendolife.com/news/2026/09/nintendo-announces-switch-2-monster-hunter-wilds-bundle",
@@ -366,7 +356,17 @@
       "title": "I Guess I’ll Delete Every PS5 Game I Own To Make Room For FF7 Revelation",
       "url": "https://www.gamespot.com/articles/i-guess-ill-delete-every-ps5-game-i-own-to-make-room-for-ff7-revelation/",
       "date": "2026-09-19T00:20:43.196Z"
+    },
+    {
+      "title": "'The PC platform is becoming more and more important,' Take-Two chief says, as we continue to wonder when we're going to get GTA 6",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/the-pc-platform-is-becoming-more-and-more-important-take-two-chief-says-as-we-continue-to-wonder-when-were-going-to-get-gta-6/",
+      "date": "2026-09-19T05:52:35.486Z"
+    },
+    {
+      "title": "Wolverine Hotfix Nerfs ‘Fart Gas’ As Insomniac Explores An Option To Toggle It Off Completely",
+      "url": "https://kotaku.com/wolverine-hotfix-nerfs-fart-gas-as-insomniac-explores-an-option-to-toggle-it-off-completely-2000735790",
+      "date": "2026-09-19T05:53:06.981Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
