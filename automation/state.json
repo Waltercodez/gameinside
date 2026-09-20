@@ -1,17 +1,7 @@
 {
-  "date": "2026-09-19",
-  "publishedToday": 11,
+  "date": "2026-09-20",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "StarCraft: Everything we know so far about Blizzard's new open-world, story-driven shooter",
-      "url": "https://www.gamesradar.com/games/third-person-shooter/starcraft-guide/",
-      "date": "2026-09-13T00:01:50.794Z"
-    },
-    {
-      "title": "Diablo 5 gameplay details from BlizzCon: More classes than ever before, procedurally-generated dungeons, and Diablo 2-style loot",
-      "url": "https://www.pcgamer.com/games/rpg/diablo-5-gameplay-details-from-blizzcon-more-classes-than-ever-before-procedurally-generated-dungeons-and-diablo-2-style-loot/",
-      "date": "2026-09-13T00:02:20.381Z"
-    },
     {
       "title": "Diablo IV krijgt nieuwe klasse en Switch 2-versie",
       "url": "https://tweakers.net/nieuws/252096/diablo-iv-krijgt-nieuwe-klasse-en-switch-2-versie.html",
@@ -366,7 +356,17 @@
       "title": "Evidence of canceled Grand Theft Auto 5 Liberty City and 'Agent Trevor' DLC, plus early version of GTA6's map surface online",
       "url": "https://www.pcgamer.com/games/grand-theft-auto/evidence-of-canceled-grand-theft-auto-5-liberty-city-and-agent-trevor-dlc-plus-early-version-of-gta6s-map-surface-online/",
       "date": "2026-09-19T20:38:28.862Z"
+    },
+    {
+      "title": "Insomniac Says Marvel’s Wolverine Did Not Use Generative AI",
+      "url": "https://insider-gaming.com/insomniac-marvels-wolverine-no-generative-ai/",
+      "date": "2026-09-20T01:07:29.441Z"
+    },
+    {
+      "title": "Typhoon Dujuan Forces Tokyo Game Show 2026 To Shut Down A Day Early",
+      "url": "https://kotaku.com/typhoon-dujuan-forces-tokyo-game-show-2026-to-shut-down-a-day-early-2000735879",
+      "date": "2026-09-20T01:07:55.455Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
