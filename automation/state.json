@@ -1,17 +1,7 @@
 {
   "date": "2026-09-21",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Diablo 5 and a New Starcraft Game Revealed, But Will They Be on PS6?",
-      "url": "https://www.pushsquare.com/news/2026/09/diablo-5-and-a-new-starcraft-game-revealed-but-will-they-be-on-ps6",
-      "date": "2026-09-14T01:03:43.986Z"
-    },
-    {
-      "title": "Last of Us Part 2 multiplayer mod ‘canceled by Sony’",
-      "url": "https://www.videogameschronicle.com/news/last-of-us-part-2-multiplayer-mod-canceled-by-sony/",
-      "date": "2026-09-14T01:04:15.764Z"
-    },
     {
       "title": "Diablo 5 Director Confirms Game is Already in Full Production",
       "url": "https://www.ign.com/articles/diablo-5-director-confirms-game-is-already-in-full-production",
@@ -376,7 +366,17 @@
       "title": "Castlevania: Belmont’s Curse Demo Launches October 1",
       "url": "https://insider-gaming.com/castlevania-belmonts-curse-demo-october-1/",
       "date": "2026-09-21T00:16:35.178Z"
+    },
+    {
+      "title": "Guide: These 26+ PS5 and PS Plus Games Are Coming Out This Week (21st - 27th September)",
+      "url": "https://www.pushsquare.com/guides/these-26plus-ps5-and-ps-plus-games-are-coming-out-this-week-21st-27th-september",
+      "date": "2026-09-21T05:00:09.590Z"
+    },
+    {
+      "title": "Call of Duty Warzone Officially Shutting Down Next Month on PS4, Xbox One",
+      "url": "https://www.polygon.com/call-of-duty-warzone-shutting-down-ps4-xbox-one/",
+      "date": "2026-09-21T05:00:23.953Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
