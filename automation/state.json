@@ -1,17 +1,7 @@
 {
   "date": "2026-09-22",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "007 First Light On Switch 2 Delayed Until March 2027",
-      "url": "https://www.nintendolife.com/news/2026/09/007-first-light-on-switch-2-delayed-until-march-2027",
-      "date": "2026-09-15T07:43:35.355Z"
-    },
-    {
-      "title": "Diablo IV Switch 2 Performance And Resolution Officially Revealed",
-      "url": "https://www.nintendolife.com/news/2026/09/diablo-iv-switch-2-performance-and-resolution-officially-revealed",
-      "date": "2026-09-15T07:43:51.652Z"
-    },
     {
       "title": "Rockstar boss says GTA 6's police \"can be harder\" to shake off than before, \"but it's fun\" because it forces you \"to think more\"",
       "url": "https://www.gamesradar.com/games/grand-theft-auto/rockstar-boss-says-gta-6s-police-can-be-harder-to-shake-off-than-before-but-its-fun-because-it-forces-you-to-think-more/",
@@ -376,7 +366,17 @@
       "title": "Xbox will reportedly ‘consolidate several studios’ in new major wave of layoffs",
       "url": "https://www.videogameschronicle.com/news/xbox-will-reportedly-consolidate-several-studios-in-new-major-wave-of-layoffs/",
       "date": "2026-09-22T04:54:04.957Z"
+    },
+    {
+      "title": "Report: Xbox Layoffs On The Way This Week, Multiple Studios To Be 'Consolidated'",
+      "url": "https://www.purexbox.com/news/2026/09/report-xbox-layoffs-on-the-way-this-week-multiple-studios-to-be-consolidated",
+      "date": "2026-09-22T09:56:45.547Z"
+    },
+    {
+      "title": "Nintendo Shares First Look At Zelda: Ocarina Of Time Switch 2 World Map",
+      "url": "https://www.nintendolife.com/news/2026/09/nintendo-shares-first-look-at-zelda-ocarina-of-time-switch-2-world-map",
+      "date": "2026-09-22T09:56:56.560Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
