@@ -1,17 +1,7 @@
 {
-  "date": "2026-09-21",
-  "publishedToday": 10,
+  "date": "2026-09-22",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Sources: Brutal IGN Layoffs Hit Multiple Departments And Long-Time Hosts",
-      "url": "https://kotaku.com/sources-ign-layoffs-hit-multiple-departments-and-long-time-hosts-2000734361",
-      "date": "2026-09-14T22:30:05.729Z"
-    },
-    {
-      "title": "Rayman Legends Retold Officially Delayed Less Than a Month Before Release",
-      "url": "https://www.polygon.com/rayman-legends-retold-ubisoft-delay/",
-      "date": "2026-09-14T22:30:33.741Z"
-    },
     {
       "title": "Rayman Legends Retold Now Out in December, PS5 Remake Delayed Two Months",
       "url": "https://www.pushsquare.com/news/2026/09/rayman-legends-retold-now-out-in-december-ps5-remake-delayed-two-months",
@@ -376,7 +366,17 @@
       "title": "Final Fantasy 7 Revelation Will Include Option to Let Players Automatically Level Up Their Characters, but Not Everyone Is Happy About It",
       "url": "https://www.ign.com/articles/final-fantasy-7-revelation-will-include-option-to-let-players-automatically-level-up-their-characters-but-not-everyone-is-happy-about-it",
       "date": "2026-09-21T21:03:42.933Z"
+    },
+    {
+      "title": "Rockstar Games Is Taking Down Footage and Images of Scrapped GTA 5 DLC And Early Version of Leaked GTA 6 Map",
+      "url": "https://www.ign.com/articles/rockstar-games-is-taking-down-footage-and-images-of-scrapped-gta-5-dlc-and-early-version-of-leaked-gta-6-map",
+      "date": "2026-09-22T00:06:04.965Z"
+    },
+    {
+      "title": "Blizzard Says StarCraft 'Won't Be Exclusive' When It Launches in 2030",
+      "url": "https://www.ign.com/articles/blizzard-says-starcraft-wont-be-exclusive-when-it-launches-in-2030",
+      "date": "2026-09-22T00:06:35.454Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
