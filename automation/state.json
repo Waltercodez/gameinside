@@ -1,17 +1,7 @@
 {
   "date": "2026-09-23",
-  "publishedToday": 8,
+  "publishedToday": 10,
   "topics": [
-    {
-      "title": "More MindsEye developers have been laid off, and GTA veteran Leslie Benzie's studio is reportedly shutting down",
-      "url": "https://www.eurogamer.net/mindseye-developers-laid-off-gta-studio-shutting-down",
-      "date": "2026-09-16T20:07:03.669Z"
-    },
-    {
-      "title": "Wardogs Outpacing Arc Raiders and Helldivers 2 on Steam and Has Already Made More Money Than Marathon Across All Platforms to Date, Analysis Shows",
-      "url": "https://www.ign.com/articles/wardogs-outpacing-arc-raiders-and-helldivers-2-on-steam-and-has-already-made-more-money-than-marathon-across-all-platforms-to-date-analysis-shows",
-      "date": "2026-09-16T20:07:22.693Z"
-    },
     {
       "title": "Spotify Seems to Be Teasing a GTA 6 Collaboration with Rockstar Games",
       "url": "https://www.ign.com/articles/spotify-seems-to-be-teasing-a-gta-6-collaboration-with-rockstar-games",
@@ -371,6 +361,16 @@
       "title": "Achtergrond - Halo Studios maakt geen Halo meer: waarom XBOX hard in zijn aanbod snoeit",
       "url": "https://tweakers.net/reviews/15338/halo-studios-maakt-geen-halo-meer-waarom-xbox-hard-in-zijn-aanbod-snoeit.html",
       "date": "2026-09-23T16:56:48.753Z"
+    },
+    {
+      "title": "Rainbow Six Siege Dev On Competing With GTA 6 And Why There Are No Plans For Siege 2",
+      "url": "https://www.gamespot.com/articles/rainbow-six-siege-dev-on-competing-with-gta-6-and-why-there-are-no-plans-for-siege-2/",
+      "date": "2026-09-23T20:20:52.112Z"
+    },
+    {
+      "title": "As Halo goes to Activision, fans are worried about this year's Halo Fest and a potential lore reboot from the Call of Duty publisher",
+      "url": "https://www.eurogamer.net/activision-new-halo-game-fans-worried-lore-reboot",
+      "date": "2026-09-23T20:21:06.590Z"
     }
   ],
   "varietyPublishedToday": 3
