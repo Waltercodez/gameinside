@@ -1,12 +1,7 @@
 {
   "date": "2026-09-23",
-  "publishedToday": 10,
+  "publishedToday": 11,
   "topics": [
-    {
-      "title": "Spotify Seems to Be Teasing a GTA 6 Collaboration with Rockstar Games",
-      "url": "https://www.ign.com/articles/spotify-seems-to-be-teasing-a-gta-6-collaboration-with-rockstar-games",
-      "date": "2026-09-16T22:55:41.115Z"
-    },
     {
       "title": "GTA 5 Franklin Voice Actor Clears the Air After Calling Out Twitch Star Kai Cenat for Allegedly Breaking Promise to a Young Fan",
       "url": "https://www.ign.com/articles/gta-5-franklin-voice-actor-clears-the-air-after-calling-out-twitch-star-kai-cenat-for-allegedly-breaking-promise-to-a-young-fan",
@@ -371,6 +366,11 @@
       "title": "As Halo goes to Activision, fans are worried about this year's Halo Fest and a potential lore reboot from the Call of Duty publisher",
       "url": "https://www.eurogamer.net/activision-new-halo-game-fans-worried-lore-reboot",
       "date": "2026-09-23T20:21:06.590Z"
+    },
+    {
+      "title": "Hackers Behind Flopped 'GTA 6' Leak Officially Threatening the FBI Now",
+      "url": "https://www.polygon.com/fbi-hacked-gta-6-leak-shinyhunters-data-agents-jobs/",
+      "date": "2026-09-23T23:40:56.741Z"
     }
   ],
   "varietyPublishedToday": 3
