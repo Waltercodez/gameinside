@@ -1,27 +1,7 @@
 {
   "date": "2026-09-23",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Bungie gooit roer om bij Marathon na aanhoudende spelerskritiek",
-      "url": "https://tweakers.net/nieuws/252186/bungie-gooit-roer-om-bij-marathon-na-aanhoudende-spelerskritiek.html",
-      "date": "2026-09-16T06:00:16.239Z"
-    },
-    {
-      "title": "Wo Long 2: Wings of Ember Gets Release Date, Demo Available Now",
-      "url": "https://www.ign.com/articles/wo-long-2-wings-of-ember-gets-release-date-demo-available-now",
-      "date": "2026-09-16T06:00:42.272Z"
-    },
-    {
-      "title": "All Confirmed & Leaked GTA 6 Radio Artists",
-      "url": "https://insider-gaming.com/all-confirmed-gta-6-radio-artists/",
-      "date": "2026-09-16T11:30:31.296Z"
-    },
-    {
-      "title": "Xbox Game Pass Gets One More Stacked Lineup Before Major Downgrade",
-      "url": "https://www.polygon.com/xbox-game-pass-september-2026-wave-2/",
-      "date": "2026-09-16T11:30:44.318Z"
-    },
     {
       "title": "Parts of GTA 6 are \"a bit outdated and weird,\" says former Rockstar dev, but \"like GTA 5\" it will \"perform really well\" and keep fans busy for a decade",
       "url": "https://www.gamesradar.com/games/grand-theft-auto/parts-of-gta-6-are-a-bit-outdated-and-weird-says-former-rockstar-dev-but-like-gta-5-it-will-perform-really-well-and-keep-fans-busy-for-a-decade/",
@@ -381,7 +361,17 @@
       "title": "Game Awards 2026: All Game of the Year Front-Runners and Predictions",
       "url": "https://www.polygon.com/game-of-the-year-goty-game-awards-2026-frontrunners/",
       "date": "2026-09-23T05:58:16.844Z"
+    },
+    {
+      "title": "State of Decay 3 studio Undead Labs lay off \"a significant number\" of \"exceptionally talented developers\" after gaining independence from Xbox",
+      "url": "https://www.rockpapershotgun.com/state-of-decay-3-studio-undead-labs-lay-off-a-significant-number-of-exceptionally-talented-developers-after-gaining-independence-from-xbox",
+      "date": "2026-09-23T11:34:28.848Z"
+    },
+    {
+      "title": "Counter-Strike 2 Update Adds ‘Rush’ Game Mode, Silent Reloads, and More!",
+      "url": "https://insider-gaming.com/counter-strike-rush-game-mode-update/",
+      "date": "2026-09-23T11:34:45.563Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
