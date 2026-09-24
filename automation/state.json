@@ -1,17 +1,7 @@
 {
   "date": "2026-09-24",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Gamestudio achter tegenvallende MindsEye voert ontslagronde door",
-      "url": "https://tweakers.net/nieuws/252272/gamestudio-achter-tegenvallende-mindseye-voert-ontslagronde-door.html",
-      "date": "2026-09-17T07:38:20.119Z"
-    },
-    {
-      "title": "Heart Machine Lays Off ‘Nearly Everyone’ After Lost Funding",
-      "url": "https://insider-gaming.com/heart-machine-layoffs-lost-publisher-funding/",
-      "date": "2026-09-17T07:38:42.387Z"
-    },
     {
       "title": "GTA 6 The Album Gets A Physical Release, Even Though The Game Won’t",
       "url": "https://www.gamespot.com/articles/gta-6-the-album-announced-and-itll-be-on-physical-media/",
@@ -371,7 +361,17 @@
       "title": "Xbox Is Reportedly Expected To Fall Short Of 3,200 Layoffs",
       "url": "https://www.nintendolife.com/news/2026/09/xbox-is-reportedly-expected-to-fall-short-of-3200-layoffs",
       "date": "2026-09-24T04:48:44.409Z"
+    },
+    {
+      "title": "Don't expect regular Destiny 2 updates to return, despite the surprise \"unvaulting\" of game additions",
+      "url": "https://www.eurogamer.net/destiny-2-unvaulted-content-details-report",
+      "date": "2026-09-24T10:00:15.529Z"
+    },
+    {
+      "title": "Following id layoffs, Quake Champions drops free-to-play nonsense and becomes a £9 game on Steam",
+      "url": "https://www.rockpapershotgun.com/following-id-layoffs-quake-champions-drops-free-to-play-nonsense-and-becomes-a-9-game-on-steam",
+      "date": "2026-09-24T10:00:45.540Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 3
 }
