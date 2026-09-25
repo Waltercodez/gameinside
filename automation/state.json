@@ -1,17 +1,7 @@
 {
   "date": "2026-09-25",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "CD Projekt Red’s move from REDengine to UE5 for The Witcher 4 wasn’t because of Cyberpunk’s launch, co-CEO says",
-      "url": "https://www.videogameschronicle.com/news/cd-projekt-reds-move-from-redengine-to-ue5-for-the-witcher-4-wasnt-because-of-cyberpunks-launch-co-ceo-says/",
-      "date": "2026-09-18T09:45:21.833Z"
-    },
-    {
-      "title": "Lollipop Chainsaw 2 is Officially Bringing Back the Zombie-Slaying Cheerleader Cheesecake Franchise",
-      "url": "https://www.polygon.com/lollipop-chainsaw-2-tokyo-game-show-2026/",
-      "date": "2026-09-18T09:45:38.853Z"
-    },
     {
       "title": "New GTA 5 Leak Suggests Rockstar Had Ambitious, City-Sized DLC Plans That Were Ultimately Scrapped",
       "url": "https://www.ign.com/articles/new-gta-5-leak-suggests-rockstar-had-ambitious-city-sized-dlc-plans-that-were-ultimately-scrapped",
@@ -371,7 +361,17 @@
       "title": "Beheerder Switch-piraterijwebsites moet 4,5 miljoen dollar betalen aan Nintendo",
       "url": "https://tweakers.net/nieuws/252596/beheerder-switch-piraterijwebsites-moet-4-komma-5-miljoen-dollar-betalen-aan-nintendo.html",
       "date": "2026-09-25T07:47:13.002Z"
+    },
+    {
+      "title": "GTA veteran's MindsEye studio Build a Rocket Boy has entered administration, following yet more reports of layoffs",
+      "url": "https://www.eurogamer.net/mindseye-build-a-rocket-boy-administration-insolvency",
+      "date": "2026-09-25T13:45:47.216Z"
+    },
+    {
+      "title": "Bungie Canceled a Game in 2024 Hailed as ‘The Future of Destiny’",
+      "url": "https://insider-gaming.com/bungie-canceled-a-game-in-2024-hailed-as-the-future-of-destiny/",
+      "date": "2026-09-25T13:46:15.479Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
