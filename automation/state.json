@@ -1,17 +1,7 @@
 {
-  "date": "2026-09-24",
-  "publishedToday": 10,
+  "date": "2026-09-25",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Twitch CEO says GTA 6 multiplayer will launch in 2027",
-      "url": "https://www.pcgamer.com/games/grand-theft-auto/twitch-ceo-says-gta-6-multiplayer-will-launch-in-2027/",
-      "date": "2026-09-18T00:17:08.951Z"
-    },
-    {
-      "title": "Hideo Kojima Confirms OD Development Is Back on Schedule",
-      "url": "https://insider-gaming.com/hideo-kojima-od-development-update/",
-      "date": "2026-09-18T00:17:37.670Z"
-    },
     {
       "title": "GTA 6 has turned October into a new release bloodbath, but AA first-person soulslike Valor Mortis is hellbent on entering the fray",
       "url": "https://www.pcgamer.com/gaming-industry/gta-6-has-turned-october-into-a-new-release-bloodbath-but-aa-first-person-soulslike-valor-mortis-is-hellbent-on-entering-the-fray/",
@@ -371,7 +361,17 @@
       "title": "EXCLUSIVE: How Ubisoft and Nintendo’s Partnership Ended With a Canceled Zelda Title",
       "url": "https://insider-gaming.com/ubisoft-nintendo-canceled-zelda-title/",
       "date": "2026-09-24T22:23:31.055Z"
+    },
+    {
+      "title": "Xbox Says Its Share of GTA 6 Preorders Matches Its Share of the Console Market, Following PS5 Dominance Claim",
+      "url": "https://www.ign.com/articles/xbox-says-its-share-of-gta-6-preorders-matches-its-share-of-the-console-market-following-ps5-dominance-claim",
+      "date": "2026-09-25T01:29:21.820Z"
+    },
+    {
+      "title": "Nintendo Reportedly Canceled A Ubisoft-Developed Zelda Game Starring Ganondorf",
+      "url": "https://www.gamespot.com/articles/nintendo-reportedly-canceled-a-ubisoft-developed-zelda-game-starring-ganondorf/",
+      "date": "2026-09-25T01:29:51.836Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
