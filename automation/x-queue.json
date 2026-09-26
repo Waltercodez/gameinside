@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "_id": "auto-1790386374054-1cvil",
+      "title": "Microsoft-CEO verdedigt Xbox-ontslagen",
+      "url": "https://gameinside.nl/artikel/microsoft-ceo-nadella-verdedigt-xbox-ontslagen",
+      "x": "Microsoft-CEO Satya Nadella verdedigt de flinke Xbox-ontslagen - maar wat betekent dit eigenlijk voor de toekomst van je favoriete game-franchises?"
+    },
+    {
       "_id": "auto-1790343972595-pyp9h",
       "title": "Bungie schrapte Payback, dé toekomst van Destiny",
       "url": "https://gameinside.nl/artikel/bungie-schrapte-payback-toekomst-van-destiny",
@@ -451,5 +457,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-09-25T00:36:40.120Z"
+  "lastRun": "2026-09-26T05:09:31.693Z"
 }
