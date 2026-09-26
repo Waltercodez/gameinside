@@ -1,17 +1,7 @@
 {
   "date": "2026-09-26",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "'The PC platform is becoming more and more important,' Take-Two chief says, as we continue to wonder when we're going to get GTA 6",
-      "url": "https://www.pcgamer.com/games/grand-theft-auto/the-pc-platform-is-becoming-more-and-more-important-take-two-chief-says-as-we-continue-to-wonder-when-were-going-to-get-gta-6/",
-      "date": "2026-09-19T05:52:35.486Z"
-    },
-    {
-      "title": "Wolverine Hotfix Nerfs ‘Fart Gas’ As Insomniac Explores An Option To Toggle It Off Completely",
-      "url": "https://kotaku.com/wolverine-hotfix-nerfs-fart-gas-as-insomniac-explores-an-option-to-toggle-it-off-completely-2000735790",
-      "date": "2026-09-19T05:53:06.981Z"
-    },
     {
       "title": "Dune Awakening now has a solo mode for players put off by its MMO leanings, while Funcom has adjusted progression so 'you don't have to lose things anymore'",
       "url": "https://www.pcgamer.com/games/survival-crafting/dune-awakening-now-has-a-solo-mode-for-players-put-off-by-its-mmo-leanings-while-funcom-has-adjusted-progression-so-you-dont-have-to-lose-things-anymore/",
@@ -366,7 +356,17 @@
       "title": "Microsoft CEO Attempts To Kill Remaining Xbox Goodwill",
       "url": "https://www.gamespot.com/articles/microsoft-ceo-attempts-to-kill-remaining-xbox-goodwill/",
       "date": "2026-09-26T01:32:54.796Z"
+    },
+    {
+      "title": "Someone Has Already 3D Printed GTA 6 Collector’s Items",
+      "url": "https://insider-gaming.com/gta-6-collectors-items-3d-printed-already/",
+      "date": "2026-09-26T07:39:40.622Z"
+    },
+    {
+      "title": "Hell Is Us Shifts Switch 2 Launch Due To \"Very Busy\" September Release Window",
+      "url": "https://www.nintendolife.com/news/2026/09/hell-is-us-shifts-switch-2-launch-due-to-very-busy-september-release-window",
+      "date": "2026-09-26T07:40:19.458Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
