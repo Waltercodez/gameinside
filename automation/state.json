@@ -1,17 +1,7 @@
 {
   "date": "2026-09-30",
-  "publishedToday": 6,
+  "publishedToday": 8,
   "topics": [
-    {
-      "title": "GTA 6 Will Make Pro Athletes Perform Worse, NBA Star Says",
-      "url": "https://www.gamespot.com/articles/gta-6-will-make-pro-athletes-perform-worse-nba-star-says/",
-      "date": "2026-09-23T16:56:36.062Z"
-    },
-    {
-      "title": "Achtergrond - Halo Studios maakt geen Halo meer: waarom XBOX hard in zijn aanbod snoeit",
-      "url": "https://tweakers.net/reviews/15338/halo-studios-maakt-geen-halo-meer-waarom-xbox-hard-in-zijn-aanbod-snoeit.html",
-      "date": "2026-09-23T16:56:48.753Z"
-    },
     {
       "title": "Rainbow Six Siege Dev On Competing With GTA 6 And Why There Are No Plans For Siege 2",
       "url": "https://www.gamespot.com/articles/rainbow-six-siege-dev-on-competing-with-gta-6-and-why-there-are-no-plans-for-siege-2/",
@@ -336,7 +326,17 @@
       "title": "Huge Deadlock Update Propels Valve's MOBA Hero Shooter to the Top of the Steam Charts, Smashes Peak Concurrent Player Record",
       "url": "https://www.ign.com/articles/huge-deadlock-update-propels-valves-moba-hero-shooter-to-the-top-of-the-steam-charts-smashes-peak-concurrent-player-record",
       "date": "2026-09-30T13:42:21.146Z"
+    },
+    {
+      "title": "GTA 6 completely \"re-engineered\" Rockstar's weather systems to \"achieve a sense of scale we haven't felt before,\" adding hurricanes, rainbows and heavy rain",
+      "url": "https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain",
+      "date": "2026-09-30T19:18:24.134Z"
+    },
+    {
+      "title": "Xbox CEO Asha Sharma insists Microsoft’s gaming business is ‘not for sale’",
+      "url": "https://www.videogameschronicle.com/news/xbox-ceo-asha-sharma-insists-microsofts-gaming-business-is-not-for-sale/",
+      "date": "2026-09-30T19:18:49.365Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
