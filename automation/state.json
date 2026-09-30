@@ -1,12 +1,7 @@
 {
-  "date": "2026-09-29",
-  "publishedToday": 8,
+  "date": "2026-09-30",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Grand Theft Auto 6's Miami Takeover Begins as Rockstar Spends Nearly $1 Million on 'Welcome to Vice City' Signage",
-      "url": "https://www.ign.com/articles/grand-theft-auto-6s-miami-takeover-begins-as-rockstar-spends-nearly-1-million-on-welcome-to-vice-city-signage",
-      "date": "2026-09-22T22:08:01.650Z"
-    },
     {
       "title": "NBA Star Steven Adams Says GTA 6's Launch Will Lead to a 'League-Wide' Drop in Performance for Athletes and Coaches",
       "url": "https://www.ign.com/articles/nba-star-steven-adams-says-gta-6s-launch-will-lead-to-a-league-wide-drop-in-performance-for-athletes-and-coaches",
@@ -341,7 +336,17 @@
       "title": "The Witcher 3 Remastered Has Already Broken Steam Concurrent Player Record",
       "url": "https://www.ign.com/articles/the-witcher-3-remastered-has-already-broken-steam-concurrent-player-record",
       "date": "2026-09-29T20:46:18.118Z"
+    },
+    {
+      "title": "GTA 6's Game of the Year Chances Have Been Called Into Question",
+      "url": "https://www.ign.com/articles/gta-6s-game-of-the-year-chances-have-been-called-into-question",
+      "date": "2026-09-30T00:26:12.453Z"
+    },
+    {
+      "title": "'The Train Isn't Stopping' — Diablo 4 Director Promises the Game Will Still Receive Support Well After Diablo 5 Launches",
+      "url": "https://www.ign.com/articles/the-train-isnt-stopping-diablo-4-director-promises-the-game-will-still-receive-support-well-after-diablo-5-launches",
+      "date": "2026-09-30T00:26:38.476Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
