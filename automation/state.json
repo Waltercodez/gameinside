@@ -1,17 +1,7 @@
 {
   "date": "2026-09-30",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "State of Decay 3 studio Undead Labs lay off \"a significant number\" of \"exceptionally talented developers\" after gaining independence from Xbox",
-      "url": "https://www.rockpapershotgun.com/state-of-decay-3-studio-undead-labs-lay-off-a-significant-number-of-exceptionally-talented-developers-after-gaining-independence-from-xbox",
-      "date": "2026-09-23T11:34:28.848Z"
-    },
-    {
-      "title": "Counter-Strike 2 Update Adds ‘Rush’ Game Mode, Silent Reloads, and More!",
-      "url": "https://insider-gaming.com/counter-strike-rush-game-mode-update/",
-      "date": "2026-09-23T11:34:45.563Z"
-    },
     {
       "title": "GTA 6 Will Make Pro Athletes Perform Worse, NBA Star Says",
       "url": "https://www.gamespot.com/articles/gta-6-will-make-pro-athletes-perform-worse-nba-star-says/",
@@ -336,7 +326,17 @@
       "title": "You Can Get A Free Digital Copy Of The Witcher 3 Remastered  On Switch 2 If You Just Borrow An Old Physical Switch Copy Of The RPG",
       "url": "https://kotaku.com/you-can-get-a-free-digital-copy-of-the-witcher-3-remastered-on-switch-2-if-you-just-borrow-an-old-physical-switch-copy-of-the-rpg-2000738492",
       "date": "2026-09-30T06:42:36.646Z"
+    },
+    {
+      "title": "GTA 6: Every Animal Confirmed So Far",
+      "url": "https://www.ign.com/articles/gta-6-every-animal-confirmed-so-far",
+      "date": "2026-09-30T13:41:57.773Z"
+    },
+    {
+      "title": "Huge Deadlock Update Propels Valve's MOBA Hero Shooter to the Top of the Steam Charts, Smashes Peak Concurrent Player Record",
+      "url": "https://www.ign.com/articles/huge-deadlock-update-propels-valves-moba-hero-shooter-to-the-top-of-the-steam-charts-smashes-peak-concurrent-player-record",
+      "date": "2026-09-30T13:42:21.146Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
