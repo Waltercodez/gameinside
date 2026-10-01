@@ -1,17 +1,7 @@
 {
-  "date": "2026-09-30",
-  "publishedToday": 10,
+  "date": "2026-10-01",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Game of Thrones Star Kit Harington Isn't a Gamer, but He's Excited for Grand Theft Auto 6",
-      "url": "https://www.ign.com/articles/game-of-thrones-star-kit-harington-isnt-a-gamer-but-hes-excited-for-grand-theft-auto-6",
-      "date": "2026-09-24T04:48:16.362Z"
-    },
-    {
-      "title": "Xbox Is Reportedly Expected To Fall Short Of 3,200 Layoffs",
-      "url": "https://www.nintendolife.com/news/2026/09/xbox-is-reportedly-expected-to-fall-short-of-3200-layoffs",
-      "date": "2026-09-24T04:48:44.409Z"
-    },
     {
       "title": "Don't expect regular Destiny 2 updates to return, despite the surprise \"unvaulting\" of game additions",
       "url": "https://www.eurogamer.net/destiny-2-unvaulted-content-details-report",
@@ -331,7 +321,17 @@
       "title": "Rumour: New Uncharted Game in the Works at Naughty Dog, Nathan Drake Not the Lead Character",
       "url": "https://www.pushsquare.com/news/2026/10/rumour-new-uncharted-game-in-the-works-at-naughty-dog-nathan-drake-not-the-lead-character",
       "date": "2026-09-30T23:47:58.014Z"
+    },
+    {
+      "title": "10 Biggest GTA 6 Questions the Previews Haven't Answered Yet",
+      "url": "https://www.polygon.com/gta-6-major-questions/",
+      "date": "2026-10-01T05:49:57.521Z"
+    },
+    {
+      "title": "Nintendo Has Now Shut Down Mario Kart Tour",
+      "url": "https://www.nintendolife.com/news/2026/10/nintendo-has-now-shut-down-mario-kart-tour",
+      "date": "2026-10-01T05:50:20.147Z"
     }
   ],
-  "varietyPublishedToday": 4
+  "varietyPublishedToday": 1
 }
