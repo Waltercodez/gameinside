@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "_id": "auto-1790907303592-7tksj",
+      "title": "Sony brengt AI-upscaling QSSR naar basis-PS5",
+      "url": "https://gameinside.nl/artikel/sony-qssr-ai-upscaling-ps5-basisconsole",
+      "x": "Sony brengt PS5 Pro-technologie naar jouw basis-PS5. AI-upscaling QSSR zorgt voor betere grafische kwaliteit zonder dat je een nieuw console nodig hebt - dit is groot."
+    },
+    {
       "_id": "auto-1790860259454-6lep1",
       "title": "The Coalition vreest ontslagen na Gears of War: E-Day",
       "url": "https://gameinside.nl/artikel/the-coalition-vreest-ontslagen-gears-of-war-e-day",
@@ -565,5 +571,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-10-01T06:09:08.277Z"
+  "lastRun": "2026-10-02T05:52:43.775Z"
 }
