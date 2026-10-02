@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-01",
-  "publishedToday": 8,
+  "date": "2026-10-02",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Xbox Says Its Share of GTA 6 Preorders Matches Its Share of the Console Market, Following PS5 Dominance Claim",
-      "url": "https://www.ign.com/articles/xbox-says-its-share-of-gta-6-preorders-matches-its-share-of-the-console-market-following-ps5-dominance-claim",
-      "date": "2026-09-25T01:29:21.820Z"
-    },
-    {
-      "title": "Nintendo Reportedly Canceled A Ubisoft-Developed Zelda Game Starring Ganondorf",
-      "url": "https://www.gamespot.com/articles/nintendo-reportedly-canceled-a-ubisoft-developed-zelda-game-starring-ganondorf/",
-      "date": "2026-09-25T01:29:51.836Z"
-    },
     {
       "title": "‘GTA 6 Mobile Competitor’ Gets a Massive Update and a New Map",
       "url": "https://insider-gaming.com/gta-6-mobile-competitor-onestate-massive-update-new-map/",
@@ -321,7 +311,17 @@
       "title": "The Division-studio Massive krijgt controle over Splinter Cell en Ghost Recon",
       "url": "https://tweakers.net/nieuws/252866/the-division-studio-massive-krijgt-controle-over-splinter-cell-en-ghost-recon.html",
       "date": "2026-10-01T23:11:38.684Z"
+    },
+    {
+      "title": "How GTA 6's Jason and Lucia Have Evolved Since 2023 in Pictures",
+      "url": "https://www.ign.com/articles/how-gta-6s-jason-and-lucia-have-evolved-since-2023-in-pictures",
+      "date": "2026-10-02T02:14:40.822Z"
+    },
+    {
+      "title": "\"AI upscaling is coming to PS5\": Sony's base console is getting its own version of a PS5 Pro feature",
+      "url": "https://www.gamesradar.com/games/ai-upscaling-is-coming-to-ps5-sonys-base-console-is-getting-its-own-version-of-the-ps5-pro-feature-ive-been-jealous-about-for-2-years/",
+      "date": "2026-10-02T02:15:05.846Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
