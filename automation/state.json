@@ -1,17 +1,7 @@
 {
   "date": "2026-10-03",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Someone Has Already 3D Printed GTA 6 Collector’s Items",
-      "url": "https://insider-gaming.com/gta-6-collectors-items-3d-printed-already/",
-      "date": "2026-09-26T07:39:40.622Z"
-    },
-    {
-      "title": "Hell Is Us Shifts Switch 2 Launch Due To \"Very Busy\" September Release Window",
-      "url": "https://www.nintendolife.com/news/2026/09/hell-is-us-shifts-switch-2-launch-due-to-very-busy-september-release-window",
-      "date": "2026-09-26T07:40:19.458Z"
-    },
     {
       "title": "Manor Lords publisher isn't worried about launching a game on GTA 6's release date",
       "url": "https://www.gamesradar.com/games/grand-theft-auto/manor-lords-publisher-isnt-worried-about-launching-a-game-on-gta-6s-release-date-pc-players-looking-to-steal-cars-might-check-out-its-new-management-sim-instead/",
@@ -321,7 +311,17 @@
       "title": "Final Fantasy 7 Revelation lead says he pushed Square Enix for a physical version of the JRPG",
       "url": "https://www.gamesradar.com/games/final-fantasy/final-fantasy-7-revelation-lead-says-he-pushed-square-enix-for-a-physical-version-of-the-jrpg-but-physical-media-will-eventually-be-essentially-disc-less/",
       "date": "2026-10-03T06:32:21.132Z"
+    },
+    {
+      "title": "Dan Houser still hasn’t seen GTA 6: ‘I will try and avoid it’",
+      "url": "https://www.videogameschronicle.com/news/dan-houser-still-hasnt-seen-gta-6-i-will-try-and-avoid-it/",
+      "date": "2026-10-03T12:32:56.118Z"
+    },
+    {
+      "title": "Metro Redux's Next-Gen Update arrives this month as franchise passes 50 million sales",
+      "url": "https://www.eurogamer.net/metro-redux-next-gen-update-50-million-sales-metro-2039",
+      "date": "2026-10-03T12:33:22.182Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
