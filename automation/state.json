@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-02",
-  "publishedToday": 8,
+  "date": "2026-10-03",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 and Fire Emblem Have a Weird Connection No One Expected",
-      "url": "https://www.polygon.com/gta-6-fire-emblem-manatees-sea-beast/",
-      "date": "2026-09-25T22:18:59.820Z"
-    },
-    {
-      "title": "Amid mass Xbox layoffs, Microsoft CEO Satya Nadella says the \"streamlining\" is \"great to see\"",
-      "url": "https://www.gamesradar.com/games/amid-mass-xbox-layoffs-microsoft-ceo-satya-nadella-says-the-streamlining-is-great-to-see/",
-      "date": "2026-09-25T22:19:14.834Z"
-    },
     {
       "title": "GTA 6 Fronts Next Game Informer Cover with New Info and Screenshots",
       "url": "https://www.pushsquare.com/news/2026/09/gta-6-fronts-next-game-informer-cover-with-new-info-and-screenshots",
@@ -321,7 +311,17 @@
       "title": "Nintendo Switch 2 Just Got 2 of the Last Decade's Best RPGs",
       "url": "https://www.polygon.com/dragon-quest-11-switch-2-rpgs/",
       "date": "2026-10-02T20:43:49.994Z"
+    },
+    {
+      "title": "GTA 6 marketing stunt reveals none of our UK editors have heard of the Miami Heat",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-marketing-stunt-reveals-none-of-our-uk-editors-have-heard-of-the-miami-heat/",
+      "date": "2026-10-03T00:29:03.074Z"
+    },
+    {
+      "title": "Disney Says Conversations About Buying Epic Games Are Not Happening 'Right Now'",
+      "url": "https://www.ign.com/articles/disney-says-conversations-about-buying-epic-games-are-not-happening-right-now",
+      "date": "2026-10-03T00:29:25.777Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
