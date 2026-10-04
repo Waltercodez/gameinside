@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-03",
-  "publishedToday": 10,
+  "date": "2026-10-04",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Surprise! Minecraft Is Getting Its First New Dimension In Over 14 Years",
-      "url": "https://www.nintendolife.com/news/2026/09/surprise-minecraft-is-getting-its-first-new-dimension-in-over-14-years",
-      "date": "2026-09-27T01:26:06.193Z"
-    },
-    {
-      "title": "The Legend of Zelda: Ocarina of Time Remake Extended Clip Reveals Closer Look at Ganondorf",
-      "url": "https://www.ign.com/articles/the-legend-of-zelda-ocarina-of-time-remake-extended-clip-reveals-closer-look-at-ganondorf",
-      "date": "2026-09-27T01:26:34.805Z"
-    },
     {
       "title": "Nadella Calls Xbox Layoffs “Great to See” as 268 New Cuts Push Microsoft Closer to its Original 3,200 Headcount Goal",
       "url": "https://wccftech.com/nadella-xbox-streamlining-layoffs-268-cuts/",
@@ -311,7 +301,17 @@
       "title": "Call of Duty: Modern Warfare 4 Video Reveals Major Change That Could End Wallhacks for Good",
       "url": "https://www.ign.com/articles/call-of-duty-modern-warfare-4-video-reveals-major-change-that-could-end-wallhacks-for-good",
       "date": "2026-10-03T19:57:07.862Z"
+    },
+    {
+      "title": "RuneScape 4 announced at RuneFest, full MMO sequel started as expansion to survival game Dragonwilds",
+      "url": "https://www.pcgamer.com/games/mmo/runescape-4-announced-at-runefest-full-mmo-sequel-started-as-expansion-to-survival-game-dragonwilds/",
+      "date": "2026-10-04T02:37:43.140Z"
+    },
+    {
+      "title": "Capcom ends its string of Ws, embraces AI as ‘essential’ for its future games and projects",
+      "url": "https://www.destructoid.com/capcom-embraces-ai/",
+      "date": "2026-10-04T02:38:07.118Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
