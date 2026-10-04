@@ -1,17 +1,7 @@
 {
   "date": "2026-10-04",
-  "publishedToday": 6,
+  "publishedToday": 8,
   "topics": [
-    {
-      "title": "Apple’s A20 Pro Matches The GTX 1650 In GTA 5 At A Modicum Of The Power Draw, Achieving An Unfathomable 1,180% Higher Performance-Per-Watt",
-      "url": "https://wccftech.com/apple-a20-pro-iphone-18-pro-max-gta-v-gtx-1650-efficiency-comparison/",
-      "date": "2026-09-27T18:22:54.800Z"
-    },
-    {
-      "title": "Latest Xbox layoffs reportedly devastated Age of Empires developer and canceled its next game",
-      "url": "https://www.pcgamer.com/gaming-industry/latest-xbox-layoffs-reportedly-devastated-age-of-empires-developer-and-canceled-its-next-game/",
-      "date": "2026-09-27T18:23:09.052Z"
-    },
     {
       "title": "'Sony's Hearing a Lot of the Feedback from Customers': NIS America Boss Weighs in on PS5 Disc Debate",
       "url": "https://www.pushsquare.com/news/2026/09/sonys-hearing-a-lot-of-the-feedback-from-customers-nis-america-boss-weighs-in-on-ps5-disc-debate",
@@ -311,6 +301,16 @@
       "title": "Feature: We've Finally Played Xbox's New Fable Reboot, And Here's What We Think So Far",
       "url": "https://www.purexbox.com/features/weve-finally-played-xboxs-new-fable-reboot-and-heres-what-we-think-so-far",
       "date": "2026-10-04T15:21:44.707Z"
+    },
+    {
+      "title": "SNL Weighs in on GTA 6 vs. The Legend of Zelda With Skit Featuring Jason and Link",
+      "url": "https://www.ign.com/articles/snl-weighs-in-on-gta-6-vs-the-legend-of-zelda-with-skit-featuring-jason-and-link",
+      "date": "2026-10-04T19:36:01.409Z"
+    },
+    {
+      "title": "Fable’s New Combat Will Stay Approachable, Devs Say",
+      "url": "https://insider-gaming.com/fable-new-combat-approachable-playground-games/",
+      "date": "2026-10-04T19:36:13.986Z"
     }
   ],
   "varietyPublishedToday": 3
