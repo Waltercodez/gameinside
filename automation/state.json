@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-04",
-  "publishedToday": 10,
+  "date": "2026-10-05",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Ace Attorney Dual Destinies VR Announced by Capcom",
-      "url": "https://insider-gaming.com/ace-attorney-dual-destinies-vr-announced-capcom/",
-      "date": "2026-09-28T00:44:47.995Z"
-    },
-    {
-      "title": "Former Dragon Age executive producer Mark Darrah explains what he'd change about each game: 'It's kind of filler'",
-      "url": "https://www.pcgamer.com/games/dragon-age/former-dragon-age-executive-producer-mark-darrah-explains-what-hed-change-about-each-game-its-kind-of-filler/",
-      "date": "2026-09-28T00:45:17.822Z"
-    },
     {
       "title": "Minecraft krijgt na ruim veertien jaar een nieuwe dimensie: de Sift",
       "url": "https://tweakers.net/nieuws/252666/minecraft-krijgt-na-ruim-veertien-jaar-een-nieuwe-dimensie-de-sift.html",
@@ -311,7 +301,17 @@
       "title": "Behaviour Interactive Is Working on an “Unannounced AAA Sci-Fi FPS With a High Realism Bar”",
       "url": "https://insider-gaming.com/behaviour-interactive-sci-fi-fps/",
       "date": "2026-10-04T23:08:34.686Z"
+    },
+    {
+      "title": "Former GTA lead says \"there's no greater compliment\" than being compared to his Rockstar classics",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/former-gta-lead-says-theres-no-greater-compliment-than-being-compared-to-his-rockstar-classics-but-he-hopes-his-new-game-is-successful-in-its-own-right/",
+      "date": "2026-10-05T01:59:24.779Z"
+    },
+    {
+      "title": "This Week’s Japanese Game Releases: Dragon’s Dogma II: Dark Arisen, Kingdom Hearts Collection [I ~ III], more",
+      "url": "https://www.gematsu.com/2026/10/this-weeks-japanese-game-releases-dragons-dogma-ii-dark-arisen-kingdom-hearts-collection-i-iii-more",
+      "date": "2026-10-05T01:59:53.278Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
