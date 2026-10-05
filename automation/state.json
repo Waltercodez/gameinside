@@ -1,17 +1,7 @@
 {
   "date": "2026-10-05",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 Won't Officially Break Clair Obscur's Big GOTY Record",
-      "url": "https://www.polygon.com/gta-6-goty-golden-joysticks-big-five/",
-      "date": "2026-09-28T15:26:17.731Z"
-    },
-    {
-      "title": "God of War Laufey PS5 Editions Revealed, Pre-Order Tomorrow",
-      "url": "https://www.pushsquare.com/news/2026/09/god-of-war-laufey-ps5-editions-revealed-pre-order-tomorrow",
-      "date": "2026-09-28T15:26:32.378Z"
-    },
     {
       "title": "I have broken GTA 5 by installing so many mods that the game only launches in windowed mode now",
       "url": "https://www.pcgamer.com/games/grand-theft-auto/i-have-broken-gta-5-by-installing-so-many-mods-that-the-game-only-launches-in-windowed-mode-now/",
@@ -311,7 +301,17 @@
       "title": "Gears of War: E-Day Standard Edition and Xbox Game Pass release countdown — Exact date and time",
       "url": "https://www.destructoid.com/gears-of-war-e-day-standard-edition-and-xbox-game-pass-release-countdown-exact-date-and-time/",
       "date": "2026-10-05T09:02:00.278Z"
+    },
+    {
+      "title": "How Is A Game Like GTA 6 Actually Made? Here’s How Rockstar Gets It Done",
+      "url": "https://www.gamespot.com/articles/how-is-a-game-like-gta-6-actually-made-heres-how-rockstar-gets-it-done/",
+      "date": "2026-10-05T18:26:02.311Z"
+    },
+    {
+      "title": "Hellblade studio Ninja Theory has started laying off staff, following Xbox’s announcement that it faces closure",
+      "url": "https://www.videogameschronicle.com/news/hellblade-studio-ninja-theory-has-started-laying-off-staff-following-xboxs-announcement-that-it-faces-closure/",
+      "date": "2026-10-05T18:26:28.346Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
