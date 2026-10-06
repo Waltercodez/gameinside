@@ -1,17 +1,7 @@
 {
   "date": "2026-10-06",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Naughty Dog Is Working On Two New The Last Of Us Projects",
-      "url": "https://www.gamespot.com/articles/naughty-dog-is-working-on-two-new-the-last-of-us-projects/",
-      "date": "2026-09-29T08:28:34.746Z"
-    },
-    {
-      "title": "In another unprecedented move, Call of Duty: Modern Warfare 4 is changing double XP tokens so they count down in match and not real-time",
-      "url": "https://www.eurogamer.net/call-of-duty-modern-warfare-4-double-xp-tokens-count-down-change",
-      "date": "2026-09-29T08:29:01.784Z"
-    },
     {
       "title": "GTA 5 For Switch Mod Project Shuts Down, Dev Thanks Take-Two For Its “Mercy”",
       "url": "https://www.gamespot.com/articles/gta-5-for-switch-mod-project-shuts-down-dev-thanks-take-two-for-its-mercy/",
@@ -311,7 +301,17 @@
       "title": "2K haalt servers NBA 2K25 twee jaar na release offline",
       "url": "https://tweakers.net/nieuws/252992/2k-haalt-servers-nba-2k25-twee-jaar-na-release-offline.html",
       "date": "2026-10-06T07:33:56.696Z"
+    },
+    {
+      "title": "GTA 5 Made Playable in Browser as AI-Generated Game Chaos Continues",
+      "url": "https://www.ign.com/articles/gta-5-made-playable-in-browser-as-ai-generated-game-chaos-continues",
+      "date": "2026-10-06T15:10:01.002Z"
+    },
+    {
+      "title": "Gears of War: E-Day – Surviving the First Night of Emergence",
+      "url": "https://news.xbox.com/en-us/2026/10/06/gears-of-war-e-day-surviving-the-first-night-of-emergence/",
+      "date": "2026-10-06T15:10:32.091Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
