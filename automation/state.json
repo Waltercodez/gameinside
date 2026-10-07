@@ -1,17 +1,7 @@
 {
   "date": "2026-10-07",
-  "publishedToday": 6,
+  "publishedToday": 8,
   "topics": [
-    {
-      "title": "GTA 6 completely \"re-engineered\" Rockstar's weather systems to \"achieve a sense of scale we haven't felt before,\" adding hurricanes, rainbows and heavy rain",
-      "url": "https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain",
-      "date": "2026-09-30T19:18:24.134Z"
-    },
-    {
-      "title": "Xbox CEO Asha Sharma insists Microsoft’s gaming business is ‘not for sale’",
-      "url": "https://www.videogameschronicle.com/news/xbox-ceo-asha-sharma-insists-microsofts-gaming-business-is-not-for-sale/",
-      "date": "2026-09-30T19:18:49.365Z"
-    },
     {
       "title": "GTA 5 Modder Taunts Rockstar With Unofficial Nintendo Switch Port, Gets Cease and Desist from Take-Two",
       "url": "https://www.ign.com/articles/gta-5-modder-taunts-rockstar-with-unofficial-nintendo-switch-port-gets-cease-and-desist-from-take-two",
@@ -301,7 +291,17 @@
       "title": "PlayStation Bringing Back Ape Escape With Ex-Sonic Devs, Report Says",
       "url": "https://www.polygon.com/ape-escape-new-game-sonic-mania/",
       "date": "2026-10-07T14:30:26.217Z"
+    },
+    {
+      "title": "The original Grand Theft Auto was open-world because ‘we didn’t want to have to build a front end’, dev says",
+      "url": "https://www.videogameschronicle.com/news/the-original-grand-theft-auto-was-open-world-because-we-didnt-want-to-have-to-build-a-front-end-dev-says/",
+      "date": "2026-10-07T20:36:25.417Z"
+    },
+    {
+      "title": "Forza Horizon 6 For PS5 Apparently Delayed To 2027, And It’s Getting A Disc Release",
+      "url": "https://www.gamespot.com/articles/forza-horizon-6-for-ps5-apparently-delayed-to-2027-and-its-getting-a-disc-release/",
+      "date": "2026-10-07T20:36:53.476Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
