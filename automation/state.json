@@ -1,17 +1,7 @@
 {
   "date": "2026-10-07",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6: Every Animal Confirmed So Far",
-      "url": "https://www.ign.com/articles/gta-6-every-animal-confirmed-so-far",
-      "date": "2026-09-30T13:41:57.773Z"
-    },
-    {
-      "title": "Huge Deadlock Update Propels Valve's MOBA Hero Shooter to the Top of the Steam Charts, Smashes Peak Concurrent Player Record",
-      "url": "https://www.ign.com/articles/huge-deadlock-update-propels-valves-moba-hero-shooter-to-the-top-of-the-steam-charts-smashes-peak-concurrent-player-record",
-      "date": "2026-09-30T13:42:21.146Z"
-    },
     {
       "title": "GTA 6 completely \"re-engineered\" Rockstar's weather systems to \"achieve a sense of scale we haven't felt before,\" adding hurricanes, rainbows and heavy rain",
       "url": "https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain",
@@ -301,7 +291,17 @@
       "title": "Xbox Helix is seemingly pulling a Steam Deck, CEO discusses devices for players \"on the go\"",
       "url": "https://www.gamesradar.com/games/xbox-helix-is-seemingly-pulling-a-steam-deck-ceo-discusses-devices-for-players-on-the-go-with-a-great-console-first/",
       "date": "2026-10-07T07:13:43.422Z"
+    },
+    {
+      "title": "GTA 6: The Big Interview",
+      "url": "https://www.ign.com/articles/gta-6-the-big-interview",
+      "date": "2026-10-07T14:29:56.217Z"
+    },
+    {
+      "title": "PlayStation Bringing Back Ape Escape With Ex-Sonic Devs, Report Says",
+      "url": "https://www.polygon.com/ape-escape-new-game-sonic-mania/",
+      "date": "2026-10-07T14:30:26.217Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
