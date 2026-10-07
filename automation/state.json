@@ -1,27 +1,7 @@
 {
-  "date": "2026-10-06",
-  "publishedToday": 8,
+  "date": "2026-10-07",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 map officially twice as large as GTA 5, features hurricanes and tropical storms",
-      "url": "https://www.videogameschronicle.com/news/gta-6-map-is-officially-twice-as-large-as-gta-5-features-hurricanes-and-tropical-storms/",
-      "date": "2026-09-29T20:46:05.462Z"
-    },
-    {
-      "title": "The Witcher 3 Remastered Has Already Broken Steam Concurrent Player Record",
-      "url": "https://www.ign.com/articles/the-witcher-3-remastered-has-already-broken-steam-concurrent-player-record",
-      "date": "2026-09-29T20:46:18.118Z"
-    },
-    {
-      "title": "GTA 6's Game of the Year Chances Have Been Called Into Question",
-      "url": "https://www.ign.com/articles/gta-6s-game-of-the-year-chances-have-been-called-into-question",
-      "date": "2026-09-30T00:26:12.453Z"
-    },
-    {
-      "title": "'The Train Isn't Stopping' — Diablo 4 Director Promises the Game Will Still Receive Support Well After Diablo 5 Launches",
-      "url": "https://www.ign.com/articles/the-train-isnt-stopping-diablo-4-director-promises-the-game-will-still-receive-support-well-after-diablo-5-launches",
-      "date": "2026-09-30T00:26:38.476Z"
-    },
     {
       "title": "GTA 6 Won’t Spoof Disney World, And That’s Too Bad",
       "url": "https://www.gamespot.com/articles/gta-6-wont-spoof-disney-world-and-thats-too-bad/",
@@ -311,7 +291,17 @@
       "title": "Nintendo's New Zelda Switch 2 Hardware Officially Arrives This Month",
       "url": "https://www.polygon.com/legend-of-zelda-ocarina-remake-new-nintendo-switch-2-hardware/",
       "date": "2026-10-06T20:18:54.948Z"
+    },
+    {
+      "title": "Xbox Reportedly Secures Exclusive Cloud Streaming Rights to GTA 6, Could Make Game Playable on PC at Launch",
+      "url": "https://www.ign.com/articles/xbox-reportedly-secures-exclusive-cloud-streaming-rights-to-gta-6-could-make-game-playable-on-pc-at-launch",
+      "date": "2026-10-07T00:41:34.989Z"
+    },
+    {
+      "title": "A Scary-Looking New Conjuring Game Just Got Announced, And It’s Out Next Week On Netflix",
+      "url": "https://www.gamespot.com/articles/a-scary-looking-new-conjuring-game-just-got-announced-and-its-out-next-week-on-netflix/",
+      "date": "2026-10-07T00:42:02.824Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
