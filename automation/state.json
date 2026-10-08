@@ -1,17 +1,7 @@
 {
   "date": "2026-10-08",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "As Xbox swings the axe, Gears of War: E-Day developers fear they'll be laid off straight after launch - and right before they'd be due their bonuses",
-      "url": "https://www.eurogamer.net/the-coalition-gears-of-war-e-day-worried-layoffs-no-bonus",
-      "date": "2026-10-01T13:11:01.881Z"
-    },
-    {
-      "title": "'Naughty Dog brengt eerst nieuwe Uncharted uit en dan The Last of Us Part III'",
-      "url": "https://tweakers.net/nieuws/252842/naughty-dog-brengt-eerst-nieuwe-uncharted-uit-en-dan-the-last-of-us-part-iii.html",
-      "date": "2026-10-01T13:11:26.747Z"
-    },
     {
       "title": "GTA 6 Gets Official ESRB Rating and It's as Mature as You'd Expect",
       "url": "https://www.ign.com/articles/gta-6-gets-official-esrb-rating-and-its-as-mature-as-youd-expect",
@@ -301,7 +291,17 @@
       "title": "Beloved Action-RPG Muramasa: The Demon Blade Returns in 2027 With Stunning Remake",
       "url": "https://www.polygon.com/muramasa-revenant-blades-2027-remake-remaster-vanillaware-marvelous/",
       "date": "2026-10-08T07:23:22.769Z"
+    },
+    {
+      "title": "Rockstar reveals some of GTA 6’s radio stations, says players can now listen to the radio and podcasts on foot",
+      "url": "https://www.videogameschronicle.com/news/rockstar-reveals-some-of-gta-6s-radio-stations-says-players-can-now-listen-to-the-radio-and-podcasts-on-foot/",
+      "date": "2026-10-08T15:35:34.047Z"
+    },
+    {
+      "title": "After months of PSVR 2 stock shortages, PlayStation sells hundreds of VR patents to Meta",
+      "url": "https://www.gamesradar.com/hardware/vr/after-months-of-psvr-2-stock-shortages-playstation-sells-hundreds-of-vr-patents-to-meta-signaling-the-brands-departure-from-the-market/",
+      "date": "2026-10-08T15:36:08.263Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
