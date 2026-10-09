@@ -1,17 +1,7 @@
 {
   "date": "2026-10-09",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 Rebrands Miami Basketball Team to Vice City for One Night Only",
-      "url": "https://www.pushsquare.com/news/2026/10/gta-6-rebrands-miami-basketball-team-to-vice-city-for-one-night-only",
-      "date": "2026-10-02T15:47:43.239Z"
-    },
-    {
-      "title": "Halo's new steward Activision reportedly considering rebooting the series, with a team in Sledgehammer Games leading the charge",
-      "url": "https://www.eurogamer.net/halo-activision-rumours-slegehammer-games-reboot",
-      "date": "2026-10-02T15:47:56.266Z"
-    },
     {
       "title": "Rockstar Co-Founder Preparing to Reveal Open-World Game and ‘Dystopian Sci-Fi’ Title",
       "url": "https://insider-gaming.com/rockstar-co-founder-preparing-to-reveal-open-world-game-dystopian/",
@@ -291,7 +281,17 @@
       "title": "Cyberpunk 2077 Movie Reportedly Lands Transformers Producer Lorenzo di Bonaventura, as Paramount Bets on CDPR’s 40 Million Seller",
       "url": "https://wccftech.com/cyberpunk-2077-movie-lorenzo-di-bonaventura-paramount-cdpr-40-million/",
       "date": "2026-10-09T09:01:58.206Z"
+    },
+    {
+      "title": "GTA 6 on Switch 2? 'That's a Conversation for Take-Two and Rockstar,' Nintendo Says",
+      "url": "https://www.ign.com/articles/gta-6-switch-2-nintendo-president",
+      "date": "2026-10-09T16:11:12.667Z"
+    },
+    {
+      "title": "Legendary RPG Creator Is Officially Taking His Game Back from Electronic Arts",
+      "url": "https://www.polygon.com/richard-garriott-ultima-creator-taking-his-back-copyright/",
+      "date": "2026-10-09T16:11:42.699Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
