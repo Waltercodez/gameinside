@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-08",
-  "publishedToday": 8,
+  "date": "2026-10-09",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "New GTA 6 Age Rating Confirms Game Will Feature Sex Scenes",
-      "url": "https://www.ign.com/articles/new-gta-6-age-rating-confirms-game-will-feature-sex-scenes",
-      "date": "2026-10-01T23:11:30.631Z"
-    },
-    {
-      "title": "The Division-studio Massive krijgt controle over Splinter Cell en Ghost Recon",
-      "url": "https://tweakers.net/nieuws/252866/the-division-studio-massive-krijgt-controle-over-splinter-cell-en-ghost-recon.html",
-      "date": "2026-10-01T23:11:38.684Z"
-    },
     {
       "title": "How GTA 6's Jason and Lucia Have Evolved Since 2023 in Pictures",
       "url": "https://www.ign.com/articles/how-gta-6s-jason-and-lucia-have-evolved-since-2023-in-pictures",
@@ -301,7 +291,17 @@
       "title": "Forza Horizon 6 Is Finally Coming to PS5 in January Alongside First Expansion",
       "url": "https://www.ign.com/articles/forza-horizon-6-is-finally-coming-to-ps5-in-january-alongside-first-expansion",
       "date": "2026-10-08T21:19:27.231Z"
+    },
+    {
+      "title": "New GTA 6 Screenshots Reveal Jaw-Dropping Effects",
+      "url": "https://insider-gaming.com/new-gta-6-screenshots-jaw-dropping-effects/",
+      "date": "2026-10-09T02:08:25.211Z"
+    },
+    {
+      "title": "Cyberpunk 2077 Live-Action Movie Officially Announced",
+      "url": "https://www.polygon.com/cyberpunk-2077-movie-paramount-pictures/",
+      "date": "2026-10-09T02:08:53.584Z"
     }
   ],
-  "varietyPublishedToday": 4
+  "varietyPublishedToday": 1
 }
