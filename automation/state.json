@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-09",
-  "publishedToday": 8,
+  "date": "2026-10-10",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 marketing stunt reveals none of our UK editors have heard of the Miami Heat",
-      "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-marketing-stunt-reveals-none-of-our-uk-editors-have-heard-of-the-miami-heat/",
-      "date": "2026-10-03T00:29:03.074Z"
-    },
-    {
-      "title": "Disney Says Conversations About Buying Epic Games Are Not Happening 'Right Now'",
-      "url": "https://www.ign.com/articles/disney-says-conversations-about-buying-epic-games-are-not-happening-right-now",
-      "date": "2026-10-03T00:29:25.777Z"
-    },
     {
       "title": "GTA 6's 18+ age rating reveals Lucia and Jason can partake in drug use \"directly from their inventory\" and \"at any time\"",
       "url": "https://www.eurogamer.net/gta6-age-rating-pegi-lucia-jason-drug-use",
@@ -291,7 +281,17 @@
       "title": "US console market hasn't been this bad \"since the early 80s,\" analyst says",
       "url": "https://www.gamesradar.com/hardware/us-console-market-hasnt-been-in-a-more-precarious-position-since-the-early-80s-analyst-says-as-ps5-and-xbox-series-x-price-soar-to-all-time-highs/",
       "date": "2026-10-09T20:53:23.015Z"
+    },
+    {
+      "title": "GTA 6 Fan Says Rockstar Sent Them a Poster Just Because They Asked Nicely",
+      "url": "https://www.ign.com/articles/gta-6-fan-says-rockstar-sent-them-a-poster-just-because-they-asked-nicely",
+      "date": "2026-10-10T00:49:03.872Z"
+    },
+    {
+      "title": "Konami Planning 'Second and Third Waves' of New Silent Hill Games",
+      "url": "https://www.ign.com/articles/konami-planning-second-and-third-waves-of-new-silent-hill-games",
+      "date": "2026-10-10T00:49:33.535Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
