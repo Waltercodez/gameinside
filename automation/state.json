@@ -1,17 +1,7 @@
 {
   "date": "2026-10-10",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Dan Houser still hasn’t seen GTA 6: ‘I will try and avoid it’",
-      "url": "https://www.videogameschronicle.com/news/dan-houser-still-hasnt-seen-gta-6-i-will-try-and-avoid-it/",
-      "date": "2026-10-03T12:32:56.118Z"
-    },
-    {
-      "title": "Metro Redux's Next-Gen Update arrives this month as franchise passes 50 million sales",
-      "url": "https://www.eurogamer.net/metro-redux-next-gen-update-50-million-sales-metro-2039",
-      "date": "2026-10-03T12:33:22.182Z"
-    },
     {
       "title": "GTA Creator Has Avoided GTA 6 While Making New Open-World Games",
       "url": "https://www.polygon.com/dan-houser-absured-ventures-open-world-game/",
@@ -291,7 +281,17 @@
       "title": "Ace Combat 8 becomes fastest-selling game in franchise history—proving players care about story as much as shooting bogies",
       "url": "https://www.destructoid.com/ace-combat-8-fastest-selling-game-in-the-series/",
       "date": "2026-10-10T07:05:45.301Z"
+    },
+    {
+      "title": "Former Last of Us dev says \"the idea of a monolithic GTA 6\" or Elder Scrolls 6 is \"intimidating\"",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/former-last-of-us-and-uncharted-4-dev-says-the-idea-of-a-monolithic-gta-6-or-elder-scrolls-6-is-intimidating-wants-more-short-games-instead/",
+      "date": "2026-10-10T13:39:46.687Z"
+    },
+    {
+      "title": "US console hardware market at its most precarious position ‘since the 80s’, says Circana",
+      "url": "https://www.videogameschronicle.com/news/us-console-hardware-market-at-its-most-precarious-position-since-the-80s-says-circana/",
+      "date": "2026-10-10T13:40:13.715Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
