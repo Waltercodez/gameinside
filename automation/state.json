@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-10",
-  "publishedToday": 10,
+  "date": "2026-10-11",
+  "publishedToday": 2,
   "topics": [
     {
       "title": "RuneScape 4 announced at RuneFest, full MMO sequel started as expansion to survival game Dragonwilds",
@@ -291,7 +291,17 @@
       "title": "Squadron 42 has a Steam page",
       "url": "https://www.pcgamer.com/games/fps/squadron-42-has-a-steam-page/",
       "date": "2026-10-10T22:30:52.746Z"
+    },
+    {
+      "title": "GTA 6 leaker CyberLeek is now reportedly threatening to release a full, playable build of the game",
+      "url": "https://www.eurogamer.net/gta-6-leaker-cyberleek-threatens-playable-build-leak",
+      "date": "2026-10-11T01:51:56.211Z"
+    },
+    {
+      "title": "PlayStation Hardware Sales Hit Lowest Point Since 2013 in US, and PS5's Price Is the Problem",
+      "url": "https://www.pushsquare.com/news/2026/10/playstation-hardware-sales-hit-lowest-point-since-2013-in-us-and-ps5s-price-is-the-problem",
+      "date": "2026-10-11T01:52:54.704Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
