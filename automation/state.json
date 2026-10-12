@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-11",
-  "publishedToday": 10,
+  "date": "2026-10-12",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Former GTA lead says \"there's no greater compliment\" than being compared to his Rockstar classics",
-      "url": "https://www.gamesradar.com/games/grand-theft-auto/former-gta-lead-says-theres-no-greater-compliment-than-being-compared-to-his-rockstar-classics-but-he-hopes-his-new-game-is-successful-in-its-own-right/",
-      "date": "2026-10-05T01:59:24.779Z"
-    },
-    {
-      "title": "This Week’s Japanese Game Releases: Dragon’s Dogma II: Dark Arisen, Kingdom Hearts Collection [I ~ III], more",
-      "url": "https://www.gematsu.com/2026/10/this-weeks-japanese-game-releases-dragons-dogma-ii-dark-arisen-kingdom-hearts-collection-i-iii-more",
-      "date": "2026-10-05T01:59:53.278Z"
-    },
     {
       "title": "GTA 6 Employs Dedicated Writers To Create Diverse ‘Background Noise’",
       "url": "https://insider-gaming.com/gta-6-employs-dedicated-writers-to-create-diverse-background-noise/",
@@ -291,7 +281,17 @@
       "title": "EA Producer Announces Wing Commander 3 Remaster At Portland Retro Gaming Expo",
       "url": "https://kotaku.com/ea-producer-announces-wing-commander-3-remaster-at-portland-retro-gaming-expo-2000744166",
       "date": "2026-10-11T23:41:10.332Z"
+    },
+    {
+      "title": "Path of Exile 2 1.0 – Everything We Know About the Full Launch of Grinding Gear’s F2P Hack and Slash",
+      "url": "https://wccftech.com/roundup/path-of-exile-2-1-0-everything-we-know-full-launch-f2p-hack-and-slash/",
+      "date": "2026-10-12T05:54:47.973Z"
+    },
+    {
+      "title": "New NetEase FPS Sparks Warzone 'Rip-Off' Claims, But Some Call of Duty Fans Are Happy to See It",
+      "url": "https://www.ign.com/articles/new-netease-fps-sparks-warzone-rip-off-claims-but-some-call-of-duty-fans-are-happy-to-see-it",
+      "date": "2026-10-12T05:55:16.000Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
