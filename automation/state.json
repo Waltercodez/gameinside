@@ -1,17 +1,7 @@
 {
   "date": "2026-10-13",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 5 Made Playable in Browser as AI-Generated Game Chaos Continues",
-      "url": "https://www.ign.com/articles/gta-5-made-playable-in-browser-as-ai-generated-game-chaos-continues",
-      "date": "2026-10-06T15:10:01.002Z"
-    },
-    {
-      "title": "Gears of War: E-Day – Surviving the First Night of Emergence",
-      "url": "https://news.xbox.com/en-us/2026/10/06/gears-of-war-e-day-surviving-the-first-night-of-emergence/",
-      "date": "2026-10-06T15:10:32.091Z"
-    },
     {
       "title": "Warhammer Survivors Is Launching Mere Days Before GTA 6, And I Respect The Audacity",
       "url": "https://www.gamespot.com/articles/warhammer-survivors-is-launching-mere-days-before-gta-6-and-i-respect-the-audacity/",
@@ -291,7 +281,17 @@
       "title": "Epic Games stelt Disney-game uit en vraagt ontwikkelaars meer AI te gebruiken",
       "url": "https://tweakers.net/nieuws/253250/epic-games-stelt-disney-game-uit-en-vraagt-ontwikkelaars-meer-ai-te-gebruiken.html",
       "date": "2026-10-13T11:46:12.630Z"
+    },
+    {
+      "title": "GTA 6 Will Reportedly Come To PC Much Earlier Than Expected",
+      "url": "https://www.gamespot.com/articles/gta-6-will-reportedly-come-to-pc-much-earlier-than-expected/",
+      "date": "2026-10-13T19:15:40.201Z"
+    },
+    {
+      "title": "Xbox Announces ‘Xbox Labs’, a New Xbox Division to “Explore New Technology”",
+      "url": "https://insider-gaming.com/xbox-labs-announced/",
+      "date": "2026-10-13T19:16:11.980Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
