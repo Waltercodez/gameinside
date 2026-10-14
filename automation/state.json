@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-13",
-  "publishedToday": 8,
+  "date": "2026-10-14",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Xbox Reportedly Secures Exclusive Cloud Streaming Rights to GTA 6, Could Make Game Playable on PC at Launch",
-      "url": "https://www.ign.com/articles/xbox-reportedly-secures-exclusive-cloud-streaming-rights-to-gta-6-could-make-game-playable-on-pc-at-launch",
-      "date": "2026-10-07T00:41:34.989Z"
-    },
-    {
-      "title": "A Scary-Looking New Conjuring Game Just Got Announced, And It’s Out Next Week On Netflix",
-      "url": "https://www.gamespot.com/articles/a-scary-looking-new-conjuring-game-just-got-announced-and-its-out-next-week-on-netflix/",
-      "date": "2026-10-07T00:42:02.824Z"
-    },
     {
       "title": "XBOX zou exclusieve streamingrechten voor GTA VI in handen hebben",
       "url": "https://tweakers.net/nieuws/253034/xbox-zou-exclusieve-streamingrechten-voor-gta-vi-in-handen-hebben.html",
@@ -291,7 +281,17 @@
       "title": "Resident Evil 4 Remake On Switch 2 Is Capcom’s First Disappointment This Year",
       "url": "https://www.polygon.com/resident-evil-4-remake-switch-2-impressions/",
       "date": "2026-10-13T23:17:40.841Z"
+    },
+    {
+      "title": "Gerucht: Grand Theft Auto VI komt begin 2027 al uit op Windows-pc's",
+      "url": "https://tweakers.net/nieuws/253272/gerucht-grand-theft-auto-vi-komt-begin-2027-al-uit-op-windows-pcs.html",
+      "date": "2026-10-14T01:57:05.489Z"
+    },
+    {
+      "title": "First PS Plus Extra Game Removal for November 2026 Confirmed",
+      "url": "https://www.pushsquare.com/news/2026/10/first-ps-plus-extra-game-removal-for-november-2026-confirmed",
+      "date": "2026-10-14T01:57:29.535Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
