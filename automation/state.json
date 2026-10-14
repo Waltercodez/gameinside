@@ -1,17 +1,7 @@
 {
   "date": "2026-10-14",
-  "publishedToday": 6,
+  "publishedToday": 8,
   "topics": [
-    {
-      "title": "GTA 6: The Big Interview",
-      "url": "https://www.ign.com/articles/gta-6-the-big-interview",
-      "date": "2026-10-07T14:29:56.217Z"
-    },
-    {
-      "title": "PlayStation Bringing Back Ape Escape With Ex-Sonic Devs, Report Says",
-      "url": "https://www.polygon.com/ape-escape-new-game-sonic-mania/",
-      "date": "2026-10-07T14:30:26.217Z"
-    },
     {
       "title": "The original Grand Theft Auto was open-world because ‘we didn’t want to have to build a front end’, dev says",
       "url": "https://www.videogameschronicle.com/news/the-original-grand-theft-auto-was-open-world-because-we-didnt-want-to-have-to-build-a-front-end-dev-says/",
@@ -301,7 +291,17 @@
       "title": "Ubisoft closing Trials developer RedLynx and downsizing Assassin's Creed: Black Flag Resynced team in Singapore",
       "url": "https://www.eurogamer.net/ubisoft-closing-trials-studio-redlyx-layoffs-singapore-black-flag",
       "date": "2026-10-14T13:43:23.014Z"
+    },
+    {
+      "title": "First big GTA 6 leak was like having someone \"wading through your dirty washing,\" says Rockstar dev",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6s-first-major-leak-was-like-having-someone-wading-through-your-dirty-washing-says-rockstar-lead-its-like-theyre-inside-your-head/",
+      "date": "2026-10-14T18:37:10.359Z"
+    },
+    {
+      "title": "Epic throws shade at Steam, admits to vibe-coding the new Epic Games Launcher with AI \"to be faster than the other guy\"",
+      "url": "https://www.eurogamer.net/epic-throws-shade-steam-vibe-coding-games-launcher-ai",
+      "date": "2026-10-14T18:37:37.067Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
