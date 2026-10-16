@@ -1,17 +1,7 @@
 {
   "date": "2026-10-16",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Damn, This GTA 6 Screenshot Looks So Good People Don’t Believe It’s Real",
-      "url": "https://kotaku.com/damn-this-gta-6-screenshot-looks-so-good-people-dont-believe-its-real-2000742750",
-      "date": "2026-10-09T09:01:30.661Z"
-    },
-    {
-      "title": "Cyberpunk 2077 Movie Reportedly Lands Transformers Producer Lorenzo di Bonaventura, as Paramount Bets on CDPR’s 40 Million Seller",
-      "url": "https://wccftech.com/cyberpunk-2077-movie-lorenzo-di-bonaventura-paramount-cdpr-40-million/",
-      "date": "2026-10-09T09:01:58.206Z"
-    },
     {
       "title": "GTA 6 on Switch 2? 'That's a Conversation for Take-Two and Rockstar,' Nintendo Says",
       "url": "https://www.ign.com/articles/gta-6-switch-2-nintendo-president",
@@ -321,7 +311,17 @@
       "title": "Remedy Boss Reacts After Control Resonant Sells 1 Million Copies, Becoming Studio's Fastest-Selling Game",
       "url": "https://www.ign.com/articles/remedy-boss-reacts-after-control-resonant-sells-1-million-copies-becoming-studios-fastest-selling-game",
       "date": "2026-10-16T05:51:05.475Z"
+    },
+    {
+      "title": "Rockstar Mods Real Life Vehicles to Look Like GTA 6 Cars Before Driving Them Through Miami",
+      "url": "https://www.ign.com/articles/rockstar-mods-real-life-vehicles-gta-6-cars-miami",
+      "date": "2026-10-16T11:21:06.052Z"
+    },
+    {
+      "title": "Nintendo drops new Zelda: Ocarina of Time remake trailers, casually giving first look at Dark Link",
+      "url": "https://www.gamesradar.com/games/the-legend-of-zelda/nintendo-quietly-drops-new-zelda-ocarina-of-time-remake-trailers-casually-giving-us-our-first-ever-look-at-dark-link-and-more/",
+      "date": "2026-10-16T11:21:26.092Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
