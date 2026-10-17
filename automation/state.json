@@ -1,17 +1,7 @@
 {
   "date": "2026-10-17",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6's Nudity Sure Sounds Hopelessly Outdated",
-      "url": "https://www.polygon.com/gta-6-nudity-jason-lucia-sounds-hopelessly-outdated/",
-      "date": "2026-10-10T07:05:16.231Z"
-    },
-    {
-      "title": "Ace Combat 8 becomes fastest-selling game in franchise history—proving players care about story as much as shooting bogies",
-      "url": "https://www.destructoid.com/ace-combat-8-fastest-selling-game-in-the-series/",
-      "date": "2026-10-10T07:05:45.301Z"
-    },
     {
       "title": "Former Last of Us dev says \"the idea of a monolithic GTA 6\" or Elder Scrolls 6 is \"intimidating\"",
       "url": "https://www.gamesradar.com/games/grand-theft-auto/former-last-of-us-and-uncharted-4-dev-says-the-idea-of-a-monolithic-gta-6-or-elder-scrolls-6-is-intimidating-wants-more-short-games-instead/",
@@ -336,7 +326,17 @@
       "title": "Samson Developer Liquid Swords Goes Bankrupt",
       "url": "https://insider-gaming.com/samson-developer-liquid-swords-bankrupt/",
       "date": "2026-10-17T06:56:03.234Z"
+    },
+    {
+      "title": "Ray Liotta saved GTA: Vice City's \"awful\" writing, Rockstar co-founder Dan Houser says",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-vice-citys-writing-was-awful-rockstar-co-founder-dan-houser-says-but-acting-icon-ray-liotta-made-it-sound-good/",
+      "date": "2026-10-17T11:36:31.379Z"
+    },
+    {
+      "title": "Cult Of The Lamb Summons A Switch 2 Version, Free Upgrade Path Confirmed",
+      "url": "https://www.nintendolife.com/news/2026/10/cult-of-the-lamb-summons-a-switch-2-version-free-upgrade-path-confirmed",
+      "date": "2026-10-17T11:36:57.698Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
