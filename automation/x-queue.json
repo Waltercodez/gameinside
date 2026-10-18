@@ -1,6 +1,24 @@
 {
   "items": [
     {
+      "_id": "auto-1792281724725-cg0p3",
+      "title": "PS6 dreigt $1000+ te kosten door AI-chiptekort",
+      "url": "https://gameinside.nl/artikel/ps6-prijs-1000-dollar-ai-datacenters-geheugenkosten",
+      "x": "De PS6 dreigt meer dan $1000 te gaan kosten - en AI-datacenters zijn de boosdoener. De geheugenmarkt wordt volledig opgevreten door kunstmatige intelligentie."
+    },
+    {
+      "_id": "auto-1792281749827-vqgy3",
+      "title": "PS5: meer dan 35 nieuwe games komen volgende week uit",
+      "url": "https://gameinside.nl/artikel/ps5-meer-dan-35-nieuwe-games-volgende-week",
+      "x": "PS5-bezitters opgelet - volgende week barst los met meer dan 35 nieuwe games. Modern Warfare 4 steelt natuurlijk de show, maar het aanbod is echt enorm."
+    },
+    {
+      "_id": "auto-1792297831232-eaff7",
+      "title": "The Witcher 3 Remastered: mooier, maar zwaarder",
+      "url": "https://gameinside.nl/artikel/benchmark-witcher-3-remastered-mooier-maar-zwaarder",
+      "x": "The Witcher 3 Remastered ziet er echt veel mooier uit - maar je pc gaat flink zweten. Benchmarks onthullen wat de upgrade van je hardware gaat kosten."
+    },
+    {
       "_id": "auto-1792237014530-680jz",
       "title": "Cult of the Lamb krijgt gratis Switch 2-upgrade",
       "url": "https://gameinside.nl/artikel/cult-of-the-lamb-switch-2-versie-gratis-upgrade",
@@ -925,5 +943,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-10-17T00:35:38.848Z"
+  "lastRun": "2026-10-18T04:46:19.214Z"
 }
