@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "_id": "auto-1792372510451-cq8p3",
+      "title": "PlayStation 6: productiekosten mogelijk $1000",
+      "url": "https://gameinside.nl/artikel/playstation-6-productiekosten-mogelijk-1000-dollar",
+      "x": "De PlayStation 6 gaat flink in de papieren lopen - productiekosten mogelijk richting de $1000. Wat gaat Sony ons hiervoor laten betalen?"
+    },
+    {
+      "_id": "auto-1792372539330-og15c",
+      "title": "Lucasfilm: topstudio niet nodig voor Star Wars",
+      "url": "https://gameinside.nl/artikel/lucasfilm-star-wars-games-indie-studios",
+      "x": "Lucasfilm Games gooit het roer om - grote uitgever? Niet nodig. Wat telt is kwaliteit en creativiteit. Hoe gaat dit de toekomst van Star Wars games veranderen?"
+    },
+    {
       "_id": "auto-1792281724725-cg0p3",
       "title": "PS6 dreigt $1000+ te kosten door AI-chiptekort",
       "url": "https://gameinside.nl/artikel/ps6-prijs-1000-dollar-ai-datacenters-geheugenkosten",
@@ -943,5 +955,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-10-18T04:46:19.214Z"
+  "lastRun": "2026-10-19T04:54:40.851Z"
 }
