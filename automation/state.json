@@ -1,17 +1,7 @@
 {
   "date": "2026-10-20",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Sony announces cheaper Midnight Black PS5 to launch alongside GTA 6, it's just a shame we won't be able to buy it",
-      "url": "https://www.gamesradar.com/hardware/sony-announces-cheaper-midnight-black-ps5-to-launch-alongside-gta-6-its-just-a-shame-we-wont-be-able-to-buy-it/",
-      "date": "2026-10-13T11:45:54.604Z"
-    },
-    {
-      "title": "Epic Games stelt Disney-game uit en vraagt ontwikkelaars meer AI te gebruiken",
-      "url": "https://tweakers.net/nieuws/253250/epic-games-stelt-disney-game-uit-en-vraagt-ontwikkelaars-meer-ai-te-gebruiken.html",
-      "date": "2026-10-13T11:46:12.630Z"
-    },
     {
       "title": "GTA 6 Will Reportedly Come To PC Much Earlier Than Expected",
       "url": "https://www.gamespot.com/articles/gta-6-will-reportedly-come-to-pc-much-earlier-than-expected/",
@@ -361,7 +351,17 @@
       "title": "CAPCOM’s Monster Hunter Wilds on Switch 2 Trades Resolution for Stability, Yet Comparisons Show Detail Holds Up Against Bigger Consoles",
       "url": "https://wccftech.com/capcom-monster-hunter-wilds-switch-2-resolution-stability-comparison-hold-up/",
       "date": "2026-10-20T10:03:14.953Z"
+    },
+    {
+      "title": "GTA 6 Is 148% Ahead Of This Other Popular AAA Game So Far",
+      "url": "https://www.gamespot.com/articles/gta-6-is-148-ahead-of-this-other-popular-aaa-game-so-far/",
+      "date": "2026-10-20T15:03:56.832Z"
+    },
+    {
+      "title": "Cyberpunk 2077 Update 2.5 Announced by CD Projekt RED",
+      "url": "https://insider-gaming.com/cyberpunk-2077-update-2-5/",
+      "date": "2026-10-20T15:04:21.847Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
