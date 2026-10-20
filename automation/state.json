@@ -1,17 +1,7 @@
 {
   "date": "2026-10-20",
-  "publishedToday": 8,
+  "publishedToday": 10,
   "topics": [
-    {
-      "title": "GTA 6 Will Reportedly Come To PC Much Earlier Than Expected",
-      "url": "https://www.gamespot.com/articles/gta-6-will-reportedly-come-to-pc-much-earlier-than-expected/",
-      "date": "2026-10-13T19:15:40.201Z"
-    },
-    {
-      "title": "Xbox Announces ‘Xbox Labs’, a New Xbox Division to “Explore New Technology”",
-      "url": "https://insider-gaming.com/xbox-labs-announced/",
-      "date": "2026-10-13T19:16:11.980Z"
-    },
     {
       "title": "Rockstar co-founder Dan Houser says he 'failed' with Max Payne 3, and I'm sorry Danno but that's just plain wrong",
       "url": "https://www.pcgamer.com/games/third-person-shooter/rockstar-co-founder-dan-houser-says-he-failed-with-max-payne-3-and-im-sorry-danno-but-thats-just-plain-wrong/",
@@ -371,7 +361,17 @@
       "title": "EA Sports Announces Fight Night Return",
       "url": "https://insider-gaming.com/ea-sports-announces-fight-night-return/",
       "date": "2026-10-20T19:15:07.086Z"
+    },
+    {
+      "title": "It Looks Like GTA 6's Beer Brands Are About to Become Real",
+      "url": "https://www.ign.com/articles/it-looks-like-gta-6s-beer-brands-are-about-to-become-real",
+      "date": "2026-10-20T22:18:50.818Z"
+    },
+    {
+      "title": "Report claims next Xbox is targeting 2028 and could cost between $1,200 and $1,800",
+      "url": "https://www.videogameschronicle.com/news/report-claims-next-xbox-is-targeting-2028-and-could-cost-between-1200-and-1800/",
+      "date": "2026-10-20T22:19:21.878Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
