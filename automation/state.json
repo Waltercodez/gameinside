@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-21",
-  "publishedToday": 10,
+  "date": "2026-10-22",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Reviews: When They Could Be Released",
-      "url": "https://www.gamespot.com/articles/gta-6-reviews-when-they-could-be-released/",
-      "date": "2026-10-15T01:27:50.003Z"
-    },
-    {
-      "title": "Xbox Considers Making Fallout, Elder Scrolls, and Minecraft Exclusive",
-      "url": "https://www.polygon.com/xbox-exclusive-minecraft-fallout-elder-scrolls/",
-      "date": "2026-10-15T01:28:18.037Z"
-    },
     {
       "title": "GTA 6 Leaks, Epic's AI Woes, No Man's Sky Mobile and the Best AAA of the Year...",
       "url": "https://www.polygon.com/video/gta-6-leaks-epic-s-ai-woes-no-man-s-sky-mobile-and-the-best-aaa-of-the-year/",
@@ -361,7 +351,17 @@
       "title": "EA Shuts Down Dragon Age, Mass Effect Studio BioWare",
       "url": "https://www.gamespot.com/articles/ea-shuts-down-dragon-age-mass-effect-studio-bioware/",
       "date": "2026-10-21T22:20:06.030Z"
+    },
+    {
+      "title": "GTA 6's Fast Food Restaurant, Burger Shot, Is Coming to Real Life in the Miami Heat's Arena",
+      "url": "https://www.ign.com/articles/gta-6s-fast-food-restaurant-burger-shot-is-coming-to-real-life-in-the-miami-heats-arena",
+      "date": "2026-10-22T01:29:50.733Z"
+    },
+    {
+      "title": "Mass Effect 5 Cancelled As Legendary Developer BioWare Closes Down",
+      "url": "https://www.purexbox.com/news/2026/10/mass-effect-5-cancelled-as-legendary-developer-bioware-closes-down",
+      "date": "2026-10-22T01:30:12.356Z"
     }
   ],
-  "varietyPublishedToday": 4
+  "varietyPublishedToday": 1
 }
