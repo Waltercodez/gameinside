@@ -1,17 +1,7 @@
 {
   "date": "2026-10-22",
-  "publishedToday": 8,
+  "publishedToday": 10,
   "topics": [
-    {
-      "title": "‘No offense to Zelda’ but GTA 6 and COD Modern Warfare 4 are ‘the two biggest games of the year’, Activision exec says",
-      "url": "https://www.videogameschronicle.com/news/no-offense-to-zelda-but-gta-6-and-cod-modern-warfare-4-are-the-two-biggest-games-of-the-year-activision-exec-says/",
-      "date": "2026-10-15T21:27:57.998Z"
-    },
-    {
-      "title": "Activision Confirms Brand New Call of Duty Subfranchise Is in the Works, Leading to Rampant Fan Speculation",
-      "url": "https://www.ign.com/articles/activision-confirms-brand-new-call-of-duty-subfranchise-is-in-the-works-leading-to-rampant-fan-speculation",
-      "date": "2026-10-15T21:28:12.326Z"
-    },
     {
       "title": "Why Rockstar Canceled Its PlayStation-Exclusive Follow-Up To GTA 4",
       "url": "https://www.gamespot.com/articles/why-rockstar-canceled-its-playstation-exclusive-follow-up-to-gta-4/",
@@ -361,7 +351,17 @@
       "title": "Gears Of War: E-Day Cost Half A Billion To Make, Apparently",
       "url": "https://www.gamespot.com/articles/gears-of-war-e-day-cost-half-a-billion-to-make-apparently/",
       "date": "2026-10-22T18:31:36.805Z"
+    },
+    {
+      "title": "GTA 6’s New TV Trailer Is A Bit Different, See It For Yourself",
+      "url": "https://www.gamespot.com/articles/gta-6s-new-tv-trailer-is-a-bit-different-see-it-for-yourself/",
+      "date": "2026-10-22T22:18:59.510Z"
+    },
+    {
+      "title": "Leaked Mass Effect 5 Trailer Is Real, Offers Glimpse of Cancelled Game",
+      "url": "https://www.pushsquare.com/news/2026/10/leaked-mass-effect-5-trailer-is-real-offers-glimpse-of-cancelled-game",
+      "date": "2026-10-22T22:19:28.102Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
