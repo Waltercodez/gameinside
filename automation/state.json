@@ -1,17 +1,7 @@
 {
   "date": "2026-10-22",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6 Leaks, Epic's AI Woes, No Man's Sky Mobile and the Best AAA of the Year...",
-      "url": "https://www.polygon.com/video/gta-6-leaks-epic-s-ai-woes-no-man-s-sky-mobile-and-the-best-aaa-of-the-year/",
-      "date": "2026-10-15T07:24:37.094Z"
-    },
-    {
-      "title": ".Geek - Levelord, mapmaker van Duke Nukem 3D en SiN, overlijdt op 68-jarige leeftijd",
-      "url": "https://tweakers.net/geek/253344/levelord-mapmaker-van-duke-nukem-3d-en-sin-overlijdt-op-68-jarige-leeftijd.html",
-      "date": "2026-10-15T07:25:01.111Z"
-    },
     {
       "title": "Rockstar has revealed the official launch trailer for Grand Theft Auto 6",
       "url": "https://www.videogameschronicle.com/news/rockstar-has-revealed-the-official-launch-trailer-for-grand-theft-auto-6/",
@@ -361,7 +351,17 @@
       "title": "Mass Effect 5 Cancelled As Legendary Developer BioWare Closes Down",
       "url": "https://www.purexbox.com/news/2026/10/mass-effect-5-cancelled-as-legendary-developer-bioware-closes-down",
       "date": "2026-10-22T01:30:12.356Z"
+    },
+    {
+      "title": "You Can Save $11 Off GTA 6 Preorders, Today Only",
+      "url": "https://www.ign.com/articles/you-can-save-11-off-gta-6-preorders-today-only",
+      "date": "2026-10-22T07:38:06.513Z"
+    },
+    {
+      "title": "EA Outlines Future Development Plans As It Prepares To Cut Around 400 Jobs",
+      "url": "https://www.nintendolife.com/news/2026/10/ea-outlines-future-development-plans-as-it-prepares-to-cut-around-400-jobs",
+      "date": "2026-10-22T07:38:38.570Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
