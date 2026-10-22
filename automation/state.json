@@ -1,17 +1,7 @@
 {
   "date": "2026-10-22",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Rockstar has revealed the official launch trailer for Grand Theft Auto 6",
-      "url": "https://www.videogameschronicle.com/news/rockstar-has-revealed-the-official-launch-trailer-for-grand-theft-auto-6/",
-      "date": "2026-10-15T13:24:23.413Z"
-    },
-    {
-      "title": "The Switch 2 version of 007 First Light finally gets a new release date",
-      "url": "https://www.videogameschronicle.com/news/the-switch-2-version-of-007-first-light-finally-gets-a-new-release-date/",
-      "date": "2026-10-15T13:24:51.174Z"
-    },
     {
       "title": "33 New Details From the GTA 6 Launch Trailer",
       "url": "https://www.ign.com/articles/33-new-details-from-the-gta-6-launch-trailer",
@@ -361,7 +351,17 @@
       "title": "EA Outlines Future Development Plans As It Prepares To Cut Around 400 Jobs",
       "url": "https://www.nintendolife.com/news/2026/10/ea-outlines-future-development-plans-as-it-prepares-to-cut-around-400-jobs",
       "date": "2026-10-22T07:38:38.570Z"
+    },
+    {
+      "title": "You Can Now Buy GTA 6 Burgers And Fried Chicken IRL, But It’s Not Cheap",
+      "url": "https://www.gamespot.com/articles/you-can-now-buy-gta-6-burgers-and-fried-chicken-irl-but-its-not-cheap/",
+      "date": "2026-10-22T13:46:31.258Z"
+    },
+    {
+      "title": "Following shock BioWare closure, scope of EA job cuts becomes clear as layoffs hit Respawn, Maxis, Full Circle, EA Motive, and more",
+      "url": "https://www.eurogamer.net/ea-cuts-massive-ripple-effect-motive-full-circle-respawn",
+      "date": "2026-10-22T13:46:59.049Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
