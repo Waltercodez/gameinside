@@ -1,17 +1,7 @@
 {
   "date": "2026-10-24",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Rockstar Officially Comments on GTA 6's Approach to Trump & COVID-19",
-      "url": "https://www.polygon.com/gta-6-trump-rockstar-games/",
-      "date": "2026-10-17T01:18:32.234Z"
-    },
-    {
-      "title": "Modern Warfare 4: Campaign Early Access Now Live",
-      "url": "https://news.xbox.com/en-us/2026/10/16/modern-warfare-4-campaign-early-access-now-live/",
-      "date": "2026-10-17T01:18:56.445Z"
-    },
     {
       "title": "PS5 JRPG Atelier Karia Adding GTA San Andreas-Style Weight Mechanic After Overwhelming Fan Vote",
       "url": "https://www.pushsquare.com/news/2026/10/ps5-jrpg-atelier-karia-adding-gta-san-andreas-style-weight-mechanic-after-overwhelming-fan-vote",
@@ -366,7 +356,17 @@
       "title": "Xbox COO and ex-Minecraft boss leaves Microsoft after just 3 months in the role",
       "url": "https://www.gamesradar.com/platforms/xbox/xbox-coo-and-ex-minecraft-boss-leaves-microsoft-after-just-3-months-in-the-role/",
       "date": "2026-10-24T00:41:03.389Z"
+    },
+    {
+      "title": "Xbox chief operating officer Helen Chiang steps down after three months",
+      "url": "https://www.gematsu.com/2026/10/xbox-chief-operating-officer-helen-chiang-steps-down-after-three-months",
+      "date": "2026-10-24T05:51:18.640Z"
+    },
+    {
+      "title": "FemShep Voice Actor Jennifer Hale Speaks Out After Mass Effect 5 Trailer Leaks Online",
+      "url": "https://www.ign.com/articles/femshep-voice-actor-jennifer-hale-speaks-out-after-mass-effect-5-trailer-leaks-online",
+      "date": "2026-10-24T05:51:49.680Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 3
 }
