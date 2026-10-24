@@ -1,17 +1,7 @@
 {
   "date": "2026-10-24",
-  "publishedToday": 8,
+  "publishedToday": 10,
   "topics": [
-    {
-      "title": "Company Behind GTA-Like Samson Goes Bankrupt Six Months After Release",
-      "url": "https://kotaku.com/samson-developer-and-publisher-liquid-swords-goes-bankrupt-6-months-after-release-2000747049",
-      "date": "2026-10-17T15:32:20.339Z"
-    },
-    {
-      "title": "US Representative Introduces Plan To Preserve Digital Game Ownership",
-      "url": "https://www.polygon.com/power-to-the-players-act-ritchie-torres/",
-      "date": "2026-10-17T15:32:33.918Z"
-    },
     {
       "title": "Deadlock cracks 300,000 concurrent players following new hero release even though the game remains invite-only",
       "url": "https://www.destructoid.com/deadlock-new-record/",
@@ -366,6 +356,16 @@
       "title": "Mass Effect Universe \"looked incredible\" says creator who claims he advised BioWare",
       "url": "https://www.eurogamer.net/mass-effect-universe-details-dantics-claims",
       "date": "2026-10-24T14:31:20.534Z"
+    },
+    {
+      "title": "Open-world spy game from Grand Theft Auto dev never happened because Rockstar couldn't get it right",
+      "url": "https://www.gamesradar.com/games/open-world/open-world-spy-game-from-grand-theft-auto-devs-never-happened-because-rockstar-couldnt-get-it-right-other-people-can-try-but-i-personally-think-its-hard/",
+      "date": "2026-10-24T18:07:44.968Z"
+    },
+    {
+      "title": "BioWare's incredible legacy will continue as long as there are RPGs",
+      "url": "https://www.pcgamer.com/games/rpg/biowares-incredible-legacy-will-continue-as-long-as-there-are-rpgs/",
+      "date": "2026-10-24T18:08:01.067Z"
     }
   ],
   "varietyPublishedToday": 3
