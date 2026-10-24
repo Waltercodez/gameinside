@@ -1,12 +1,7 @@
 {
-  "date": "2026-10-23",
-  "publishedToday": 10,
+  "date": "2026-10-24",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Fans Are Comparing Grand Theft Auto 6′s Latest Trailer To Its First And Complaining That It’s A Blurry ‘Downgrade’",
-      "url": "https://kotaku.com/fans-are-comparing-grand-theft-auto-6s-latest-trailer-to-its-first-and-complaining-that-its-a-blurry-downgrade-2000746855",
-      "date": "2026-10-16T22:50:20.726Z"
-    },
     {
       "title": "Rockstar Officially Comments on GTA 6's Approach to Trump & COVID-19",
       "url": "https://www.polygon.com/gta-6-trump-rockstar-games/",
@@ -361,7 +356,17 @@
       "title": "Mass Effect Fans Call for EA Boycott as Petition to Save BioWare's Canceled Game Garners More than 75,000 Signatures",
       "url": "https://www.ign.com/articles/mass-effect-fans-call-for-ea-boycott-as-petition-to-save-biowares-canceled-game-garners-more-than-75000-signatures",
       "date": "2026-10-23T22:08:50.162Z"
+    },
+    {
+      "title": "Grand Theft Auto V – The Legacy Review",
+      "url": "https://www.ign.com/articles/grand-theft-auto-v-the-legacy-review",
+      "date": "2026-10-24T00:40:34.171Z"
+    },
+    {
+      "title": "Xbox COO and ex-Minecraft boss leaves Microsoft after just 3 months in the role",
+      "url": "https://www.gamesradar.com/platforms/xbox/xbox-coo-and-ex-minecraft-boss-leaves-microsoft-after-just-3-months-in-the-role/",
+      "date": "2026-10-24T00:41:03.389Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
