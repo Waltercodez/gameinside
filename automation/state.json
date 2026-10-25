@@ -1,27 +1,7 @@
 {
-  "date": "2026-10-24",
-  "publishedToday": 10,
+  "date": "2026-10-25",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Deadlock cracks 300,000 concurrent players following new hero release even though the game remains invite-only",
-      "url": "https://www.destructoid.com/deadlock-new-record/",
-      "date": "2026-10-17T18:29:26.134Z"
-    },
-    {
-      "title": "Modern Warfare 4 Emerges to Best Call of Duty Steam Rating in a Decade",
-      "url": "https://insider-gaming.com/modern-warfare-4-emerges-best-steam-rating-decade/",
-      "date": "2026-10-17T18:29:39.347Z"
-    },
-    {
-      "title": "PS6 Price Tag Facing $1,000+ Nightmare as AI Data Centres Send Component Costs Soaring",
-      "url": "https://www.pushsquare.com/news/2026/10/ps6-price-tag-facing-usd1000plus-nightmare-as-ai-data-centres-send-component-costs-soaring",
-      "date": "2026-10-18T00:02:07.457Z"
-    },
-    {
-      "title": "Guide: These 35+ PS5 and PS Plus Games Are Coming Out Next Week (19th-25th October)",
-      "url": "https://www.pushsquare.com/guides/these-35plus-ps5-and-ps-plus-games-are-coming-out-next-week-19th-25th-october",
-      "date": "2026-10-18T00:02:32.479Z"
-    },
     {
       "title": "Every Major Game Releasing in November That Isn’t GTA 6",
       "url": "https://www.polygon.com/november-2026-game-releases/",
@@ -366,7 +346,17 @@
       "title": "BioWare's incredible legacy will continue as long as there are RPGs",
       "url": "https://www.pcgamer.com/games/rpg/biowares-incredible-legacy-will-continue-as-long-as-there-are-rpgs/",
       "date": "2026-10-24T18:08:01.067Z"
+    },
+    {
+      "title": "‘Mass Effect 5’ Starred a Customizable ‘John Wick’ N7 Agent 600 Years After the Reaper War",
+      "url": "https://insider-gaming.com/mass-effect-universe-reveal-creator/",
+      "date": "2026-10-25T01:09:21.606Z"
+    },
+    {
+      "title": "Every Legend of Zelda Movie Character and Cast Member Confirmed So Far",
+      "url": "https://www.polygon.com/the-legend-of-zelda-2027-movie-cast-link-zelda-ganondorf/",
+      "date": "2026-10-25T01:09:48.598Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
