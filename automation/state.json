@@ -1,17 +1,7 @@
 {
   "date": "2026-10-25",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Every Major Game Releasing in November That Isn’t GTA 6",
-      "url": "https://www.polygon.com/november-2026-game-releases/",
-      "date": "2026-10-18T04:30:09.141Z"
-    },
-    {
-      "title": "Benchmark - The Witcher 3 Remastered – Mooier en moderner, maar ook een stuk zwaarder",
-      "url": "https://tweakers.net/reviews/15418/the-witcher-3-remastered-mooier-en-moderner-maar-ook-een-stuk-zwaarder.html",
-      "date": "2026-10-18T04:30:32.201Z"
-    },
     {
       "title": "'I Don't Think We're Seeing It Here': GTA 6 Launch Trailer Not Using PS5's New QSSR Upscaler",
       "url": "https://www.pushsquare.com/news/2026/10/i-dont-think-were-seeing-it-here-gta-6-launch-trailer-not-using-ps5s-new-qssr-upscaler",
@@ -356,7 +346,17 @@
       "title": "Every Legend of Zelda Movie Character and Cast Member Confirmed So Far",
       "url": "https://www.polygon.com/the-legend-of-zelda-2027-movie-cast-link-zelda-ganondorf/",
       "date": "2026-10-25T01:09:48.598Z"
+    },
+    {
+      "title": "Xbox Reportedly Bungled $500 Million Netflix Exclusivity Deal To Develop Movies, Shows Based On Games",
+      "url": "https://kotaku.com/xbox-reportedly-bungled-500-million-netflix-exclusivity-deal-to-develop-movies-shows-based-on-games-2000749336",
+      "date": "2026-10-25T06:06:39.343Z"
+    },
+    {
+      "title": "Stalker 2's next update has already leaked",
+      "url": "https://www.eurogamer.net/stalker-2-update-2-1-zone-lookout-playstation-asia-leak",
+      "date": "2026-10-25T06:06:52.356Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
