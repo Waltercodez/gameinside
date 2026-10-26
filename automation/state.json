@@ -1,17 +1,7 @@
 {
   "date": "2026-10-26",
-  "publishedToday": 6,
+  "publishedToday": 8,
   "topics": [
-    {
-      "title": "Modder Uses AI to Put Shadow of War's Nemesis System in Rockstar's Red Dead Redemption 2",
-      "url": "https://www.ign.com/articles/red-dead-redemption-2-enrage-mod-nemesis-system",
-      "date": "2026-10-19T13:16:41.012Z"
-    },
-    {
-      "title": "Witcher 3 Switch 2 patch rolls out today with a number of changes, including alterations to resolution and \"visual clarity\"",
-      "url": "https://www.eurogamer.net/witcher-3-switch-2-patch-update-resolution-brightness",
-      "date": "2026-10-19T13:17:01.034Z"
-    },
     {
       "title": "Sounds Like GTA 6 Will Be Full of Details Like Red Dead's Infamous Horse Balls",
       "url": "https://www.polygon.com/gta-6-rdr2-horse-balls-confirmed-rockstar/",
@@ -361,6 +351,16 @@
       "title": "EA Scrubbing Mass Effect from Other Games as Series Starts to Die Off",
       "url": "https://www.pushsquare.com/news/2026/10/ea-scrubbing-mass-effect-from-other-games-as-series-starts-to-die-off",
       "date": "2026-10-26T12:58:42.110Z"
+    },
+    {
+      "title": "GTA 6 Coffee Is Here To Keep You Warm Until The Game Releases",
+      "url": "https://www.gamespot.com/articles/gta-6-coffee-is-here-to-keep-you-warm-until-the-game-releases/",
+      "date": "2026-10-26T19:17:31.593Z"
+    },
+    {
+      "title": "Amid sweeping layoffs at Xbox and massive AI investments, Microsoft introduces a \"Voluntary Exit Offer\" to 60,000 workers",
+      "url": "https://www.eurogamer.net/xbox-ai-microsoft-voluntary-exit-offer-60000",
+      "date": "2026-10-26T19:17:42.049Z"
     }
   ],
   "varietyPublishedToday": 3
