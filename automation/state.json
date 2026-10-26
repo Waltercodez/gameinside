@@ -1,12 +1,7 @@
 {
-  "date": "2026-10-25",
-  "publishedToday": 10,
+  "date": "2026-10-26",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA V NPCs Can Now Talk Back In Real Time With AI-Powered NPCTalk Mod, Free Release Coming Next Week",
-      "url": "https://wccftech.com/gta-v-npcs-can-now-talk-back-in-real-time-with-ai-powered-npctalk-mod-free-release-coming-next-week/",
-      "date": "2026-10-18T23:10:19.761Z"
-    },
     {
       "title": "The PlayStation 6 stands to be ludicrously expensive as its production cost alone reportedly approaches $1000",
       "url": "https://www.destructoid.com/playstation-6-stands-to-be-incredibly-expensive/",
@@ -356,7 +351,17 @@
       "title": "XBOX COO Helen Chiang Departs Microsoft After 21 Years",
       "url": "https://insider-gaming.com/xbox-coo-helen-chiang-leaves-microsoft/",
       "date": "2026-10-25T19:04:37.175Z"
+    },
+    {
+      "title": "Tomb Raider's 2027's Return Looks Stunning in New Official Footage",
+      "url": "https://www.polygon.com/tomb-raider-remake-legacy-of-atlantis-new-trailer-30th-anniversary/",
+      "date": "2026-10-26T00:22:15.387Z"
+    },
+    {
+      "title": "Shenmue 3 Revival Postponed, as PS5 Re-Release Is Delayed to Early 2027",
+      "url": "https://www.pushsquare.com/news/2026/10/shenmue-3-revival-postponed-as-ps5-re-release-is-delayed-to-early-2027",
+      "date": "2026-10-26T00:22:41.382Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
