@@ -1,17 +1,7 @@
 {
   "date": "2026-10-26",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "The PlayStation 6 stands to be ludicrously expensive as its production cost alone reportedly approaches $1000",
-      "url": "https://www.destructoid.com/playstation-6-stands-to-be-incredibly-expensive/",
-      "date": "2026-10-19T01:15:12.815Z"
-    },
-    {
-      "title": "Star Wars Games Don’t Need Top Publishers, Lucasfilm Says",
-      "url": "https://insider-gaming.com/lucasfilm-star-wars-games-independent-studios/",
-      "date": "2026-10-19T01:15:41.668Z"
-    },
     {
       "title": "This Week’s Japanese Game Releases: Call of Duty: Modern Warfare 4, Final Fantasy Resonance, Nintendo Switch Sports Resort, Stupid Never Dies, more",
       "url": "https://www.gematsu.com/2026/10/this-weeks-japanese-game-releases-call-of-duty-modern-warfare-4-final-fantasy-resonance-nintendo-switch-sports-resort-stupid-never-dies-more",
@@ -361,7 +351,17 @@
       "title": "Shenmue 3 Revival Postponed, as PS5 Re-Release Is Delayed to Early 2027",
       "url": "https://www.pushsquare.com/news/2026/10/shenmue-3-revival-postponed-as-ps5-re-release-is-delayed-to-early-2027",
       "date": "2026-10-26T00:22:41.382Z"
+    },
+    {
+      "title": "Phantom Blade Zero Reviews Just Beat Every Soulslike In 2026",
+      "url": "https://www.polygon.com/phantom-blade-zero-review-roundup-score/",
+      "date": "2026-10-26T06:11:10.951Z"
+    },
+    {
+      "title": "Mass Effect's Commander Shepard Actors, Destiny Community Help #SaveMassEffect Petition Cross 200,000 Signatures",
+      "url": "https://www.ign.com/articles/mass-effects-commander-shepard-actors-destiny-community-help-savemasseffect-petition-cross-200000-signatures",
+      "date": "2026-10-26T06:11:25.685Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
