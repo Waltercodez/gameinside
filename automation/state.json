@@ -1,17 +1,7 @@
 {
   "date": "2026-10-27",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6 ‘Crude Ads’ Surface Across Miami",
-      "url": "https://insider-gaming.com/gta-6-crude-ads-surface-across-miami/",
-      "date": "2026-10-20T10:02:43.268Z"
-    },
-    {
-      "title": "CAPCOM’s Monster Hunter Wilds on Switch 2 Trades Resolution for Stability, Yet Comparisons Show Detail Holds Up Against Bigger Consoles",
-      "url": "https://wccftech.com/capcom-monster-hunter-wilds-switch-2-resolution-stability-comparison-hold-up/",
-      "date": "2026-10-20T10:03:14.953Z"
-    },
     {
       "title": "GTA 6 Is 148% Ahead Of This Other Popular AAA Game So Far",
       "url": "https://www.gamespot.com/articles/gta-6-is-148-ahead-of-this-other-popular-aaa-game-so-far/",
@@ -351,7 +341,17 @@
       "title": "Ghost of Yotei studio Sucker Punch reportedly lays off 26 developers \"after carefully observing the challenges in the market\"",
       "url": "https://www.eurogamer.net/ghost-of-yotei-sucker-punch-lays-off-developers",
       "date": "2026-10-27T05:01:30.037Z"
+    },
+    {
+      "title": "Ghost Of Yotei Was A Hit, But Its Developer Is Reportedly Cutting Jobs",
+      "url": "https://www.gamespot.com/articles/ghost-of-yotei-was-a-hit-but-its-developer-is-reportedly-cutting-jobs/",
+      "date": "2026-10-27T10:32:00.177Z"
+    },
+    {
+      "title": "Free-to-Play Pokémon Game Is Shutting Down After 5 Years",
+      "url": "https://www.polygon.com/pokemon-unite-end-service-announcement/",
+      "date": "2026-10-27T10:32:32.219Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 3
 }
