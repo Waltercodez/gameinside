@@ -1,17 +1,7 @@
 {
   "date": "2026-10-29",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "You Can Save $11 Off GTA 6 Preorders, Today Only",
-      "url": "https://www.ign.com/articles/you-can-save-11-off-gta-6-preorders-today-only",
-      "date": "2026-10-22T07:38:06.513Z"
-    },
-    {
-      "title": "EA Outlines Future Development Plans As It Prepares To Cut Around 400 Jobs",
-      "url": "https://www.nintendolife.com/news/2026/10/ea-outlines-future-development-plans-as-it-prepares-to-cut-around-400-jobs",
-      "date": "2026-10-22T07:38:38.570Z"
-    },
     {
       "title": "You Can Now Buy GTA 6 Burgers And Fried Chicken IRL, But It’s Not Cheap",
       "url": "https://www.gamespot.com/articles/you-can-now-buy-gta-6-burgers-and-fried-chicken-irl-but-its-not-cheap/",
@@ -341,7 +331,17 @@
       "title": "BioWare Co-Founder Speaks Out on Studio Closure, Mass Effect Cancellation",
       "url": "https://www.ign.com/articles/bioware-co-founder-speaks-out-on-studio-closure-mass-effect-cancellation",
       "date": "2026-10-29T05:46:12.064Z"
+    },
+    {
+      "title": "The latest episode of South Park features exclusive GTA 6 footage where a man is hit in the head with dog poo",
+      "url": "https://www.videogameschronicle.com/news/the-latest-episode-of-south-park-features-exclusive-gta-6-footage-where-a-man-is-hit-in-the-head-with-dog-poo/",
+      "date": "2026-10-29T12:57:55.270Z"
+    },
+    {
+      "title": "Phantom Blade Zero immediately tops over half a million concurrent Steam players",
+      "url": "https://www.gamesradar.com/games/action-rpg/phantom-blade-zero-immediately-tops-over-half-a-million-concurrent-steam-players-beating-silksong-and-slay-the-spire-2s-all-time-records-in-a-matter-of-hours/",
+      "date": "2026-10-29T12:58:18.280Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
