@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-28",
-  "publishedToday": 10,
+  "date": "2026-10-29",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6's Fast Food Restaurant, Burger Shot, Is Coming to Real Life in the Miami Heat's Arena",
-      "url": "https://www.ign.com/articles/gta-6s-fast-food-restaurant-burger-shot-is-coming-to-real-life-in-the-miami-heats-arena",
-      "date": "2026-10-22T01:29:50.733Z"
-    },
-    {
-      "title": "Mass Effect 5 Cancelled As Legendary Developer BioWare Closes Down",
-      "url": "https://www.purexbox.com/news/2026/10/mass-effect-5-cancelled-as-legendary-developer-bioware-closes-down",
-      "date": "2026-10-22T01:30:12.356Z"
-    },
     {
       "title": "You Can Save $11 Off GTA 6 Preorders, Today Only",
       "url": "https://www.ign.com/articles/you-can-save-11-off-gta-6-preorders-today-only",
@@ -341,7 +331,17 @@
       "title": "Alien: Isolation 2 Team Confirms Physical Edition, Photo Mode, and New Gameplay Details",
       "url": "https://www.ign.com/articles/alien-isolation-2-team-confirms-physical-edition-photo-mode-and-new-gameplay-details",
       "date": "2026-10-29T00:00:02.483Z"
+    },
+    {
+      "title": "GTA 6's Map Will Open Up Relatively Early and Let You Explore Freely, Developers Are Still Discovering New Parts of the World",
+      "url": "https://www.ign.com/articles/gta-6s-map-will-open-up-relatively-early-and-let-you-explore-freely-developers-are-still-discovering-new-parts-of-the-world",
+      "date": "2026-10-29T05:45:41.031Z"
+    },
+    {
+      "title": "BioWare Co-Founder Speaks Out on Studio Closure, Mass Effect Cancellation",
+      "url": "https://www.ign.com/articles/bioware-co-founder-speaks-out-on-studio-closure-mass-effect-cancellation",
+      "date": "2026-10-29T05:46:12.064Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
