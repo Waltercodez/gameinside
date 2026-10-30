@@ -1,17 +1,7 @@
 {
   "date": "2026-10-30",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Capcom Data Breach Results In Unauthorised Access To More Than 11.7 Million 'CAPCOM ID' Accounts",
-      "url": "https://www.nintendolife.com/news/2026/10/capcom-data-breach-results-in-unauthorised-access-to-more-than-11-7-million-capcom-id-accounts",
-      "date": "2026-10-23T07:30:16.337Z"
-    },
-    {
-      "title": "Mass Effect’s Stunning Leaked Trailer Shows What EA Canceled, as BioWare’s 50-Person Team Aimed for Unmatched Player Choice",
-      "url": "https://wccftech.com/mass-effect-leaked-trailer-ea-canceled-bioware-50-person-team-player-choice/",
-      "date": "2026-10-23T07:30:42.299Z"
-    },
     {
       "title": "PlayStation Is Offering $40 Off PS5 Refurb Bundles Ahead of GTA 6",
       "url": "https://www.ign.com/articles/ps5-console-bundle-deal-ahead-of-gta-6-and-black-friday",
@@ -331,7 +321,17 @@
       "title": "Ubisoft Says No More Assassin’s Creed Remakes Are Actively in Development, With Hexe News Coming in 2027 and Valhalla Finally Getting New Game+",
       "url": "https://wccftech.com/ubisoft-assassins-creed-no-more-remakes-active-development-hexe-2027-valhalla-new-game-plus/",
       "date": "2026-10-30T02:39:47.639Z"
+    },
+    {
+      "title": "Bethesda Is Reportedly Ready To Reveal The Official Title Of The Elder Scrolls VI",
+      "url": "https://www.nintendolife.com/news/2026/10/bethesda-is-reportedly-ready-to-reveal-the-official-title-of-the-elder-scrolls-vi",
+      "date": "2026-10-30T09:58:43.620Z"
+    },
+    {
+      "title": "The Duskbloods komt pas in 2027 uit",
+      "url": "https://tweakers.net/nieuws/253936/the-duskbloods-komt-pas-in-2027-uit.html",
+      "date": "2026-10-30T09:59:05.182Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 3
 }
