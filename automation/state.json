@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-29",
-  "publishedToday": 8,
+  "date": "2026-10-30",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "First GTA 6 TV Commercial Strips Out Steamy Shower Scenes, but Shows More of Lucia's Fancy Hair Tech",
-      "url": "https://www.ign.com/articles/gta-6-tv-commercial-strips-shower-scene-doesnt-mention-xbox",
-      "date": "2026-10-23T01:29:45.803Z"
-    },
-    {
-      "title": "Half-Life 3 Rumors Reignite After Valve Employee Lets Codename Slip",
-      "url": "https://www.polygon.com/valve-half-life-3-hlx/",
-      "date": "2026-10-23T01:30:12.410Z"
-    },
     {
       "title": "Capcom Data Breach Results In Unauthorised Access To More Than 11.7 Million 'CAPCOM ID' Accounts",
       "url": "https://www.nintendolife.com/news/2026/10/capcom-data-breach-results-in-unauthorised-access-to-more-than-11-7-million-capcom-id-accounts",
@@ -331,7 +321,17 @@
       "title": "Official The Elder Scrolls 6 Announcement Imminent, Report Says",
       "url": "https://www.polygon.com/the-elder-scrolls-6-sentinel-news-tes6-skyrim-anniversary-bethesda/",
       "date": "2026-10-29T23:17:03.564Z"
+    },
+    {
+      "title": "Artist With Music In GTA 6 Had No Idea About Any Of That",
+      "url": "https://www.gamespot.com/articles/artist-with-music-in-gta-6-had-no-idea-about-any-of-that/",
+      "date": "2026-10-30T02:39:16.148Z"
+    },
+    {
+      "title": "Ubisoft Says No More Assassin’s Creed Remakes Are Actively in Development, With Hexe News Coming in 2027 and Valhalla Finally Getting New Game+",
+      "url": "https://wccftech.com/ubisoft-assassins-creed-no-more-remakes-active-development-hexe-2027-valhalla-new-game-plus/",
+      "date": "2026-10-30T02:39:47.639Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
