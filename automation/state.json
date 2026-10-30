@@ -1,17 +1,7 @@
 {
   "date": "2026-10-30",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "PlayStation Is Offering $40 Off PS5 Refurb Bundles Ahead of GTA 6",
-      "url": "https://www.ign.com/articles/ps5-console-bundle-deal-ahead-of-gta-6-and-black-friday",
-      "date": "2026-10-23T13:24:40.233Z"
-    },
-    {
-      "title": "Call of Duty: Modern Warfare 4's Multiplayer Unlocked Early, But Feedback Has Been Brutal So Far",
-      "url": "https://www.pushsquare.com/news/2026/10/call-of-duty-modern-warfare-4s-multiplayer-unlocked-early-but-feedback-has-been-brutal-so-far",
-      "date": "2026-10-23T13:24:52.555Z"
-    },
     {
       "title": "GTA 6 Burgers Will Be Available In Florida Throughout The Year",
       "url": "https://www.gamespot.com/articles/gta-6-burgers-will-be-available-in-florida-throughout-the-year/",
@@ -331,7 +321,17 @@
       "title": "The Duskbloods komt pas in 2027 uit",
       "url": "https://tweakers.net/nieuws/253936/the-duskbloods-komt-pas-in-2027-uit.html",
       "date": "2026-10-30T09:59:05.182Z"
+    },
+    {
+      "title": "GTA 6’s Attention To Detail Is Getting A Little Ridiculous",
+      "url": "https://www.gamespot.com/articles/gta-6-attention-to-detail-is-getting-a-little-ridiculous/",
+      "date": "2026-10-30T16:41:35.295Z"
+    },
+    {
+      "title": "EA reportedly closed BioWare because it was forced to choose between Mass Effect 5 and Star Wars Battlefront 3",
+      "url": "https://www.eurogamer.net/ea-closed-bioware-because-star-wars-battlefront-3",
+      "date": "2026-10-30T16:42:00.551Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 4
 }
