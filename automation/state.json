@@ -1,17 +1,7 @@
 {
-  "date": "2026-10-31",
-  "publishedToday": 10,
+  "date": "2026-11-01",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "‘Mass Effect 5’ Starred a Customizable ‘John Wick’ N7 Agent 600 Years After the Reaper War",
-      "url": "https://insider-gaming.com/mass-effect-universe-reveal-creator/",
-      "date": "2026-10-25T01:09:21.606Z"
-    },
-    {
-      "title": "Every Legend of Zelda Movie Character and Cast Member Confirmed So Far",
-      "url": "https://www.polygon.com/the-legend-of-zelda-2027-movie-cast-link-zelda-ganondorf/",
-      "date": "2026-10-25T01:09:48.598Z"
-    },
     {
       "title": "Xbox Reportedly Bungled $500 Million Netflix Exclusivity Deal To Develop Movies, Shows Based On Games",
       "url": "https://kotaku.com/xbox-reportedly-bungled-500-million-netflix-exclusivity-deal-to-develop-movies-shows-based-on-games-2000749336",
@@ -321,7 +311,17 @@
       "title": "FromSoftware temporarily shuts down Dark Souls 2 and 3 multiplayer over 'server issue'",
       "url": "https://www.pcgamer.com/games/dark-souls/fromsoftware-temporarily-shuts-down-dark-souls-2-and-3-multiplayer-over-server-issue/",
       "date": "2026-10-31T23:22:47.468Z"
+    },
+    {
+      "title": "Achtergrond - Een console kopen voor GTA VI? Dit betaal je voor een PS5 of XBOX",
+      "url": "https://tweakers.net/reviews/15538/een-console-kopen-voor-gta-vi-dit-betaal-je-voor-een-ps5-of-xbox.html",
+      "date": "2026-11-01T05:59:17.874Z"
+    },
+    {
+      "title": "Input Lag Is So Bad in Call of Duty: Modern Warfare 4 on Nintendo Switch 2 That Players Suffer From a 'Competitive Disadvantage'",
+      "url": "https://www.ign.com/articles/input-lag-is-so-bad-in-call-of-duty-modern-warfare-4-on-nintendo-switch-2-that-players-suffer-from-a-competitive-disadvantage",
+      "date": "2026-11-01T05:59:40.533Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
