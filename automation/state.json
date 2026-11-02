@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-01",
-  "publishedToday": 8,
+  "date": "2026-11-02",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Tomb Raider's 2027's Return Looks Stunning in New Official Footage",
-      "url": "https://www.polygon.com/tomb-raider-remake-legacy-of-atlantis-new-trailer-30th-anniversary/",
-      "date": "2026-10-26T00:22:15.387Z"
-    },
-    {
-      "title": "Shenmue 3 Revival Postponed, as PS5 Re-Release Is Delayed to Early 2027",
-      "url": "https://www.pushsquare.com/news/2026/10/shenmue-3-revival-postponed-as-ps5-re-release-is-delayed-to-early-2027",
-      "date": "2026-10-26T00:22:41.382Z"
-    },
     {
       "title": "Phantom Blade Zero Reviews Just Beat Every Soulslike In 2026",
       "url": "https://www.polygon.com/phantom-blade-zero-review-roundup-score/",
@@ -311,7 +301,17 @@
       "title": "Fable Is Ditching the One Feature That Made Fable 3 An Instant Classic",
       "url": "https://www.polygon.com/fable-reboot-no-co-op/",
       "date": "2026-11-01T22:47:33.851Z"
+    },
+    {
+      "title": "Walmart GTA 6 Preorders Will Get a ‘Surprise and Delight’ Bag, It’s Claimed",
+      "url": "https://insider-gaming.com/walmart-gta-6-preorder-bonus-bag/",
+      "date": "2026-11-02T02:28:46.796Z"
+    },
+    {
+      "title": "Here's one bit of good news for Mass Effect: modders are bringing the multiplayer mode to Mass Effect Legendary Edition",
+      "url": "https://www.pcgamer.com/games/mass-effect/heres-one-bit-of-good-news-for-mass-effect-modders-are-bringing-the-multiplayer-mode-to-mass-effect-legendary-edition/",
+      "date": "2026-11-02T02:29:15.671Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
