@@ -1,27 +1,7 @@
 {
   "date": "2026-11-02",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "The actor rumoured to be playing Lucia in GTA 6 actively ignored questions about it during an introductory livestream",
-      "url": "https://www.videogameschronicle.com/news/the-actor-rumoured-to-be-playing-lucia-in-gta-6-actively-ignored-questions-about-it-during-an-introductory-livestream/",
-      "date": "2026-10-26T12:58:30.958Z"
-    },
-    {
-      "title": "EA Scrubbing Mass Effect from Other Games as Series Starts to Die Off",
-      "url": "https://www.pushsquare.com/news/2026/10/ea-scrubbing-mass-effect-from-other-games-as-series-starts-to-die-off",
-      "date": "2026-10-26T12:58:42.110Z"
-    },
-    {
-      "title": "GTA 6 Coffee Is Here To Keep You Warm Until The Game Releases",
-      "url": "https://www.gamespot.com/articles/gta-6-coffee-is-here-to-keep-you-warm-until-the-game-releases/",
-      "date": "2026-10-26T19:17:31.593Z"
-    },
-    {
-      "title": "Amid sweeping layoffs at Xbox and massive AI investments, Microsoft introduces a \"Voluntary Exit Offer\" to 60,000 workers",
-      "url": "https://www.eurogamer.net/xbox-ai-microsoft-voluntary-exit-offer-60000",
-      "date": "2026-10-26T19:17:42.049Z"
-    },
     {
       "title": "GTA 6 Causes 17% Spike in Time Off Requests on Game's Release Date",
       "url": "https://www.ign.com/articles/gta-6-causes-17-spike-in-time-off-requests-on-games-release-date",
@@ -311,7 +291,17 @@
       "title": "Yakuza Series Creator Toshiro Nagoshi's Studio Has Officially Shut Down Before Releasing a Game",
       "url": "https://www.ign.com/articles/yakuza-series-creator-toshiro-nagoshis-studio-has-officially-shut-down-before-releasing-a-game",
       "date": "2026-11-02T11:00:32.204Z"
+    },
+    {
+      "title": "GTA 6 Buying Guide: Get Ready For Sticker Shock",
+      "url": "https://www.gamespot.com/articles/gta-6-buying-guide-get-ready-for-sticker-shock/",
+      "date": "2026-11-02T20:45:17.386Z"
+    },
+    {
+      "title": "Developers, Creators, And Fans Remember BioWare: ‘I’ve Been Trying To Replicate That Feeling For Almost My Whole Life’",
+      "url": "https://kotaku.com/bioware-closure-mass-effect-universe-dragon-age-baldurs-gate-kotor-2000752411",
+      "date": "2026-11-02T20:45:42.404Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
