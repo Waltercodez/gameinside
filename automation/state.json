@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-02",
-  "publishedToday": 6,
+  "date": "2026-11-03",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Causes 17% Spike in Time Off Requests on Game's Release Date",
-      "url": "https://www.ign.com/articles/gta-6-causes-17-spike-in-time-off-requests-on-games-release-date",
-      "date": "2026-10-26T23:51:20.624Z"
-    },
-    {
-      "title": "Ghost of Yotei Developer Sucker Punch Hit With Layoffs",
-      "url": "https://www.ign.com/articles/ghost-of-yotei-developer-sucker-punch-hit-with-layoffs",
-      "date": "2026-10-26T23:51:34.230Z"
-    },
     {
       "title": "Hunger Games Director Hopes You Aren't Too Distracted With GTA 6 to See Sunrise on the Reaping",
       "url": "https://www.ign.com/articles/hunger-games-director-hopes-you-arent-too-distracted-with-gta-6-to-see-sunrise-on-the-reaping",
@@ -301,7 +291,17 @@
       "title": "Developers, Creators, And Fans Remember BioWare: ‘I’ve Been Trying To Replicate That Feeling For Almost My Whole Life’",
       "url": "https://kotaku.com/bioware-closure-mass-effect-universe-dragon-age-baldurs-gate-kotor-2000752411",
       "date": "2026-11-02T20:45:42.404Z"
+    },
+    {
+      "title": "A Concerning Amount of GTA Fans Would Give Up Their Pets to Play GTA 6 Early",
+      "url": "https://www.ign.com/articles/a-concerning-amount-of-gta-fans-would-give-up-their-pets-to-play-gta-6-early",
+      "date": "2026-11-03T02:54:42.033Z"
+    },
+    {
+      "title": "Nintendo Officially Comments on Zelda Remake's Divisive Graphics",
+      "url": "https://www.polygon.com/zelda-ocarina-of-time-art-style-link-zelda-puppets/",
+      "date": "2026-11-03T02:55:10.532Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
