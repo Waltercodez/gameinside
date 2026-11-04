@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-03",
-  "publishedToday": 8,
+  "date": "2026-11-04",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Guide: GTA 6 Release Times and Preload: When Can You Start Playing?",
-      "url": "https://www.pushsquare.com/guides/gta-6-release-times-and-preload-when-can-you-start-playing",
-      "date": "2026-10-28T00:33:00.688Z"
-    },
-    {
-      "title": "Cyberpunk 2 Listing Hints at Multiplayer Quests in CD Projekt Red Sequel",
-      "url": "https://www.polygon.com/cyberpunk-2-multiplayer-quests-leak-cd-projekt-red/",
-      "date": "2026-10-28T00:33:38.720Z"
-    },
     {
       "title": "GTA 6 Developers Are About To Do Something Historic",
       "url": "https://www.gamespot.com/articles/gta-6-developers-are-about-to-do-something-historic/",
@@ -291,7 +281,17 @@
       "title": "Ubisoft Among Suitors Trying to Buy Marvel's Blade, Dishonored Studio Arkane Lyon from Xbox",
       "url": "https://www.ign.com/articles/ubisoft-among-suitors-trying-to-buy-marvels-blade-dishonored-studio-arkane-lyon-from-xbox",
       "date": "2026-11-03T23:58:55.911Z"
+    },
+    {
+      "title": "This Custom Xbox-Inside-An-Alligator Console Is Actually One Big Ad For GTA 6",
+      "url": "https://www.gamespot.com/articles/this-custom-xbox-inside-an-alligator-console-is-actually-one-big-ad-for-gta-6/",
+      "date": "2026-11-04T06:16:01.262Z"
+    },
+    {
+      "title": "The Elder Scrolls 6: Sentinel Is Still 'At Least Two Years Away' as Disappointment Follows New Trailer",
+      "url": "https://www.pushsquare.com/news/2026/11/the-elder-scrolls-6-sentinel-is-still-at-least-two-years-away-as-disappointment-follows-new-trailer",
+      "date": "2026-11-04T06:16:25.290Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
