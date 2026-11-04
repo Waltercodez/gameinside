@@ -1,17 +1,7 @@
 {
   "date": "2026-11-04",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 Online Could Be Released In Early 2027, Bank Says",
-      "url": "https://www.gamespot.com/articles/gta-6-online-could-be-released-in-early-2027-bank-says/",
-      "date": "2026-10-28T19:32:46.350Z"
-    },
-    {
-      "title": "Call of Duty: Modern Warfare 4 Season 1 Adds 6 New Maps, New Weapons, and a New DMZ Area",
-      "url": "https://www.ign.com/articles/call-of-duty-modern-warfare-4-season-1-adds-6-new-maps-new-weapons-and-a-new-dmz-area",
-      "date": "2026-10-28T19:33:02.229Z"
-    },
     {
       "title": "'Appreciate the Fans' — GTA 5 Cast Tell Jason and Lucia’s Actors the Most Important Things They Should Know Before GTA 6 Launches Them to Fame",
       "url": "https://www.ign.com/articles/appreciate-the-fans-gta-5-cast-tell-jason-and-lucias-actors-the-most-important-things-they-should-know-before-gta-6-launches-them-to-fame",
@@ -281,7 +271,17 @@
       "title": "Steam Is Tightening Its Game Submission Rules As AI Slop Floods The Store",
       "url": "https://www.gamespot.com/articles/steam-is-tightening-its-game-submission-rules-as-ai-slop-floods-the-store/",
       "date": "2026-11-04T14:37:40.472Z"
+    },
+    {
+      "title": "GTA 6 Will Now Come To Stores Sooner, But It’s Not Playable Right Away",
+      "url": "https://www.gamespot.com/articles/gta-6-will-now-come-to-stores-sooner-but-its-not-playable-right-away/",
+      "date": "2026-11-04T21:19:30.150Z"
+    },
+    {
+      "title": "God Of War Laufey Delayed",
+      "url": "https://www.gamespot.com/articles/god-of-war-laufey-delayed/",
+      "date": "2026-11-04T21:19:51.895Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
