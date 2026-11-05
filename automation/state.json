@@ -1,17 +1,7 @@
 {
   "date": "2026-11-05",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "The latest episode of South Park features exclusive GTA 6 footage where a man is hit in the head with dog poo",
-      "url": "https://www.videogameschronicle.com/news/the-latest-episode-of-south-park-features-exclusive-gta-6-footage-where-a-man-is-hit-in-the-head-with-dog-poo/",
-      "date": "2026-10-29T12:57:55.270Z"
-    },
-    {
-      "title": "Phantom Blade Zero immediately tops over half a million concurrent Steam players",
-      "url": "https://www.gamesradar.com/games/action-rpg/phantom-blade-zero-immediately-tops-over-half-a-million-concurrent-steam-players-beating-silksong-and-slay-the-spire-2s-all-time-records-in-a-matter-of-hours/",
-      "date": "2026-10-29T12:58:18.280Z"
-    },
     {
       "title": "The GTA 6: Original Score Has a Release Date and a Brand New Track You Can Listen to Right Now",
       "url": "https://www.ign.com/articles/the-gta-6-original-score-has-a-release-date-and-a-brand-new-track-you-can-listen-to-right-now",
@@ -281,7 +271,17 @@
       "title": "PlayStation sees record high player numbers and increased revenue for Q2 2026, and a lot of that success is down to Marvel's Wolverine",
       "url": "https://www.eurogamer.net/sony-playstation-fy-2026-wolverine-sales",
       "date": "2026-11-05T10:52:05.373Z"
+    },
+    {
+      "title": "Rockstar releases nearly 40 new GTA 6 screenshots ahead of launch",
+      "url": "https://www.videogameschronicle.com/news/rockstar-releases-nearly-40-new-gta-6-screenshots-ahead-of-launch/",
+      "date": "2026-11-05T18:44:24.725Z"
+    },
+    {
+      "title": "Assassin's Creed Valhalla gets New Game Plus and Stash inventory in \"The Most Requested Update\"",
+      "url": "https://www.gamesradar.com/games/assassin-s-creed/assassins-creed-valhalla-gets-new-game-plus-a-stash-inventory-and-extended-progression-mode-in-the-most-requested-update/",
+      "date": "2026-11-05T18:44:50.706Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
