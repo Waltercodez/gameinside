@@ -1,17 +1,7 @@
 {
   "date": "2026-11-06",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Bethesda Is Reportedly Ready To Reveal The Official Title Of The Elder Scrolls VI",
-      "url": "https://www.nintendolife.com/news/2026/10/bethesda-is-reportedly-ready-to-reveal-the-official-title-of-the-elder-scrolls-vi",
-      "date": "2026-10-30T09:58:43.620Z"
-    },
-    {
-      "title": "The Duskbloods komt pas in 2027 uit",
-      "url": "https://tweakers.net/nieuws/253936/the-duskbloods-komt-pas-in-2027-uit.html",
-      "date": "2026-10-30T09:59:05.182Z"
-    },
     {
       "title": "GTA 6’s Attention To Detail Is Getting A Little Ridiculous",
       "url": "https://www.gamespot.com/articles/gta-6-attention-to-detail-is-getting-a-little-ridiculous/",
@@ -271,7 +261,17 @@
       "title": "Saudi Arabia owns EA, and according to a Reuters report, Unity is next",
       "url": "https://www.pcgamer.com/gaming-industry/saudi-arabia-owns-ea-and-according-to-a-reuters-report-unity-is-next/",
       "date": "2026-11-06T06:46:37.511Z"
+    },
+    {
+      "title": "Rockstar Will Be Keen to Release GTA 6 on PC Sooner Rather Than Later Because of AI Clones, Former Dev Says",
+      "url": "https://www.ign.com/articles/former-rockstar-dev-claims-gta-6-online-will-launch-soon",
+      "date": "2026-11-06T15:01:03.041Z"
+    },
+    {
+      "title": "After gobbling up EA, Saudi Arabia and private equity firm Silver Lake reportedly looking to buy Unity",
+      "url": "https://www.eurogamer.net/unity-game-engine-saudi-arabia-silver-lake",
+      "date": "2026-11-06T15:01:32.625Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
