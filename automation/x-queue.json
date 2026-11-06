@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "_id": "auto-1793924068504-ggwfl",
+      "title": "BioWare documentaire toont laatste jaren studio",
+      "url": "https://gameinside.nl/artikel/bioware-documentaire-laatste-jaren-studio",
+      "x": "BioWare-documentaire Massive Effect: The BioWare Story komt eraan - kijken hoe het afgelopen jaren met de legendarische studio ging. 2027, dus nog even wachten."
+    },
+    {
+      "_id": "auto-1793947595548-rufqd",
+      "title": "Unity mogelijk volgende overname Saudi-fonds PIF",
+      "url": "https://gameinside.nl/artikel/unity-overname-saudi-arabia-pif-silver-lake",
+      "x": "Na EA nu ook Unity? Het Saudische staatsfonds PIF en investeerder Silver Lake zouden de spelengine-maker willen overnemen. Wat gaat dit betekenen voor de toekomst van game-development?"
+    },
+    {
       "_id": "auto-1793904261668-awkq1",
       "title": "GTA 6: Rockstar deelt bijna 40 nieuwe screenshots",
       "url": "https://gameinside.nl/artikel/gta-6-rockstar-nieuwe-screenshots-release",
@@ -1321,5 +1333,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-11-05T07:00:20.106Z"
+  "lastRun": "2026-11-06T07:00:01.056Z"
 }
