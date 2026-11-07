@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-06",
-  "publishedToday": 8,
+  "date": "2026-11-07",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "The Worst GTA Game Is One Rockstar Could Never Make Today",
-      "url": "https://www.polygon.com/gta-advance-worst-grand-theft-auto-game/",
-      "date": "2026-10-30T21:29:12.796Z"
-    },
-    {
-      "title": "Activision Apologizes for 'Modern Warfare 4' Footage After Backlash",
-      "url": "https://www.polygon.com/modern-warfare-4-activision-apologizes-itaewon-tragedy/",
-      "date": "2026-10-30T21:29:25.912Z"
-    },
     {
       "title": "New games in 2027: Fable, Final Fantasy 7, and (maybe) GTA 6 on PC",
       "url": "https://www.pcgamer.com/games/new-pc-games-2027/",
@@ -271,7 +261,17 @@
       "title": "Updated Xbox PC app promises 60% faster loading and easier access to games, but CEO Asha Sharma says there's \"plenty more to do\"",
       "url": "https://www.eurogamer.net/updated-xbox-pc-app-faster-asha-sharma",
       "date": "2026-11-06T20:53:16.750Z"
+    },
+    {
+      "title": "A bunch of Grand Theft Auto games will be cheap on Steam until GTA 6 comes out, and only one sucks",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/a-bunch-of-grand-theft-auto-games-will-be-cheap-on-steam-until-gta-6-comes-out-and-only-one-of-them-sucks/",
+      "date": "2026-11-07T00:55:25.689Z"
+    },
+    {
+      "title": "New Jet Set Radio and Streets of Rage Games Still in the Works",
+      "url": "https://insider-gaming.com/new-jet-set-radio-and-streets-of-rage-games-still-in-the-works/",
+      "date": "2026-11-07T00:55:52.699Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
