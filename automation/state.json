@@ -1,17 +1,7 @@
 {
   "date": "2026-11-07",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "New games in 2027: Fable, Final Fantasy 7, and (maybe) GTA 6 on PC",
-      "url": "https://www.pcgamer.com/games/new-pc-games-2027/",
-      "date": "2026-10-31T01:35:28.308Z"
-    },
-    {
-      "title": "Xbox's Doom, Wolfenstein Developers Working 'More Closely Than Ever' Following Xbox 'Reset' Layoffs",
-      "url": "https://www.ign.com/articles/xboxs-doom-wolfenstein-developers-working-more-closely-than-ever-following-xbox-reset-layoffs",
-      "date": "2026-10-31T01:35:53.873Z"
-    },
     {
       "title": "5 Must-Play New Xbox Games Coming in November, Including GTA 6",
       "url": "https://www.polygon.com/new-xbox-games-november-2026/",
@@ -271,7 +261,17 @@
       "title": "New Jet Set Radio and Streets of Rage Games Still in the Works",
       "url": "https://insider-gaming.com/new-jet-set-radio-and-streets-of-rage-games-still-in-the-works/",
       "date": "2026-11-07T00:55:52.699Z"
+    },
+    {
+      "title": "GTA 6's Biggest Competition Officially Arrives on PC in 2027",
+      "url": "https://www.polygon.com/ananta-anime-gta-pc-ps5-release-date-2027-netease-games/",
+      "date": "2026-11-07T07:07:50.672Z"
+    },
+    {
+      "title": "Sudden Illness Sees Miyamoto Miss Nintendo's Financial Briefing, But He's Expected To Make A Quick Recovery",
+      "url": "https://www.nintendolife.com/news/2026/11/sudden-illness-sees-miyamoto-miss-nintendos-financial-briefing-but-hes-expected-to-make-a-quick-recovery",
+      "date": "2026-11-07T07:08:12.736Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
