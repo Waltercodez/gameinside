@@ -1,17 +1,7 @@
 {
   "date": "2026-11-07",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "5 Must-Play New Xbox Games Coming in November, Including GTA 6",
-      "url": "https://www.polygon.com/new-xbox-games-november-2026/",
-      "date": "2026-10-31T08:24:31.990Z"
-    },
-    {
-      "title": "Video: Nintendo Highlights Eight New Things In Zelda: Ocarina Of Time (Switch 2)",
-      "url": "https://www.nintendolife.com/news/2026/10/video-nintendo-highlights-eight-new-things-in-zelda-ocarina-of-time-switch-2",
-      "date": "2026-10-31T08:24:58.970Z"
-    },
     {
       "title": "With GTA 6, Rockstar couldn't \"just trot out something\" fans would already expect",
       "url": "https://www.gamesradar.com/games/grand-theft-auto/with-gta-6-rockstar-couldnt-just-trot-out-something-fans-would-already-expect-weve-built-a-pyramid-on-everest/",
@@ -271,7 +261,17 @@
       "title": "Sudden Illness Sees Miyamoto Miss Nintendo's Financial Briefing, But He's Expected To Make A Quick Recovery",
       "url": "https://www.nintendolife.com/news/2026/11/sudden-illness-sees-miyamoto-miss-nintendos-financial-briefing-but-hes-expected-to-make-a-quick-recovery",
       "date": "2026-11-07T07:08:12.736Z"
+    },
+    {
+      "title": "Nier: Automata developer is 'currently investigating' a bizarre update bug that drastically inflated the game's file size from 50GB to 366GB",
+      "url": "https://www.pcgamer.com/games/rpg/nier-automata-developer-is-currently-investigating-a-bizarre-update-bug-that-drastically-inflated-the-games-file-size-from-50gb-to-366gb/",
+      "date": "2026-11-07T13:59:58.965Z"
+    },
+    {
+      "title": "Xbox is testing a way to use your phone as a controller on smart TVs",
+      "url": "https://www.eurogamer.net/xbox-cloud-gaming-phone-controller-smart-tv-nano-cloud-connect",
+      "date": "2026-11-07T14:00:11.381Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
