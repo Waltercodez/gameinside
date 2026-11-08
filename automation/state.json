@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-07",
-  "publishedToday": 10,
+  "date": "2026-11-08",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "6 Essential Activities GTA Needs to Let Players Experience in Vice City",
-      "url": "https://www.polygon.com/gta-6-side-activities/",
-      "date": "2026-10-31T23:22:35.593Z"
-    },
-    {
-      "title": "FromSoftware temporarily shuts down Dark Souls 2 and 3 multiplayer over 'server issue'",
-      "url": "https://www.pcgamer.com/games/dark-souls/fromsoftware-temporarily-shuts-down-dark-souls-2-and-3-multiplayer-over-server-issue/",
-      "date": "2026-10-31T23:22:47.468Z"
-    },
     {
       "title": "Achtergrond - Een console kopen voor GTA VI? Dit betaal je voor een PS5 of XBOX",
       "url": "https://tweakers.net/reviews/15538/een-console-kopen-voor-gta-vi-dit-betaal-je-voor-een-ps5-of-xbox.html",
@@ -271,7 +261,17 @@
       "title": "Assassin's Creed is reportedly going to ancient Rome, while a mobile spin-off heads to Jerusalem",
       "url": "https://www.eurogamer.net/assassins-creed-mars-ancient-rome-pocket-mobile-jerusalem-rumour",
       "date": "2026-11-07T22:44:18.276Z"
+    },
+    {
+      "title": "89% of People Think GTA 6 Will Win Game of the Year at The Game Awards",
+      "url": "https://insider-gaming.com/gta-6-game-of-the-year-awards-chances/",
+      "date": "2026-11-08T02:27:54.162Z"
+    },
+    {
+      "title": "Sony delays PlayStation's Pulse Elevate speakers indefinitely, less than a week before launch",
+      "url": "https://www.eurogamer.net/playstation-pulse-elevate-speakers-delayed-indefinitely-production-issue",
+      "date": "2026-11-08T02:28:17.897Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
