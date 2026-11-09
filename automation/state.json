@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-08",
-  "publishedToday": 8,
+  "date": "2026-11-09",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Grand Theft Auto 6 Download Size Revealed To Be 210 GB",
-      "url": "https://insider-gaming.com/gta-6-install-size-revealed-210-gb/",
-      "date": "2026-11-01T22:47:23.852Z"
-    },
-    {
-      "title": "Fable Is Ditching the One Feature That Made Fable 3 An Instant Classic",
-      "url": "https://www.polygon.com/fable-reboot-no-co-op/",
-      "date": "2026-11-01T22:47:33.851Z"
-    },
     {
       "title": "Walmart GTA 6 Preorders Will Get a ‘Surprise and Delight’ Bag, It’s Claimed",
       "url": "https://insider-gaming.com/walmart-gta-6-preorder-bonus-bag/",
@@ -271,7 +261,17 @@
       "title": "Ocarina of Time remake datamine suggests Master Quest is on the way",
       "url": "https://www.eurogamer.net/zelda-ocarina-of-time-remake-master-quest-dlc-datamine",
       "date": "2026-11-08T21:09:40.440Z"
+    },
+    {
+      "title": "The Legend Of Zelda: Ocarina of Time For Switch 2 Could Bring Back A Classic Mode",
+      "url": "https://www.polygon.com/ocarina-of-time-master-quest-switch-2/",
+      "date": "2026-11-09T00:52:51.825Z"
+    },
+    {
+      "title": "AMD Acknowledges Radeon Driver Bug Causing Constant SSD Writes, Fix In The Works",
+      "url": "https://wccftech.com/amd-acknowledges-radeon-driver-bug-causing-constant-ssd-writes-fix-in-the-works/",
+      "date": "2026-11-09T00:53:20.803Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 2
 }
