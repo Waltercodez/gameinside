@@ -1,17 +1,7 @@
 {
   "date": "2026-11-09",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Walmart GTA 6 Preorders Will Get a ‘Surprise and Delight’ Bag, It’s Claimed",
-      "url": "https://insider-gaming.com/walmart-gta-6-preorder-bonus-bag/",
-      "date": "2026-11-02T02:28:46.796Z"
-    },
-    {
-      "title": "Here's one bit of good news for Mass Effect: modders are bringing the multiplayer mode to Mass Effect Legendary Edition",
-      "url": "https://www.pcgamer.com/games/mass-effect/heres-one-bit-of-good-news-for-mass-effect-modders-are-bringing-the-multiplayer-mode-to-mass-effect-legendary-edition/",
-      "date": "2026-11-02T02:29:15.671Z"
-    },
     {
       "title": "Sony Issues Yet Another PS5 Firmware Update as Jailbreak Whac-a-Mole Continues Ahead of GTA 6 Release",
       "url": "https://www.ign.com/articles/sony-issues-yet-another-ps5-firmware-update-as-jailbreak-whac-a-mole-continues-ahead-of-gta-6-release",
@@ -271,7 +261,17 @@
       "title": "AMD Acknowledges Radeon Driver Bug Causing Constant SSD Writes, Fix In The Works",
       "url": "https://wccftech.com/amd-acknowledges-radeon-driver-bug-causing-constant-ssd-writes-fix-in-the-works/",
       "date": "2026-11-09T00:53:20.803Z"
+    },
+    {
+      "title": "PlayStation Portal Midnight Black Japan-only model announced",
+      "url": "https://www.gematsu.com/2026/11/playstation-portal-midnight-black-japan-only-model-announced",
+      "date": "2026-11-09T07:57:29.346Z"
+    },
+    {
+      "title": "Jackbox Games isn't interested in AI development: 'All that is done by people, and we have no intention of changing that'",
+      "url": "https://www.pcgamer.com/gaming-industry/game-development/jackbox-games-isnt-interested-in-ai-development-all-that-is-done-by-people-and-we-have-no-intention-of-changing-that/",
+      "date": "2026-11-09T07:57:43.200Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
