@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "_id": "auto-1794185568840-84p3v",
+      "title": "Zelda: Ocarina of Time krijgt mogelijk Master Quest",
+      "url": "https://gameinside.nl/artikel/zelda-ocarina-of-time-switch-2-master-quest-datamine",
+      "x": "Dataminers hebben iets interessants gevonden in de Switch 2-remake van Ocarina of Time - wijst alles op een terugkeer van Master Quest? Dit gaan we onderzoeken."
+    },
+    {
+      "_id": "auto-1794185598133-v213i",
+      "title": "AMD erkent Radeon driverbug: continue SSD-writes",
+      "url": "https://gameinside.nl/artikel/amd-radeon-driverbug-ssd-writes-fix",
+      "x": "AMD erkent ernstige Radeon driverbug - je SSD wordt constant volgeschreven. Gelukkig werkt AMD al aan een fix voor Adrenalin."
+    },
+    {
       "_id": "auto-1794133114389-st8pr",
       "title": "Sony stelt Pulse Elevate-speakers voor PS5 uit",
       "url": "https://gameinside.nl/artikel/sony-pulse-elevate-speakers-uitstel-reviewunits",
@@ -1375,5 +1387,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-11-08T01:30:32.613Z"
+  "lastRun": "2026-11-09T01:46:19.107Z"
 }
