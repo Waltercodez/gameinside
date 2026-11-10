@@ -1,17 +1,7 @@
 {
   "date": "2026-11-10",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "A Concerning Amount of GTA Fans Would Give Up Their Pets to Play GTA 6 Early",
-      "url": "https://www.ign.com/articles/a-concerning-amount-of-gta-fans-would-give-up-their-pets-to-play-gta-6-early",
-      "date": "2026-11-03T02:54:42.033Z"
-    },
-    {
-      "title": "Nintendo Officially Comments on Zelda Remake's Divisive Graphics",
-      "url": "https://www.polygon.com/zelda-ocarina-of-time-art-style-link-zelda-puppets/",
-      "date": "2026-11-03T02:55:10.532Z"
-    },
     {
       "title": "10 Things You Need to Know Before GTA 6 Comes Out",
       "url": "https://insider-gaming.com/10-things-you-need-to-know-before-gta-6-comes-out/",
@@ -271,7 +261,17 @@
       "title": "Anticipated Warhammer 40K tactical RPG Dark Heresy gets a release date",
       "url": "https://www.eurogamer.net/warhammer-40k-dark-heresy-owlcat-crpg",
       "date": "2026-11-10T02:06:21.218Z"
+    },
+    {
+      "title": "GTA VI neemt op XBOX geen 212 maar 225GB opslagruimte in beslag",
+      "url": "https://tweakers.net/nieuws/254344/gta-vi-neemt-op-xbox-geen-212-maar-225gb-opslagruimte-in-beslag.html",
+      "date": "2026-11-10T09:46:33.506Z"
+    },
+    {
+      "title": "Switch 2 and Switch consoles updated to version 23.5.0 as Nintendo quietly re-introduces eShop gifting",
+      "url": "https://www.eurogamer.net/switch-2-and-switch-consoles-updated-to-version-2350-as-nintendo-quietly-re-introduces-eshop-gifting",
+      "date": "2026-11-10T09:46:59.528Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
