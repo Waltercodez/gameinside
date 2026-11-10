@@ -1,17 +1,7 @@
 {
   "date": "2026-11-10",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "10 Things You Need to Know Before GTA 6 Comes Out",
-      "url": "https://insider-gaming.com/10-things-you-need-to-know-before-gta-6-comes-out/",
-      "date": "2026-11-03T10:49:36.245Z"
-    },
-    {
-      "title": "Remedy revenue soars by 226% following release of Control Resonant, the developer's fastest-selling game ever",
-      "url": "https://www.eurogamer.net/control-resonant-remedy-revenue-leaps",
-      "date": "2026-11-03T10:50:02.241Z"
-    },
     {
       "title": "GTA 6 Preload, Global Release Times and Install Size Confirmed, Rockstar Announces Physical Cover Art Poster and Map of Leonida",
       "url": "https://www.ign.com/articles/gta-6-preload-times-and-install-size-confirmed-rockstar-announces-physical-cover-art-poster-and-map-of-leonida",
@@ -271,7 +261,17 @@
       "title": "Switch 2 and Switch consoles updated to version 23.5.0 as Nintendo quietly re-introduces eShop gifting",
       "url": "https://www.eurogamer.net/switch-2-and-switch-consoles-updated-to-version-2350-as-nintendo-quietly-re-introduces-eshop-gifting",
       "date": "2026-11-10T09:46:59.528Z"
+    },
+    {
+      "title": "GTA 6 Is The Most Preordered Game Of All Time For PlayStation And Xbox",
+      "url": "https://www.gamespot.com/articles/gta-6-is-the-most-preordered-game-of-all-time-for-playstation-and-xbox/",
+      "date": "2026-11-10T17:48:56.874Z"
+    },
+    {
+      "title": "XBOX CEO Reveals ‘New 10-Year Strategic Partnership’ with Take-Two",
+      "url": "https://insider-gaming.com/xbox-ceo-announces-10-year-take-two-partnership/",
+      "date": "2026-11-10T17:49:21.514Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
