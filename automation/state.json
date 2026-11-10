@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-09",
-  "publishedToday": 6,
+  "date": "2026-11-10",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Buying Guide: Get Ready For Sticker Shock",
-      "url": "https://www.gamespot.com/articles/gta-6-buying-guide-get-ready-for-sticker-shock/",
-      "date": "2026-11-02T20:45:17.386Z"
-    },
-    {
-      "title": "Developers, Creators, And Fans Remember BioWare: ‘I’ve Been Trying To Replicate That Feeling For Almost My Whole Life’",
-      "url": "https://kotaku.com/bioware-closure-mass-effect-universe-dragon-age-baldurs-gate-kotor-2000752411",
-      "date": "2026-11-02T20:45:42.404Z"
-    },
     {
       "title": "A Concerning Amount of GTA Fans Would Give Up Their Pets to Play GTA 6 Early",
       "url": "https://www.ign.com/articles/a-concerning-amount-of-gta-fans-would-give-up-their-pets-to-play-gta-6-early",
@@ -271,7 +261,17 @@
       "title": "Killing Floor 3 Developer Tripwire Interactive Announces Layoffs",
       "url": "https://insider-gaming.com/tripwire-interactive-announces-layoffs/",
       "date": "2026-11-09T18:46:47.971Z"
+    },
+    {
+      "title": "Take-Two 'Enhancing' Technical Defenses and Legal Activities to Combat GTA 6 AI Reverse-Engineering Threat",
+      "url": "https://www.ign.com/articles/take-two-enhancing-technical-defenses-and-legal-activities-to-combat-gta-6-ai-reverse-engineering-threat",
+      "date": "2026-11-10T02:05:57.234Z"
+    },
+    {
+      "title": "Anticipated Warhammer 40K tactical RPG Dark Heresy gets a release date",
+      "url": "https://www.eurogamer.net/warhammer-40k-dark-heresy-owlcat-crpg",
+      "date": "2026-11-10T02:06:21.218Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
