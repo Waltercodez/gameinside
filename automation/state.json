@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-10",
-  "publishedToday": 8,
+  "date": "2026-11-11",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Xbox Made an Alligator-Shaped Series X, and You Can Win It Before GTA 6 Launches",
-      "url": "https://www.ign.com/articles/xbox-made-an-alligator-shaped-series-x-and-you-can-win-it-before-gta-6-launches",
-      "date": "2026-11-03T23:58:41.897Z"
-    },
-    {
-      "title": "Ubisoft Among Suitors Trying to Buy Marvel's Blade, Dishonored Studio Arkane Lyon from Xbox",
-      "url": "https://www.ign.com/articles/ubisoft-among-suitors-trying-to-buy-marvels-blade-dishonored-studio-arkane-lyon-from-xbox",
-      "date": "2026-11-03T23:58:55.911Z"
-    },
     {
       "title": "This Custom Xbox-Inside-An-Alligator Console Is Actually One Big Ad For GTA 6",
       "url": "https://www.gamespot.com/articles/this-custom-xbox-inside-an-alligator-console-is-actually-one-big-ad-for-gta-6/",
@@ -271,7 +261,17 @@
       "title": "Sony stopt met PlayStation Plus-app voor pc, geen streaming meer op pc",
       "url": "https://tweakers.net/nieuws/254376/sony-stopt-met-playstation-plus-app-voor-pc-geen-streaming-meer-op-pc.html",
       "date": "2026-11-10T23:18:16.137Z"
+    },
+    {
+      "title": "GTA 6 Was Never Going to Hit 60 Frames per Second on Consoles",
+      "url": "https://www.ign.com/articles/gta-6-was-never-going-to-be-60-frames-per-second-on-consoles",
+      "date": "2026-11-11T06:12:40.629Z"
+    },
+    {
+      "title": "PS5 shipments top 100 million",
+      "url": "https://www.gematsu.com/2026/11/ps5-shipments-top-100-million",
+      "date": "2026-11-11T06:13:05.931Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
