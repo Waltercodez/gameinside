@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-11",
-  "publishedToday": 6,
+  "date": "2026-11-12",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Rakes in Over $750 Million in Preorders 2 Weeks Ahead of Release Date",
-      "url": "https://www.ign.com/articles/gta-6-rakes-in-over-750-million-in-pre-orders-two-weeks-ahead-of-release-date",
-      "date": "2026-11-05T02:25:16.973Z"
-    },
-    {
-      "title": "PS5 Exclusive God of War Laufey Has Officially Been Delayed by Three Months",
-      "url": "https://www.pushsquare.com/news/2026/11/ps5-exclusive-god-of-war-laufey-has-officially-been-delayed-by-three-months",
-      "date": "2026-11-05T02:25:43.783Z"
-    },
     {
       "title": "All Grand Theft Auto Games, Ranked From Worst to Best",
       "url": "https://insider-gaming.com/all-gta-games-ranked-worst-to-best/",
@@ -261,7 +251,17 @@
       "title": "Destroy All Humans remake developer goes independent, splits from THQ Nordic and parent company Embracer Group",
       "url": "https://www.eurogamer.net/destroy-all-humans-independent-thq-embracer",
       "date": "2026-11-11T21:56:19.059Z"
+    },
+    {
+      "title": "GTA 6 Fans Think a Beloved Legacy Character from a Previous Game Is Hiding in the Latest Trailer",
+      "url": "https://www.ign.com/articles/gta-6-fans-think-a-beloved-legacy-character-from-a-previous-game-is-hiding-in-the-latest-trailer",
+      "date": "2026-11-12T02:57:16.416Z"
+    },
+    {
+      "title": "CD Projekt used AI to modify the voice of Geralt's Polish actor after a stroke left it significantly changed: 'This was a special case'",
+      "url": "https://www.pcgamer.com/games/the-witcher/cd-projekt-used-ai-to-modify-the-voice-of-geralts-polish-actor-after-a-stroke-left-it-significantly-changed-this-was-a-special-case/",
+      "date": "2026-11-12T02:57:42.189Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
