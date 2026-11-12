@@ -1,17 +1,7 @@
 {
   "date": "2026-11-12",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Rockstar releases nearly 40 new GTA 6 screenshots ahead of launch",
-      "url": "https://www.videogameschronicle.com/news/rockstar-releases-nearly-40-new-gta-6-screenshots-ahead-of-launch/",
-      "date": "2026-11-05T18:44:24.725Z"
-    },
-    {
-      "title": "Assassin's Creed Valhalla gets New Game Plus and Stash inventory in \"The Most Requested Update\"",
-      "url": "https://www.gamesradar.com/games/assassin-s-creed/assassins-creed-valhalla-gets-new-game-plus-a-stash-inventory-and-extended-progression-mode-in-the-most-requested-update/",
-      "date": "2026-11-05T18:44:50.706Z"
-    },
     {
       "title": "Spectrum Is Offering Free Internet Upgrades So People Can Download GTA 6 Faster",
       "url": "https://www.ign.com/articles/spectrum-is-offering-free-internet-upgrades-so-people-can-download-gta-6-faster",
@@ -261,7 +251,17 @@
       "title": "PS5 wordt vierde PlayStation met 100 miljoen geleverde consoles",
       "url": "https://tweakers.net/nieuws/254434/ps5-wordt-vierde-playstation-met-100-miljoen-geleverde-consoles.html",
       "date": "2026-11-12T11:02:47.314Z"
+    },
+    {
+      "title": "GTA 6 was almost refused classification in South Korea due to the sheer amount of genitals shown",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-was-almost-refused-classification-in-south-korea-due-to-the-sheer-amount-of-genitals-shown/",
+      "date": "2026-11-12T18:53:54.481Z"
+    },
+    {
+      "title": "The Witcher 3 uses gen-AI to enhance Geralt's Polish voice following actor's stroke - \"I do think this is one of those ways where you can use AI ethically\"",
+      "url": "https://www.eurogamer.net/cd-projekt-red-geralt-gen-ai-voice-polish-jacek-rozenek",
+      "date": "2026-11-12T18:54:21.510Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
