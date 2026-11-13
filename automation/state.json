@@ -1,17 +1,7 @@
 {
   "date": "2026-11-13",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Rockstar Will Be Keen to Release GTA 6 on PC Sooner Rather Than Later Because of AI Clones, Former Dev Says",
-      "url": "https://www.ign.com/articles/former-rockstar-dev-claims-gta-6-online-will-launch-soon",
-      "date": "2026-11-06T15:01:03.041Z"
-    },
-    {
-      "title": "After gobbling up EA, Saudi Arabia and private equity firm Silver Lake reportedly looking to buy Unity",
-      "url": "https://www.eurogamer.net/unity-game-engine-saudi-arabia-silver-lake",
-      "date": "2026-11-06T15:01:32.625Z"
-    },
     {
       "title": "Can You Upgrade To GTA 6’s $100 Edition? Yes, And It’s Easy–Here’s How",
       "url": "https://www.gamespot.com/articles/can-you-upgrade-to-gta-6s-100-edition-yes-and-its-easy-heres-how/",
@@ -261,7 +251,17 @@
       "title": "Xbox CEO Announces Major New Bethesda Games In The Works, Including Wolfenstein 3",
       "url": "https://www.purexbox.com/news/2026/11/xbox-ceo-announces-major-new-bethesda-games-in-the-works-including-wolfenstein-3",
       "date": "2026-11-13T07:55:49.942Z"
+    },
+    {
+      "title": "GTA 6 In-Game TV Show Macca & Friends Looks Ridiculous In The Best Way",
+      "url": "https://www.gamespot.com/articles/gta-6-in-game-tv-show-macca-friends-looks-ridiculous-in-the-best-way/",
+      "date": "2026-11-13T16:19:37.179Z"
+    },
+    {
+      "title": "Wolfenstein 3 Is Officially In Production At MachineGames",
+      "url": "https://www.gamespot.com/articles/wolfenstein-3-is-officially-in-production-at-machinegames/",
+      "date": "2026-11-13T16:20:07.086Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
