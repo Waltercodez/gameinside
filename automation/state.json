@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-12",
-  "publishedToday": 6,
+  "date": "2026-11-13",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Spectrum Is Offering Free Internet Upgrades So People Can Download GTA 6 Faster",
-      "url": "https://www.ign.com/articles/spectrum-is-offering-free-internet-upgrades-so-people-can-download-gta-6-faster",
-      "date": "2026-11-06T00:14:03.181Z"
-    },
-    {
-      "title": "BioWare's Final Years Were Filmed and Will Be Revealed in a New Documentary",
-      "url": "https://www.ign.com/articles/biowares-final-years-were-filmed-and-will-be-revealed-in-a-new-documentary",
-      "date": "2026-11-06T00:14:31.017Z"
-    },
     {
       "title": "GTA 6 Ultimate Edition: Is It Worth Paying More?",
       "url": "https://insider-gaming.com/gta-6-ultimate-edition-is-it-worth-paying-more/",
@@ -261,7 +251,17 @@
       "title": "The Witcher 3 uses gen-AI to enhance Geralt's Polish voice following actor's stroke - \"I do think this is one of those ways where you can use AI ethically\"",
       "url": "https://www.eurogamer.net/cd-projekt-red-geralt-gen-ai-voice-polish-jacek-rozenek",
       "date": "2026-11-12T18:54:21.510Z"
+    },
+    {
+      "title": "Palworld developer Pocketpair gives employees time off for 'a 5-day business trip in Vice City when GTA 6 launches'",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/palworld-developer-pocketpair-gives-employees-time-off-for-a-5-day-business-trip-in-vice-city-when-gta-6-launches/",
+      "date": "2026-11-13T00:19:51.816Z"
+    },
+    {
+      "title": "Wolfenstein 3 announced",
+      "url": "https://www.gematsu.com/2026/11/wolfenstein-3-announced",
+      "date": "2026-11-13T00:20:16.841Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
