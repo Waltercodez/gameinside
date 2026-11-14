@@ -1,17 +1,7 @@
 {
   "date": "2026-11-14",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Nier: Automata developer is 'currently investigating' a bizarre update bug that drastically inflated the game's file size from 50GB to 366GB",
-      "url": "https://www.pcgamer.com/games/rpg/nier-automata-developer-is-currently-investigating-a-bizarre-update-bug-that-drastically-inflated-the-games-file-size-from-50gb-to-366gb/",
-      "date": "2026-11-07T13:59:58.965Z"
-    },
-    {
-      "title": "Xbox is testing a way to use your phone as a controller on smart TVs",
-      "url": "https://www.eurogamer.net/xbox-cloud-gaming-phone-controller-smart-tv-nano-cloud-connect",
-      "date": "2026-11-07T14:00:11.381Z"
-    },
     {
       "title": "Grand Theft Auto 6 Physical Copies Are Officially in the Wild",
       "url": "https://www.polygon.com/gta-6-grand-theft-auto-physical-copies-retail/",
@@ -261,7 +251,17 @@
       "title": "Tom Henderson Says Ubisoft Montréal Has Spun Off Three New Projects, Including the Return of Rainbow Six Vegas With a Third Entry",
       "url": "https://wccftech.com/ubisoft-montreal-three-new-projects-rainbow-six-vegas/",
       "date": "2026-11-14T10:23:11.949Z"
+    },
+    {
+      "title": "GTA 6 Players Report Issues with Physical Version Pre-Order Codes",
+      "url": "https://www.polygon.com/gta-6-grand-theft-auto-no-code-physical-edition/",
+      "date": "2026-11-14T17:05:00.765Z"
+    },
+    {
+      "title": "Ubisoft Is Reportedly Bringing A Beloved Series Back After Nearly Two Decades",
+      "url": "https://www.polygon.com/rainbow-six-vegas-3-rumor/",
+      "date": "2026-11-14T17:05:27.770Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
