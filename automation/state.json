@@ -1,17 +1,7 @@
 {
   "date": "2026-11-14",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6's Biggest Competition Officially Arrives on PC in 2027",
-      "url": "https://www.polygon.com/ananta-anime-gta-pc-ps5-release-date-2027-netease-games/",
-      "date": "2026-11-07T07:07:50.672Z"
-    },
-    {
-      "title": "Sudden Illness Sees Miyamoto Miss Nintendo's Financial Briefing, But He's Expected To Make A Quick Recovery",
-      "url": "https://www.nintendolife.com/news/2026/11/sudden-illness-sees-miyamoto-miss-nintendos-financial-briefing-but-hes-expected-to-make-a-quick-recovery",
-      "date": "2026-11-07T07:08:12.736Z"
-    },
     {
       "title": "Nier: Automata developer is 'currently investigating' a bizarre update bug that drastically inflated the game's file size from 50GB to 366GB",
       "url": "https://www.pcgamer.com/games/rpg/nier-automata-developer-is-currently-investigating-a-bizarre-update-bug-that-drastically-inflated-the-games-file-size-from-50gb-to-366gb/",
@@ -261,7 +251,17 @@
       "title": "Fallout 5 and Fallout Remasters Officially Announced",
       "url": "https://www.polygon.com/fallout-5-fo3-remaster-new-games-bethesda-softworks/",
       "date": "2026-11-14T03:12:37.545Z"
+    },
+    {
+      "title": "Vice City was the GTA that established Rockstar's killer formula - and 24 years on, it's still one of the best games ever made",
+      "url": "https://www.eurogamer.net/gta-vice-city-retrospective",
+      "date": "2026-11-14T10:22:46.386Z"
+    },
+    {
+      "title": "Tom Henderson Says Ubisoft Montréal Has Spun Off Three New Projects, Including the Return of Rainbow Six Vegas With a Third Entry",
+      "url": "https://wccftech.com/ubisoft-montreal-three-new-projects-rainbow-six-vegas/",
+      "date": "2026-11-14T10:23:11.949Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
