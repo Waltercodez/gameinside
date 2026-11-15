@@ -1,27 +1,7 @@
 {
   "date": "2026-11-15",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Sony Indefinitely Delays Another PS5 Peripheral Days Before Release",
-      "url": "https://www.pushsquare.com/news/2026/11/sony-indefinitely-delays-another-ps5-peripheral-days-before-release",
-      "date": "2026-11-08T10:18:37.086Z"
-    },
-    {
-      "title": "Digital Foundry Delivers Its Tech Verdict On Stellar Blade's Switch 2 Port",
-      "url": "https://www.nintendolife.com/news/2026/11/digital-foundry-delivers-its-tech-verdict-on-stellar-blades-switch-2-port",
-      "date": "2026-11-08T10:18:59.144Z"
-    },
-    {
-      "title": "Assassin's Creed Hexe Reportedly Delayed As New Assassin's Creed Games Leak",
-      "url": "https://www.polygon.com/assassins-creed-hexe-delay-leak/",
-      "date": "2026-11-08T16:42:35.295Z"
-    },
-    {
-      "title": "WoW: Forever is the biggest launch in World of Warcraft history, says Blizzard",
-      "url": "https://www.eurogamer.net/wow-forever-biggest-launch-world-of-warcraft-history-concurrent-players",
-      "date": "2026-11-08T16:42:46.807Z"
-    },
     {
       "title": "Nintendo Is Testing New Ways to Play on Switch 2",
       "url": "https://insider-gaming.com/nintendo-switch-2-new-ways-to-play/",
@@ -261,7 +241,17 @@
       "title": "League of Legends: New Dawn Unveiled With Debut Trailer, Riot Announces Major Overhaul Coming in 2027",
       "url": "https://www.ign.com/articles/league-of-legends-new-dawn-unveiled-with-debut-trailer-riot-announces-major-overhaul-coming-in-2027",
       "date": "2026-11-15T09:22:31.575Z"
+    },
+    {
+      "title": "How Long Will It Take to Complete GTA 6? Platinum Trophy & Mythic Achievement Time Explained",
+      "url": "https://insider-gaming.com/how-long-to-complete-gta/",
+      "date": "2026-11-15T17:07:27.708Z"
+    },
+    {
+      "title": "Treyarch lays off lead Call of Duty writer and Zombies veteran after \"approximately 20 years\" of service",
+      "url": "https://www.eurogamer.net/craig-houston-layoff-treyarch-call-of-duty-layoffs",
+      "date": "2026-11-15T17:07:54.731Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
