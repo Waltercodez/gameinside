@@ -1,17 +1,7 @@
 {
   "date": "2026-11-15",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "89% of People Think GTA 6 Will Win Game of the Year at The Game Awards",
-      "url": "https://insider-gaming.com/gta-6-game-of-the-year-awards-chances/",
-      "date": "2026-11-08T02:27:54.162Z"
-    },
-    {
-      "title": "Sony delays PlayStation's Pulse Elevate speakers indefinitely, less than a week before launch",
-      "url": "https://www.eurogamer.net/playstation-pulse-elevate-speakers-delayed-indefinitely-production-issue",
-      "date": "2026-11-08T02:28:17.897Z"
-    },
     {
       "title": "Sony Indefinitely Delays Another PS5 Peripheral Days Before Release",
       "url": "https://www.pushsquare.com/news/2026/11/sony-indefinitely-delays-another-ps5-peripheral-days-before-release",
@@ -261,7 +251,17 @@
       "title": "Nintendo Officially Reveals New Kirby Game for Switch 2",
       "url": "https://www.polygon.com/kirby-world-beyond-nintendo-switch-2-2027/",
       "date": "2026-11-15T01:53:56.525Z"
+    },
+    {
+      "title": "I Can't Wait to Ignore the Main Story of GTA 6",
+      "url": "https://www.polygon.com/gta-6-main-story-side-activities/",
+      "date": "2026-11-15T09:21:55.546Z"
+    },
+    {
+      "title": "League of Legends: New Dawn Unveiled With Debut Trailer, Riot Announces Major Overhaul Coming in 2027",
+      "url": "https://www.ign.com/articles/league-of-legends-new-dawn-unveiled-with-debut-trailer-riot-announces-major-overhaul-coming-in-2027",
+      "date": "2026-11-15T09:22:31.575Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
