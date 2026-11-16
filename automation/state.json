@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-15",
-  "publishedToday": 8,
+  "date": "2026-11-16",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "The Legend Of Zelda: Ocarina of Time For Switch 2 Could Bring Back A Classic Mode",
-      "url": "https://www.polygon.com/ocarina-of-time-master-quest-switch-2/",
-      "date": "2026-11-09T00:52:51.825Z"
-    },
-    {
-      "title": "AMD Acknowledges Radeon Driver Bug Causing Constant SSD Writes, Fix In The Works",
-      "url": "https://wccftech.com/amd-acknowledges-radeon-driver-bug-causing-constant-ssd-writes-fix-in-the-works/",
-      "date": "2026-11-09T00:53:20.803Z"
-    },
     {
       "title": "PlayStation Portal Midnight Black Japan-only model announced",
       "url": "https://www.gematsu.com/2026/11/playstation-portal-midnight-black-japan-only-model-announced",
@@ -251,7 +241,17 @@
       "title": "Xbox’s Jason Ronald Confirms Project Helix Is a Console That Plays PC Games, Says Neural Rendering Is Leveraged to Deliver “A New Level of Visual Fidelity”",
       "url": "https://wccftech.com/xbox-project-helix-console-pc-games-neural-rendering/",
       "date": "2026-11-15T21:47:27.506Z"
+    },
+    {
+      "title": "EA Adds 'Don't Delete' Message to Madden NFL 27 in Bid to Keep Players From Making Room Ahead of GTA 6",
+      "url": "https://www.ign.com/articles/ea-adds-dont-delete-message-to-madden-nfl-27-in-bid-to-keep-players-from-making-room-ahead-of-gta-6",
+      "date": "2026-11-16T02:03:38.902Z"
+    },
+    {
+      "title": "'The Ultimate Gaming Machine' - Xbox Reveals Tons Of New Project Helix Information",
+      "url": "https://www.purexbox.com/news/2026/11/the-ultimate-gaming-machine-xbox-reveals-tons-of-new-project-helix-information",
+      "date": "2026-11-16T02:04:04.047Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
