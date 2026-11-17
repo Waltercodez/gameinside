@@ -1,17 +1,7 @@
 {
   "date": "2026-11-17",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA VI neemt op XBOX geen 212 maar 225GB opslagruimte in beslag",
-      "url": "https://tweakers.net/nieuws/254344/gta-vi-neemt-op-xbox-geen-212-maar-225gb-opslagruimte-in-beslag.html",
-      "date": "2026-11-10T09:46:33.506Z"
-    },
-    {
-      "title": "Switch 2 and Switch consoles updated to version 23.5.0 as Nintendo quietly re-introduces eShop gifting",
-      "url": "https://www.eurogamer.net/switch-2-and-switch-consoles-updated-to-version-2350-as-nintendo-quietly-re-introduces-eshop-gifting",
-      "date": "2026-11-10T09:46:59.528Z"
-    },
     {
       "title": "GTA 6 Is The Most Preordered Game Of All Time For PlayStation And Xbox",
       "url": "https://www.gamespot.com/articles/gta-6-is-the-most-preordered-game-of-all-time-for-playstation-and-xbox/",
@@ -251,7 +241,17 @@
       "title": "Xbox Is Releasing Two First-Party Expansions In December 2026",
       "url": "https://www.purexbox.com/news/2026/11/xbox-is-releasing-two-first-party-expansions-in-december-2026",
       "date": "2026-11-17T03:51:32.034Z"
+    },
+    {
+      "title": "Sony Squeezes in Last-Minute PS5 Firmware Security Update Ahead of GTA 6 Release Date, Amid Fresh Hacker Claim",
+      "url": "https://www.ign.com/articles/sony-squeezes-in-last-minute-ps5-firmware-security-update-ahead-of-gta-6-release-date-amid-fresh-hacker-claim",
+      "date": "2026-11-17T13:21:45.030Z"
+    },
+    {
+      "title": "Zelda Ocarina of Time remake is the best-selling physical game in the US in 2026 so far, passing 1 million in its first week",
+      "url": "https://www.videogameschronicle.com/news/zelda-ocarina-of-time-remake-is-the-best-selling-physical-game-in-the-us-in-2026-so-far-passing-1-million-in-its-first-week/",
+      "date": "2026-11-17T13:22:15.063Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
