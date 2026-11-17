@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "_id": "auto-1794860851552-oehk8",
+      "title": "Project Helix is console, geen pc, zegt Microsoft",
+      "url": "https://gameinside.nl/artikel/project-helix-console-geen-pc-microsoft-clarificeert",
+      "x": "Microsoft maakt duidelijk: Project Helix is een échte console, niet zomaar een pc met Xbox-games. Wat betekent dat voor de toekomst van Xbox?"
+    },
+    {
       "_id": "auto-1794821944196-7blni",
       "title": "GTA 6 verschijnt deze week op PS5 naast PS Plus",
       "url": "https://gameinside.nl/artikel/gta-6-release-week-ps5-ps-plus-games",
@@ -1531,5 +1537,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-11-16T06:48:47.284Z"
+  "lastRun": "2026-11-17T02:59:14.589Z"
 }
