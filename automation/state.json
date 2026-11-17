@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-16",
-  "publishedToday": 6,
+  "date": "2026-11-17",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Take-Two 'Enhancing' Technical Defenses and Legal Activities to Combat GTA 6 AI Reverse-Engineering Threat",
-      "url": "https://www.ign.com/articles/take-two-enhancing-technical-defenses-and-legal-activities-to-combat-gta-6-ai-reverse-engineering-threat",
-      "date": "2026-11-10T02:05:57.234Z"
-    },
-    {
-      "title": "Anticipated Warhammer 40K tactical RPG Dark Heresy gets a release date",
-      "url": "https://www.eurogamer.net/warhammer-40k-dark-heresy-owlcat-crpg",
-      "date": "2026-11-10T02:06:21.218Z"
-    },
     {
       "title": "GTA VI neemt op XBOX geen 212 maar 225GB opslagruimte in beslag",
       "url": "https://tweakers.net/nieuws/254344/gta-vi-neemt-op-xbox-geen-212-maar-225gb-opslagruimte-in-beslag.html",
@@ -251,7 +241,17 @@
       "title": "The next Xbox, Project Helix, is a console and \"not a PC\" says Microsoft, as it clarifies that computational power isn't sole focus this time",
       "url": "https://www.eurogamer.net/microsoft-project-helix-interview-details",
       "date": "2026-11-16T20:27:32.698Z"
+    },
+    {
+      "title": "GTA 6 Gets New Screenshots Highlighting Leonida's Dynamic Weather",
+      "url": "https://www.ign.com/articles/gta-6-gets-new-screenshots-highlighting-leonidas-dynamic-weather",
+      "date": "2026-11-17T03:50:51.789Z"
+    },
+    {
+      "title": "Xbox Is Releasing Two First-Party Expansions In December 2026",
+      "url": "https://www.purexbox.com/news/2026/11/xbox-is-releasing-two-first-party-expansions-in-december-2026",
+      "date": "2026-11-17T03:51:32.034Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
