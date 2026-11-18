@@ -1,17 +1,7 @@
 {
   "date": "2026-11-18",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "GTA 6 Was Never Going to Hit 60 Frames per Second on Consoles",
-      "url": "https://www.ign.com/articles/gta-6-was-never-going-to-be-60-frames-per-second-on-consoles",
-      "date": "2026-11-11T06:12:40.629Z"
-    },
-    {
-      "title": "PS5 shipments top 100 million",
-      "url": "https://www.gematsu.com/2026/11/ps5-shipments-top-100-million",
-      "date": "2026-11-11T06:13:05.931Z"
-    },
     {
       "title": "‘We see it as an opportunity’: Indie studios releasing games this month explain how it feels to go up against GTA 6",
       "url": "https://www.videogameschronicle.com/news/we-see-it-as-an-opportunity-indie-studios-releasing-games-this-month-explain-how-it-feels-to-go-up-against-gta-6/",
@@ -251,7 +241,17 @@
       "title": "Layoffs Hit XCOM Dev as It Struggles with Production of Third Entry",
       "url": "https://www.pushsquare.com/news/2026/11/layoffs-hit-xcom-dev-as-it-struggles-with-production-of-third-entry",
       "date": "2026-11-18T04:18:25.346Z"
+    },
+    {
+      "title": "GTA 6 Unwanted Attention Mission Walkthrough",
+      "url": "https://www.videogameschronicle.com/guide/gta-6-unwanted-attention-mission-walkthrough/",
+      "date": "2026-11-18T13:56:02.196Z"
+    },
+    {
+      "title": "Jason Schreier Says Civilization VII Developer Firaxis Cut 60 of Its 180 Staff, Including Studio Head Heather Hazen, While Work on a New XCOM Continues",
+      "url": "https://wccftech.com/firaxis-layoffs-civilization-vii-heather-hazen-xcom/",
+      "date": "2026-11-18T13:56:33.223Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
