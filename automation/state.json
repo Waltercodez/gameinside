@@ -1,17 +1,7 @@
 {
   "date": "2026-11-18",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "‘We see it as an opportunity’: Indie studios releasing games this month explain how it feels to go up against GTA 6",
-      "url": "https://www.videogameschronicle.com/news/we-see-it-as-an-opportunity-indie-studios-releasing-games-this-month-explain-how-it-feels-to-go-up-against-gta-6/",
-      "date": "2026-11-11T14:18:47.702Z"
-    },
-    {
-      "title": "Ocarina of Time-remake verkoopt in vier dagen meer dan 5 miljoen stuks",
-      "url": "https://tweakers.net/nieuws/254402/ocarina-of-time-remake-verkoopt-in-vier-dagen-meer-dan-5-miljoen-stuks.html",
-      "date": "2026-11-11T14:19:15.749Z"
-    },
     {
       "title": "New GTA 6 Surprise Gameplay Seemingly Released in Yet Another Viral Marketing Stunt",
       "url": "https://www.ign.com/articles/new-gta-6-surprise-gameplay-seemingly-released-in-yet-another-viral-marketing-stunt",
@@ -251,7 +241,17 @@
       "title": "Jason Schreier Says Civilization VII Developer Firaxis Cut 60 of Its 180 Staff, Including Studio Head Heather Hazen, While Work on a New XCOM Continues",
       "url": "https://wccftech.com/firaxis-layoffs-civilization-vii-heather-hazen-xcom/",
       "date": "2026-11-18T13:56:33.223Z"
+    },
+    {
+      "title": "GTA 6 at 60fps on PS5 Pro isn't possible because the console \"is not powerful enough,\" Rockstar says",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-at-60fps-on-ps5-pro-isnt-possible-because-the-console-is-not-powerful-enough-rockstar-says/",
+      "date": "2026-11-18T21:54:58.597Z"
+    },
+    {
+      "title": "Here Are The Most Nominated Games And Publishers At The Game Awards This Year",
+      "url": "https://www.gamespot.com/articles/here-are-the-most-nominated-games-and-publishers-at-the-game-awards-this-year/",
+      "date": "2026-11-18T21:55:21.614Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
