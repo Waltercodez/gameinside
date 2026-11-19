@@ -1,17 +1,7 @@
 {
   "date": "2026-11-19",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 was almost refused classification in South Korea due to the sheer amount of genitals shown",
-      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-was-almost-refused-classification-in-south-korea-due-to-the-sheer-amount-of-genitals-shown/",
-      "date": "2026-11-12T18:53:54.481Z"
-    },
-    {
-      "title": "The Witcher 3 uses gen-AI to enhance Geralt's Polish voice following actor's stroke - \"I do think this is one of those ways where you can use AI ethically\"",
-      "url": "https://www.eurogamer.net/cd-projekt-red-geralt-gen-ai-voice-polish-jacek-rozenek",
-      "date": "2026-11-12T18:54:21.510Z"
-    },
     {
       "title": "Palworld developer Pocketpair gives employees time off for 'a 5-day business trip in Vice City when GTA 6 launches'",
       "url": "https://www.pcgamer.com/games/grand-theft-auto/palworld-developer-pocketpair-gives-employees-time-off-for-a-5-day-business-trip-in-vice-city-when-gta-6-launches/",
@@ -241,7 +231,17 @@
       "title": "Five Xbox Games Are Releasing Today, Including The Big One You Probably Know About (November 19)",
       "url": "https://www.purexbox.com/news/2026/11/five-xbox-games-are-releasing-today-including-the-big-one-you-probably-know-about-november-19",
       "date": "2026-11-19T13:00:59.943Z"
+    },
+    {
+      "title": "Infamous GTA 6 leaker CyberLeek is back, and this time the group claims to have leaked a full development build of the game",
+      "url": "https://www.eurogamer.net/cyberleek-gta-6-dev-build",
+      "date": "2026-11-19T21:30:17.193Z"
+    },
+    {
+      "title": "Steam Makes Strategy RPG Masterpiece Free For a Limited Time",
+      "url": "https://www.polygon.com/free-games-on-steam-november-2026-crusader-kings-3/",
+      "date": "2026-11-19T21:30:42.610Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
