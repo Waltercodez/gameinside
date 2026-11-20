@@ -1,17 +1,7 @@
 {
   "date": "2026-11-20",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 In-Game TV Show Macca & Friends Looks Ridiculous In The Best Way",
-      "url": "https://www.gamespot.com/articles/gta-6-in-game-tv-show-macca-friends-looks-ridiculous-in-the-best-way/",
-      "date": "2026-11-13T16:19:37.179Z"
-    },
-    {
-      "title": "Wolfenstein 3 Is Officially In Production At MachineGames",
-      "url": "https://www.gamespot.com/articles/wolfenstein-3-is-officially-in-production-at-machinegames/",
-      "date": "2026-11-13T16:20:07.086Z"
-    },
     {
       "title": "Yes, some brave games are still launching on Steam during GTA 6 week",
       "url": "https://www.pcgamer.com/games/yes-some-brave-games-are-still-launching-on-steam-during-gta-6-launch-week/",
@@ -241,7 +231,17 @@
       "title": "Citybuilder Town to City wint Dutch Game Award voor beste Nederlandse game",
       "url": "https://tweakers.net/nieuws/254754/citybuilder-town-to-city-wint-dutch-game-award-voor-beste-nederlandse-game.html",
       "date": "2026-11-20T11:34:43.643Z"
+    },
+    {
+      "title": "GTA 6 earns $3.79 billion in one day as the biggest entertainment launch in history",
+      "url": "https://www.videogameschronicle.com/news/gta-6-earns-3-79-billion-in-one-day-as-the-biggest-entertainment-launch-in-history/",
+      "date": "2026-11-20T20:13:41.073Z"
+    },
+    {
+      "title": "Ubisoft start bedrijf voor 'AI-gameplayinnovatie' en ontslaat 166 ontwikkelaars",
+      "url": "https://tweakers.net/nieuws/254768/ubisoft-start-bedrijf-voor-ai-gameplayinnovatie-en-ontslaat-166-ontwikkelaars.html",
+      "date": "2026-11-20T20:14:05.629Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
