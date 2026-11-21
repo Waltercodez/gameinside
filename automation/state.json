@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-20",
-  "publishedToday": 6,
+  "date": "2026-11-21",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Yes, some brave games are still launching on Steam during GTA 6 week",
-      "url": "https://www.pcgamer.com/games/yes-some-brave-games-are-still-launching-on-steam-during-gta-6-launch-week/",
-      "date": "2026-11-13T22:36:12.146Z"
-    },
-    {
-      "title": "God of War Sons of Sparta Coming to PS4 Next Week With New Content",
-      "url": "https://www.ign.com/articles/god-of-war-sons-of-sparta-coming-to-ps4-next-week-with-new-content",
-      "date": "2026-11-13T22:36:25.167Z"
-    },
     {
       "title": "Some of These GTA 6 Clips Look So Good That I Don't Care if It's Running at 30fps",
       "url": "https://www.ign.com/articles/some-of-these-gta-6-clips-look-so-good-that-i-dont-care-if-its-running-at-30-fps",
@@ -241,7 +231,17 @@
       "title": "Ubisoft start bedrijf voor 'AI-gameplayinnovatie' en ontslaat 166 ontwikkelaars",
       "url": "https://tweakers.net/nieuws/254768/ubisoft-start-bedrijf-voor-ai-gameplayinnovatie-en-ontslaat-166-ontwikkelaars.html",
       "date": "2026-11-20T20:14:05.629Z"
+    },
+    {
+      "title": "GTA 6 Afternoon Delight walkthrough: Safe code, Jason’s dance choice and rewards",
+      "url": "https://www.videogameschronicle.com/guide/gta-6-afternoon-delight-walkthrough-safe-code-jasons-dance-choice-and-rewards/",
+      "date": "2026-11-21T01:30:40.859Z"
+    },
+    {
+      "title": "The Witcher 4 Gets Official Update on Physical Release",
+      "url": "https://www.polygon.com/the-witcher-4-physical-release-cd-projekt-red-ps5/",
+      "date": "2026-11-21T01:31:11.891Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
