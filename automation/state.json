@@ -1,17 +1,7 @@
 {
   "date": "2026-11-21",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Some of These GTA 6 Clips Look So Good That I Don't Care if It's Running at 30fps",
-      "url": "https://www.ign.com/articles/some-of-these-gta-6-clips-look-so-good-that-i-dont-care-if-its-running-at-30-fps",
-      "date": "2026-11-14T03:12:07.402Z"
-    },
-    {
-      "title": "Fallout 5 and Fallout Remasters Officially Announced",
-      "url": "https://www.polygon.com/fallout-5-fo3-remaster-new-games-bethesda-softworks/",
-      "date": "2026-11-14T03:12:37.545Z"
-    },
     {
       "title": "Vice City was the GTA that established Rockstar's killer formula - and 24 years on, it's still one of the best games ever made",
       "url": "https://www.eurogamer.net/gta-vice-city-retrospective",
@@ -241,7 +231,17 @@
       "title": "The Witcher 4 Gets Official Update on Physical Release",
       "url": "https://www.polygon.com/the-witcher-4-physical-release-cd-projekt-red-ps5/",
       "date": "2026-11-21T01:31:11.891Z"
+    },
+    {
+      "title": "Rockstar: GTA VI verdiende niet 2,4 maar 3,8 miljard dollar op de eerste dag",
+      "url": "https://tweakers.net/nieuws/254792/rockstar-gta-vi-verdiende-niet-2-komma-4-maar-3-komma-8-miljard-dollar-op-de-eerste-dag.html",
+      "date": "2026-11-21T09:46:32.199Z"
+    },
+    {
+      "title": "The Wolf Among Us Remastered Has Been Delayed For Switch",
+      "url": "https://www.nintendolife.com/news/2026/11/the-wolf-among-us-remastered-has-been-delayed-for-switch",
+      "date": "2026-11-21T09:47:01.253Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
