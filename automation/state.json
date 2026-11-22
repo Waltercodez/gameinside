@@ -1,17 +1,7 @@
 {
   "date": "2026-11-22",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "How Long Will It Take to Complete GTA 6? Platinum Trophy & Mythic Achievement Time Explained",
-      "url": "https://insider-gaming.com/how-long-to-complete-gta/",
-      "date": "2026-11-15T17:07:27.708Z"
-    },
-    {
-      "title": "Treyarch lays off lead Call of Duty writer and Zombies veteran after \"approximately 20 years\" of service",
-      "url": "https://www.eurogamer.net/craig-houston-layoff-treyarch-call-of-duty-layoffs",
-      "date": "2026-11-15T17:07:54.731Z"
-    },
     {
       "title": "GTA 6's Jason and Lucia Will Start as Small-Time Criminals Who Have to Work Up to High-Value Jobs",
       "url": "https://www.ign.com/articles/gta-6s-jason-and-lucia-will-start-as-small-time-criminals-who-have-to-work-up-to-high-value-jobs",
@@ -231,7 +221,17 @@
       "title": "I've never known a moment like this in video games",
       "url": "https://www.eurogamer.net/gta-6-video-games-biggest-moment",
       "date": "2026-11-22T11:19:37.361Z"
+    },
+    {
+      "title": "GTA 6: Full Alien UFO questline walkthrough",
+      "url": "https://www.videogameschronicle.com/guide/gta-6-full-alien-ufo-questline-walkthrough/",
+      "date": "2026-11-22T19:35:49.368Z"
+    },
+    {
+      "title": "Unreal Engine 5.9 Preview 2 Brings Browser-Based Gaming To Blueprint-Only Projects, Enables AI Workflows By Default And Improves Rendering",
+      "url": "https://wccftech.com/unreal-engine-5-9-preview-2-brings-browser-based-gaming-to-blueprint-only-projects-enables-ai-workflows-by-default-and-improves-rendering/",
+      "date": "2026-11-22T19:36:15.621Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
