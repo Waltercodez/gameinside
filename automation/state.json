@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-21",
-  "publishedToday": 8,
+  "date": "2026-11-22",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Leak Seemingly Reveals Full Track List Days Before Launch",
-      "url": "https://www.ign.com/articles/gta-6-leak-seemingly-reveals-full-track-list-days-before-launch",
-      "date": "2026-11-15T01:53:26.877Z"
-    },
-    {
-      "title": "Nintendo Officially Reveals New Kirby Game for Switch 2",
-      "url": "https://www.polygon.com/kirby-world-beyond-nintendo-switch-2-2027/",
-      "date": "2026-11-15T01:53:56.525Z"
-    },
     {
       "title": "I Can't Wait to Ignore the Main Story of GTA 6",
       "url": "https://www.polygon.com/gta-6-main-story-side-activities/",
@@ -231,7 +221,17 @@
       "title": "The team behind Ubisoft's 'first playable AI-based R&D project' has been established as its own subsidiary called Motherbrain",
       "url": "https://www.pcgamer.com/gaming-industry/the-team-behind-ubisofts-first-playable-ai-based-r-and-d-project-has-been-established-as-its-own-subsidiary-called-motherbrain/",
       "date": "2026-11-21T23:13:34.921Z"
+    },
+    {
+      "title": "GTA 6 radio DJs and podcast hosts: Every famous voice on GTA 6’s radio",
+      "url": "https://www.videogameschronicle.com/guide/gta-6-radio-djs-and-podcast-hosts-every-famous-voice-on-gta-6s-radio/",
+      "date": "2026-11-22T03:09:49.119Z"
+    },
+    {
+      "title": "The Binding of Isaac Dev Removes Undisclosed AI-Generated Music From Repentance+ Following Creator Response, Review-Bombing",
+      "url": "https://www.ign.com/articles/the-binding-of-isaac-dev-removes-undisclosed-ai-generated-music-from-repentance-following-creator-response-review-bombing",
+      "date": "2026-11-22T03:10:19.114Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
