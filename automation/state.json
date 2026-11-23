@@ -1,27 +1,7 @@
 {
   "date": "2026-11-23",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "This Week’s Japanese Game Releases: Grand Theft Auto VI, more",
-      "url": "https://www.gematsu.com/2026/11/this-weeks-japanese-game-releases-grand-theft-auto-vi-more",
-      "date": "2026-11-16T09:38:36.324Z"
-    },
-    {
-      "title": "Guide: These 13+ PS5 and PS Plus Games Are Coming Out This Week (16th-22nd November)",
-      "url": "https://www.pushsquare.com/guides/these-13plus-ps5-and-ps-plus-games-are-coming-out-this-week-16th-22nd-november",
-      "date": "2026-11-16T09:39:06.357Z"
-    },
-    {
-      "title": "NBA 2K27 is getting a Vice City Edition, as well as numerous GTA 6 themed items in Season 3",
-      "url": "https://www.videogameschronicle.com/news/nba-2k27-is-getting-a-vice-city-edition-as-well-as-numerous-gta-6-themed-items-in-season-3/",
-      "date": "2026-11-16T20:27:08.108Z"
-    },
-    {
-      "title": "The next Xbox, Project Helix, is a console and \"not a PC\" says Microsoft, as it clarifies that computational power isn't sole focus this time",
-      "url": "https://www.eurogamer.net/microsoft-project-helix-interview-details",
-      "date": "2026-11-16T20:27:32.698Z"
-    },
     {
       "title": "GTA 6 Gets New Screenshots Highlighting Leonida's Dynamic Weather",
       "url": "https://www.ign.com/articles/gta-6-gets-new-screenshots-highlighting-leonidas-dynamic-weather",
@@ -231,7 +211,17 @@
       "title": "Achtergrond - AI-tools maken modden, porten én klonen van games makkelijker: 'Beangstigend'",
       "url": "https://tweakers.net/reviews/15610/ai-tools-maken-modden-porten-en-klonen-van-games-makkelijker-beangstigend.html",
       "date": "2026-11-23T09:00:25.984Z"
+    },
+    {
+      "title": "GTA 6 Hacker Officially Walks Free After Judge's Final Warning",
+      "url": "https://www.polygon.com/gta-6-hacker-released-prison-sentence/",
+      "date": "2026-11-23T21:19:57.318Z"
+    },
+    {
+      "title": "Activision calls Banjo-Kazooie one of its \"iconic gaming franchises,\" raising hopes for long-awaited new game",
+      "url": "https://www.eurogamer.net/activision-banjo-kazooie-iconic-gaming-franchise",
+      "date": "2026-11-23T21:20:24.182Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
