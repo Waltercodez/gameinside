@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-22",
-  "publishedToday": 6,
+  "date": "2026-11-23",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6's Jason and Lucia Will Start as Small-Time Criminals Who Have to Work Up to High-Value Jobs",
-      "url": "https://www.ign.com/articles/gta-6s-jason-and-lucia-will-start-as-small-time-criminals-who-have-to-work-up-to-high-value-jobs",
-      "date": "2026-11-15T21:47:13.852Z"
-    },
-    {
-      "title": "Xbox’s Jason Ronald Confirms Project Helix Is a Console That Plays PC Games, Says Neural Rendering Is Leveraged to Deliver “A New Level of Visual Fidelity”",
-      "url": "https://wccftech.com/xbox-project-helix-console-pc-games-neural-rendering/",
-      "date": "2026-11-15T21:47:27.506Z"
-    },
     {
       "title": "EA Adds 'Don't Delete' Message to Madden NFL 27 in Bid to Keep Players From Making Room Ahead of GTA 6",
       "url": "https://www.ign.com/articles/ea-adds-dont-delete-message-to-madden-nfl-27-in-bid-to-keep-players-from-making-room-ahead-of-gta-6",
@@ -231,7 +221,17 @@
       "title": "Unreal Engine 5.9 Preview 2 Brings Browser-Based Gaming To Blueprint-Only Projects, Enables AI Workflows By Default And Improves Rendering",
       "url": "https://wccftech.com/unreal-engine-5-9-preview-2-brings-browser-based-gaming-to-blueprint-only-projects-enables-ai-workflows-by-default-and-improves-rendering/",
       "date": "2026-11-22T19:36:15.621Z"
+    },
+    {
+      "title": "GTA 6 Chapter 2 Mission List: Every Missions in Order & Point Of No Return",
+      "url": "https://www.videogameschronicle.com/guide/gta-6-chapter-2-mission-list/",
+      "date": "2026-11-23T00:49:48.055Z"
+    },
+    {
+      "title": "New Dota 2 patch tries to help games end faster, adds an item that summons super creeps in every lane at once",
+      "url": "https://www.pcgamer.com/games/moba/new-dota-2-patch-tries-to-help-games-end-faster-adds-an-item-that-summons-super-creeps-in-every-lane-at-once/",
+      "date": "2026-11-23T00:50:12.074Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
