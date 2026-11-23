@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "_id": "auto-1795395009650-todc8",
+      "title": "Dota 2 patch 7.42 moet matches korter maken",
+      "url": "https://gameinside.nl/artikel/dota-2-patch-742-matches-korter-greater-horn-of-battle",
+      "x": "Dota 2 patch 7.42 brengt een nieuw item dat super creeps spawnt. Eindelijk een einde aan die eindeloze matches?"
+    },
+    {
       "_id": "auto-1795376173201-v19i5",
       "title": "Unreal Engine 5.9 Preview 2: Blueprint naar browser",
       "url": "https://gameinside.nl/artikel/unreal-engine-5-9-preview-2-browser-blueprint-ai",
@@ -1699,5 +1705,5 @@
       "x": "Xbox Cloud Gaming gaat tijdslimieten invoeren - Game Pass-abonnees kunnen straks extra speeltijd bijkopen. Wat betekent dit voor jouw gaminggewoonten?"
     }
   ],
-  "lastRun": "2026-11-22T02:21:15.090Z"
+  "lastRun": "2026-11-23T07:53:27.193Z"
 }
