@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-23",
-  "publishedToday": 6,
+  "date": "2026-11-24",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "GTA 6 Gets New Screenshots Highlighting Leonida's Dynamic Weather",
-      "url": "https://www.ign.com/articles/gta-6-gets-new-screenshots-highlighting-leonidas-dynamic-weather",
-      "date": "2026-11-17T03:50:51.789Z"
-    },
-    {
-      "title": "Xbox Is Releasing Two First-Party Expansions In December 2026",
-      "url": "https://www.purexbox.com/news/2026/11/xbox-is-releasing-two-first-party-expansions-in-december-2026",
-      "date": "2026-11-17T03:51:32.034Z"
-    },
     {
       "title": "Sony Squeezes in Last-Minute PS5 Firmware Security Update Ahead of GTA 6 Release Date, Amid Fresh Hacker Claim",
       "url": "https://www.ign.com/articles/sony-squeezes-in-last-minute-ps5-firmware-security-update-ahead-of-gta-6-release-date-amid-fresh-hacker-claim",
@@ -221,7 +211,17 @@
       "title": "Activision calls Banjo-Kazooie one of its \"iconic gaming franchises,\" raising hopes for long-awaited new game",
       "url": "https://www.eurogamer.net/activision-banjo-kazooie-iconic-gaming-franchise",
       "date": "2026-11-23T21:20:24.182Z"
+    },
+    {
+      "title": "Where To Find Cut-Off Tool in GTA 6 To Open Containers",
+      "url": "https://www.videogameschronicle.com/guide/gta-6-cut-off-tool/",
+      "date": "2026-11-24T05:59:42.835Z"
+    },
+    {
+      "title": "Final Fantasy VII Revelation Has Been Rated For Switch 2 By The ESRB",
+      "url": "https://www.nintendolife.com/news/2026/11/final-fantasy-vii-revelation-has-been-rated-for-switch-2-by-the-esrb",
+      "date": "2026-11-24T06:00:08.116Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
