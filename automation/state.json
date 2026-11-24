@@ -1,17 +1,7 @@
 {
   "date": "2026-11-24",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "Sony Squeezes in Last-Minute PS5 Firmware Security Update Ahead of GTA 6 Release Date, Amid Fresh Hacker Claim",
-      "url": "https://www.ign.com/articles/sony-squeezes-in-last-minute-ps5-firmware-security-update-ahead-of-gta-6-release-date-amid-fresh-hacker-claim",
-      "date": "2026-11-17T13:21:45.030Z"
-    },
-    {
-      "title": "Zelda Ocarina of Time remake is the best-selling physical game in the US in 2026 so far, passing 1 million in its first week",
-      "url": "https://www.videogameschronicle.com/news/zelda-ocarina-of-time-remake-is-the-best-selling-physical-game-in-the-us-in-2026-so-far-passing-1-million-in-its-first-week/",
-      "date": "2026-11-17T13:22:15.063Z"
-    },
     {
       "title": "The Game Awards 2026 nominees announced, and GTA 6 leads with eight nods before it's even out",
       "url": "https://www.eurogamer.net/game-awards-2026-nominees-full-list-gta-6",
@@ -221,7 +211,17 @@
       "title": "Final Fantasy VII Revelation Has Been Rated For Switch 2 By The ESRB",
       "url": "https://www.nintendolife.com/news/2026/11/final-fantasy-vii-revelation-has-been-rated-for-switch-2-by-the-esrb",
       "date": "2026-11-24T06:00:08.116Z"
+    },
+    {
+      "title": "Rockstar is reportedly interested in a Red Dead Redemption film or TV show",
+      "url": "https://www.videogameschronicle.com/news/rockstar-is-reportedly-interested-in-a-red-dead-redemption-film-or-tv-show/",
+      "date": "2026-11-24T17:40:08.620Z"
+    },
+    {
+      "title": "Xbox Snags PS5 Exclusive 'Nioh 3' For January 2027 Release",
+      "url": "https://www.purexbox.com/news/2026/11/xbox-snags-ps5-exclusive-nioh-3-for-january-2027-release",
+      "date": "2026-11-24T17:40:36.105Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
