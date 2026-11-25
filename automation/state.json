@@ -1,27 +1,7 @@
 {
   "date": "2026-11-25",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "GTA 6 Unwanted Attention Mission Walkthrough",
-      "url": "https://www.videogameschronicle.com/guide/gta-6-unwanted-attention-mission-walkthrough/",
-      "date": "2026-11-18T13:56:02.196Z"
-    },
-    {
-      "title": "Jason Schreier Says Civilization VII Developer Firaxis Cut 60 of Its 180 Staff, Including Studio Head Heather Hazen, While Work on a New XCOM Continues",
-      "url": "https://wccftech.com/firaxis-layoffs-civilization-vii-heather-hazen-xcom/",
-      "date": "2026-11-18T13:56:33.223Z"
-    },
-    {
-      "title": "GTA 6 at 60fps on PS5 Pro isn't possible because the console \"is not powerful enough,\" Rockstar says",
-      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-at-60fps-on-ps5-pro-isnt-possible-because-the-console-is-not-powerful-enough-rockstar-says/",
-      "date": "2026-11-18T21:54:58.597Z"
-    },
-    {
-      "title": "Here Are The Most Nominated Games And Publishers At The Game Awards This Year",
-      "url": "https://www.gamespot.com/articles/here-are-the-most-nominated-games-and-publishers-at-the-game-awards-this-year/",
-      "date": "2026-11-18T21:55:21.614Z"
-    },
     {
       "title": "Can you replay missions in GTA 6?",
       "url": "https://www.videogameschronicle.com/guide/can-you-replay-missions-in-gta-6/",
@@ -221,7 +201,17 @@
       "title": "The Witcher 4 Dev Signs New 'Agreements' With Sony, But What Does It Mean For Xbox?",
       "url": "https://www.purexbox.com/news/2026/11/the-witcher-4-dev-signs-new-agreements-with-sony-but-what-does-it-mean-for-xbox",
       "date": "2026-11-25T12:50:18.966Z"
+    },
+    {
+      "title": "GTA 6 Animation Director Reveals Rockstar Made 3 Animations for Each Item Interaction",
+      "url": "https://www.ign.com/articles/gta-6-animation-director-reveals-rockstar-made-3-animations-for-each-item-interaction",
+      "date": "2026-11-25T22:29:54.686Z"
+    },
+    {
+      "title": "‘No one gets left behind’: CDPR says The Witcher 4 will launch on Xbox day one, despite Sony agreement",
+      "url": "https://www.videogameschronicle.com/news/no-one-gets-left-behind-cdpr-says-the-witcher-4-will-launch-on-xbox-day-one-despite-sony-agreement/",
+      "date": "2026-11-25T22:30:25.358Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
