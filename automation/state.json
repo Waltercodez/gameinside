@@ -1,17 +1,7 @@
 {
   "date": "2026-11-26",
-  "publishedToday": 4,
+  "publishedToday": 6,
   "topics": [
-    {
-      "title": "Infamous GTA 6 leaker CyberLeek is back, and this time the group claims to have leaked a full development build of the game",
-      "url": "https://www.eurogamer.net/cyberleek-gta-6-dev-build",
-      "date": "2026-11-19T21:30:17.193Z"
-    },
-    {
-      "title": "Steam Makes Strategy RPG Masterpiece Free For a Limited Time",
-      "url": "https://www.polygon.com/free-games-on-steam-november-2026-crusader-kings-3/",
-      "date": "2026-11-19T21:30:42.610Z"
-    },
     {
       "title": "GTA 6 Chapters and Mission List: How many chapters in GTA 6? (Spoiler-Free)",
       "url": "https://www.videogameschronicle.com/guide/gta-6-chapters-and-mission-list-how-many-chapters-in-gta-6-spoiler-free/",
@@ -211,7 +201,17 @@
       "title": "Nintendo Promises To Fix The Long Load Times On Pikmin 4 - Switch 2 Edition",
       "url": "https://www.nintendolife.com/news/2026/11/nintendo-promises-to-fix-the-long-load-times-on-pikmin-4-switch-2-edition",
       "date": "2026-11-26T15:12:09.745Z"
+    },
+    {
+      "title": "Rockstar Games Has A GTA 6 Hit On Its Hands, But Its Union Vote Is A Loss",
+      "url": "https://www.gamespot.com/articles/rockstar-games-has-a-gta-6-hit-on-its-hands-but-its-union-vote-is-a-loss/",
+      "date": "2026-11-26T23:50:25.605Z"
+    },
+    {
+      "title": "Ubisoft defends calling Skull & Bones a ‘quadruple-A’ game in lawsuit",
+      "url": "https://www.videogameschronicle.com/news/ubisoft-defends-calling-skull-bones-a-quadruple-a-game-in-lawsuit/",
+      "date": "2026-11-26T23:50:53.641Z"
     }
   ],
-  "varietyPublishedToday": 2
+  "varietyPublishedToday": 3
 }
