@@ -1,17 +1,7 @@
 {
-  "date": "2026-11-25",
-  "publishedToday": 6,
+  "date": "2026-11-26",
+  "publishedToday": 2,
   "topics": [
-    {
-      "title": "Can you replay missions in GTA 6?",
-      "url": "https://www.videogameschronicle.com/guide/can-you-replay-missions-in-gta-6/",
-      "date": "2026-11-19T03:24:02.838Z"
-    },
-    {
-      "title": "WoW: Forever is huge: Players have created over 15 million characters so far",
-      "url": "https://www.pcgamer.com/games/world-of-warcraft/wow-forever-is-huge-players-have-created-over-15-million-characters-so-far/",
-      "date": "2026-11-19T03:24:27.850Z"
-    },
     {
       "title": "The Xbox Series S version of GTA 6 is seemingly the first to use AMD’s FSR 4.1 upscaling",
       "url": "https://www.videogameschronicle.com/news/the-xbox-series-s-version-of-gta-6-is-seemingly-the-first-to-use-amds-fsr-4-1-upscaling/",
@@ -211,7 +201,17 @@
       "title": "‘No one gets left behind’: CDPR says The Witcher 4 will launch on Xbox day one, despite Sony agreement",
       "url": "https://www.videogameschronicle.com/news/no-one-gets-left-behind-cdpr-says-the-witcher-4-will-launch-on-xbox-day-one-despite-sony-agreement/",
       "date": "2026-11-25T22:30:25.358Z"
+    },
+    {
+      "title": "Rockstar Explains Why it Added Consequences to GTA 6's Violence and Crimes",
+      "url": "https://www.ign.com/articles/rockstar-explains-why-it-added-consequences-to-gta-6s-violence-and-crimes",
+      "date": "2026-11-26T05:00:21.309Z"
+    },
+    {
+      "title": "Hollow Knight: Silksong DLC News and 'Exciting' Reveals from Dev Team Cherry Coming This Week",
+      "url": "https://www.pushsquare.com/news/2026/11/hollow-knight-silksong-dlc-news-and-exciting-reveals-from-dev-team-cherry-coming-this-week",
+      "date": "2026-11-26T05:00:42.321Z"
     }
   ],
-  "varietyPublishedToday": 3
+  "varietyPublishedToday": 1
 }
