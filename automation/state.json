@@ -1,17 +1,7 @@
 {
   "date": "2026-11-26",
-  "publishedToday": 2,
+  "publishedToday": 4,
   "topics": [
-    {
-      "title": "The Xbox Series S version of GTA 6 is seemingly the first to use AMD’s FSR 4.1 upscaling",
-      "url": "https://www.videogameschronicle.com/news/the-xbox-series-s-version-of-gta-6-is-seemingly-the-first-to-use-amds-fsr-4-1-upscaling/",
-      "date": "2026-11-19T13:00:33.902Z"
-    },
-    {
-      "title": "Five Xbox Games Are Releasing Today, Including The Big One You Probably Know About (November 19)",
-      "url": "https://www.purexbox.com/news/2026/11/five-xbox-games-are-releasing-today-including-the-big-one-you-probably-know-about-november-19",
-      "date": "2026-11-19T13:00:59.943Z"
-    },
     {
       "title": "Infamous GTA 6 leaker CyberLeek is back, and this time the group claims to have leaked a full development build of the game",
       "url": "https://www.eurogamer.net/cyberleek-gta-6-dev-build",
@@ -211,7 +201,17 @@
       "title": "Hollow Knight: Silksong DLC News and 'Exciting' Reveals from Dev Team Cherry Coming This Week",
       "url": "https://www.pushsquare.com/news/2026/11/hollow-knight-silksong-dlc-news-and-exciting-reveals-from-dev-team-cherry-coming-this-week",
       "date": "2026-11-26T05:00:42.321Z"
+    },
+    {
+      "title": "75% of Rockstar’s workers have voted against unionizing",
+      "url": "https://www.videogameschronicle.com/news/75-of-rockstars-workers-have-voted-against-unionizing/",
+      "date": "2026-11-26T15:11:43.087Z"
+    },
+    {
+      "title": "Nintendo Promises To Fix The Long Load Times On Pikmin 4 - Switch 2 Edition",
+      "url": "https://www.nintendolife.com/news/2026/11/nintendo-promises-to-fix-the-long-load-times-on-pikmin-4-switch-2-edition",
+      "date": "2026-11-26T15:12:09.745Z"
     }
   ],
-  "varietyPublishedToday": 1
+  "varietyPublishedToday": 2
 }
